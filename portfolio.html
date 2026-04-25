@@ -717,13 +717,13 @@ footer p { font-size:.78rem; color:rgba(255,255,255,.35); line-height:1.8; }
         <h2 class="reveal">let's chat</h2>
         <p class="reveal">whether you have a clear vision or no idea where to start, i'd love to hear about your business. no pressure, no sales pitch — just a conversation about what you need.</p>
         <div class="contact-links reveal">
-          <a href="mailto:brooke@brookeco.digital">
+          <a href="mailto:hellomrshockett@gmail.com">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m2 7 10 7 10-7"/></svg>
-            brooke@brookeco.digital
+            hellomrshockett@gmail.com
           </a>
-          <a href="https://facebook.com/brookecodigital" target="_blank" rel="noopener">
+          <a href="https://facebook.com/brookecohome" target="_blank" rel="noopener">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            facebook.com/brookecodigital
+            @brookecohome
           </a>
           <a href="#">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -731,11 +731,12 @@ footer p { font-size:.78rem; color:rgba(255,255,255,.35); line-height:1.8; }
           </a>
         </div>
       </div>
-      <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+      <form class="contact-form reveal" action="https://formspree.io/f/hellomrshockett@gmail.com" method="POST" onsubmit="handleSubmit(event)">
         <input type="text" name="name" placeholder="your name" required>
         <input type="text" name="business" placeholder="business name">
-        <input type="email" name="email" placeholder="email address" required>
+        <input type="email" name="_replyto" placeholder="email address" required>
         <textarea name="message" placeholder="tell me about your business and what you're looking for..." required></textarea>
+        <input type="hidden" name="_subject" value="New inquiry from Brooke Co. Digital">
         <button type="submit" class="btn-submit">send message</button>
       </form>
     </div>
@@ -795,16 +796,29 @@ document.addEventListener('click', (e) => {
 // --- Form handler ---
 function handleSubmit(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('.btn-submit');
-  btn.textContent = 'sent — i\'ll be in touch';
-  btn.style.background = 'var(--sage)';
+  const form = e.target;
+  const btn = form.querySelector('.btn-submit');
+  btn.textContent = 'sending...';
   btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = 'send message';
-    btn.style.background = '';
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(r => {
+    if (r.ok) {
+      btn.textContent = 'sent — i\'ll be in touch';
+      btn.style.background = 'var(--sage)';
+      form.reset();
+    } else {
+      btn.textContent = 'hmm, try again';
+      btn.style.background = '#c0623a';
+      btn.disabled = false;
+    }
+  }).catch(() => {
+    btn.textContent = 'hmm, try again';
+    btn.style.background = '#c0623a';
     btn.disabled = false;
-    e.target.reset();
-  }, 3000);
+  });
 }
 </script>
 </body>
