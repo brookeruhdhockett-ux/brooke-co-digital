@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ember &amp; Sage Salon — Brookings, SD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset & Variables ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:       #FDF8F4;
+      --blush:       #E8C4C4;
+      --blush-light: #F5E1E1;
+      --mauve:       #C9929B;
+      --mauve-dark:  #A06B76;
+      --sage:        #9CAF88;
+      --sage-dark:   #7A9466;
+      --sage-light:  #D4DFC7;
+      --charcoal:    #3A3238;
+      --warm-gray:   #6B5E66;
+      --light-gray:  #F0EBE8;
+      --white:       #FFFFFF;
+
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body:    'Nunito Sans', sans-serif;
+
+      --header-h: 72px;
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+
+    body {
+      font-family: var(--font-body);
+      font-weight: 300;
+      color: var(--charcoal);
+      background: var(--cream);
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a   { text-decoration: none; color: inherit; }
+    ul  { list-style: none; }
+
+    /* ── Typography ── */
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.2; }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--charcoal);
+      margin-bottom: 1.25rem;
+    }
+
+    .section-subtitle {
+      max-width: 560px;
+      margin: 0 auto 3rem;
+      color: var(--warm-gray);
+      font-size: 1.05rem;
+    }
+
+    .text-center { text-align: center; }
+
+    /* ── Container ── */
+    .container {
+      width: 90%;
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    section { padding: 6rem 0; }
+
+    /* ── Reveal animation ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Button ── */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      transition: all 0.35s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--mauve-dark);
+      color: var(--white);
+    }
+    .btn-primary:hover {
+      background: var(--sage-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(122,148,102,0.3);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--mauve-dark);
+      border: 2px solid var(--mauve-dark);
+    }
+    .btn-outline:hover {
+      background: var(--mauve-dark);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* ══════════════════════════════
+       HEADER
+    ══════════════════════════════ */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--header-h);
+      background: rgba(253,248,244,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid rgba(200,146,155,0.15);
+      transition: box-shadow 0.3s ease;
+    }
+    .header.scrolled {
+      box-shadow: 0 2px 20px rgba(58,50,56,0.08);
+    }
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      letter-spacing: 0.5px;
+    }
+    .logo span { color: var(--sage-dark); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--sage-dark);
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--charcoal); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-book {
+      font-size: 0.75rem;
+      padding: 0.65rem 1.5rem;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--charcoal);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* ══════════════════════════════
+       HERO
+    ══════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: calc(var(--header-h) + 2rem) 1rem 4rem;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(170deg, var(--cream) 0%, var(--blush-light) 50%, var(--sage-light) 100%);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%; right: -20%;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(156,175,136,0.15), transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -20%; left: -15%;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,196,196,0.2), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 720px; }
+    .hero-label {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--mauve-dark);
+    }
+    .hero-tagline {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+      color: var(--warm-gray);
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+    }
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--warm-gray);
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      animation: float 2.5s ease-in-out infinite;
+    }
+    .scroll-indicator svg { width: 20px; height: 20px; }
+    @keyframes float {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ══════════════════════════════
+       ABOUT
+    ══════════════════════════════ */
+    .about { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .about-image {
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, var(--blush-light), var(--sage-light));
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-image::after {
+      content: 'Photo';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      opacity: 0.5;
+    }
+    .about-text h2 { font-size: clamp(2rem, 3.5vw, 2.75rem); margin-bottom: 1.5rem; }
+    .about-text p { color: var(--warm-gray); margin-bottom: 1.25rem; font-size: 1.05rem; }
+    .about-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--light-gray);
+    }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--mauve-dark);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--warm-gray);
+      margin-top: 0.25rem;
+    }
+
+    /* ══════════════════════════════
+       SERVICES
+    ══════════════════════════════ */
+    .services { background: var(--cream); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      border: 1px solid rgba(200,146,155,0.1);
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(58,50,56,0.08);
+    }
+    .service-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+    }
+    .service-icon.cut   { background: var(--blush-light); color: var(--mauve-dark); }
+    .service-icon.color { background: var(--sage-light);  color: var(--sage-dark); }
+    .service-icon.style { background: #F5E6D0;           color: #B8860B; }
+    .service-icon.nails { background: #E8DFF5;           color: #7B68AE; }
+
+    .service-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+    .price-list { margin-top: 1rem; }
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.6rem 0;
+      border-bottom: 1px dotted var(--light-gray);
+      font-size: 0.95rem;
+    }
+    .price-row:last-child { border-bottom: none; }
+    .price-name { color: var(--warm-gray); }
+    .price-amount { font-weight: 600; color: var(--charcoal); }
+
+    /* ══════════════════════════════
+       TEAM
+    ══════════════════════════════ */
+    .team { background: var(--white); }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+    .team-card { text-align: center; }
+    .team-photo {
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .team-photo-inner {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      opacity: 0.6;
+    }
+    .team-photo-inner.tp1 { background: linear-gradient(135deg, var(--blush-light), var(--blush)); }
+    .team-photo-inner.tp2 { background: linear-gradient(135deg, var(--sage-light), var(--sage)); }
+    .team-photo-inner.tp3 { background: linear-gradient(135deg, #F5E6D0, #D4B896); }
+
+    .team-card h3 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+    .team-role {
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .team-card p { color: var(--warm-gray); font-size: 0.95rem; max-width: 300px; margin: 0 auto; }
+
+    /* ══════════════════════════════
+       GALLERY
+    ══════════════════════════════ */
+    .gallery { background: var(--cream); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 260px;
+      gap: 1rem;
+    }
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.35s ease;
+    }
+    .gallery-item:hover { transform: scale(1.02); }
+    .gallery-item .gi-inner {
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      opacity: 0.5;
+    }
+    .gallery-item:nth-child(1) .gi-inner { background: linear-gradient(135deg, var(--blush-light), #E8D4D4); }
+    .gallery-item:nth-child(2) .gi-inner { background: linear-gradient(135deg, var(--sage-light), #B8C9A8); }
+    .gallery-item:nth-child(3) .gi-inner { background: linear-gradient(135deg, #F5E6D0, #E8D4B8); }
+    .gallery-item:nth-child(4) .gi-inner { background: linear-gradient(135deg, #E8DFF5, #D4C8E8); }
+    .gallery-item:nth-child(5) .gi-inner { background: linear-gradient(135deg, var(--blush), var(--mauve)); }
+    .gallery-item:nth-child(6) .gi-inner { background: linear-gradient(135deg, var(--sage), var(--sage-dark)); }
+    .gallery-item:nth-child(2) { grid-row: span 2; }
+    .gallery-item:nth-child(5) { grid-column: span 2; }
+
+    /* ══════════════════════════════
+       TESTIMONIALS
+    ══════════════════════════════ */
+    .testimonials { background: var(--white); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .testimonial-card {
+      background: var(--cream);
+      border-radius: 16px;
+      padding: 2.5rem;
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '\201C';
+      font-family: var(--font-display);
+      font-size: 4rem;
+      color: var(--sage);
+      line-height: 1;
+      position: absolute;
+      top: 1rem; left: 1.5rem;
+      opacity: 0.5;
+    }
+    .testimonial-text {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .testimonial-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .ta1 { background: var(--mauve); }
+    .ta2 { background: var(--sage); }
+    .ta3 { background: #B8860B; }
+    .testimonial-name { font-weight: 600; font-size: 0.9rem; }
+    .testimonial-detail { font-size: 0.8rem; color: var(--warm-gray); }
+
+    /* ══════════════════════════════
+       BOOK CTA
+    ══════════════════════════════ */
+    .cta-section {
+      background: linear-gradient(135deg, var(--charcoal) 0%, #4A3F48 100%);
+      text-align: center;
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(156,175,136,0.1), transparent 70%);
+    }
+    .cta-section h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+      margin-left: auto; margin-right: auto;
+    }
+    .cta-section .btn-primary {
+      background: var(--sage);
+      color: var(--white);
+    }
+    .cta-section .btn-primary:hover {
+      background: var(--sage-dark);
+      box-shadow: 0 8px 24px rgba(122,148,102,0.4);
+    }
+
+    /* ══════════════════════════════
+       CONTACT
+    ══════════════════════════════ */
+    .contact { background: var(--cream); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+    .contact-block h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+    .contact-block p, .contact-block li {
+      color: var(--warm-gray);
+      font-size: 0.95rem;
+      line-height: 2;
+    }
+    .contact-block a {
+      color: var(--mauve-dark);
+      transition: color 0.3s;
+    }
+    .contact-block a:hover { color: var(--sage-dark); }
+    .hours-table { width: 100%; }
+    .hours-table td { padding: 0.35rem 0; color: var(--warm-gray); font-size: 0.95rem; }
+    .hours-table td:first-child { font-weight: 600; color: var(--charcoal); padding-right: 1.5rem; }
+
+    .map-placeholder {
+      grid-column: 1 / -1;
+      height: 280px;
+      background: linear-gradient(135deg, var(--light-gray), #E0D8D4);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      margin-top: 1rem;
+    }
+
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    .footer {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.5);
+      padding: 3rem 0 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .footer-logo span { color: var(--sage); }
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .footer-socials a {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+      transition: all 0.3s;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .footer-socials a:hover {
+      background: var(--sage-dark);
+      color: var(--white);
+    }
+    .footer-divider {
+      width: 80px; height: 1px;
+      background: rgba(255,255,255,0.15);
+      margin: 1.5rem auto;
+    }
+    .footer-credit {
+      font-size: 0.72rem;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.3);
+      margin-top: 1rem;
+    }
+    .footer-credit a {
+      color: rgba(255,255,255,0.45);
+      transition: color 0.3s;
+    }
+    .footer-credit a:hover { color: var(--sage); }
+
+    /* ══════════════════════════════
+       MOBILE NAV OVERLAY
+    ══════════════════════════════ */
+    .mobile-nav {
+      position: fixed;
+      inset: 0;
+      background: rgba(253,248,244,0.97);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    .mobile-nav.open { opacity: 1; pointer-events: auto; }
+    .mobile-nav a {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--charcoal);
+      transition: color 0.3s;
+    }
+    .mobile-nav a:hover { color: var(--mauve-dark); }
+
+    /* ══════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════ */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-image { max-height: 400px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 200px;
+      }
+      .gallery-item:nth-child(2) { grid-row: span 1; }
+      .gallery-item:nth-child(5) { grid-column: span 1; }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 4rem 0; }
+      .hero { min-height: 90vh; }
+      .hero h1 { font-size: 2.75rem; }
+      .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 200px; }
+      .gallery-item:nth-child(5) { grid-column: span 1; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .about-stats { flex-direction: column; gap: 1.5rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="#" class="logo">Ember <span>&amp;</span> Sage</a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#team">Team</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a href="#book" class="btn btn-primary nav-book">Book Now</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── Mobile Nav ── -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#team" class="mobile-link">Team</a>
+    <a href="#gallery" class="mobile-link">Gallery</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <a href="#book" class="btn btn-primary mobile-link" style="margin-top:1rem;">Book Your Appointment</a>
+  </div>
+
+  <!-- ── Hero ── -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-label">Brookings, South Dakota</p>
+      <h1>Ember <em>&amp;</em> Sage</h1>
+      <p class="hero-tagline">Where warmth meets artistry</p>
+      <div class="hero-buttons">
+        <a href="#book" class="btn btn-primary">Book Your Appointment</a>
+        <a href="#services" class="btn btn-outline">View Services</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M19 12l-7 7-7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ── About ── -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;color:var(--warm-gray);opacity:0.5;">Salon Interior</div>
+        </div>
+        <div class="about-text reveal">
+          <p class="section-label">Our Story</p>
+          <h2>Rooted in community, crafted with care</h2>
+          <p>Ember &amp; Sage was born from a simple belief: every person deserves a space where they feel seen, valued, and completely at ease. Founded in 2019 by two lifelong friends, our woman-owned salon has become a gathering place for the Brookings community.</p>
+          <p>We blend modern technique with genuine warmth, creating an experience that goes far beyond the chair. From your first consultation to your final look in the mirror, every detail is intentional.</p>
+          <div class="about-stats">
+            <div>
+              <div class="stat-number">5+</div>
+              <div class="stat-label">Years in Brookings</div>
+            </div>
+            <div>
+              <div class="stat-number">2K+</div>
+              <div class="stat-label">Happy Clients</div>
+            </div>
+            <div>
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Woman-Owned</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Services ── -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="text-center reveal">
+        <p class="section-label">What We Offer</p>
+        <h2 class="section-title">Services &amp; Pricing</h2>
+        <p class="section-subtitle">Thoughtful services for every style, every occasion. All pricing reflects our commitment to fair, transparent rates.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card reveal">
+          <div class="service-icon cut">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><line x1="8.59" y1="16.24" x2="19" y2="3"/><line x1="15.41" y1="16.24" x2="5" y2="3"/></svg>
+          </div>
+          <h3>Cuts &amp; Trims</h3>
+          <div class="price-list">
+            <div class="price-row"><span class="price-name">Women's Haircut</span><span class="price-amount">$55 - $75</span></div>
+            <div class="price-row"><span class="price-name">Men's Haircut</span><span class="price-amount">$30 - $40</span></div>
+            <div class="price-row"><span class="price-name">Kids (12 &amp; Under)</span><span class="price-amount">$25</span></div>
+            <div class="price-row"><span class="price-name">Bang Trim</span><span class="price-amount">$15</span></div>
+            <div class="price-row"><span class="price-name">Dry Cut</span><span class="price-amount">$45</span></div>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon color">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+          </div>
+          <h3>Color Services</h3>
+          <div class="price-list">
+            <div class="price-row"><span class="price-name">Single-Process Color</span><span class="price-amount">$85 - $110</span></div>
+            <div class="price-row"><span class="price-name">Partial Highlights</span><span class="price-amount">$120 - $150</span></div>
+            <div class="price-row"><span class="price-name">Full Highlights</span><span class="price-amount">$160 - $200</span></div>
+            <div class="price-row"><span class="price-name">Balayage / Ombre</span><span class="price-amount">$180 - $250</span></div>
+            <div class="price-row"><span class="price-name">Color Correction</span><span class="price-amount">Starting at $200</span></div>
+            <div class="price-row"><span class="price-name">Gloss / Toner</span><span class="price-amount">$45</span></div>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon style">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <h3>Styling &amp; Treatments</h3>
+          <div class="price-list">
+            <div class="price-row"><span class="price-name">Blowout</span><span class="price-amount">$45 - $55</span></div>
+            <div class="price-row"><span class="price-name">Updo / Formal Style</span><span class="price-amount">$75 - $100</span></div>
+            <div class="price-row"><span class="price-name">Bridal Styling</span><span class="price-amount">$120+</span></div>
+            <div class="price-row"><span class="price-name">Deep Conditioning</span><span class="price-amount">$35</span></div>
+            <div class="price-row"><span class="price-name">Keratin Treatment</span><span class="price-amount">$250 - $350</span></div>
+          </div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon nails">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c-4.97 0-9 3.58-9 8 0 2.1.84 4.01 2.2 5.44L4 21l4.56-1.2A9.5 9.5 0 0012 20.5c4.97 0 9-3.58 9-8s-4.03-9.5-9-9.5z"/></svg>
+          </div>
+          <h3>Nails</h3>
+          <div class="price-list">
+            <div class="price-row"><span class="price-name">Classic Manicure</span><span class="price-amount">$30</span></div>
+            <div class="price-row"><span class="price-name">Gel Manicure</span><span class="price-amount">$45</span></div>
+            <div class="price-row"><span class="price-name">Classic Pedicure</span><span class="price-amount">$45</span></div>
+            <div class="price-row"><span class="price-name">Spa Pedicure</span><span class="price-amount">$60</span></div>
+            <div class="price-row"><span class="price-name">Dip Powder Set</span><span class="price-amount">$55</span></div>
+            <div class="price-row"><span class="price-name">Nail Art (per nail)</span><span class="price-amount">$5+</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Team ── -->
+  <section class="team" id="team">
+    <div class="container">
+      <div class="text-center reveal">
+        <p class="section-label">The Artists</p>
+        <h2 class="section-title">Meet the Team</h2>
+        <p class="section-subtitle">Three talented stylists, one shared passion for making people feel like their best selves.</p>
+      </div>
+      <div class="team-grid">
+
+        <div class="team-card reveal">
+          <div class="team-photo"><div class="team-photo-inner tp1">Photo</div></div>
+          <h3>Maren Cole</h3>
+          <p class="team-role">Owner &amp; Senior Stylist</p>
+          <p>With 12 years behind the chair, Maren specializes in lived-in color and precision cuts. She co-founded Ember &amp; Sage to build the salon she always wished existed.</p>
+        </div>
+
+        <div class="team-card reveal">
+          <div class="team-photo"><div class="team-photo-inner tp2">Photo</div></div>
+          <h3>Josie Arellano</h3>
+          <p class="team-role">Color Specialist</p>
+          <p>Josie trained at Aveda and brings an artist's eye to every transformation. She is known for her balayage work and always getting the tone exactly right.</p>
+        </div>
+
+        <div class="team-card reveal">
+          <div class="team-photo"><div class="team-photo-inner tp3">Photo</div></div>
+          <h3>Tessa Lindgren</h3>
+          <p class="team-role">Stylist &amp; Nail Tech</p>
+          <p>The newest member of the team, Tessa brings fresh energy and a talent for textured bobs and editorial nail art. Her clients love her calm, welcoming presence.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Gallery ── -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="text-center reveal">
+        <p class="section-label">Our Work</p>
+        <h2 class="section-title">Gallery</h2>
+        <p class="section-subtitle">A glimpse of the transformations and artistry that happen every day at Ember &amp; Sage.</p>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item"><div class="gi-inner">Balayage</div></div>
+        <div class="gallery-item"><div class="gi-inner">Bridal Updo</div></div>
+        <div class="gallery-item"><div class="gi-inner">Precision Cut</div></div>
+        <div class="gallery-item"><div class="gi-inner">Nail Art</div></div>
+        <div class="gallery-item"><div class="gi-inner">Color Transformation</div></div>
+        <div class="gallery-item"><div class="gi-inner">Salon Interior</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Testimonials ── -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="text-center reveal">
+        <p class="section-label">Kind Words</p>
+        <h2 class="section-title">What Our Clients Say</h2>
+      </div>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card reveal">
+          <p class="testimonial-text">I have never felt so comfortable in a salon before. Maren listened to exactly what I wanted and delivered something even better than I imagined. This is my forever salon.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar ta1">A</div>
+            <div>
+              <div class="testimonial-name">Allison R.</div>
+              <div class="testimonial-detail">Client since 2021</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <p class="testimonial-text">Josie did my wedding hair and my bridesmaids' hair. Every single person looked incredible. She was calm, organized, and made the morning so special.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar ta2">K</div>
+            <div>
+              <div class="testimonial-name">Kayla M.</div>
+              <div class="testimonial-detail">Bridal Client</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <p class="testimonial-text">I drove 45 minutes for Tessa's balayage and I would drive twice that. The vibe of this place, the attention to detail, the results -- it is all worth it.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar ta3">D</div>
+            <div>
+              <div class="testimonial-name">Dana L.</div>
+              <div class="testimonial-detail">Client since 2023</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Book CTA ── -->
+  <section class="cta-section" id="book">
+    <div class="container reveal">
+      <h2>Ready for Your Transformation?</h2>
+      <p>Book online in under a minute, or give us a call. We cannot wait to welcome you.</p>
+      <a href="#" class="btn btn-primary">Book Your Appointment</a>
+    </div>
+  </section>
+
+  <!-- ── Contact ── -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="text-center reveal">
+        <p class="section-label">Get in Touch</p>
+        <h2 class="section-title">Visit Us</h2>
+      </div>
+      <div class="contact-grid reveal">
+
+        <div class="contact-block">
+          <h3>Location</h3>
+          <p>412 Main Avenue<br>Brookings, SD 57006</p>
+          <p style="margin-top:0.75rem;"><a href="#">Get Directions</a></p>
+        </div>
+
+        <div class="contact-block">
+          <h3>Contact</h3>
+          <p>
+            <a href="tel:6056920000">(605) 692-0000</a><br>
+            <a href="mailto:hello@emberandsage.com">hello@emberandsage.com</a>
+          </p>
+          <p style="margin-top:0.75rem;"><a href="#">@emberandsagesalon</a></p>
+        </div>
+
+        <div class="contact-block">
+          <h3>Hours</h3>
+          <table class="hours-table">
+            <tr><td>Monday</td><td>Closed</td></tr>
+            <tr><td>Tue - Fri</td><td>9:00 AM - 7:00 PM</td></tr>
+            <tr><td>Saturday</td><td>9:00 AM - 4:00 PM</td></tr>
+            <tr><td>Sunday</td><td>Closed</td></tr>
+          </table>
+        </div>
+
+        <div class="map-placeholder">Map Embed</div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">Ember <span>&amp;</span> Sage</div>
+      <p>Warmth, artistry, and community in the heart of Brookings.</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Pinterest">PN</a>
+      </div>
+      <div class="footer-divider"></div>
+      <p>&copy; 2026 Ember &amp; Sage Salon. All rights reserved.</p>
+      <p class="footer-credit">Website by <a href="#">Brooke Co. Digital</a></p>
+    </div>
+  </footer>
+
+  <!-- ── Scripts ── -->
+  <script>
+    // Sticky header shadow
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Scroll reveal with IntersectionObserver
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Stagger children slightly
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 80);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a:not(.btn)');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.style.color = '';
+        if (link.getAttribute('href') === '#' + current) {
+          link.style.color = 'var(--charcoal)';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
