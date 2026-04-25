@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brooke Co. Digital — websites + social media for small businesses</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ───── reset + base ───── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --blush:    #f2ddd5;
+  --cream:    #faf6f1;
+  --sage:     #b5c4b1;
+  --sage-dark:#8a9f85;
+  --gold:     #c9a96e;
+  --charcoal: #3a3632;
+  --text:     #4a4540;
+  --text-lt:  #7d756c;
+  --white:    #ffffff;
+  --radius:   12px;
+  --radius-lg:20px;
+}
+
+html { scroll-behavior:smooth; scroll-padding-top:80px; }
+
+body {
+  font-family:'Outfit', sans-serif;
+  font-weight:300;
+  color:var(--text);
+  background:var(--cream);
+  line-height:1.7;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3,h4 { font-family:'DM Serif Display', serif; font-weight:400; line-height:1.2; }
+
+a { color:inherit; text-decoration:none; }
+img { max-width:100%; display:block; }
+
+.container { max-width:1100px; margin:0 auto; padding:0 24px; }
+
+/* ───── reveal animations ───── */
+.reveal {
+  opacity:0;
+  transform:translateY(32px);
+  transition:opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1);
+}
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* stagger children */
+.stagger .reveal:nth-child(2) { transition-delay:.1s; }
+.stagger .reveal:nth-child(3) { transition-delay:.2s; }
+.stagger .reveal:nth-child(4) { transition-delay:.3s; }
+
+/* ───── header ───── */
+header {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:rgba(250,246,241,.92);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(181,196,177,.18);
+  transition:box-shadow .3s;
+}
+header.scrolled { box-shadow:0 2px 24px rgba(58,54,50,.06); }
+
+.header-inner {
+  max-width:1100px; margin:0 auto; padding:0 24px;
+  display:flex; align-items:center; justify-content:space-between;
+  height:68px;
+}
+
+.logo {
+  font-family:'DM Serif Display', serif;
+  font-size:1.35rem;
+  color:var(--charcoal);
+  letter-spacing:-.02em;
+}
+.logo span { color:var(--sage-dark); }
+
+nav { display:flex; align-items:center; gap:32px; }
+nav a {
+  font-size:.875rem; font-weight:400; letter-spacing:.02em;
+  color:var(--text-lt);
+  transition:color .25s;
+  position:relative;
+}
+nav a::after {
+  content:''; position:absolute; bottom:-4px; left:0; width:0; height:1.5px;
+  background:var(--sage-dark); transition:width .25s;
+}
+nav a:hover { color:var(--charcoal); }
+nav a:hover::after { width:100%; }
+
+.nav-cta {
+  background:var(--sage-dark); color:var(--white); padding:10px 22px;
+  border-radius:50px; font-weight:500; font-size:.8rem; letter-spacing:.04em;
+  transition:background .25s, transform .2s;
+}
+.nav-cta::after { display:none; }
+.nav-cta:hover { background:var(--charcoal); color:var(--white); transform:translateY(-1px); }
+
+/* hamburger */
+.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; z-index:110; }
+.hamburger span {
+  display:block; width:24px; height:2px; background:var(--charcoal);
+  border-radius:2px; transition:transform .3s, opacity .3s;
+}
+.hamburger.active span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity:0; }
+.hamburger.active span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+/* mobile nav */
+@media(max-width:768px) {
+  .hamburger { display:flex; }
+  nav {
+    position:fixed; top:0; right:-100%; width:75%; max-width:320px; height:100vh;
+    flex-direction:column; justify-content:center; gap:28px;
+    background:var(--cream); padding:40px;
+    transition:right .35s cubic-bezier(.22,1,.36,1);
+    box-shadow:-8px 0 40px rgba(0,0,0,.08);
+  }
+  nav.open { right:0; }
+  nav a { font-size:1.1rem; }
+}
+
+/* ───── hero ───── */
+.hero {
+  min-height:100vh;
+  display:flex; align-items:center; justify-content:center;
+  text-align:center;
+  padding:120px 24px 80px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before {
+  content:''; position:absolute; top:-20%; right:-15%; width:55vw; height:55vw;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(181,196,177,.18) 0%, transparent 70%);
+  pointer-events:none;
+}
+.hero::after {
+  content:''; position:absolute; bottom:-10%; left:-10%; width:40vw; height:40vw;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(242,221,213,.3) 0%, transparent 70%);
+  pointer-events:none;
+}
+
+.hero-content { position:relative; z-index:1; max-width:680px; }
+
+.hero-label {
+  font-size:.8rem; font-weight:500; letter-spacing:.18em;
+  color:var(--sage-dark); margin-bottom:20px;
+  text-transform:uppercase;
+}
+
+.hero h1 {
+  font-size:clamp(2.6rem, 6vw, 4.2rem);
+  color:var(--charcoal);
+  margin-bottom:20px;
+  letter-spacing:-.02em;
+}
+.hero h1 span { display:block; font-family:'Outfit', sans-serif; font-weight:300; font-size:.42em; color:var(--text-lt); margin-top:12px; letter-spacing:.01em; }
+
+.hero p {
+  font-size:1.05rem; color:var(--text-lt); max-width:480px; margin:0 auto 36px;
+  line-height:1.8;
+}
+
+.btn {
+  display:inline-block;
+  padding:14px 36px;
+  border-radius:50px;
+  font-family:'Outfit', sans-serif;
+  font-weight:500;
+  font-size:.9rem;
+  letter-spacing:.04em;
+  transition:all .3s cubic-bezier(.22,1,.36,1);
+  cursor:pointer;
+  border:none;
+}
+.btn-primary { background:var(--sage-dark); color:var(--white); }
+.btn-primary:hover { background:var(--charcoal); transform:translateY(-2px); box-shadow:0 8px 30px rgba(58,54,50,.12); }
+
+.btn-outline { background:transparent; color:var(--sage-dark); border:1.5px solid var(--sage); }
+.btn-outline:hover { background:var(--sage-dark); color:var(--white); transform:translateY(-2px); }
+
+.hero-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+/* ───── section shared ───── */
+section { padding:100px 0; }
+
+.section-label {
+  font-size:.75rem; font-weight:500; letter-spacing:.18em;
+  color:var(--sage-dark); text-transform:uppercase; margin-bottom:10px;
+}
+
+.section-title {
+  font-size:clamp(1.8rem, 4vw, 2.6rem);
+  color:var(--charcoal);
+  margin-bottom:8px;
+}
+
+.section-subtitle {
+  font-size:1rem; color:var(--text-lt); margin-bottom:50px; max-width:500px;
+}
+
+.text-center { text-align:center; }
+.mx-auto { margin-left:auto; margin-right:auto; }
+
+/* ───── about ───── */
+.about-section { background:var(--white); }
+.about-inner {
+  display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;
+}
+.about-photo {
+  width:100%; aspect-ratio:4/5; border-radius:var(--radius-lg);
+  background:linear-gradient(135deg, var(--blush) 0%, rgba(181,196,177,.3) 100%);
+  position:relative; overflow:hidden;
+}
+.about-photo::after {
+  content:'b'; position:absolute; bottom:30px; right:30px;
+  font-family:'DM Serif Display', serif; font-size:8rem;
+  color:rgba(255,255,255,.35); line-height:1;
+}
+.about-text h2 { font-size:clamp(1.6rem,3.5vw,2.2rem); color:var(--charcoal); margin-bottom:20px; }
+.about-text p { color:var(--text-lt); margin-bottom:16px; font-size:.95rem; line-height:1.85; }
+.about-text .signature {
+  font-family:'DM Serif Display', serif; font-style:italic;
+  font-size:1.4rem; color:var(--sage-dark); margin-top:20px;
+}
+
+@media(max-width:768px) {
+  .about-inner { grid-template-columns:1fr; gap:36px; }
+  .about-photo { max-width:320px; margin:0 auto; }
+}
+
+/* ───── services ───── */
+.services-grid {
+  display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;
+}
+.service-card {
+  background:var(--white);
+  border-radius:var(--radius-lg);
+  padding:36px 28px;
+  text-align:center;
+  transition:transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s;
+  border:1px solid rgba(181,196,177,.15);
+}
+.service-card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 16px 48px rgba(58,54,50,.07);
+}
+.service-icon {
+  width:56px; height:56px; border-radius:16px;
+  display:flex; align-items:center; justify-content:center;
+  margin:0 auto 20px; font-size:1.4rem;
+  background:var(--cream);
+}
+.service-card h3 {
+  font-size:1.1rem; color:var(--charcoal); margin-bottom:10px;
+}
+.service-card p {
+  font-size:.85rem; color:var(--text-lt); line-height:1.7;
+}
+
+@media(max-width:900px) { .services-grid { grid-template-columns:repeat(2, 1fr); } }
+@media(max-width:500px) { .services-grid { grid-template-columns:1fr; max-width:360px; margin:0 auto; } }
+
+/* ───── portfolio ───── */
+.portfolio-section { background:var(--white); }
+.portfolio-grid {
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;
+}
+.portfolio-card {
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  transition:transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s;
+  position:relative;
+}
+.portfolio-card:hover {
+  transform:translateY(-8px);
+  box-shadow:0 20px 60px rgba(58,54,50,.1);
+}
+.portfolio-preview {
+  aspect-ratio:4/3;
+  display:flex; align-items:flex-end;
+  padding:24px;
+  position:relative;
+}
+.portfolio-preview::before {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,.45) 0%, transparent 60%);
+}
+.portfolio-preview-text { position:relative; z-index:1; color:var(--white); }
+.portfolio-preview-text h3 { font-size:1.2rem; margin-bottom:2px; }
+.portfolio-preview-text p { font-size:.78rem; font-weight:400; opacity:.85; }
+
+/* card themes */
+.card-construction .portfolio-preview {
+  background:linear-gradient(135deg, #3d4147 0%, #4a4843 40%, #c9973e 100%);
+}
+.card-salon .portfolio-preview {
+  background:linear-gradient(135deg, #e8cfc6 0%, #d4b8ab 40%, #a8b9a3 100%);
+}
+.card-restaurant .portfolio-preview {
+  background:linear-gradient(135deg, #3a3836 0%, #4e4844 40%, #b5654a 100%);
+}
+
+.portfolio-info {
+  padding:22px 24px;
+  background:var(--cream);
+  display:flex; align-items:center; justify-content:space-between;
+}
+.portfolio-info span { font-size:.85rem; color:var(--text-lt); }
+.portfolio-link {
+  font-size:.85rem; font-weight:500; color:var(--sage-dark);
+  transition:color .2s;
+}
+.portfolio-link:hover { color:var(--charcoal); }
+
+@media(max-width:768px) {
+  .portfolio-grid { grid-template-columns:1fr; max-width:440px; margin:0 auto; }
+}
+
+/* ───── how it works ───── */
+.steps {
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:40px;
+  max-width:900px; margin:0 auto;
+  position:relative;
+}
+.steps::before {
+  content:''; position:absolute; top:36px; left:16%; right:16%;
+  height:1.5px;
+  background:linear-gradient(90deg, transparent, var(--sage), transparent);
+}
+.step {
+  text-align:center;
+  position:relative;
+}
+.step-num {
+  width:72px; height:72px; border-radius:50%;
+  background:var(--white);
+  border:2px solid var(--sage);
+  display:flex; align-items:center; justify-content:center;
+  margin:0 auto 20px;
+  font-family:'DM Serif Display', serif;
+  font-size:1.5rem;
+  color:var(--sage-dark);
+  position:relative; z-index:1;
+}
+.step h3 { font-size:1.05rem; color:var(--charcoal); margin-bottom:8px; }
+.step p { font-size:.88rem; color:var(--text-lt); max-width:240px; margin:0 auto; line-height:1.7; }
+
+@media(max-width:600px) {
+  .steps { grid-template-columns:1fr; gap:48px; }
+  .steps::before {
+    top:0; bottom:0; left:50%; right:auto;
+    width:1.5px; height:100%;
+    background:linear-gradient(180deg, transparent, var(--sage), transparent);
+  }
+}
+
+/* ───── testimonials ───── */
+.testimonials-section { background:var(--white); }
+.testimonials-grid {
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;
+  max-width:960px; margin:0 auto;
+}
+.testimonial-card {
+  background:var(--cream);
+  border-radius:var(--radius-lg);
+  padding:36px 30px;
+  position:relative;
+}
+.testimonial-card::before {
+  content:'\201C';
+  font-family:'DM Serif Display', serif;
+  font-size:4rem; color:var(--sage); opacity:.4;
+  position:absolute; top:12px; left:24px; line-height:1;
+}
+.testimonial-card p {
+  font-size:.9rem; color:var(--text); line-height:1.8;
+  font-style:italic; margin-bottom:18px; position:relative; z-index:1;
+}
+.testimonial-author {
+  font-size:.8rem; font-weight:500; color:var(--sage-dark);
+}
+.testimonial-biz {
+  font-size:.75rem; color:var(--text-lt);
+}
+
+@media(max-width:768px) {
+  .testimonials-grid { grid-template-columns:1fr; max-width:440px; }
+}
+
+/* ───── pricing ───── */
+.pricing-box {
+  max-width:640px; margin:0 auto;
+  background:var(--white);
+  border-radius:var(--radius-lg);
+  padding:48px 44px;
+  text-align:center;
+  border:1px solid rgba(181,196,177,.2);
+}
+.pricing-box h3 {
+  font-size:1.6rem; color:var(--charcoal); margin-bottom:16px;
+}
+.pricing-box p {
+  font-size:.95rem; color:var(--text-lt); line-height:1.85; margin-bottom:28px;
+}
+.pricing-range {
+  font-family:'DM Serif Display', serif;
+  font-size:2rem; color:var(--sage-dark);
+  margin-bottom:8px;
+}
+
+/* ───── contact ───── */
+.contact-section {
+  background:var(--charcoal);
+  color:var(--white);
+}
+.contact-inner {
+  display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;
+}
+.contact-text h2 { color:var(--white); font-size:clamp(1.8rem,4vw,2.6rem); margin-bottom:16px; }
+.contact-text p { color:rgba(255,255,255,.6); font-size:.95rem; line-height:1.8; margin-bottom:28px; }
+.contact-links { display:flex; flex-direction:column; gap:12px; }
+.contact-links a {
+  display:inline-flex; align-items:center; gap:10px;
+  color:rgba(255,255,255,.7); font-size:.9rem;
+  transition:color .2s;
+}
+.contact-links a:hover { color:var(--sage); }
+
+.contact-form { display:flex; flex-direction:column; gap:16px; }
+.contact-form input,
+.contact-form textarea {
+  width:100%;
+  padding:14px 18px;
+  border-radius:var(--radius);
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.06);
+  color:var(--white);
+  font-family:'Outfit', sans-serif;
+  font-size:.9rem;
+  font-weight:300;
+  transition:border-color .25s, background .25s;
+  outline:none;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color:rgba(255,255,255,.35);
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color:var(--sage);
+  background:rgba(255,255,255,.09);
+}
+.contact-form textarea { min-height:120px; resize:vertical; }
+
+.btn-submit {
+  background:var(--sage-dark); color:var(--white);
+  padding:14px 36px; border-radius:50px; border:none;
+  font-family:'Outfit', sans-serif; font-size:.9rem; font-weight:500;
+  letter-spacing:.04em; cursor:pointer;
+  transition:background .3s, transform .2s;
+  align-self:flex-start;
+}
+.btn-submit:hover { background:var(--sage); transform:translateY(-2px); }
+
+@media(max-width:768px) {
+  .contact-inner { grid-template-columns:1fr; gap:40px; }
+}
+
+/* ───── footer ───── */
+footer {
+  background:var(--charcoal);
+  border-top:1px solid rgba(255,255,255,.06);
+  padding:28px 0;
+  text-align:center;
+}
+footer p { font-size:.78rem; color:rgba(255,255,255,.35); line-height:1.8; }
+
+/* ───── utility ───── */
+.divider {
+  width:48px; height:2px; background:var(--sage); border-radius:2px; margin:16px auto 0;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ HEADER ═══════ -->
+<header id="header">
+  <div class="header-inner">
+    <a href="#" class="logo">brooke co. <span>digital</span></a>
+    <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+    <nav id="nav">
+      <a href="#about">about</a>
+      <a href="#services">services</a>
+      <a href="#portfolio">portfolio</a>
+      <a href="#process">process</a>
+      <a href="#pricing">pricing</a>
+      <a href="#contact" class="nav-cta">let's chat</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <p class="hero-label reveal">web design &amp; social media</p>
+    <h1 class="reveal">brooke co. digital
+      <span>beautiful websites + social media for small businesses</span>
+    </h1>
+    <p class="reveal">helping local businesses look as good online as they are in real life. modern design, honest pricing, and someone who actually answers your texts.</p>
+    <div class="hero-btns reveal">
+      <a href="#contact" class="btn btn-primary">let's work together</a>
+      <a href="#portfolio" class="btn btn-outline">see my work</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ ABOUT ═══════ -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-photo reveal"></div>
+      <div class="about-text">
+        <p class="section-label reveal">about me</p>
+        <h2 class="reveal">hey, i'm brooke.</h2>
+        <p class="reveal">i'm a south dakota mom of four who builds websites and runs social media for small businesses. i started because i kept seeing incredible local businesses with zero online presence — or a website from 2009 that didn't work on phones.</p>
+        <p class="reveal">i believe every small business deserves a beautiful, modern website without the big agency price tag. i keep things simple, affordable, and drama-free. you'll always be able to text me when you need something.</p>
+        <p class="reveal">when i'm not designing, i'm probably chasing kids, drinking iced coffee, or hunting for deals at target.</p>
+        <p class="signature reveal">— brooke</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SERVICES ═══════ -->
+<section id="services">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label reveal">what i do</p>
+      <h2 class="section-title reveal">services</h2>
+      <p class="section-subtitle mx-auto reveal">everything you need to look legit online, without the corporate fluff.</p>
+    </div>
+    <div class="services-grid stagger">
+      <div class="service-card reveal">
+        <div class="service-icon">&#9672;</div>
+        <h3>custom websites</h3>
+        <p>mobile-friendly, modern, and built from scratch to match your brand. no cookie-cutter templates.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">&#9883;</div>
+        <h3>social media management</h3>
+        <p>content creation, scheduling, and growth strategy so you can focus on running your business.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">&#9998;</div>
+        <h3>blog management</h3>
+        <p>seo-focused content and regular posts that actually drive traffic to your site.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">&#9906;</div>
+        <h3>google business setup</h3>
+        <p>get your business showing up in local search so customers can find you first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PORTFOLIO ═══════ -->
+<section class="portfolio-section" id="portfolio">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label reveal">my work</p>
+      <h2 class="section-title reveal">portfolio</h2>
+      <p class="section-subtitle mx-auto reveal">a few sites i've built recently</p>
+    </div>
+    <div class="portfolio-grid stagger">
+
+      <a href="index.html" class="portfolio-card card-construction reveal">
+        <div class="portfolio-preview">
+          <div class="portfolio-preview-text">
+            <h3>Prairie Built Construction</h3>
+            <p>general contractor</p>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <span>web design + seo</span>
+          <span class="portfolio-link">view live site &rarr;</span>
+        </div>
+      </a>
+
+      <a href="salon.html" class="portfolio-card card-salon reveal">
+        <div class="portfolio-preview">
+          <div class="portfolio-preview-text">
+            <h3>Ember &amp; Sage Salon</h3>
+            <p>hair + beauty studio</p>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <span>web design + branding</span>
+          <span class="portfolio-link">view live site &rarr;</span>
+        </div>
+      </a>
+
+      <a href="restaurant.html" class="portfolio-card card-restaurant reveal">
+        <div class="portfolio-preview">
+          <div class="portfolio-preview-text">
+            <h3>Iron &amp; Grain Kitchen</h3>
+            <p>farm-to-table restaurant</p>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <span>web design + menus</span>
+          <span class="portfolio-link">view live site &rarr;</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ HOW IT WORKS ═══════ -->
+<section id="process">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label reveal">how it works</p>
+      <h2 class="section-title reveal">three simple steps</h2>
+      <p class="section-subtitle mx-auto reveal">no jargon. no weird contracts. just a straightforward process.</p>
+    </div>
+    <div class="steps stagger">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <h3>tell me about your business</h3>
+        <p>we'll hop on a quick call or text back and forth. i'll learn what you do, what you need, and what vibe you're going for.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <h3>i build your site in under a week</h3>
+        <p>i handle everything — design, copy, mobile optimization. you just give feedback until it feels right.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <h3>you go live and start getting customers</h3>
+        <p>your site launches and people can actually find your business online. i stick around if you need updates or help.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ TESTIMONIALS ═══════ -->
+<section class="testimonials-section" id="testimonials">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label reveal">kind words</p>
+      <h2 class="section-title reveal">what my clients say</h2>
+      <div class="divider"></div>
+    </div>
+    <br><br>
+    <div class="testimonials-grid stagger">
+      <div class="testimonial-card reveal">
+        <p>brooke built our website in five days and it looks like we paid thousands for it. we've gotten more calls in the last month than the entire year before. she just gets it.</p>
+        <p class="testimonial-author">mike r.</p>
+        <p class="testimonial-biz">prairie built construction</p>
+      </div>
+      <div class="testimonial-card reveal">
+        <p>i kept putting off getting a website because i thought it would be this huge stressful thing. brooke made it so easy. she texted me updates and i barely had to do anything.</p>
+        <p class="testimonial-author">jenna s.</p>
+        <p class="testimonial-biz">ember &amp; sage salon</p>
+      </div>
+      <div class="testimonial-card reveal">
+        <p>we went from not showing up on google at all to being the first result for "farm to table" in our town. brooke is the real deal and her pricing is beyond fair.</p>
+        <p class="testimonial-author">daniel k.</p>
+        <p class="testimonial-biz">iron &amp; grain kitchen</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PRICING ═══════ -->
+<section id="pricing">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label reveal">pricing</p>
+      <h2 class="section-title reveal">honest, simple pricing</h2>
+      <div class="divider"></div>
+    </div>
+    <br><br>
+    <div class="pricing-box reveal">
+      <p class="pricing-range">$200 — $500</p>
+      <h3>where most sites land</h3>
+      <p>every business is different so i customize packages based on what you actually need. no hidden fees, no surprise invoices. message me and we'll figure out what works for your budget. i'd rather build you something great at a fair price than not work together at all.</p>
+      <a href="#contact" class="btn btn-primary">get a free quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CONTACT ═══════ -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-text">
+        <p class="section-label reveal" style="color:var(--sage);">get in touch</p>
+        <h2 class="reveal">let's chat</h2>
+        <p class="reveal">whether you have a clear vision or no idea where to start, i'd love to hear about your business. no pressure, no sales pitch — just a conversation about what you need.</p>
+        <div class="contact-links reveal">
+          <a href="mailto:brooke@brookeco.digital">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m2 7 10 7 10-7"/></svg>
+            brooke@brookeco.digital
+          </a>
+          <a href="https://facebook.com/brookecodigital" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            facebook.com/brookecodigital
+          </a>
+          <a href="#">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            south dakota
+          </a>
+        </div>
+      </div>
+      <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+        <input type="text" name="name" placeholder="your name" required>
+        <input type="text" name="business" placeholder="business name">
+        <input type="email" name="email" placeholder="email address" required>
+        <textarea name="message" placeholder="tell me about your business and what you're looking for..." required></textarea>
+        <button type="submit" class="btn-submit">send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="container">
+    <p>&copy; 2026 brooke co. digital</p>
+    <p>based in south dakota, working with businesses everywhere</p>
+  </div>
+</footer>
+
+<!-- ═══════ JS ═══════ -->
+<script>
+// --- Scroll reveal ---
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// --- Header scroll shadow ---
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+// --- Mobile menu ---
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('nav');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  nav.classList.toggle('open');
+});
+// Close nav on link click
+nav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    nav.classList.remove('open');
+  });
+});
+// Close on outside click
+document.addEventListener('click', (e) => {
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    hamburger.classList.remove('active');
+    nav.classList.remove('open');
+  }
+});
+
+// --- Form handler ---
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.btn-submit');
+  btn.textContent = 'sent — i\'ll be in touch';
+  btn.style.background = 'var(--sage)';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = 'send message';
+    btn.style.background = '';
+    btn.disabled = false;
+    e.target.reset();
+  }, 3000);
+}
+</script>
+</body>
+</html>
