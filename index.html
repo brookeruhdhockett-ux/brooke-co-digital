@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prairie Built Construction | Clear Lake, South Dakota</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --slate: #2c3e50;
+      --slate-dark: #1a252f;
+      --amber: #d4a24e;
+      --amber-light: #e8c47a;
+      --amber-dark: #b8872e;
+      --white: #ffffff;
+      --off-white: #f8f6f3;
+      --warm-gray: #e8e4df;
+      --text: #3a3a3a;
+      --text-light: #6b6b6b;
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; font-weight: 400; }
+
+    /* ---- Animations ---- */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideRight {
+      from { opacity: 0; transform: translateX(-40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .fade-up { animation: fadeUp 0.8s ease both; }
+    .fade-in { animation: fadeIn 1s ease both; }
+    .slide-right { animation: slideRight 0.8s ease both; }
+
+    /* Scroll-triggered via CSS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---- Sticky Header ---- */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(26, 37, 47, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 0 24px;
+      transition: box-shadow 0.3s ease;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      background: var(--amber);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--slate-dark);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    nav { display: flex; align-items: center; gap: 8px; }
+
+    nav a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+
+    .nav-cta {
+      background: var(--amber) !important;
+      color: var(--slate-dark) !important;
+      font-weight: 700 !important;
+      padding: 10px 20px !important;
+    }
+
+    .nav-cta:hover { background: var(--amber-light) !important; }
+
+    /* Mobile menu toggle */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      margin: 6px 0;
+      transition: all 0.3s ease;
+    }
+
+    /* ---- Hero ---- */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--slate-dark) 0%, #34495e 50%, var(--slate) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(212,162,78,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(212,162,78,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-content { position: relative; z-index: 2; max-width: 800px; }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(212,162,78,0.15);
+      border: 1px solid rgba(212,162,78,0.3);
+      color: var(--amber-light);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 50px;
+      margin-bottom: 28px;
+      animation: fadeIn 1s ease 0.2s both;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.2rem);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 24px;
+      animation: fadeUp 0.8s ease 0.4s both;
+    }
+
+    .hero h1 span { color: var(--amber); }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 580px;
+      margin: 0 auto 40px;
+      animation: fadeUp 0.8s ease 0.6s both;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s ease 0.8s both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .btn-primary {
+      background: var(--amber);
+      color: var(--slate-dark);
+    }
+
+    .btn-primary:hover {
+      background: var(--amber-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212,162,78,0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.05);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 64px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      animation: fadeIn 1s ease 1s both;
+    }
+
+    .stat { text-align: center; }
+    .stat-number {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: var(--amber);
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+    }
+
+    /* ---- Section Base ---- */
+    section { padding: 100px 24px; }
+
+    .section-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 64px;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--amber-dark);
+      margin-bottom: 12px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--slate-dark);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      font-size: 1.05rem;
+      color: var(--text-light);
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    /* ---- About ---- */
+    .about { background: var(--off-white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .about-image {
+      background: linear-gradient(135deg, var(--slate) 0%, #3d5266 100%);
+      border-radius: 16px;
+      height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-image::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 120px;
+      height: 120px;
+      background: var(--amber);
+      border-radius: 16px 0 0 0;
+      opacity: 0.15;
+    }
+
+    .about-image-text {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .about-image-text svg {
+      display: block;
+      margin: 0 auto 12px;
+      opacity: 0.3;
+    }
+
+    .about-content h2 {
+      font-size: 2.2rem;
+      color: var(--slate-dark);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .about-content p {
+      color: var(--text-light);
+      margin-bottom: 16px;
+      font-size: 1.02rem;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .about-feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--slate-dark);
+    }
+
+    .about-feature-icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(212,162,78,0.12);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--amber-dark);
+      font-size: 0.85rem;
+    }
+
+    /* ---- Services ---- */
+    .services { background: var(--white); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--off-white);
+      border-radius: 16px;
+      padding: 36px 28px;
+      transition: all 0.35s ease;
+      border: 1px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--amber);
+      transform: scaleX(0);
+      transition: transform 0.35s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+      border-color: rgba(212,162,78,0.15);
+    }
+
+    .service-card:hover::after { transform: scaleX(1); }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--amber) 0%, var(--amber-dark) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.25rem;
+      color: var(--slate-dark);
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 0.92rem;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+
+    /* ---- Gallery ---- */
+    .gallery { background: var(--slate-dark); }
+
+    .gallery .section-label { color: var(--amber-light); }
+    .gallery .section-header h2 { color: var(--white); }
+    .gallery .section-header p { color: rgba(255,255,255,0.6); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      aspect-ratio: 4/3;
+    }
+
+    .gallery-item-bg {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover .gallery-item-bg { transform: scale(1.05); }
+
+    .gallery-item:nth-child(1) .gallery-item-bg {
+      background: linear-gradient(180deg, #5a7a8a 0%, #3d5a6a 100%);
+    }
+    .gallery-item:nth-child(2) .gallery-item-bg {
+      background: linear-gradient(180deg, #8a7a5a 0%, #6a5a3d 100%);
+    }
+    .gallery-item:nth-child(3) .gallery-item-bg {
+      background: linear-gradient(180deg, #6a8a6a 0%, #4a6a4a 100%);
+    }
+    .gallery-item:nth-child(4) .gallery-item-bg {
+      background: linear-gradient(180deg, #7a6a5a 0%, #5a4a3a 100%);
+    }
+    .gallery-item:nth-child(5) .gallery-item-bg {
+      background: linear-gradient(180deg, #5a6a8a 0%, #3d4a6a 100%);
+    }
+    .gallery-item:nth-child(6) .gallery-item-bg {
+      background: linear-gradient(180deg, #8a6a5a 0%, #6a4a3a 100%);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      padding: 40px 20px 20px;
+      transform: translateY(100%);
+      transition: transform 0.35s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay { transform: translateY(0); }
+
+    .gallery-overlay h4 {
+      color: var(--white);
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .gallery-overlay span {
+      font-size: 0.8rem;
+      color: var(--amber-light);
+      font-weight: 500;
+    }
+
+    .gallery-placeholder-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: rgba(255,255,255,0.3);
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    .gallery-placeholder-text svg {
+      display: block;
+      margin: 0 auto 8px;
+      opacity: 0.4;
+    }
+
+    /* ---- Testimonials ---- */
+    .testimonials { background: var(--off-white); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 36px 32px;
+      border: 1px solid var(--warm-gray);
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+      transform: translateY(-4px);
+    }
+
+    .testimonial-stars {
+      color: var(--amber);
+      font-size: 1rem;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-card blockquote {
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--slate) 0%, #4a6a7a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .testimonial-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--slate-dark);
+    }
+
+    .testimonial-location {
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* ---- CTA Banner ---- */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--amber-dark) 0%, var(--amber) 50%, var(--amber-light) 100%);
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .cta-banner h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--slate-dark);
+      margin-bottom: 16px;
+    }
+
+    .cta-banner p {
+      font-size: 1.1rem;
+      color: rgba(26,37,47,0.7);
+      max-width: 550px;
+      margin: 0 auto 32px;
+    }
+
+    .btn-dark {
+      background: var(--slate-dark);
+      color: var(--white);
+    }
+
+    .btn-dark:hover {
+      background: var(--slate);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    /* ---- Contact ---- */
+    .contact { background: var(--white); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.6rem;
+      color: var(--slate-dark);
+      margin-bottom: 16px;
+    }
+
+    .contact-info > p {
+      color: var(--text-light);
+      margin-bottom: 32px;
+      font-size: 1rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .contact-detail-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(212,162,78,0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--amber-dark);
+      font-size: 0.9rem;
+    }
+
+    .contact-detail strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--slate-dark);
+      margin-bottom: 2px;
+    }
+
+    .contact-detail span {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .contact-form {
+      background: var(--off-white);
+      border-radius: 16px;
+      padding: 40px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group { margin-bottom: 16px; }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--slate-dark);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--warm-gray);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: 'DM Sans', sans-serif;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      background: var(--white);
+      color: var(--text);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--amber);
+      box-shadow: 0 0 0 3px rgba(212,162,78,0.15);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--amber);
+      color: var(--slate-dark);
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    .form-submit:hover {
+      background: var(--amber-dark);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(212,162,78,0.3);
+    }
+
+    /* ---- Footer ---- */
+    footer {
+      background: var(--slate-dark);
+      padding: 64px 24px 24px;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-brand p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-top: 16px;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .footer-col a {
+      display: block;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover { color: var(--amber-light); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer-credit {
+      font-size: 0.7rem !important;
+      color: rgba(255,255,255,0.2) !important;
+    }
+
+    .footer-credit a {
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-credit a:hover { color: var(--amber-light); }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .menu-toggle { display: block; }
+
+      .hero-stats { gap: 24px; flex-wrap: wrap; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-image { height: 280px; }
+
+      .services-grid { grid-template-columns: 1fr; }
+
+      .gallery-grid { grid-template-columns: 1fr; }
+
+      .testimonials-grid { grid-template-columns: 1fr; }
+
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      .footer-grid { grid-template-columns: 1fr; }
+
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+
+      section { padding: 64px 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-buttons { flex-direction: column; align-items: center; }
+      .btn { width: 100%; justify-content: center; }
+      .about-features { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <div class="logo-mark">PB</div>
+        Prairie Built
+      </a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Projects</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="nav-cta">Free Estimate</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Serving Eastern South Dakota Since 2009</div>
+      <h1>Built for <span>South Dakota</span> Strong</h1>
+      <p>From brutal winter storms to scorching summer heat, we build structures that stand up to everything the prairie throws at them. Family-owned, community-trusted.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Request a Free Estimate &#8594;</a>
+        <a href="#gallery" class="btn btn-outline">View Our Work</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">17</div>
+          <div class="stat-label">Years in Business</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Licensed &amp; Insured</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <div class="about-image-text">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            Team photo placeholder
+          </div>
+        </div>
+        <div class="about-content reveal">
+          <div class="section-label">About Prairie Built</div>
+          <h2>Three Generations of Building Right</h2>
+          <p>Prairie Built Construction was founded by Mike and Sarah Larsen right here in Clear Lake. What started as a two-person roofing crew has grown into one of Deuel County's most trusted full-service contractors.</p>
+          <p>We know what South Dakota weather does to a home. We've seen the hail, the wind, the freeze-thaw cycles that crack foundations and tear off shingles. That's why every project we take on is built to last -- not just built to code.</p>
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="about-feature-icon">&#10003;</div>
+              Locally Owned &amp; Operated
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">&#10003;</div>
+              Free On-Site Estimates
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">&#10003;</div>
+              Licensed &amp; Fully Insured
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">&#10003;</div>
+              Storm Damage Specialists
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">What We Do</div>
+        <h2>Built to Handle Anything the Prairie Throws at It</h2>
+        <p>From new builds to storm repairs, we bring the same level of craftsmanship and care to every single job.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">&#9650;</div>
+          <h3>Roofing</h3>
+          <p>New installations, tear-offs, storm damage repair, and insurance claim assistance. We use materials rated for South Dakota's Class 4 hail zones and 90+ mph wind ratings.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">&#9632;</div>
+          <h3>Remodeling</h3>
+          <p>Kitchens, bathrooms, basements, and whole-home renovations. We help you modernize your space while keeping it functional for real life with real families.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">&#9644;</div>
+          <h3>Concrete</h3>
+          <p>Driveways, patios, garage floors, and foundations. Our concrete work is engineered with proper reinforcement and drainage for South Dakota's brutal freeze-thaw cycles.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">&#9638;</div>
+          <h3>Decks &amp; Outdoor</h3>
+          <p>Custom wood and composite decks, pergolas, and outdoor living spaces. We design and build outdoor areas you'll actually use from May through October.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Our Work</div>
+        <h2>Recent Projects Around the Lake Region</h2>
+        <p>Every project tells a story. Here are some of our favorites from Clear Lake, Watertown, Brookings, and beyond.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item reveal">
+          <div class="gallery-item-bg">
+            <div class="gallery-placeholder-text">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              Project Photo
+            </div>
+          </div>
+          <div class="gallery-overlay">
+            <h4>Full Roof Replacement</h4>
+            <span>Clear Lake, SD</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal">
+          <div class="gallery-item-bg">
+            <div class="gallery-placeholder-text">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              Project Photo
+            </div>
+          </div>
+          <div class="gallery-overlay">
+            <h4>Kitchen Remodel</h4>
+            <span>Watertown, SD</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal">
+          <div class="gallery-item-bg">
+            <div class="gallery-placeholder-text">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              Project Photo
+            </div>
+          </div>
+          <div class="gallery-overlay">
+            <h4>Stamped Concrete Patio</h4>
+            <span>Brookings, SD</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal">
+          <div class="gallery-item-bg">
+            <div class="gallery-placeholder-text">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              Project Photo
+            </div>
+          </div>
+          <div class="gallery-overlay">
+            <h4>Composite Deck Build</h4>
+            <span>Lake Cochrane, SD</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal">
+          <div class="gallery-item-bg">
+            <div class="gallery-placeholder-text">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              Project Photo
+            </div>
+          </div>
+          <div class="gallery-overlay">
+            <h4>Storm Damage Repair</h4>
+            <span>Gary, SD</span>
+          </div>
+        </div>
+        <div class="gallery-item reveal">
+          <div class="gallery-item-bg">
+            <div class="gallery-placeholder-text">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              Project Photo
+            </div>
+          </div>
+          <div class="gallery-overlay">
+            <h4>Basement Finish</h4>
+            <span>Estelline, SD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">What People Say</div>
+        <h2>Trusted by Our Neighbors</h2>
+        <p>We don't just work in this community -- we live here. Our reputation is everything.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"After the July hailstorm took out half our siding and most of the roof, Prairie Built had a crew out within 48 hours. They handled everything with insurance and the finished product looks better than the original. Can't recommend them enough."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">DH</div>
+            <div>
+              <div class="testimonial-name">Dave Hendrickson</div>
+              <div class="testimonial-location">Clear Lake, SD</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"We hired them for a full kitchen remodel and they came in on budget and ahead of schedule. Mike and his team were respectful of our space, cleaned up every single day, and the attention to detail was outstanding."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">JP</div>
+            <div>
+              <div class="testimonial-name">Jennifer Paulson</div>
+              <div class="testimonial-location">Watertown, SD</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Third year in a row using Prairie Built. They did our driveway, then the deck, now the garage. Honest pricing, solid work, and they actually answer the phone. That's rare these days."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">TK</div>
+            <div>
+              <div class="testimonial-name">Tom Knutson</div>
+              <div class="testimonial-location">Brookings, SD</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container reveal">
+      <h2>Ready to Start Your Project?</h2>
+      <p>Get a free, no-obligation estimate. We'll come to you, assess the work, and give you an honest price.</p>
+      <a href="#contact" class="btn btn-dark">Request a Free Estimate &#8594;</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="section-label">Get in Touch</div>
+          <h3>Let's Talk About Your Project</h3>
+          <p>Whether it's a quick repair or a major renovation, we'd love to hear from you. Reach out by phone, stop by, or fill out the form and we'll get back to you within one business day.</p>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">&#9742;</div>
+            <div>
+              <strong>Phone</strong>
+              <span>(605) 555-0142</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">&#9993;</div>
+            <div>
+              <strong>Email</strong>
+              <span>info@prairiebuiltsd.com</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">&#9673;</div>
+            <div>
+              <strong>Location</strong>
+              <span>Clear Lake, South Dakota 57226</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">&#9200;</div>
+            <div>
+              <strong>Hours</strong>
+              <span>Mon - Fri: 7:00 AM - 5:00 PM<br>Sat: By Appointment</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form reveal">
+          <form onsubmit="return false;">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="John Smith">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="(605) 555-0000">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="john@example.com">
+            </div>
+            <div class="form-group">
+              <label for="service">Service Needed</label>
+              <select id="service">
+                <option value="">Select a service...</option>
+                <option value="roofing">Roofing</option>
+                <option value="remodeling">Remodeling</option>
+                <option value="concrete">Concrete</option>
+                <option value="decks">Decks &amp; Outdoor</option>
+                <option value="storm">Storm Damage Repair</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell Us About Your Project</label>
+              <textarea id="message" placeholder="Describe your project, timeline, and any other details..."></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Request &#8594;</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <div class="logo-mark">PB</div>
+          Prairie Built
+        </a>
+        <p>Family-owned construction serving Clear Lake and Eastern South Dakota since 2009. Built tough for the toughest climate in America.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Roofing</a>
+        <a href="#services">Remodeling</a>
+        <a href="#services">Concrete</a>
+        <a href="#services">Decks &amp; Outdoor</a>
+        <a href="#services">Storm Damage</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about">About Us</a>
+        <a href="#gallery">Our Work</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Service Area</h4>
+        <a href="#">Clear Lake</a>
+        <a href="#">Watertown</a>
+        <a href="#">Brookings</a>
+        <a href="#">Gary</a>
+        <a href="#">Estelline</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Prairie Built Construction. All rights reserved.</p>
+      <p class="footer-credit">Website by <a href="#">Brooke Co. Digital</a></p>
+    </div>
+  </footer>
+
+  <!-- Scroll Reveal Script (vanilla JS, no libraries) -->
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    revealElements.forEach(el => observer.observe(el));
+
+    // Mobile menu toggle
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        if (nav.style.display === 'flex') {
+          nav.style.display = 'none';
+        } else {
+          nav.style.display = 'flex';
+          nav.style.flexDirection = 'column';
+          nav.style.position = 'absolute';
+          nav.style.top = '72px';
+          nav.style.left = '0';
+          nav.style.right = '0';
+          nav.style.background = 'rgba(26,37,47,0.98)';
+          nav.style.padding = '16px';
+          nav.style.gap = '4px';
+        }
+      });
+      // Close menu on link click
+      nav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          if (window.innerWidth <= 768) nav.style.display = 'none';
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>
