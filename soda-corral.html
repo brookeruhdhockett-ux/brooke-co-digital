@@ -40,16 +40,16 @@ body {
   overflow-x: hidden;
 }
 
-/* ---- Gingham pattern utility ---- */
+/* ---- Pink stripe pattern utility ---- */
 .gingham {
-  background-color: var(--cream);
-  background-image:
-    linear-gradient(45deg, var(--blush) 25%, transparent 25%),
-    linear-gradient(-45deg, var(--blush) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, var(--blush) 75%),
-    linear-gradient(-45deg, transparent 75%, var(--blush) 75%);
-  background-size: 20px 20px;
-  background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+  background-color: var(--pink-light);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 28px,
+    rgba(245,198,194,0.35) 28px,
+    rgba(245,198,194,0.35) 56px
+  );
 }
 
 /* ---- Rope border utility ---- */
@@ -211,14 +211,14 @@ nav {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-image:
-    linear-gradient(45deg, rgba(245,198,194,0.3) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(245,198,194,0.3) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(245,198,194,0.3) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(245,198,194,0.3) 75%);
-  background-size: 30px 30px;
-  background-position: 0 0, 0 15px, 15px -15px, -15px 0;
-  opacity: 0.5;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 32px,
+    rgba(245,198,194,0.3) 32px,
+    rgba(245,198,194,0.3) 64px
+  );
+  opacity: 0.6;
 }
 
 .hero-content { position: relative; z-index: 1; }

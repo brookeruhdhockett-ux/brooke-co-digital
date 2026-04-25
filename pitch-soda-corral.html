@@ -192,14 +192,14 @@ h1, h2, h3, h4 {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-image:
-    linear-gradient(45deg, rgba(245,198,194,0.25) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(245,198,194,0.25) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(245,198,194,0.25) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(245,198,194,0.25) 75%);
-  background-size: 20px 20px;
-  background-position: 0 0, 0 10px, 10px -10px, -10px 0;
-  opacity: 0.5;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 28px,
+    rgba(245,198,194,0.3) 28px,
+    rgba(245,198,194,0.3) 56px
+  );
+  opacity: 0.6;
 }
 
 .sc-hero-mockup > * {
@@ -613,7 +613,7 @@ h1, h2, h3, h4 {
       <li>Mobile-friendly — looks great on phones</li>
       <li>Event booking form for summer gigs</li>
       <li>Contact info and location</li>
-      <li>Updates anytime — just text me</li>
+      <li>Easy updates — just text me (one-time fee per update, or optional monthly plan)</li>
       <li>Live link you can share on Facebook</li>
     </ul>
   </div>
