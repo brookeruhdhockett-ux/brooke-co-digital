@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heroes Sports Bar & Grill | Canby, MN</title>
+<meta name="description" content="Heroes Sports Bar & Grill in Canby, MN — burgers, wings, cold beers, and game day specials in a friendly neighborhood sports bar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy: #0f1923;
+  --navy-light: #182633;
+  --gold: #d4a017;
+  --gold-light: #e8b82e;
+  --orange: #e07a2f;
+  --white: #f5f5f0;
+  --gray: #a0a8b0;
+  --card-bg: #1a2a38;
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--navy);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── HEADER ── */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(15, 25, 35, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(212, 160, 23, 0.15);
+  transition: box-shadow 0.3s;
+}
+
+header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.5); }
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.logo span { color: var(--white); }
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+nav a {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--gray);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover { color: var(--gold); }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── MOBILE NAV ── */
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+
+  nav {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 25, 35, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 160, 23, 0.15);
+    transform: translateY(-120%);
+    opacity: 0;
+    transition: all 0.4s ease;
+    pointer-events: none;
+  }
+
+  nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 24px;
+    gap: 0;
+  }
+
+  nav li {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  nav a {
+    display: block;
+    padding: 16px 0;
+    font-size: 1rem;
+  }
+}
+
+/* ── SECTIONS ── */
+section { padding: 100px 24px; }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 72px;
+  background:
+    radial-gradient(ellipse at 30% 60%, rgba(212, 160, 23, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 40%, rgba(224, 122, 47, 0.06) 0%, transparent 50%),
+    var(--navy);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 40px,
+      rgba(212, 160, 23, 0.03) 40px,
+      rgba(212, 160, 23, 0.03) 41px
+    );
+  pointer-events: none;
+}
+
+.hero-content { position: relative; z-index: 1; max-width: 700px; }
+
+.hero-badge {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 8px 20px;
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin-bottom: 8px;
+}
+
+.hero h1 .accent { color: var(--gold); }
+
+.hero-sub {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--gray);
+  margin-bottom: 40px;
+}
+
+.hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+.btn {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  padding: 14px 36px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.btn-primary:hover { background: var(--gold-light); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 40px;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+}
+
+.hero-scroll::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 2px;
+  animation: scrollPulse 2s infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 0.3; transform: translateX(-50%) translateY(10px); }
+}
+
+/* ── ABOUT ── */
+.about { background: var(--navy-light); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text p {
+  color: var(--gray);
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.stat {
+  border-left: 3px solid var(--gold);
+  padding-left: 16px;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.about-image {
+  position: relative;
+  aspect-ratio: 4/3;
+  background: var(--card-bg);
+  border: 1px solid rgba(212, 160, 23, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-image-placeholder {
+  text-align: center;
+  color: var(--gray);
+}
+
+.about-image-placeholder .icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.about-image-placeholder p {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* ── MENU ── */
+.menu-disclaimer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--gray);
+  border: 1px dashed rgba(255,255,255,0.15);
+  padding: 10px 20px;
+  margin-bottom: 48px;
+  display: inline-block;
+}
+
+.menu-center { text-align: center; }
+
+.menu-categories {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.menu-tab {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  background: transparent;
+  color: var(--gray);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.menu-tab.active,
+.menu-tab:hover {
+  background: var(--gold);
+  color: var(--navy);
+  border-color: var(--gold);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.menu-item {
+  background: var(--card-bg);
+  padding: 28px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  transition: background 0.3s;
+}
+
+.menu-item:hover { background: rgba(212, 160, 23, 0.06); }
+
+.menu-item-name {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.menu-item-desc {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.5;
+}
+
+.menu-item-price {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.menu-section { display: none; }
+.menu-section.active { display: grid; }
+
+@media (max-width: 768px) {
+  .menu-grid, .menu-section { grid-template-columns: 1fr; }
+  .menu-item { padding: 20px 24px; }
+}
+
+/* ── GAME DAY ── */
+.gameday { background: var(--navy-light); position: relative; overflow: hidden; }
+
+.gameday::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212, 160, 23, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.specials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.special-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 36px 28px;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.special-card:hover {
+  border-color: rgba(212, 160, 23, 0.3);
+  transform: translateY(-4px);
+}
+
+.special-day {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.special-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.special-desc {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 16px;
+}
+
+.special-price {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+@media (max-width: 768px) {
+  .specials-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+}
+
+/* ── LOCATION ── */
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.info-block { margin-bottom: 36px; }
+
+.info-block h3 {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.info-block p, .info-block li {
+  font-size: 1rem;
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+.info-block ul { list-style: none; }
+
+.info-block a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.info-block a:hover { color: var(--gold-light); }
+
+.map-placeholder {
+  aspect-ratio: 4/3;
+  background: var(--card-bg);
+  border: 1px solid rgba(212, 160, 23, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.map-placeholder .icon {
+  font-size: 2.5rem;
+  display: block;
+}
+
+.map-placeholder p {
+  font-size: 0.85rem;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.map-placeholder .btn {
+  font-size: 0.8rem;
+  padding: 10px 24px;
+}
+
+@media (max-width: 768px) {
+  .location-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy-light);
+  border-top: 1px solid rgba(212, 160, 23, 0.1);
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.footer-address {
+  font-size: 0.85rem;
+  color: var(--gray);
+  margin-bottom: 20px;
+}
+
+.footer-social a {
+  display: inline-block;
+  color: var(--gray);
+  font-size: 0.85rem;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+
+.footer-social a:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.footer-credit {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.25);
+  margin-top: 20px;
+}
+
+.footer-credit a {
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-credit a:hover { color: var(--gold); }
+
+/* ── ANIMATIONS ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ── UTILITY ── */
+.divider {
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  margin-bottom: 32px;
+}
+
+.text-center { text-align: center; }
+.text-center .divider { margin-left: auto; margin-right: auto; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="header-inner">
+    <a href="#hero" class="logo">Heroes <span>Bar & Grill</span></a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gameday">Game Day</a></li>
+        <li><a href="#location">Visit</a></li>
+        <li><a href="https://www.facebook.com/HeroesSB/" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-badge reveal">Canby, Minnesota</div>
+    <h1 class="reveal reveal-delay-1">Heroes <span class="accent">Sports Bar</span> & Grill</h1>
+    <p class="hero-sub reveal reveal-delay-2">Burgers &bull; Brews &bull; Big Games</p>
+    <div class="hero-buttons reveal reveal-delay-3">
+      <a href="#menu" class="btn btn-primary">See the Menu</a>
+      <a href="#location" class="btn btn-outline">Find Us</a>
+    </div>
+  </div>
+  <div class="hero-scroll"></div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label reveal">Our Story</div>
+        <h2 class="section-title reveal reveal-delay-1">The hometown<br>sports bar.</h2>
+        <div class="divider reveal reveal-delay-2"></div>
+        <p class="reveal reveal-delay-2">Heroes Sports Bar & Grill is where Canby comes together. Whether you are catching the big game, grabbing a burger after work, or celebrating with friends, this is your spot.</p>
+        <p class="reveal reveal-delay-3">Known for handcrafted burgers, friendly service, and an atmosphere that makes everyone feel like a regular from the first visit.</p>
+        <div class="about-stats reveal reveal-delay-4">
+          <div class="stat">
+            <div class="stat-number">205</div>
+            <div class="stat-label">1st St W</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">56220</div>
+            <div class="stat-label">Canby, MN</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-image reveal reveal-delay-3">
+        <div class="about-image-placeholder">
+          <span class="icon">&#127866;</span>
+          <p>Photo placeholder</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label reveal">What We Serve</div>
+      <h2 class="section-title reveal reveal-delay-1">The Menu</h2>
+      <div class="divider reveal reveal-delay-2"></div>
+      <div class="menu-center reveal reveal-delay-2">
+        <div class="menu-disclaimer">&#9733; Sample menu for demonstration purposes &#9733;</div>
+      </div>
+    </div>
+
+    <div class="menu-categories reveal reveal-delay-3">
+      <button class="menu-tab active" data-tab="burgers">Burgers</button>
+      <button class="menu-tab" data-tab="starters">Starters</button>
+      <button class="menu-tab" data-tab="entrees">Entrees</button>
+      <button class="menu-tab" data-tab="drinks">Drinks</button>
+    </div>
+
+    <!-- BURGERS -->
+    <div class="menu-section menu-grid active" data-section="burgers">
+      <div class="menu-item reveal">
+        <div>
+          <div class="menu-item-name">The Heroes Smash</div>
+          <div class="menu-item-desc">Double smashed patties, American cheese, pickles, hero sauce</div>
+        </div>
+        <div class="menu-item-price">$13.99</div>
+      </div>
+      <div class="menu-item reveal reveal-delay-1">
+        <div>
+          <div class="menu-item-name">Classic Cheeseburger</div>
+          <div class="menu-item-desc">Quarter-pound patty, cheddar, lettuce, tomato, onion</div>
+        </div>
+        <div class="menu-item-price">$11.49</div>
+      </div>
+      <div class="menu-item reveal reveal-delay-2">
+        <div>
+          <div class="menu-item-name">Bacon BBQ Burger</div>
+          <div class="menu-item-desc">Applewood bacon, pepper jack, crispy onion rings, smoky BBQ</div>
+        </div>
+        <div class="menu-item-price">$14.49</div>
+      </div>
+      <div class="menu-item reveal reveal-delay-3">
+        <div>
+          <div class="menu-item-name">Mushroom Swiss</div>
+          <div class="menu-item-desc">Sauteed mushrooms, melted Swiss, garlic aioli</div>
+        </div>
+        <div class="menu-item-price">$13.49</div>
+      </div>
+      <div class="menu-item reveal reveal-delay-4">
+        <div>
+          <div class="menu-item-name">The Canby Patty Melt</div>
+          <div class="menu-item-desc">Rye bread, caramelized onions, Swiss and American, griddle-pressed</div>
+        </div>
+        <div class="menu-item-price">$12.99</div>
+      </div>
+      <div class="menu-item reveal reveal-delay-5">
+        <div>
+          <div class="menu-item-name">Juicy Lucy</div>
+          <div class="menu-item-desc">Minnesota classic with molten cheese stuffed inside the patty</div>
+        </div>
+        <div class="menu-item-price">$13.99</div>
+      </div>
+    </div>
+
+    <!-- STARTERS -->
+    <div class="menu-section menu-grid" data-section="starters">
+      <div class="menu-item reveal">
+        <div>
+          <div class="menu-item-name">Loaded Nachos</div>
+          <div class="menu-item-desc">Tortilla chips, queso, seasoned beef, jalapenos, sour cream</div>
+        </div>
+        <div class="menu-item-price">$11.99</div>
+      </div>
+      <div class="menu-item reveal reveal-delay-1">
+        <div>
+          <div class="menu-item-name">Boneless Wings</div>
+          <div class="menu-item-desc">Tossed in your choice: buffalo, garlic parm, or honey BBQ</div>
+        </div>
+        <div class="menu-item-price">$12.49</div>
+      </div>
+      <div class="menu-item reveal reveal-delay-2">
+        <div>
+          <div class="menu-item-name">Mozzarella Sticks</div>
+          <div class="menu-item-desc">Hand-breaded, served with marinara</div>
+        </div>
+        <div class="menu-item-price">$9.49</div>
+      </div>
+      <div class="menu-item reveal reveal-delay-3">
+        <div>
+          <div class="menu-item-name">Crispy Chicken Strips</div>
+          <div class="menu-item-desc">Hand-breaded tenders with fries and ranch</div>
+        </div>
+        <div class="menu-item-price">$10.99</div>
+      </div>
+      <div class="menu-item reveal reveal-delay-4">
+        <div>
+          <div class="menu-item-name">Onion Rings</div>
+          <div class="menu-item-desc">Beer-battered, served with spicy ranch</div>
+        </div>
+        <div class="menu-item-price">$8.49</div>
+      </div>
+      <div class="menu-item reveal reveal-delay-5">
+        <div>
+          <div class="menu-item-name">Soft Pretzel Bites</div>
+          <div class="menu-item-desc">Warm pretzel bites with beer cheese dip</div>
+        </div>
+        <div class="menu-item-price">$8.99</div>
+      </div>
+    </div>
+
+    <!-- ENTREES -->
+    <div class="menu-section menu-grid" data-section="entrees">
+      <div class="menu-item reveal">
+        <div>
+          <div class="menu-item-name">Fish & Chips</div>
+          <div class="menu-item-desc">Beer-battered cod, fries, coleslaw, tartar sauce</div>
+        </div>
+        <div class="menu-item-price">$14.99</div>
+      </div>
+      <div class="menu-item reveal reveal-delay-1">
+        <div>
+          <div class="menu-item-name">Philly Cheesesteak</div>
+          <div class="menu-item-desc">Shaved ribeye, peppers, onions, provolone on a hoagie</div>
+        </div>
+        <div class="menu-item-price">$13.99</div>
+      </div>
+      <div class="menu-item reveal reveal-delay-2">
+        <div>
+          <div class="menu-item-name">Crispy Chicken Wrap</div>
+          <div class="menu-item-desc">Breaded chicken, lettuce, tomato, bacon, ranch in a flour tortilla</div>
+        </div>
+        <div class="menu-item-price">$12.49</div>
+      </div>
+      <div class="menu-item reveal reveal-delay-3">
+        <div>
+          <div class="menu-item-name">Grilled Chicken Salad</div>
+          <div class="menu-item-desc">Mixed greens, tomatoes, cucumbers, cheddar, honey mustard</div>
+        </div>
+        <div class="menu-item-price">$12.99</div>
+      </div>
+    </div>
+
+    <!-- DRINKS -->
+    <div class="menu-section menu-grid" data-section="drinks">
+      <div class="menu-item reveal">
+        <div>
+          <div class="menu-item-name">Domestic Pint</div>
+          <div class="menu-item-desc">Bud Light, Coors Light, Miller Lite</div>
+        </div>
+        <div class="menu-item-price">$4.50</div>
+      </div>
+      <div class="menu-item reveal reveal-delay-1">
+        <div>
+          <div class="menu-item-name">Craft Pint</div>
+          <div class="menu-item-desc">Rotating MN taps — ask your server</div>
+        </div>
+        <div class="menu-item-price">$6.50</div>
+      </div>
+      <div class="menu-item reveal reveal-delay-2">
+        <div>
+          <div class="menu-item-name">Domestic Bucket</div>
+          <div class="menu-item-desc">Five bottles on ice — pick your brand</div>
+        </div>
+        <div class="menu-item-price">$18.00</div>
+      </div>
+      <div class="menu-item reveal reveal-delay-3">
+        <div>
+          <div class="menu-item-name">House Margarita</div>
+          <div class="menu-item-desc">Classic lime, served on the rocks or blended</div>
+        </div>
+        <div class="menu-item-price">$7.50</div>
+      </div>
+      <div class="menu-item reveal reveal-delay-4">
+        <div>
+          <div class="menu-item-name">Old Fashioned</div>
+          <div class="menu-item-desc">Bourbon, bitters, cherry, orange — the Midwest way</div>
+        </div>
+        <div class="menu-item-price">$8.50</div>
+      </div>
+      <div class="menu-item reveal reveal-delay-5">
+        <div>
+          <div class="menu-item-name">Soft Drinks &amp; Coffee</div>
+          <div class="menu-item-desc">Pepsi products, iced tea, drip coffee</div>
+        </div>
+        <div class="menu-item-price">$2.99</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GAME DAY -->
+<section class="gameday" id="gameday">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label reveal">Every Week</div>
+      <h2 class="section-title reveal reveal-delay-1">Game Day Specials</h2>
+      <div class="divider reveal reveal-delay-2"></div>
+    </div>
+    <div class="specials-grid">
+      <div class="special-card reveal reveal-delay-1">
+        <div class="special-day">Tuesday</div>
+        <div class="special-name">Taco Tuesday</div>
+        <div class="special-desc">Street tacos with all the fixings</div>
+        <div class="special-price">$2 each</div>
+      </div>
+      <div class="special-card reveal reveal-delay-2">
+        <div class="special-day">Wednesday</div>
+        <div class="special-name">Wing Night</div>
+        <div class="special-desc">Bone-in wings, any sauce</div>
+        <div class="special-price">75&cent; each</div>
+      </div>
+      <div class="special-card reveal reveal-delay-3">
+        <div class="special-day">Thursday</div>
+        <div class="special-name">Burger & Beer</div>
+        <div class="special-desc">Classic burger plus a domestic pint</div>
+        <div class="special-price">$9.99</div>
+      </div>
+      <div class="special-card reveal reveal-delay-1">
+        <div class="special-day">Friday</div>
+        <div class="special-name">Fish Fry</div>
+        <div class="special-desc">Beer-battered cod, fries, slaw</div>
+        <div class="special-price">$12.99</div>
+      </div>
+      <div class="special-card reveal reveal-delay-2">
+        <div class="special-day">Saturday</div>
+        <div class="special-name">Prime Rib Night</div>
+        <div class="special-desc">Slow-roasted, served with baked potato</div>
+        <div class="special-price">$18.99</div>
+      </div>
+      <div class="special-card reveal reveal-delay-3">
+        <div class="special-day">Sunday</div>
+        <div class="special-name">Sunday Funday</div>
+        <div class="special-desc">Buckets and sliders during every game</div>
+        <div class="special-price">$16 bucket</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label reveal">Come Hang</div>
+      <h2 class="section-title reveal reveal-delay-1">Find Us</h2>
+      <div class="divider reveal reveal-delay-2"></div>
+    </div>
+    <div class="location-grid" style="margin-top: 48px;">
+      <div>
+        <div class="info-block reveal">
+          <h3>Address</h3>
+          <p>205 1st St W<br>Canby, MN 56220</p>
+        </div>
+        <div class="info-block reveal reveal-delay-1">
+          <h3>Hours</h3>
+          <ul>
+            <li>Monday &mdash; Thursday: 11 AM &ndash; 10 PM</li>
+            <li>Friday &mdash; Saturday: 11 AM &ndash; 12 AM</li>
+            <li>Sunday: 11 AM &ndash; 9 PM</li>
+          </ul>
+        </div>
+        <div class="info-block reveal reveal-delay-2">
+          <h3>Connect</h3>
+          <p><a href="https://www.facebook.com/HeroesSB/" target="_blank" rel="noopener">Follow us on Facebook</a></p>
+        </div>
+        <div class="info-block reveal reveal-delay-3">
+          <h3>Features</h3>
+          <ul>
+            <li>Multiple big screens for every game</li>
+            <li>Full bar with MN craft taps</li>
+            <li>Dine-in and takeout</li>
+            <li>Private party options available</li>
+          </ul>
+        </div>
+      </div>
+      <div class="map-placeholder reveal reveal-delay-2">
+        <span class="icon">&#128205;</span>
+        <p>Map placeholder</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=205+1st+St+W+Canby+MN+56220" target="_blank" rel="noopener" class="btn btn-primary">Get Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Heroes Sports Bar & Grill</div>
+    <div class="footer-address">205 1st St W, Canby, MN 56220</div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/HeroesSB/" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <div class="footer-credit">Website by <a href="#">Brooke Co. Digital</a></div>
+  </div>
+</footer>
+
+<script>
+// ── Scroll reveal ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── Header scroll effect ──
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+
+// ── Hamburger menu ──
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('nav');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  nav.classList.toggle('open');
+});
+
+// Close mobile nav on link click
+nav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    nav.classList.remove('open');
+  });
+});
+
+// ── Smooth scroll with offset ──
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const offset = header.offsetHeight + 10;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+
+// ── Menu tabs ──
+const tabs = document.querySelectorAll('.menu-tab');
+const sections = document.querySelectorAll('.menu-section');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.tab;
+
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    sections.forEach(s => {
+      s.classList.remove('active');
+      if (s.dataset.section === target) {
+        s.classList.add('active');
+        // Re-trigger reveal for newly visible items
+        s.querySelectorAll('.reveal').forEach(el => {
+          el.classList.remove('visible');
+          observer.observe(el);
+        });
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
