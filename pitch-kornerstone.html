@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Korner Stone Kravings — Website Preview | Brooke Co. Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ───── Reset ───── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ───── Page / Print Setup ───── */
+@page {
+  size: letter;
+  margin: 0;
+}
+
+html, body {
+  width: 8.5in;
+  margin: 0 auto;
+  padding: 0;
+  background: #faf6f1;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  color: #3a3632;
+  line-height: 1.6;
+  font-size: 11pt;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+@media print {
+  html, body {
+    width: 100%;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .no-print { display: none; }
+}
+
+h1, h2, h3, h4 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #3a3632;
+}
+
+/* ───── Brooke Co. Colors ───── */
+:root {
+  --cream: #faf6f1;
+  --sage: #8a9f85;
+  --sage-light: #b5c4b1;
+  --blush: #f2ddd5;
+  --charcoal: #3a3632;
+  --text: #4a4540;
+  --text-light: #7d756c;
+  /* Korner Stone colors */
+  --ks-cream: #FDF6EE;
+  --ks-warm-cream: #F8EFE2;
+  --ks-brown-dark: #4A3222;
+  --ks-brown-med: #6B4D38;
+  --ks-brown-light: #8B6F5C;
+  --ks-butter: #E8C95A;
+  --ks-rose: #D4A0A0;
+  --ks-rose-deep: #B87878;
+  --ks-rose-light: #EACECE;
+}
+
+/* ───── PAGE 1 ───── */
+.page {
+  width: 8.5in;
+  min-height: 11in;
+  padding: 0.6in 0.7in;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-2 {
+  page-break-before: always;
+}
+
+/* ── Header ── */
+.bc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20pt;
+  border-bottom: 1.5px solid var(--sage-light);
+  margin-bottom: 28pt;
+}
+
+.bc-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18pt;
+  color: var(--charcoal);
+  letter-spacing: -0.01em;
+}
+
+.bc-logo span {
+  color: var(--sage);
+}
+
+.bc-tagline {
+  font-size: 8.5pt;
+  color: var(--text-light);
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+}
+
+/* ── Title Block ── */
+.title-block {
+  text-align: center;
+  margin-bottom: 30pt;
+}
+
+.title-block h1 {
+  font-size: 32pt;
+  color: var(--charcoal);
+  margin-bottom: 6pt;
+  letter-spacing: -0.02em;
+}
+
+.title-block .prepared-for {
+  font-size: 14pt;
+  color: var(--sage);
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  margin-bottom: 4pt;
+}
+
+.title-block .date {
+  font-size: 9pt;
+  color: var(--text-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Browser Mockup ── */
+.browser-frame {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(58, 54, 50, 0.12), 0 1px 4px rgba(58, 54, 50, 0.06);
+  overflow: hidden;
+  margin-bottom: 24pt;
+}
+
+.browser-chrome {
+  background: #f0eeeb;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.browser-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.browser-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.browser-dots span:nth-child(1) { background: #EF6B5F; }
+.browser-dots span:nth-child(2) { background: #F4BF4F; }
+.browser-dots span:nth-child(3) { background: #61C554; }
+
+.browser-url {
+  flex: 1;
+  background: #fff;
+  border-radius: 5px;
+  padding: 5px 12px;
+  font-size: 8pt;
+  color: #999;
+  font-family: 'Outfit', sans-serif;
+}
+
+.browser-body {
+  padding: 0;
+}
+
+/* ── Korner Stone Hero Mockup ── */
+.ks-hero-mockup {
+  background: linear-gradient(160deg, var(--ks-warm-cream) 0%, var(--ks-cream) 40%, var(--ks-rose-light) 100%);
+  padding: 36pt 24pt 30pt;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ks-hero-mockup::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle at 30% 40%, rgba(232, 201, 90, 0.12) 0%, transparent 50%),
+              radial-gradient(circle at 70% 60%, rgba(212, 160, 160, 0.10) 0%, transparent 50%);
+}
+
+.ks-hero-mockup > * {
+  position: relative;
+  z-index: 1;
+}
+
+.ks-hero-badge {
+  display: inline-block;
+  font-size: 6.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--ks-rose-deep);
+  background: rgba(212, 160, 160, 0.15);
+  padding: 3pt 10pt;
+  border-radius: 20px;
+  margin-bottom: 10pt;
+  font-family: 'Nunito', sans-serif;
+}
+
+.ks-hero-mockup h2 {
+  font-family: 'Lora', serif;
+  font-size: 32pt;
+  color: var(--ks-brown-dark);
+  line-height: 1.1;
+  margin-bottom: 4pt;
+  font-weight: 700;
+}
+
+.ks-hero-mockup h2 em {
+  font-style: italic;
+  color: var(--ks-rose-deep);
+}
+
+.ks-hero-tagline {
+  font-size: 10pt;
+  color: var(--ks-brown-light);
+  font-weight: 400;
+  margin-bottom: 14pt;
+  font-family: 'Nunito', sans-serif;
+}
+
+.ks-cta {
+  display: inline-block;
+  padding: 8px 28px;
+  background: var(--ks-brown-dark);
+  color: var(--ks-cream);
+  border-radius: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  font-size: 8pt;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ── Menu Preview Label ── */
+.section-label {
+  font-size: 9pt;
+  color: var(--sage);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 8pt;
+}
+
+/* ── Korner Stone Menu Mockup ── */
+.ks-menu-mockup {
+  background: var(--ks-warm-cream);
+  padding: 20pt 18pt;
+}
+
+.ks-menu-header {
+  text-align: center;
+  margin-bottom: 14pt;
+}
+
+.ks-menu-header h3 {
+  font-family: 'Lora', serif;
+  font-size: 16pt;
+  color: var(--ks-brown-dark);
+  font-weight: 700;
+  margin-bottom: 2pt;
+}
+
+.ks-menu-header p {
+  font-size: 7.5pt;
+  color: var(--ks-brown-light);
+  letter-spacing: 0.06em;
+  font-family: 'Nunito', sans-serif;
+}
+
+.ks-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8pt;
+}
+
+.ks-menu-item {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10pt 12pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8pt;
+}
+
+.ks-menu-name {
+  font-family: 'Lora', serif;
+  font-size: 8pt;
+  font-weight: 600;
+  color: var(--ks-brown-dark);
+  margin-bottom: 1pt;
+}
+
+.ks-menu-desc {
+  font-size: 6.5pt;
+  color: var(--ks-brown-light);
+  line-height: 1.3;
+  font-family: 'Nunito', sans-serif;
+}
+
+.ks-menu-price {
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  color: var(--ks-rose-deep);
+  font-size: 8pt;
+  white-space: nowrap;
+}
+
+/* ───── PAGE 2 ───── */
+
+/* ── Page 2 Header (smaller repeat) ── */
+.bc-header-sm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 14pt;
+  border-bottom: 1px solid var(--sage-light);
+  margin-bottom: 28pt;
+}
+
+.bc-header-sm .bc-logo {
+  font-size: 13pt;
+}
+
+.bc-header-sm .bc-tagline {
+  font-size: 7.5pt;
+}
+
+/* ── What's Included ── */
+.section {
+  margin-bottom: 28pt;
+}
+
+.section h2 {
+  font-size: 18pt;
+  margin-bottom: 14pt;
+  color: var(--charcoal);
+}
+
+.section h2 .accent {
+  color: var(--sage);
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+}
+
+.checklist li {
+  padding: 7pt 0 7pt 28pt;
+  position: relative;
+  font-size: 10.5pt;
+  color: var(--text);
+  border-bottom: 1px solid rgba(178, 196, 177, 0.2);
+  line-height: 1.5;
+}
+
+.checklist li:last-child {
+  border-bottom: none;
+}
+
+.checklist li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10pt;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background: var(--sage);
+  opacity: 0.85;
+}
+
+.checklist li::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 13pt;
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+}
+
+/* ── How It Works ── */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16pt;
+}
+
+.step {
+  text-align: center;
+  padding: 18pt 12pt;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(58, 54, 50, 0.05);
+}
+
+.step-number {
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 10pt;
+  background: var(--sage);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 12pt;
+}
+
+.step h4 {
+  font-size: 11pt;
+  margin-bottom: 5pt;
+  color: var(--charcoal);
+}
+
+.step p {
+  font-size: 9pt;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* ── Pricing ── */
+.pricing-box {
+  background: var(--blush);
+  border-radius: 12px;
+  padding: 22pt 28pt;
+  text-align: center;
+}
+
+.pricing-box p {
+  font-size: 10.5pt;
+  color: var(--text);
+  line-height: 1.7;
+  max-width: 5.5in;
+  margin: 0 auto;
+}
+
+/* ── Contact / Footer ── */
+.contact-footer {
+  margin-top: 28pt;
+  padding-top: 18pt;
+  border-top: 1.5px solid var(--sage-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.contact-info h3 {
+  font-size: 12pt;
+  color: var(--charcoal);
+  margin-bottom: 6pt;
+}
+
+.contact-info p {
+  font-size: 9pt;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.contact-brand {
+  text-align: right;
+}
+
+.contact-brand .bc-logo {
+  font-size: 14pt;
+  margin-bottom: 2pt;
+}
+
+.contact-brand .bc-tagline {
+  font-size: 7.5pt;
+}
+
+/* ── Decorative accent line ── */
+.accent-line {
+  width: 40pt;
+  height: 2.5px;
+  background: var(--sage);
+  border-radius: 2px;
+  margin: 0 auto 18pt;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ PAGE 1 ═══════════════════ -->
+<div class="page page-1">
+
+  <!-- Header -->
+  <div class="bc-header">
+    <div class="bc-logo">Brooke Co. <span>Digital</span></div>
+    <div class="bc-tagline">websites + social media for small businesses</div>
+  </div>
+
+  <!-- Title Block -->
+  <div class="title-block">
+    <h1>Website Preview</h1>
+    <div class="prepared-for">Prepared for Korner Stone Kravings</div>
+    <div class="date">April 2026</div>
+  </div>
+
+  <!-- Hero Mockup -->
+  <div class="section-label">Homepage Preview</div>
+  <div class="browser-frame">
+    <div class="browser-chrome">
+      <div class="browser-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="browser-url">kornerstonekravings.com</div>
+    </div>
+    <div class="browser-body">
+      <div class="ks-hero-mockup">
+        <div class="ks-hero-badge">Est. 2013 &mdash; Canby, Minnesota</div>
+        <h2>Baked Fresh,<br><em>Served with Love</em></h2>
+        <div class="ks-hero-tagline">Breads, pastries, coffee, and comfort — the cornerstone of every good morning in Canby.</div>
+        <div class="ks-cta">Explore Our Menu</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menu Mockup -->
+  <div class="section-label">Menu Section Preview</div>
+  <div class="browser-frame">
+    <div class="browser-chrome">
+      <div class="browser-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="browser-url">kornerstonekravings.com/#menu</div>
+    </div>
+    <div class="browser-body">
+      <div class="ks-menu-mockup">
+        <div class="ks-menu-header">
+          <h3>Our Menu</h3>
+          <p>From golden loaves to warm-from-the-oven pastries and hearty breakfast plates</p>
+        </div>
+        <div class="ks-menu-grid">
+          <div class="ks-menu-item">
+            <div>
+              <div class="ks-menu-name">Honey Wheat Loaf</div>
+              <div class="ks-menu-desc">Soft, slightly sweet whole wheat bread baked with local honey</div>
+            </div>
+            <div class="ks-menu-price">$5.50</div>
+          </div>
+          <div class="ks-menu-item">
+            <div>
+              <div class="ks-menu-name">Cinnamon Roll</div>
+              <div class="ks-menu-desc">Giant, gooey, frosted with cream cheese icing</div>
+            </div>
+            <div class="ks-menu-price">$4.00</div>
+          </div>
+          <div class="ks-menu-item">
+            <div>
+              <div class="ks-menu-name">Sourdough Boule</div>
+              <div class="ks-menu-desc">Crusty artisan sourdough with a tangy, chewy crumb</div>
+            </div>
+            <div class="ks-menu-price">$6.50</div>
+          </div>
+          <div class="ks-menu-item">
+            <div>
+              <div class="ks-menu-name">The Canby Classic</div>
+              <div class="ks-menu-desc">Two eggs, hash browns, toast, bacon or sausage</div>
+            </div>
+            <div class="ks-menu-price">$9.50</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════ PAGE 2 ═══════════════════ -->
+<div class="page page-2">
+
+  <!-- Smaller Header -->
+  <div class="bc-header-sm">
+    <div class="bc-logo">Brooke Co. <span>Digital</span></div>
+    <div class="bc-tagline">Korner Stone Kravings — Website Preview</div>
+  </div>
+
+  <!-- What's Included -->
+  <div class="section">
+    <h2>What's <span class="accent">Included</span></h2>
+    <ul class="checklist">
+      <li>Custom designed website matching your brand</li>
+      <li>Full menu with bakery items, pastries, breakfast, and prices</li>
+      <li>Mobile-friendly — looks great on phones</li>
+      <li>Daily specials section with rotating features</li>
+      <li>Location, hours, and contact info with embedded map</li>
+      <li>Easy updates — just text me (one-time fee per update, or optional monthly plan)</li>
+      <li>Live link you can share on Facebook</li>
+    </ul>
+  </div>
+
+  <!-- How It Works -->
+  <div class="section">
+    <h2>How It <span class="accent">Works</span></h2>
+    <div class="accent-line" style="margin-left:0;"></div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h4>You tell me</h4>
+        <p>Share any changes, additions, or ideas you have in mind</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h4>I build it</h4>
+        <p>Everything is designed and ready in under a week</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h4>You go live</h4>
+        <p>Your site is live and customers can find you online</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing -->
+  <div class="section">
+    <h2>Pricing</h2>
+    <div class="accent-line" style="margin-left:0;"></div>
+    <div class="pricing-box">
+      <p>I'm currently offering a discounted rate for my first few clients. Message me and we'll figure out what works for your budget. No pressure, no commitment.</p>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-footer">
+    <div class="contact-info">
+      <h3>Let's talk</h3>
+      <p>
+        Brooke Hockett<br>
+        hellomrshockett@gmail.com<br>
+        Facebook: @brookecohome
+      </p>
+    </div>
+    <div class="contact-brand">
+      <div class="bc-logo">Brooke Co. <span>Digital</span></div>
+      <div class="bc-tagline">websites + social media for small businesses</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

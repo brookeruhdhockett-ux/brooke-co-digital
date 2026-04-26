@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ugly Duckling — Website Preview | Brooke Co. Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ───── Reset ───── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ───── Page / Print Setup ───── */
+@page {
+  size: letter;
+  margin: 0;
+}
+
+html, body {
+  width: 8.5in;
+  margin: 0 auto;
+  padding: 0;
+  background: #faf6f1;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  color: #3a3632;
+  line-height: 1.6;
+  font-size: 11pt;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+@media print {
+  html, body {
+    width: 100%;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .no-print { display: none; }
+}
+
+h1, h2, h3, h4 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #3a3632;
+}
+
+/* ───── Brooke Co. Colors ───── */
+:root {
+  --cream: #faf6f1;
+  --sage: #8a9f85;
+  --sage-light: #b5c4b1;
+  --blush: #f2ddd5;
+  --charcoal: #3a3632;
+  --text: #4a4540;
+  --text-light: #7d756c;
+  /* Ugly Duckling colors */
+  --ud-cream: #F5F0E8;
+  --ud-linen: #EDE6D8;
+  --ud-sage: #7A8E6E;
+  --ud-sage-dark: #5C6E52;
+  --ud-sage-pale: #D6DFD0;
+  --ud-olive: #6B7355;
+  --ud-barn-red: #8B4D3A;
+  --ud-wood: #7A5E45;
+  --ud-wood-dark: #4E3B2A;
+  --ud-wheat: #C8B28E;
+  --ud-wheat-light: #DDD1B8;
+  --ud-warm-gray: #8A8178;
+  --ud-text: #3B342E;
+  --ud-text-light: #6E645C;
+}
+
+/* ───── PAGE 1 ───── */
+.page {
+  width: 8.5in;
+  min-height: 11in;
+  padding: 0.6in 0.7in;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-2 {
+  page-break-before: always;
+}
+
+/* ── Header ── */
+.bc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20pt;
+  border-bottom: 1.5px solid var(--sage-light);
+  margin-bottom: 28pt;
+}
+
+.bc-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18pt;
+  color: var(--charcoal);
+  letter-spacing: -0.01em;
+}
+
+.bc-logo span {
+  color: var(--sage);
+}
+
+.bc-tagline {
+  font-size: 8.5pt;
+  color: var(--text-light);
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+}
+
+/* ── Title Block ── */
+.title-block {
+  text-align: center;
+  margin-bottom: 30pt;
+}
+
+.title-block h1 {
+  font-size: 32pt;
+  color: var(--charcoal);
+  margin-bottom: 6pt;
+  letter-spacing: -0.02em;
+}
+
+.title-block .prepared-for {
+  font-size: 14pt;
+  color: var(--sage);
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  margin-bottom: 4pt;
+}
+
+.title-block .date {
+  font-size: 9pt;
+  color: var(--text-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Browser Mockup ── */
+.browser-frame {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(58, 54, 50, 0.12), 0 1px 4px rgba(58, 54, 50, 0.06);
+  overflow: hidden;
+  margin-bottom: 24pt;
+}
+
+.browser-chrome {
+  background: #f0eeeb;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.browser-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.browser-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.browser-dots span:nth-child(1) { background: #EF6B5F; }
+.browser-dots span:nth-child(2) { background: #F4BF4F; }
+.browser-dots span:nth-child(3) { background: #61C554; }
+
+.browser-url {
+  flex: 1;
+  background: #fff;
+  border-radius: 5px;
+  padding: 5px 12px;
+  font-size: 8pt;
+  color: #999;
+  font-family: 'Outfit', sans-serif;
+}
+
+.browser-body {
+  padding: 0;
+}
+
+/* ── Ugly Duckling Hero Mockup ── */
+.ud-hero-mockup {
+  background: linear-gradient(160deg, var(--ud-linen) 0%, var(--ud-sage-pale) 50%, var(--ud-wheat-light) 100%);
+  padding: 36pt 24pt 30pt;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ud-hero-mockup::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234E3B2A' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.ud-hero-mockup > * {
+  position: relative;
+  z-index: 1;
+}
+
+.ud-hero-badge {
+  display: inline-block;
+  font-size: 6.5pt;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ud-sage-dark);
+  background: rgba(122,142,110,0.12);
+  border: 1px solid rgba(122,142,110,0.25);
+  padding: 3pt 10pt;
+  border-radius: 100px;
+  margin-bottom: 10pt;
+}
+
+.ud-hero-mockup h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 34pt;
+  color: var(--ud-wood-dark);
+  line-height: 1.05;
+  margin-bottom: 6pt;
+  font-weight: 400;
+}
+
+.ud-hero-tagline {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 12pt;
+  color: var(--ud-barn-red);
+  margin-bottom: 12pt;
+}
+
+.ud-hero-desc {
+  font-size: 8pt;
+  color: var(--ud-text-light);
+  max-width: 400px;
+  margin: 0 auto 14pt;
+  line-height: 1.7;
+}
+
+.ud-cta {
+  display: inline-block;
+  padding: 8px 24px;
+  background: var(--ud-sage-dark);
+  color: #fff;
+  border-radius: 6px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 8pt;
+  letter-spacing: 0.03em;
+}
+
+/* ── Menu Preview Label ── */
+.section-label {
+  font-size: 9pt;
+  color: var(--sage);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 8pt;
+}
+
+/* ── Ugly Duckling Offerings Mockup ── */
+.ud-offerings-mockup {
+  background: var(--ud-cream);
+  padding: 20pt 18pt;
+}
+
+.ud-offerings-header {
+  margin-bottom: 14pt;
+}
+
+.ud-offerings-header .ud-label {
+  font-size: 6.5pt;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ud-sage-dark);
+  margin-bottom: 3pt;
+}
+
+.ud-offerings-header h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 16pt;
+  color: var(--ud-wood-dark);
+  font-weight: 400;
+  margin-bottom: 2pt;
+}
+
+.ud-offerings-header p {
+  font-size: 7.5pt;
+  color: var(--ud-text-light);
+  line-height: 1.6;
+}
+
+.ud-offerings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10pt;
+}
+
+.ud-offering-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 14pt 12pt;
+  border: 1px solid rgba(200,178,142,0.25);
+}
+
+.ud-offering-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--ud-sage-pale);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-bottom: 8pt;
+}
+
+.ud-offering-card h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 9.5pt;
+  color: var(--ud-wood-dark);
+  margin-bottom: 3pt;
+}
+
+.ud-offering-card p {
+  font-size: 6.5pt;
+  color: var(--ud-text-light);
+  line-height: 1.5;
+}
+
+/* ───── PAGE 2 ───── */
+
+.bc-header-sm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 14pt;
+  border-bottom: 1px solid var(--sage-light);
+  margin-bottom: 28pt;
+}
+
+.bc-header-sm .bc-logo {
+  font-size: 13pt;
+}
+
+.bc-header-sm .bc-tagline {
+  font-size: 7.5pt;
+}
+
+.section {
+  margin-bottom: 28pt;
+}
+
+.section h2 {
+  font-size: 18pt;
+  margin-bottom: 14pt;
+  color: var(--charcoal);
+}
+
+.section h2 .accent {
+  color: var(--sage);
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+}
+
+.checklist li {
+  padding: 7pt 0 7pt 28pt;
+  position: relative;
+  font-size: 10.5pt;
+  color: var(--text);
+  border-bottom: 1px solid rgba(178, 196, 177, 0.2);
+  line-height: 1.5;
+}
+
+.checklist li:last-child {
+  border-bottom: none;
+}
+
+.checklist li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10pt;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background: var(--sage);
+  opacity: 0.85;
+}
+
+.checklist li::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 13pt;
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16pt;
+}
+
+.step {
+  text-align: center;
+  padding: 18pt 12pt;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(58, 54, 50, 0.05);
+}
+
+.step-number {
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 10pt;
+  background: var(--sage);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 12pt;
+}
+
+.step h4 {
+  font-size: 11pt;
+  margin-bottom: 5pt;
+  color: var(--charcoal);
+}
+
+.step p {
+  font-size: 9pt;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.pricing-box {
+  background: var(--blush);
+  border-radius: 12px;
+  padding: 22pt 28pt;
+  text-align: center;
+}
+
+.pricing-box p {
+  font-size: 10.5pt;
+  color: var(--text);
+  line-height: 1.7;
+  max-width: 5.5in;
+  margin: 0 auto;
+}
+
+.contact-footer {
+  margin-top: 28pt;
+  padding-top: 18pt;
+  border-top: 1.5px solid var(--sage-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.contact-info h3 {
+  font-size: 12pt;
+  color: var(--charcoal);
+  margin-bottom: 6pt;
+}
+
+.contact-info p {
+  font-size: 9pt;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.contact-brand {
+  text-align: right;
+}
+
+.contact-brand .bc-logo {
+  font-size: 14pt;
+  margin-bottom: 2pt;
+}
+
+.contact-brand .bc-tagline {
+  font-size: 7.5pt;
+}
+
+.accent-line {
+  width: 40pt;
+  height: 2.5px;
+  background: var(--sage);
+  border-radius: 2px;
+  margin: 0 auto 18pt;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ PAGE 1 ═══════════════════ -->
+<div class="page page-1">
+
+  <!-- Header -->
+  <div class="bc-header">
+    <div class="bc-logo">Brooke Co. <span>Digital</span></div>
+    <div class="bc-tagline">websites + social media for small businesses</div>
+  </div>
+
+  <!-- Title Block -->
+  <div class="title-block">
+    <h1>Website Preview</h1>
+    <div class="prepared-for">Prepared for The Ugly Duckling</div>
+    <div class="date">April 2026</div>
+  </div>
+
+  <!-- Hero Mockup -->
+  <div class="section-label">Homepage Preview</div>
+  <div class="browser-frame">
+    <div class="browser-chrome">
+      <div class="browser-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="browser-url">theuglyduckling.com</div>
+    </div>
+    <div class="browser-body">
+      <div class="ud-hero-mockup">
+        <div class="ud-hero-badge">Est. 2016 &middot; Downtown Brookings</div>
+        <h2>The Ugly Duckling</h2>
+        <div class="ud-hero-tagline">Where old things find new life</div>
+        <div class="ud-hero-desc">A curated marketplace for local creatives, upcycled treasures, vintage finds, and one-of-a-kind handcrafted goods in downtown Brookings, South Dakota.</div>
+        <div class="ud-cta">Visit Us</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offerings Mockup -->
+  <div class="section-label">What We Offer Preview</div>
+  <div class="browser-frame">
+    <div class="browser-chrome">
+      <div class="browser-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="browser-url">theuglyduckling.com/#offerings</div>
+    </div>
+    <div class="browser-body">
+      <div class="ud-offerings-mockup">
+        <div class="ud-offerings-header">
+          <div class="ud-label">What We Offer</div>
+          <h3>Curated. Crafted. Upcycled.</h3>
+          <p>Every corner of our shop holds something unexpected.</p>
+        </div>
+        <div class="ud-offerings-grid">
+          <div class="ud-offering-card">
+            <div class="ud-offering-icon">&#x1FA91;</div>
+            <h4>Repurposed Furniture</h4>
+            <p>Dressers, tables, and statement pieces brought back to life with fresh paint and creative reimagining.</p>
+          </div>
+          <div class="ud-offering-card">
+            <div class="ud-offering-icon">&#x1F3FA;</div>
+            <h4>Vintage Finds</h4>
+            <p>Antiques, curiosities, and timeless treasures sourced from estate sales and barns across the Midwest.</p>
+          </div>
+          <div class="ud-offering-card">
+            <div class="ud-offering-icon">&#x1F5BC;&#xFE0F;</div>
+            <h4>Custom Framing</h4>
+            <p>Preserve your memories with custom framing services. Vintage frames to modern mats.</p>
+          </div>
+          <div class="ud-offering-card">
+            <div class="ud-offering-icon">&#x1F9F6;</div>
+            <h4>Handcrafted Goods</h4>
+            <p>Locally made candles, soaps, jewelry, pottery, and textiles from South Dakota artisans.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════ PAGE 2 ═══════════════════ -->
+<div class="page page-2">
+
+  <!-- Smaller Header -->
+  <div class="bc-header-sm">
+    <div class="bc-logo">Brooke Co. <span>Digital</span></div>
+    <div class="bc-tagline">The Ugly Duckling — Website Preview</div>
+  </div>
+
+  <!-- What's Included -->
+  <div class="section">
+    <h2>What's <span class="accent">Included</span></h2>
+    <ul class="checklist">
+      <li>Custom designed website matching your brand</li>
+      <li>Product showcase with categories for all your offerings</li>
+      <li>Mobile-friendly — looks great on phones</li>
+      <li>Custom framing gallery with service details</li>
+      <li>Location, hours, and contact info with embedded map</li>
+      <li>Easy updates — just text me (one-time fee per update, or optional monthly plan)</li>
+      <li>Live link you can share on Facebook</li>
+    </ul>
+  </div>
+
+  <!-- How It Works -->
+  <div class="section">
+    <h2>How It <span class="accent">Works</span></h2>
+    <div class="accent-line" style="margin-left:0;"></div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h4>You tell me</h4>
+        <p>Share any changes, additions, or ideas you have in mind</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h4>I build it</h4>
+        <p>Everything is designed and ready in under a week</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h4>You go live</h4>
+        <p>Your site is live and customers can find you online</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing -->
+  <div class="section">
+    <h2>Pricing</h2>
+    <div class="accent-line" style="margin-left:0;"></div>
+    <div class="pricing-box">
+      <p>I'm currently offering a discounted rate for my first few clients. Message me and we'll figure out what works for your budget. No pressure, no commitment.</p>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-footer">
+    <div class="contact-info">
+      <h3>Let's talk</h3>
+      <p>
+        Brooke Hockett<br>
+        hellomrshockett@gmail.com<br>
+        Facebook: @brookecohome
+      </p>
+    </div>
+    <div class="contact-brand">
+      <div class="bc-logo">Brooke Co. <span>Digital</span></div>
+      <div class="bc-tagline">websites + social media for small businesses</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

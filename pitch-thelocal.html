@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Local — Website Preview | Brooke Co. Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ───── Reset ───── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ───── Page / Print Setup ───── */
+@page {
+  size: letter;
+  margin: 0;
+}
+
+html, body {
+  width: 8.5in;
+  margin: 0 auto;
+  padding: 0;
+  background: #faf6f1;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  color: #3a3632;
+  line-height: 1.6;
+  font-size: 11pt;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+@media print {
+  html, body {
+    width: 100%;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .no-print { display: none; }
+}
+
+h1, h2, h3, h4 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #3a3632;
+}
+
+/* ───── Brooke Co. Colors ───── */
+:root {
+  --cream: #faf6f1;
+  --sage: #8a9f85;
+  --sage-light: #b5c4b1;
+  --blush: #f2ddd5;
+  --charcoal: #3a3632;
+  --text: #4a4540;
+  --text-light: #7d756c;
+  /* The Local colors */
+  --tl-black: #0D0D0D;
+  --tl-charcoal: #1A1A1A;
+  --tl-dark-surface: #222222;
+  --tl-copper: #B87333;
+  --tl-copper-light: #D4956A;
+  --tl-copper-glow: rgba(184, 115, 51, 0.15);
+  --tl-cream: #F2EAE0;
+  --tl-cream-dim: #D6CDBE;
+  --tl-olive: #4A5A3A;
+  --tl-text-muted: #9E9689;
+  --tl-text-dim: #6E6860;
+}
+
+/* ───── PAGE 1 ───── */
+.page {
+  width: 8.5in;
+  min-height: 11in;
+  padding: 0.6in 0.7in;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-2 {
+  page-break-before: always;
+}
+
+/* ── Header ── */
+.bc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20pt;
+  border-bottom: 1.5px solid var(--sage-light);
+  margin-bottom: 28pt;
+}
+
+.bc-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18pt;
+  color: var(--charcoal);
+  letter-spacing: -0.01em;
+}
+
+.bc-logo span {
+  color: var(--sage);
+}
+
+.bc-tagline {
+  font-size: 8.5pt;
+  color: var(--text-light);
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+}
+
+/* ── Title Block ── */
+.title-block {
+  text-align: center;
+  margin-bottom: 30pt;
+}
+
+.title-block h1 {
+  font-size: 32pt;
+  color: var(--charcoal);
+  margin-bottom: 6pt;
+  letter-spacing: -0.02em;
+}
+
+.title-block .prepared-for {
+  font-size: 14pt;
+  color: var(--sage);
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  margin-bottom: 4pt;
+}
+
+.title-block .date {
+  font-size: 9pt;
+  color: var(--text-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Browser Mockup ── */
+.browser-frame {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(58, 54, 50, 0.12), 0 1px 4px rgba(58, 54, 50, 0.06);
+  overflow: hidden;
+  margin-bottom: 24pt;
+}
+
+.browser-chrome {
+  background: #f0eeeb;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.browser-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.browser-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.browser-dots span:nth-child(1) { background: #EF6B5F; }
+.browser-dots span:nth-child(2) { background: #F4BF4F; }
+.browser-dots span:nth-child(3) { background: #61C554; }
+
+.browser-url {
+  flex: 1;
+  background: #fff;
+  border-radius: 5px;
+  padding: 5px 12px;
+  font-size: 8pt;
+  color: #999;
+  font-family: 'Outfit', sans-serif;
+}
+
+.browser-body {
+  padding: 0;
+}
+
+/* ── The Local Hero Mockup ── */
+.tl-hero-mockup {
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(184, 115, 51, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(74, 90, 58, 0.06) 0%, transparent 50%),
+    linear-gradient(180deg, var(--tl-black) 0%, var(--tl-charcoal) 50%, var(--tl-black) 100%);
+  padding: 36pt 24pt 30pt;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.tl-hero-mockup::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+.tl-hero-mockup > * {
+  position: relative;
+  z-index: 1;
+}
+
+.tl-hero-tag {
+  font-family: 'Jost', sans-serif;
+  font-size: 7pt;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--tl-copper);
+  margin-bottom: 12pt;
+}
+
+.tl-hero-mockup h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42pt;
+  font-weight: 700;
+  color: var(--tl-cream);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 6pt;
+  line-height: 1.0;
+}
+
+.tl-hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11pt;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--tl-copper-light);
+  margin-bottom: 10pt;
+}
+
+.tl-hero-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10pt auto;
+  max-width: 200px;
+}
+
+.tl-hero-divider::before,
+.tl-hero-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--tl-copper), transparent);
+}
+
+.tl-hero-divider-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--tl-copper);
+}
+
+.tl-hero-details {
+  font-family: 'Jost', sans-serif;
+  font-size: 7pt;
+  color: var(--tl-text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 2;
+}
+
+.tl-cta {
+  display: inline-block;
+  margin-top: 12pt;
+  padding: 8px 36px;
+  border: 1px solid var(--tl-copper);
+  color: var(--tl-copper);
+  font-family: 'Jost', sans-serif;
+  font-size: 7pt;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* ── Menu Preview Label ── */
+.section-label {
+  font-size: 9pt;
+  color: var(--sage);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 8pt;
+}
+
+/* ── The Local Menu Mockup ── */
+.tl-menu-mockup {
+  background: var(--tl-black);
+  padding: 20pt 18pt;
+}
+
+.tl-menu-header {
+  text-align: center;
+  margin-bottom: 14pt;
+}
+
+.tl-menu-header .tl-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 6.5pt;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--tl-copper);
+  margin-bottom: 4pt;
+}
+
+.tl-menu-header h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18pt;
+  color: var(--tl-cream);
+  font-weight: 600;
+  margin-bottom: 2pt;
+}
+
+.tl-menu-header p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 8pt;
+  font-style: italic;
+  color: var(--tl-text-muted);
+}
+
+.tl-menu-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 8pt auto 14pt;
+  max-width: 180px;
+}
+
+.tl-menu-divider::before,
+.tl-menu-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--tl-copper), transparent);
+}
+
+.tl-menu-divider-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--tl-copper);
+}
+
+.tl-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8pt 32pt;
+}
+
+.tl-menu-item {
+  padding: 6pt 0;
+  border-bottom: 1px solid rgba(184, 115, 51, 0.08);
+}
+
+.tl-menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 6pt;
+  margin-bottom: 2pt;
+}
+
+.tl-menu-item-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 9pt;
+  font-weight: 600;
+  color: var(--tl-cream);
+}
+
+.tl-menu-item-dots {
+  flex: 1;
+  border-bottom: 1px dotted rgba(184, 115, 51, 0.2);
+  min-width: 10px;
+  margin-bottom: 2px;
+}
+
+.tl-menu-item-price {
+  font-family: 'Jost', sans-serif;
+  font-size: 7.5pt;
+  font-weight: 400;
+  color: var(--tl-copper);
+  white-space: nowrap;
+}
+
+.tl-menu-item-desc {
+  font-size: 6.5pt;
+  color: var(--tl-text-muted);
+  line-height: 1.5;
+  font-family: 'Jost', sans-serif;
+}
+
+/* ───── PAGE 2 ───── */
+
+.bc-header-sm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 14pt;
+  border-bottom: 1px solid var(--sage-light);
+  margin-bottom: 28pt;
+}
+
+.bc-header-sm .bc-logo {
+  font-size: 13pt;
+}
+
+.bc-header-sm .bc-tagline {
+  font-size: 7.5pt;
+}
+
+.section {
+  margin-bottom: 28pt;
+}
+
+.section h2 {
+  font-size: 18pt;
+  margin-bottom: 14pt;
+  color: var(--charcoal);
+}
+
+.section h2 .accent {
+  color: var(--sage);
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+}
+
+.checklist li {
+  padding: 7pt 0 7pt 28pt;
+  position: relative;
+  font-size: 10.5pt;
+  color: var(--text);
+  border-bottom: 1px solid rgba(178, 196, 177, 0.2);
+  line-height: 1.5;
+}
+
+.checklist li:last-child {
+  border-bottom: none;
+}
+
+.checklist li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10pt;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background: var(--sage);
+  opacity: 0.85;
+}
+
+.checklist li::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 13pt;
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16pt;
+}
+
+.step {
+  text-align: center;
+  padding: 18pt 12pt;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(58, 54, 50, 0.05);
+}
+
+.step-number {
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 10pt;
+  background: var(--sage);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 12pt;
+}
+
+.step h4 {
+  font-size: 11pt;
+  margin-bottom: 5pt;
+  color: var(--charcoal);
+}
+
+.step p {
+  font-size: 9pt;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.pricing-box {
+  background: var(--blush);
+  border-radius: 12px;
+  padding: 22pt 28pt;
+  text-align: center;
+}
+
+.pricing-box p {
+  font-size: 10.5pt;
+  color: var(--text);
+  line-height: 1.7;
+  max-width: 5.5in;
+  margin: 0 auto;
+}
+
+.contact-footer {
+  margin-top: 28pt;
+  padding-top: 18pt;
+  border-top: 1.5px solid var(--sage-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.contact-info h3 {
+  font-size: 12pt;
+  color: var(--charcoal);
+  margin-bottom: 6pt;
+}
+
+.contact-info p {
+  font-size: 9pt;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.contact-brand {
+  text-align: right;
+}
+
+.contact-brand .bc-logo {
+  font-size: 14pt;
+  margin-bottom: 2pt;
+}
+
+.contact-brand .bc-tagline {
+  font-size: 7.5pt;
+}
+
+.accent-line {
+  width: 40pt;
+  height: 2.5px;
+  background: var(--sage);
+  border-radius: 2px;
+  margin: 0 auto 18pt;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ PAGE 1 ═══════════════════ -->
+<div class="page page-1">
+
+  <!-- Header -->
+  <div class="bc-header">
+    <div class="bc-logo">Brooke Co. <span>Digital</span></div>
+    <div class="bc-tagline">websites + social media for small businesses</div>
+  </div>
+
+  <!-- Title Block -->
+  <div class="title-block">
+    <h1>Website Preview</h1>
+    <div class="prepared-for">Prepared for The Local</div>
+    <div class="date">April 2026</div>
+  </div>
+
+  <!-- Hero Mockup -->
+  <div class="section-label">Homepage Preview</div>
+  <div class="browser-frame">
+    <div class="browser-chrome">
+      <div class="browser-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="browser-url">thelocalwatertown.com</div>
+    </div>
+    <div class="browser-body">
+      <div class="tl-hero-mockup">
+        <div class="tl-hero-tag">Now Open in Downtown Watertown</div>
+        <h2>The Local</h2>
+        <div class="tl-hero-subtitle">Dinner, reimagined for the region</div>
+        <div class="tl-hero-divider">
+          <span class="tl-hero-divider-dot"></span>
+        </div>
+        <div class="tl-hero-details">
+          Upscale-casual dining &amp; craft cocktails<br>
+          Dinner service only &bull; Opened December 2025
+        </div>
+        <div class="tl-cta">Explore the Menu</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menu Mockup -->
+  <div class="section-label">Menu Section Preview</div>
+  <div class="browser-frame">
+    <div class="browser-chrome">
+      <div class="browser-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="browser-url">thelocalwatertown.com/#menu</div>
+    </div>
+    <div class="browser-body">
+      <div class="tl-menu-mockup">
+        <div class="tl-menu-header">
+          <div class="tl-label">The Menu</div>
+          <h3>Dinner Service</h3>
+          <p>Upscale-casual fare crafted with intention</p>
+        </div>
+        <div class="tl-menu-divider">
+          <span class="tl-menu-divider-dot"></span>
+        </div>
+        <div class="tl-menu-grid">
+          <div class="tl-menu-item">
+            <div class="tl-menu-item-header">
+              <span class="tl-menu-item-name">Braised Short Rib</span>
+              <span class="tl-menu-item-dots"></span>
+              <span class="tl-menu-item-price">$38</span>
+            </div>
+            <p class="tl-menu-item-desc">Red wine reduction, creamy polenta, roasted root vegetables</p>
+          </div>
+          <div class="tl-menu-item">
+            <div class="tl-menu-item-header">
+              <span class="tl-menu-item-name">Pan-Seared Salmon</span>
+              <span class="tl-menu-item-dots"></span>
+              <span class="tl-menu-item-price">$34</span>
+            </div>
+            <p class="tl-menu-item-desc">Miso-glazed, forbidden black rice, bok choy, citrus beurre blanc</p>
+          </div>
+          <div class="tl-menu-item">
+            <div class="tl-menu-item-header">
+              <span class="tl-menu-item-name">Filet Mignon</span>
+              <span class="tl-menu-item-dots"></span>
+              <span class="tl-menu-item-price">$38</span>
+            </div>
+            <p class="tl-menu-item-desc">8 oz center-cut, compound herb butter, roasted fingerlings</p>
+          </div>
+          <div class="tl-menu-item">
+            <div class="tl-menu-item-header">
+              <span class="tl-menu-item-name">Espresso Martini</span>
+              <span class="tl-menu-item-dots"></span>
+              <span class="tl-menu-item-price">$15</span>
+            </div>
+            <p class="tl-menu-item-desc">Vodka, fresh-pulled espresso, coffee liqueur, vanilla</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════ PAGE 2 ═══════════════════ -->
+<div class="page page-2">
+
+  <!-- Smaller Header -->
+  <div class="bc-header-sm">
+    <div class="bc-logo">Brooke Co. <span>Digital</span></div>
+    <div class="bc-tagline">The Local — Website Preview</div>
+  </div>
+
+  <!-- What's Included -->
+  <div class="section">
+    <h2>What's <span class="accent">Included</span></h2>
+    <ul class="checklist">
+      <li>Custom designed website matching your brand and atmosphere</li>
+      <li>Full dinner menu with starters, entrees, cocktails, and desserts</li>
+      <li>Mobile-friendly — looks great on phones</li>
+      <li>Reservation info and contact details</li>
+      <li>Hours, location, and directions</li>
+      <li>Easy updates — just text me (one-time fee per update, or optional monthly plan)</li>
+      <li>Live link you can share on Facebook and social media</li>
+    </ul>
+  </div>
+
+  <!-- How It Works -->
+  <div class="section">
+    <h2>How It <span class="accent">Works</span></h2>
+    <div class="accent-line" style="margin-left:0;"></div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h4>You tell me</h4>
+        <p>Share any changes, additions, or ideas you have in mind</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h4>I build it</h4>
+        <p>Everything is designed and ready in under a week</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h4>You go live</h4>
+        <p>Your site is live and customers can find you online</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing -->
+  <div class="section">
+    <h2>Pricing</h2>
+    <div class="accent-line" style="margin-left:0;"></div>
+    <div class="pricing-box">
+      <p>I'm currently offering a discounted rate for my first few clients. Message me and we'll figure out what works for your budget. No pressure, no commitment.</p>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-footer">
+    <div class="contact-info">
+      <h3>Let's talk</h3>
+      <p>
+        Brooke Hockett<br>
+        hellomrshockett@gmail.com<br>
+        Facebook: @brookecohome
+      </p>
+    </div>
+    <div class="contact-brand">
+      <div class="bc-logo">Brooke Co. <span>Digital</span></div>
+      <div class="bc-tagline">websites + social media for small businesses</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
