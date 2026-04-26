@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Ugly Duckling | Upcycled Goods & Vintage Finds | Brookings, SD</title>
+  <meta name="description" content="The Ugly Duckling — upcycled goods, vintage finds, repurposed furniture, custom framing & handcrafted items in downtown Brookings, South Dakota. A marketplace for local creatives since 2016.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #F5F0E8;
+      --linen: #EDE6D8;
+      --sage: #7A8E6E;
+      --sage-dark: #5C6E52;
+      --sage-pale: #D6DFD0;
+      --olive: #6B7355;
+      --warm-gray: #8A8178;
+      --warm-gray-light: #B5ADA5;
+      --warm-gray-dark: #5C5550;
+      --barn-red: #8B4D3A;
+      --barn-red-light: #A86B58;
+      --wood: #7A5E45;
+      --wood-light: #A08668;
+      --wood-dark: #4E3B2A;
+      --wheat: #C8B28E;
+      --wheat-light: #DDD1B8;
+      --text: #3B342E;
+      --text-light: #6E645C;
+      --white: #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.7;
+      font-size: 16px;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    /* ---- HEADER ---- */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(245,240,232,0.92);
+      backdrop-filter: blur(14px);
+      transition: box-shadow 0.3s, background 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+    .site-header.scrolled {
+      box-shadow: 0 2px 24px rgba(59,52,46,0.08);
+      border-bottom-color: var(--wheat-light);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.8rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.45rem;
+      color: var(--wood-dark);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .logo span { color: var(--sage-dark); }
+
+    nav { display: flex; gap: 2rem; align-items: center; }
+    nav a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-light);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.25s;
+    }
+    nav a:hover { color: var(--sage-dark); }
+
+    /* ---- HAMBURGER ---- */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+      z-index: 110;
+    }
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--wood-dark);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ---- MOBILE NAV ---- */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(245,240,232,0.97);
+      backdrop-filter: blur(20px);
+      z-index: 105;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      color: var(--wood-dark);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    .mobile-nav a:hover { color: var(--sage-dark); }
+
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--linen) 0%, var(--sage-pale) 50%, var(--wheat-light) 100%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234E3B2A' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      background: rgba(122,142,110,0.12);
+      border: 1px solid rgba(122,142,110,0.25);
+      padding: 0.4rem 1.2rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      color: var(--wood-dark);
+      margin-bottom: 0.4rem;
+      line-height: 1.05;
+    }
+
+    .hero-tagline {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: var(--barn-red);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      max-width: 540px;
+      margin: 0 auto 2rem;
+      line-height: 1.8;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--sage-dark);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .hero-cta:hover { background: var(--olive); transform: translateY(-1px); }
+    .hero-cta svg { width: 18px; height: 18px; }
+
+    /* ---- DECORATIVE DIVIDER ---- */
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.5rem 0;
+    }
+    .divider-line {
+      width: 60px;
+      height: 1px;
+      background: var(--wheat);
+    }
+    .divider-icon {
+      color: var(--sage);
+      font-size: 1.2rem;
+    }
+
+    /* ---- SECTIONS ---- */
+    section {
+      padding: 5rem 2rem;
+    }
+
+    .section-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--wood-dark);
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      max-width: 600px;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ---- ABOUT ---- */
+    .about {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-visual {
+      background: linear-gradient(135deg, var(--sage-pale) 0%, var(--linen) 100%);
+      border-radius: 12px;
+      padding: 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.06;
+      background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20.5h2V0h2v20.5h2V0h2v20.5h2V0h2v20.5h2V0h4v2h-4v2h4v2h-4v2h4v2h-4v2h4v2h-4v2.5z' fill='%234E3B2A' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E");
+    }
+
+    .about-visual-icon {
+      position: relative;
+      z-index: 1;
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      filter: grayscale(0.2);
+    }
+
+    .about-visual-text {
+      position: relative;
+      z-index: 1;
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--wood-dark);
+      line-height: 1.5;
+    }
+
+    .about-stat-row {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .about-stat {
+      text-align: center;
+      flex: 1;
+    }
+
+    .about-stat-number {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: var(--sage-dark);
+    }
+
+    .about-stat-label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ---- OFFERINGS ---- */
+    .offerings {
+      background: var(--cream);
+    }
+
+    .offerings-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .offering-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2.2rem;
+      border: 1px solid rgba(200,178,142,0.25);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .offering-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(59,52,46,0.06);
+    }
+
+    .offering-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--sage-pale);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .offering-card h3 {
+      font-size: 1.3rem;
+      color: var(--wood-dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .offering-card p {
+      font-size: 0.92rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 600px) {
+      .offerings-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ---- STORY BAND ---- */
+    .story-band {
+      background: var(--wood-dark);
+      color: var(--cream);
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .story-band .section-label { color: var(--sage-pale); }
+
+    .story-band blockquote {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.5;
+      color: var(--wheat-light);
+    }
+
+    .story-band .attribution {
+      font-size: 0.85rem;
+      color: var(--warm-gray-light);
+      font-weight: 400;
+    }
+
+    /* ---- VISIT ---- */
+    .visit {
+      background: var(--white);
+    }
+
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .visit-info h3 {
+      font-size: 1.4rem;
+      color: var(--wood-dark);
+      margin-bottom: 1rem;
+    }
+
+    .visit-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .visit-detail-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--sage-pale);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .visit-detail-icon svg {
+      width: 18px;
+      height: 18px;
+      color: var(--sage-dark);
+    }
+
+    .visit-detail-text {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .visit-detail-text strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .visit-detail-text a {
+      color: var(--sage-dark);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    .visit-detail-text a:hover { color: var(--barn-red); }
+
+    .visit-map {
+      background: var(--linen);
+      border-radius: 12px;
+      overflow: hidden;
+      min-height: 320px;
+      position: relative;
+    }
+
+    .visit-map iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      border: none;
+      filter: saturate(0.8) contrast(0.95);
+    }
+
+    @media (max-width: 768px) {
+      .visit-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ---- FOOTER ---- */
+    .site-footer {
+      background: var(--wood-dark);
+      color: var(--warm-gray-light);
+      padding: 3rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-brand .logo {
+      font-size: 1.3rem;
+      color: var(--cream);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .footer-brand .logo span { color: var(--sage-pale); }
+
+    .footer-brand p {
+      font-size: 0.82rem;
+      color: var(--warm-gray-light);
+    }
+
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      font-size: 0.82rem;
+      color: var(--warm-gray-light);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    .footer-links a:hover { color: var(--cream); }
+
+    .footer-credit {
+      width: 100%;
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.78rem;
+      color: var(--warm-gray);
+    }
+    .footer-credit a {
+      color: var(--sage-pale);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    .footer-credit a:hover { color: var(--cream); }
+
+    /* ---- SCROLL REVEAL ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ---- MISC ---- */
+    ::selection {
+      background: var(--sage-pale);
+      color: var(--wood-dark);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo">The Ugly <span>Duckling</span></a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#offerings">What We Offer</a>
+        <a href="#visit">Visit</a>
+        <a href="https://www.facebook.com/theuglyducklingsd/" target="_blank" rel="noopener">Facebook</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#offerings" onclick="closeMenu()">What We Offer</a>
+    <a href="#visit" onclick="closeMenu()">Visit</a>
+    <a href="https://www.facebook.com/theuglyducklingsd/" target="_blank" rel="noopener">Facebook</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge reveal">Est. 2016 &middot; Downtown Brookings</div>
+      <h1 class="reveal reveal-delay-1">The Ugly Duckling</h1>
+      <div class="hero-tagline reveal reveal-delay-2">Where old things find new life</div>
+      <p class="reveal reveal-delay-3">
+        A curated marketplace for local creatives, upcycled treasures, vintage finds, and one-of-a-kind handcrafted goods in the heart of downtown Brookings, South Dakota.
+      </p>
+      <a href="#visit" class="hero-cta reveal reveal-delay-4">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Visit Us
+      </a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div>
+          <div class="section-label reveal">Our Story</div>
+          <h2 class="section-title reveal reveal-delay-1">More than a shop.<br>A community of makers.</h2>
+          <p class="section-subtitle reveal reveal-delay-2">
+            Since 2016, The Ugly Duckling has been a home for local artisans, vintage collectors, and creative souls who believe that beautiful things deserve a second chance. We are a marketplace where sustainability meets artistry and every piece tells a story.
+          </p>
+          <p class="section-subtitle reveal reveal-delay-3" style="margin-bottom:0">
+            From repurposed furniture and antique church windows predating South Dakota statehood to hand-poured candles and custom framing, every item in our space carries the mark of someone who cares. Connected to Farmhouse Fancy, we share a passion for giving old things a fresh start.
+          </p>
+        </div>
+        <div class="about-visual reveal reveal-delay-2">
+          <div class="about-visual-icon">&#x1F3E1;</div>
+          <div class="about-visual-text">
+            "Every piece has a past.<br>We help it find a future."
+          </div>
+          <div class="about-stat-row">
+            <div class="about-stat">
+              <div class="about-stat-number">10+</div>
+              <div class="about-stat-label">Years</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-number">Local</div>
+              <div class="about-stat-label">Creatives</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-number">1</div>
+              <div class="about-stat-label">Mission</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="divider" style="padding:1rem 0;">
+    <span class="divider-line"></span>
+    <span class="divider-icon">&#x2766;</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <!-- OFFERINGS -->
+  <section class="offerings" id="offerings">
+    <div class="section-inner">
+      <div class="section-label reveal">What We Offer</div>
+      <h2 class="section-title reveal reveal-delay-1">Curated. Crafted. Upcycled.</h2>
+      <p class="section-subtitle reveal reveal-delay-2">Every corner of our shop holds something unexpected. Here is a taste of what you will find.</p>
+      <div class="offerings-grid">
+        <div class="offering-card reveal reveal-delay-1">
+          <div class="offering-icon">&#x1FA91;</div>
+          <h3>Repurposed Furniture</h3>
+          <p>Dressers, tables, shelving, and statement pieces brought back to life with a fresh coat of paint, new hardware, or a creative reimagining. Each piece is one of a kind.</p>
+        </div>
+        <div class="offering-card reveal reveal-delay-2">
+          <div class="offering-icon">&#x1F3FA;</div>
+          <h3>Vintage Finds</h3>
+          <p>Antiques, curiosities, and timeless treasures sourced from estate sales, barns, and collections across the Midwest. Some pieces predate South Dakota statehood.</p>
+        </div>
+        <div class="offering-card reveal reveal-delay-3">
+          <div class="offering-icon">&#x1F5BC;&#xFE0F;</div>
+          <h3>Custom Framing</h3>
+          <p>Preserve your memories and artwork with our custom framing services. From vintage frames to modern mats, we match the frame to the story you want to tell.</p>
+        </div>
+        <div class="offering-card reveal reveal-delay-4">
+          <div class="offering-icon">&#x1F9F6;</div>
+          <h3>Handcrafted Goods</h3>
+          <p>Locally made candles, soaps, jewelry, pottery, textiles, and more from South Dakota artisans. When you buy handcrafted, you support a neighbor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY BAND -->
+  <section class="story-band">
+    <div class="section-label reveal">Sustainability</div>
+    <blockquote class="reveal reveal-delay-1">
+      "We believe the most sustainable choice is the one that already exists. Every upcycled piece keeps something beautiful out of a landfill and puts it back into a home."
+    </blockquote>
+    <div class="attribution reveal reveal-delay-2">The Ugly Duckling &middot; Brookings, SD</div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="visit" id="visit">
+    <div class="section-inner">
+      <div class="section-label reveal">Come See Us</div>
+      <h2 class="section-title reveal reveal-delay-1">Visit The Ugly Duckling</h2>
+      <p class="section-subtitle reveal reveal-delay-2">We are located on Main Avenue in the heart of downtown Brookings.</p>
+      <div class="visit-grid">
+        <div class="visit-info reveal reveal-delay-2">
+          <div class="visit-detail">
+            <div class="visit-detail-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="visit-detail-text">
+              <strong>Address</strong>
+              312 Main Ave<br>Brookings, SD 57006
+            </div>
+          </div>
+          <div class="visit-detail">
+            <div class="visit-detail-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="visit-detail-text">
+              <strong>Hours</strong>
+              Tuesday &ndash; Friday: 10 AM &ndash; 5:30 PM<br>
+              Saturday: 10 AM &ndash; 4 PM<br>
+              Sunday &ndash; Monday: Closed
+            </div>
+          </div>
+          <div class="visit-detail">
+            <div class="visit-detail-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </div>
+            <div class="visit-detail-text">
+              <strong>Follow Us</strong>
+              <a href="https://www.facebook.com/theuglyducklingsd/" target="_blank" rel="noopener">The Ugly Duckling on Facebook</a>
+            </div>
+          </div>
+          <div class="visit-detail">
+            <div class="visit-detail-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div class="visit-detail-text">
+              <strong>Website</strong>
+              <a href="https://farmhouseduck.com" target="_blank" rel="noopener">farmhouseduck.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="visit-map reveal reveal-delay-3">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2838.5!2d-96.7983!3d44.3114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x878b3de18e3b87d1%3A0x9b6e8e8e8e8e8e8e!2s312%20Main%20Ave%2C%20Brookings%2C%20SD%2057006!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map to The Ugly Duckling, 312 Main Ave, Brookings SD">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">The Ugly <span>Duckling</span></a>
+        <p>Upcycled goods & vintage finds in downtown Brookings, SD</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#offerings">What We Offer</a>
+        <a href="#visit">Visit</a>
+        <a href="https://www.facebook.com/theuglyducklingsd/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <div class="footer-credit">
+        &copy; 2026 The Ugly Duckling. All rights reserved. &nbsp;&bull;&nbsp; Website by <a href="#">Brooke Co. Digital</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ---- SCROLL REVEAL ----
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // ---- HEADER SCROLL ----
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // ---- HAMBURGER ----
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+
+    function closeMenu() {
+      hamburger.classList.remove('active');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // ---- SMOOTH SCROLL WITH HEADER OFFSET ----
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const headerH = header.offsetHeight;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - headerH - 16;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
