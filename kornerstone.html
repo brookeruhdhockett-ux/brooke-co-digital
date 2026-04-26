@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Korner Stone Kravings | Bakery &amp; Cafe | Canby, MN</title>
+  <meta name="description" content="Korner Stone Kravings — a beloved bakery and cafe in Canby, Minnesota. Fresh-baked breads, pastries, coffee, and breakfast served daily for over 13 years.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FDF6EE;
+      --warm-cream: #F8EFE2;
+      --soft-white: #FFFCF8;
+      --brown-dark: #4A3222;
+      --brown-med: #6B4D38;
+      --brown-light: #8B6F5C;
+      --butter: #E8C95A;
+      --butter-soft: #F5E6A3;
+      --rose: #D4A0A0;
+      --rose-light: #EACECE;
+      --rose-deep: #B87878;
+      --espresso: #2C1810;
+      --text: #3A2A1E;
+      --text-light: #7A6A5E;
+      --text-muted: #A89888;
+      --border: #E8DDD0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      color: var(--text);
+      background: var(--soft-white);
+      line-height: 1.7;
+      font-size: 16px;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Lora', serif;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--brown-dark);
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ---- HEADER ---- */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      z-index: 100;
+      background: rgba(253, 246, 238, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s ease;
+    }
+    .site-header.scrolled {
+      border-bottom-color: var(--border);
+      box-shadow: 0 2px 20px rgba(74, 50, 34, 0.08);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.8rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Lora', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--brown-dark);
+      letter-spacing: 0.02em;
+    }
+    .logo span { color: var(--rose-deep); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brown-med);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--rose);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--brown-dark); }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 110;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px; height: 2px;
+      background: var(--brown-dark);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        position: fixed;
+        top: 0; right: -100%;
+        width: 75%; height: 100vh;
+        flex-direction: column;
+        background: var(--cream);
+        padding: 5rem 2rem 2rem;
+        gap: 1.5rem;
+        transition: right 0.35s ease;
+        box-shadow: -4px 0 30px rgba(0,0,0,0.1);
+      }
+      .nav-links.open { right: 0; }
+      .nav-links a { font-size: 1rem; }
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(160deg, var(--warm-cream) 0%, var(--cream) 40%, var(--rose-light) 100%);
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle at 30% 40%, rgba(232, 201, 90, 0.12) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 60%, rgba(212, 160, 160, 0.10) 0%, transparent 50%);
+      animation: gentleDrift 20s ease-in-out infinite alternate;
+    }
+    @keyframes gentleDrift {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(30px, -20px); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--rose-deep);
+      background: rgba(212, 160, 160, 0.15);
+      padding: 0.4rem 1.2rem;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      color: var(--brown-dark);
+      margin-bottom: 0.5rem;
+      line-height: 1.1;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--rose-deep);
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--brown-light);
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--brown-dark);
+      color: var(--cream);
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    .hero-cta:hover {
+      background: var(--espresso);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(44, 24, 16, 0.2);
+    }
+
+    /* Decorative wheat/grain divider */
+    .section-divider {
+      text-align: center;
+      padding: 1rem 0;
+      color: var(--butter);
+      font-size: 1.5rem;
+      letter-spacing: 0.3em;
+      opacity: 0.6;
+    }
+
+    /* ---- SECTIONS GENERAL ---- */
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--rose-deep);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      color: var(--text-light);
+      max-width: 600px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---- ABOUT ---- */
+    .about {
+      background: var(--soft-white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .about-image {
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, var(--warm-cream), var(--rose-light));
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-image-icon {
+      font-size: 5rem;
+      opacity: 0.3;
+    }
+    .about-image .years-badge {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background: var(--brown-dark);
+      color: var(--cream);
+      padding: 1rem 1.4rem;
+      border-radius: 16px;
+      text-align: center;
+    }
+    .years-badge .number {
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      display: block;
+      line-height: 1;
+    }
+    .years-badge .label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      opacity: 0.8;
+    }
+
+    .about-text p {
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .about-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--brown-med);
+    }
+    .about-feature .dot {
+      width: 8px; height: 8px;
+      background: var(--butter);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-image { max-height: 300px; }
+    }
+
+    /* ---- MENU ---- */
+    .menu {
+      background: var(--warm-cream);
+    }
+
+    .menu-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .menu-header .section-desc {
+      margin: 0 auto;
+    }
+
+    .menu-disclaimer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 2rem;
+      padding: 0.6rem 1.2rem;
+      background: rgba(255,255,255,0.5);
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    .menu-categories {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .menu-tab {
+      padding: 0.5rem 1.2rem;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border: 2px solid var(--border);
+      background: transparent;
+      color: var(--brown-med);
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .menu-tab:hover,
+    .menu-tab.active {
+      background: var(--brown-dark);
+      color: var(--cream);
+      border-color: var(--brown-dark);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .menu-panel { display: none; }
+    .menu-panel.active { display: block; }
+
+    .menu-item {
+      background: var(--soft-white);
+      border-radius: 14px;
+      padding: 1.3rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .menu-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(74, 50, 34, 0.06);
+    }
+    .menu-item-name {
+      font-family: 'Lora', serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--brown-dark);
+      margin-bottom: 0.2rem;
+    }
+    .menu-item-desc {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+    .menu-item-price {
+      font-family: 'Lora', serif;
+      font-weight: 700;
+      color: var(--rose-deep);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+
+    /* ---- SPECIALS ---- */
+    .specials {
+      background: var(--brown-dark);
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+    .specials::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at 80% 20%, rgba(232, 201, 90, 0.08) 0%, transparent 60%);
+    }
+
+    .specials .section-label { color: var(--butter); }
+    .specials .section-title { color: var(--cream); }
+    .specials .section-desc { color: rgba(255,255,255,0.6); }
+
+    .specials-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+    .specials-header .section-desc { margin: 0 auto; }
+
+    .specials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .special-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .special-card:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-4px);
+    }
+    .special-day {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--butter);
+      margin-bottom: 0.8rem;
+    }
+    .special-name {
+      font-family: 'Lora', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .special-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+    .special-price {
+      margin-top: 1rem;
+      font-family: 'Lora', serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--butter);
+    }
+
+    @media (max-width: 768px) {
+      .specials-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ---- LOCATION / HOURS ---- */
+    .location {
+      background: var(--soft-white);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    .location-map {
+      background: var(--warm-cream);
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .location-map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 20px;
+    }
+
+    .hours-card {
+      background: var(--warm-cream);
+      border-radius: 20px;
+      padding: 2.5rem;
+    }
+    .hours-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+    .hours-row:last-child { border-bottom: none; }
+    .hours-day { font-weight: 600; color: var(--brown-dark); }
+    .hours-time { color: var(--text-light); }
+    .hours-row.today {
+      background: rgba(212, 160, 160, 0.1);
+      margin: 0 -1rem;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+    }
+    .hours-row.today .hours-day { color: var(--rose-deep); }
+
+    .contact-info {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+    .contact-icon {
+      width: 36px; height: 36px;
+      background: var(--brown-dark);
+      color: var(--cream);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .location-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ---- FOOTER ---- */
+    .site-footer {
+      background: var(--espresso);
+      color: rgba(255,255,255,0.5);
+      padding: 3rem 0;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Lora', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+    .footer-logo span { color: var(--rose); }
+    .footer-tagline {
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+      color: rgba(255,255,255,0.4);
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.4);
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--cream); }
+
+    .footer-divider {
+      width: 60px;
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+      margin: 1.5rem auto;
+    }
+
+    .footer-bottom {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+    }
+    .footer-bottom a {
+      color: var(--rose);
+      transition: color 0.3s;
+    }
+    .footer-bottom a:hover { color: var(--rose-light); }
+
+    .footer-disclaimer {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.2);
+      margin-top: 0.8rem;
+      font-style: italic;
+    }
+
+    /* ---- UTILITY ---- */
+    .scroll-top {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      width: 44px; height: 44px;
+      background: var(--brown-dark);
+      color: var(--cream);
+      border: none;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .scroll-top:hover {
+      background: var(--espresso);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo">Korner Stone <span>Kravings</span></a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#specials">Specials</a></li>
+          <li><a href="#location">Visit</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Est. 2013 &mdash; Canby, Minnesota</div>
+      <h1>Baked Fresh,<br><em>Served with Love</em></h1>
+      <p class="hero-sub">Breads, pastries, coffee, and comfort — the cornerstone of every good morning in Canby for over 13 years.</p>
+      <a href="#menu" class="hero-cta">Explore Our Menu &darr;</a>
+    </div>
+  </section>
+
+  <div class="section-divider">&bull; &bull; &bull;</div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <div class="about-image-icon">&#127838;</div>
+          <div class="years-badge">
+            <span class="number">13</span>
+            <span class="label">Years</span>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <p class="section-label">Our Story</p>
+          <h2 class="section-title">The Cornerstone of Canby</h2>
+          <p>For over thirteen years, Korner Stone Kravings has been the place where Canby starts its day. What began as a dream to bring fresh-baked goodness to a small Minnesota town has grown into a gathering place that feels like home.</p>
+          <p>Every morning before the sun is up, we're in the kitchen — shaping loaves, rolling pastries, and brewing coffee. It's honest work, and we wouldn't have it any other way. This isn't just a bakery. It's where neighbors catch up, farmers grab their first cup, and families make Saturday morning traditions.</p>
+          <div class="about-features">
+            <div class="about-feature"><span class="dot"></span>Scratch-baked daily</div>
+            <div class="about-feature"><span class="dot"></span>Locally sourced</div>
+            <div class="about-feature"><span class="dot"></span>Family owned</div>
+            <div class="about-feature"><span class="dot"></span>Community loved</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <div class="menu-header reveal">
+        <p class="section-label">What We Serve</p>
+        <h2 class="section-title">Our Menu</h2>
+        <p class="section-desc">From golden loaves to warm-from-the-oven pastries and hearty breakfast plates — there's something for everyone.</p>
+        <br>
+        <span class="menu-disclaimer">&#9733; Sample menu for demonstration purposes &#9733;</span>
+      </div>
+
+      <div class="menu-categories reveal">
+        <button class="menu-tab active" data-tab="bakery">Bakery</button>
+        <button class="menu-tab" data-tab="pastries">Pastries</button>
+        <button class="menu-tab" data-tab="breakfast">Breakfast</button>
+        <button class="menu-tab" data-tab="drinks">Drinks</button>
+      </div>
+
+      <!-- Bakery -->
+      <div class="menu-panel active" id="panel-bakery">
+        <div class="menu-grid">
+          <div class="menu-item"><div><div class="menu-item-name">Honey Wheat Loaf</div><div class="menu-item-desc">Soft, slightly sweet whole wheat bread baked with local honey</div></div><div class="menu-item-price">$5.50</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">Sourdough Boule</div><div class="menu-item-desc">Crusty artisan sourdough with a tangy, chewy crumb</div></div><div class="menu-item-price">$6.50</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">Cinnamon Swirl Bread</div><div class="menu-item-desc">Classic white bread layered with cinnamon-sugar ribbons</div></div><div class="menu-item-price">$6.00</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">Dinner Rolls (half dozen)</div><div class="menu-item-desc">Buttery pull-apart rolls, perfect for the family table</div></div><div class="menu-item-price">$4.50</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">Marble Rye</div><div class="menu-item-desc">Swirled light and dark rye — great for sandwiches</div></div><div class="menu-item-price">$6.00</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">Focaccia Slab</div><div class="menu-item-desc">Herb-topped, olive oil-brushed Italian flatbread</div></div><div class="menu-item-price">$7.00</div></div>
+        </div>
+      </div>
+
+      <!-- Pastries -->
+      <div class="menu-panel" id="panel-pastries">
+        <div class="menu-grid">
+          <div class="menu-item"><div><div class="menu-item-name">Blueberry Muffin</div><div class="menu-item-desc">Bursting with wild blueberries, topped with streusel crumble</div></div><div class="menu-item-price">$3.50</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">Cinnamon Roll</div><div class="menu-item-desc">Giant, gooey, frosted with cream cheese icing</div></div><div class="menu-item-price">$4.00</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">Apple Fritter</div><div class="menu-item-desc">Crispy, caramelized apple dough with vanilla glaze</div></div><div class="menu-item-price">$3.75</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">Croissant</div><div class="menu-item-desc">Buttery, flaky, golden — plain or filled with chocolate</div></div><div class="menu-item-price">$3.50</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">Lemon Poppy Seed Scone</div><div class="menu-item-desc">Bright citrus scone with a light lemon drizzle</div></div><div class="menu-item-price">$3.75</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">Bear Claw</div><div class="menu-item-desc">Almond-filled pastry with sliced almonds on top</div></div><div class="menu-item-price">$4.00</div></div>
+        </div>
+      </div>
+
+      <!-- Breakfast -->
+      <div class="menu-panel" id="panel-breakfast">
+        <div class="menu-grid">
+          <div class="menu-item"><div><div class="menu-item-name">The Canby Classic</div><div class="menu-item-desc">Two eggs any style, hash browns, toast, and your choice of bacon or sausage</div></div><div class="menu-item-price">$9.50</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">Biscuits &amp; Gravy</div><div class="menu-item-desc">Fluffy house-made biscuits smothered in sausage gravy</div></div><div class="menu-item-price">$8.00</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">Breakfast Sandwich</div><div class="menu-item-desc">Egg, cheese, and bacon on a fresh-baked croissant</div></div><div class="menu-item-price">$6.50</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">French Toast</div><div class="menu-item-desc">Thick-cut cinnamon swirl bread, griddled golden, maple syrup</div></div><div class="menu-item-price">$8.50</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">Veggie Scramble</div><div class="menu-item-desc">Farm eggs scrambled with peppers, onions, mushrooms, and cheddar</div></div><div class="menu-item-price">$8.50</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">Oatmeal Bowl</div><div class="menu-item-desc">Steel-cut oats with brown sugar, walnuts, and seasonal fruit</div></div><div class="menu-item-price">$5.50</div></div>
+        </div>
+      </div>
+
+      <!-- Drinks -->
+      <div class="menu-panel" id="panel-drinks">
+        <div class="menu-grid">
+          <div class="menu-item"><div><div class="menu-item-name">Drip Coffee</div><div class="menu-item-desc">Fresh-brewed, bottomless refills</div></div><div class="menu-item-price">$2.50</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">Latte</div><div class="menu-item-desc">Espresso with steamed milk — vanilla, caramel, or mocha</div></div><div class="menu-item-price">$4.50</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">Iced Coffee</div><div class="menu-item-desc">Cold-brewed and served over ice</div></div><div class="menu-item-price">$3.50</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">Hot Chocolate</div><div class="menu-item-desc">Rich and creamy, topped with whipped cream</div></div><div class="menu-item-price">$3.00</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">Chai Tea Latte</div><div class="menu-item-desc">Spiced chai with steamed milk and a touch of honey</div></div><div class="menu-item-price">$4.50</div></div>
+          <div class="menu-item"><div><div class="menu-item-name">Fresh Squeezed OJ</div><div class="menu-item-desc">Made to order, pure orange goodness</div></div><div class="menu-item-price">$3.50</div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DAILY SPECIALS -->
+  <section class="specials" id="specials">
+    <div class="container">
+      <div class="specials-header reveal">
+        <p class="section-label">Don't Miss Out</p>
+        <h2 class="section-title">Daily Specials</h2>
+        <p class="section-desc">Something different every day of the week — because variety is the spice of life (and baking).</p>
+      </div>
+
+      <div class="specials-grid">
+        <div class="special-card reveal">
+          <div class="special-day">Monday</div>
+          <div class="special-name">Kolache Day</div>
+          <div class="special-desc">Fruit and cream cheese kolaches — an old-world favorite, fresh from the oven.</div>
+          <div class="special-price">$2.50 each</div>
+        </div>
+        <div class="special-card reveal">
+          <div class="special-day">Wednesday</div>
+          <div class="special-name">Soup &amp; Bread Bowl</div>
+          <div class="special-desc">Homemade soup of the day served in a carved-out sourdough boule.</div>
+          <div class="special-price">$8.50</div>
+        </div>
+        <div class="special-card reveal">
+          <div class="special-day">Friday</div>
+          <div class="special-name">Cookie Decorating</div>
+          <div class="special-desc">Bring the kids in after school — sugar cookies and frosting, create your own masterpiece.</div>
+          <div class="special-price">$5.00</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" style="background: var(--warm-cream);">&bull; &bull; &bull;</div>
+
+  <!-- LOCATION & HOURS -->
+  <section class="location" id="location">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 2rem;" class="reveal">
+        <p class="section-label">Come See Us</p>
+        <h2 class="section-title">Location &amp; Hours</h2>
+      </div>
+
+      <div class="location-grid">
+        <div class="location-map reveal">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.5!2d-96.2755!3d44.7089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x878b0e0a0a0a0a0a%3A0x0!2s229+1st+St+W%2C+Canby%2C+MN+56220!5e0!3m2!1sen!2sus!4v1700000000000"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Korner Stone Kravings location on Google Maps">
+          </iframe>
+        </div>
+        <div class="reveal">
+          <div class="hours-card">
+            <h3>Hours</h3>
+            <div class="hours-row" data-day="1"><span class="hours-day">Monday</span><span class="hours-time">6:00 AM &ndash; 2:00 PM</span></div>
+            <div class="hours-row" data-day="2"><span class="hours-day">Tuesday</span><span class="hours-time">6:00 AM &ndash; 2:00 PM</span></div>
+            <div class="hours-row" data-day="3"><span class="hours-day">Wednesday</span><span class="hours-time">6:00 AM &ndash; 2:00 PM</span></div>
+            <div class="hours-row" data-day="4"><span class="hours-day">Thursday</span><span class="hours-time">6:00 AM &ndash; 2:00 PM</span></div>
+            <div class="hours-row" data-day="5"><span class="hours-day">Friday</span><span class="hours-time">6:00 AM &ndash; 2:00 PM</span></div>
+            <div class="hours-row" data-day="6"><span class="hours-day">Saturday</span><span class="hours-time">7:00 AM &ndash; 1:00 PM</span></div>
+            <div class="hours-row" data-day="0"><span class="hours-day">Sunday</span><span class="hours-time">Closed</span></div>
+
+            <div class="contact-info">
+              <div class="contact-item">
+                <div class="contact-icon">&#9742;</div>
+                <a href="tel:+15072235151">(507) 223-5151</a>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">&#9906;</div>
+                <span>229 1st St W, Canby, MN 56220</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-logo">Korner Stone <span>Kravings</span></div>
+      <div class="footer-tagline">Bakery &amp; Cafe &mdash; Canby, Minnesota</div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#specials">Specials</a>
+        <a href="#location">Visit</a>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        &copy; 2026 Korner Stone Kravings. All rights reserved.<br>
+        Website by <a href="https://brookeruhdhockett-ux.github.io/brooke-co-digital/" target="_blank" rel="noopener">Brooke Co. Digital</a>
+      </div>
+      <div class="footer-disclaimer">This is a vision board / sample website created for demonstration purposes. Menu items and prices are hypothetical.</div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">&uarr;</button>
+
+  <script>
+    // ---- Header scroll effect ----
+    const header = document.getElementById('header');
+    const scrollTop = document.getElementById('scrollTop');
+
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+      scrollTop.classList.toggle('visible', window.scrollY > 600);
+    });
+
+    scrollTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ---- Hamburger menu ----
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // ---- Smooth scroll with header offset ----
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+          const offset = header.offsetHeight + 20;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ---- Scroll reveal with IntersectionObserver ----
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ---- Menu tabs ----
+    const tabs = document.querySelectorAll('.menu-tab');
+    const panels = document.querySelectorAll('.menu-panel');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+      });
+    });
+
+    // ---- Highlight today's hours ----
+    const today = new Date().getDay();
+    const todayRow = document.querySelector(`.hours-row[data-day="${today}"]`);
+    if (todayRow) todayRow.classList.add('today');
+  </script>
+
+</body>
+</html>
