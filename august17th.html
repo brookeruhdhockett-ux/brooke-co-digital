@@ -615,91 +615,147 @@
       background: var(--honey);
     }
 
-    /* ---- MONTHLY SPECIAL ---- */
+    /* ---- WEEKLY LUNCH SPECIALS ---- */
     .special-section {
       background: var(--cream);
       padding: 5rem 2rem;
     }
 
-    .special-card {
-      max-width: 700px;
-      margin: 0 auto;
-      background: var(--warm-white);
-      border-radius: 16px;
+    .special-carousel {
+      max-width: 800px;
+      margin: 2.5rem auto 0;
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
       overflow: hidden;
+      border-radius: 16px;
       border: 2px solid var(--amber);
       box-shadow: 0 8px 32px rgba(74, 52, 31, 0.08);
     }
 
-    .special-header {
+    .day-card {
+      min-width: 100%;
+      background: var(--warm-white);
+      transition: transform 0.4s ease;
+    }
+
+    .day-header {
       background: var(--espresso);
       color: var(--amber);
       text-align: center;
-      padding: 1.2rem 2rem;
+      padding: 1rem 2rem;
       font-family: 'Fraunces', serif;
       font-size: 0.75rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .special-body {
+    .day-header .day-month { opacity: 0.6; font-size: 0.65rem; }
+
+    .day-body {
       padding: 2.5rem;
       text-align: center;
     }
 
-    .special-month {
+    .day-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.6rem;
+      color: var(--espresso);
+      margin-bottom: 0.3rem;
+    }
+
+    .day-date {
+      font-size: 0.82rem;
+      color: var(--brown-light);
+      margin-bottom: 1.2rem;
+    }
+
+    .day-special-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem;
+      color: var(--amber);
+      margin-bottom: 0.8rem;
+    }
+
+    .day-desc {
+      color: var(--brown-light);
+      line-height: 1.8;
+      font-size: 0.92rem;
+      max-width: 500px;
+      margin: 0 auto 1.2rem;
+    }
+
+    .day-price {
       font-family: 'Fraunces', serif;
       font-size: 1.8rem;
       color: var(--espresso);
       margin-bottom: 0.5rem;
     }
 
-    .special-name {
-      font-family: 'Fraunces', serif;
-      font-size: 1.3rem;
-      color: var(--amber);
-      margin-bottom: 1rem;
-    }
-
-    .special-desc {
-      color: var(--brown-light);
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-      font-size: 0.95rem;
-    }
-
-    .special-items {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1.5rem;
-    }
-
-    .special-items li {
-      padding: 0.6rem 0;
-      border-bottom: 1px solid rgba(74, 52, 31, 0.08);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.92rem;
-    }
-
-    .special-items li:last-child { border-bottom: none; }
-
-    .special-items .item-name {
-      color: var(--espresso);
-      font-weight: 500;
-    }
-
-    .special-items .item-price {
-      color: var(--amber);
-      font-family: 'Fraunces', serif;
-      font-size: 1rem;
-    }
-
-    .special-note {
-      font-size: 0.82rem;
+    .day-includes {
+      font-size: 0.8rem;
       color: var(--brown-light);
       font-style: italic;
+    }
+
+    .carousel-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .carousel-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid var(--amber);
+      background: var(--warm-white);
+      color: var(--espresso);
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s;
+    }
+
+    .carousel-btn:hover {
+      background: var(--amber);
+      color: var(--warm-white);
+    }
+
+    .carousel-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--sage);
+      opacity: 0.3;
+      cursor: pointer;
+      transition: opacity 0.25s, background 0.25s;
+      border: none;
+    }
+
+    .carousel-dot.active {
+      opacity: 1;
+      background: var(--amber);
+    }
+
+    @media (max-width: 600px) {
+      .day-body { padding: 1.8rem 1.2rem; }
+      .day-name { font-size: 1.3rem; }
+      .day-special-name { font-size: 1.1rem; }
     }
 
     /* ---- FOOTER ---- */
@@ -1040,40 +1096,96 @@
     </div>
   </section>
 
-  <!-- MONTHLY SPECIAL -->
+  <!-- WEEKLY LUNCH SPECIALS -->
   <section class="special-section" id="specials">
     <div class="section-inner">
       <div class="text-center fade-in">
-        <p class="section-label">This Month</p>
-        <h2 class="section-title">Monthly Lunch Special</h2>
+        <p class="section-label">This Week</p>
+        <h2 class="section-title">Weekly Lunch Specials</h2>
         <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
+        <p style="max-width:480px;margin:1rem auto 0;font-size:0.95rem;color:var(--warm-gray);line-height:1.6;">Served Monday through Friday during lunch hours. Menu changes weekly &mdash; follow us on Facebook for updates.</p>
       </div>
 
-      <div class="special-card fade-in" style="margin-top:2.5rem;">
-        <div class="special-header">Limited Time &bull; May 2026</div>
-        <div class="special-body">
-          <p class="special-month">May Lunch Special</p>
-          <p class="special-name">Spring on the Prairie</p>
-          <p class="special-desc">Warm up your lunch break with our May specials, available Monday through Friday while supplies last.</p>
-          <ul class="special-items">
-            <li>
-              <span class="item-name">Turkey Bacon Ranch Melt</span>
-              <span class="item-price">$9.50</span>
-            </li>
-            <li>
-              <span class="item-name">Garden Veggie Soup &amp; Half Sub Combo</span>
-              <span class="item-price">$10.00</span>
-            </li>
-            <li>
-              <span class="item-name">Iced Honey Lavender Latte</span>
-              <span class="item-price">$5.50</span>
-            </li>
-            <li>
-              <span class="item-name">Combo: Any Special + Drink</span>
-              <span class="item-price">$13.00</span>
-            </li>
-          </ul>
-          <p class="special-note">Specials available during lunch hours only. Menu items and prices may change.</p>
+      <div class="special-carousel fade-in" style="margin-top:2.5rem;">
+        <div class="carousel-track" id="carouselTrack">
+
+          <div class="day-card">
+            <div class="day-header">
+              <span class="day-name">Monday</span>
+              <span class="day-date">May 5</span>
+              <span class="day-month">May 2026</span>
+            </div>
+            <div class="day-body">
+              <p class="day-special-name">Turkey Bacon Ranch Melt</p>
+              <p class="day-desc">Sliced turkey, crispy bacon, ranch, and melted cheddar on toasted sourdough. Served with house chips.</p>
+              <p class="day-price">$9.50</p>
+            </div>
+          </div>
+
+          <div class="day-card">
+            <div class="day-header">
+              <span class="day-name">Tuesday</span>
+              <span class="day-date">May 6</span>
+              <span class="day-month">May 2026</span>
+            </div>
+            <div class="day-body">
+              <p class="day-special-name">BBQ Pulled Pork Sandwich</p>
+              <p class="day-desc">Slow-smoked pulled pork with tangy house BBQ sauce, pickled onions, and coleslaw on a brioche bun.</p>
+              <p class="day-price">$10.00</p>
+            </div>
+          </div>
+
+          <div class="day-card">
+            <div class="day-header">
+              <span class="day-name">Wednesday</span>
+              <span class="day-date">May 7</span>
+              <span class="day-month">May 2026</span>
+            </div>
+            <div class="day-body">
+              <p class="day-special-name">Garden Veggie Soup &amp; Half Sub</p>
+              <p class="day-desc">Creamy garden vegetable soup paired with your choice of half sub. A cozy midweek combo.</p>
+              <p class="day-price">$10.00</p>
+            </div>
+          </div>
+
+          <div class="day-card">
+            <div class="day-header">
+              <span class="day-name">Thursday</span>
+              <span class="day-date">May 8</span>
+              <span class="day-month">May 2026</span>
+            </div>
+            <div class="day-body">
+              <p class="day-special-name">Chicken Caesar Wrap</p>
+              <p class="day-desc">Grilled chicken, romaine, parmesan, and creamy caesar dressing in a warm flour tortilla.</p>
+              <p class="day-price">$9.00</p>
+            </div>
+          </div>
+
+          <div class="day-card">
+            <div class="day-header">
+              <span class="day-name">Friday</span>
+              <span class="day-date">May 9</span>
+              <span class="day-month">May 2026</span>
+            </div>
+            <div class="day-body">
+              <p class="day-special-name">Philly Cheesesteak Sub</p>
+              <p class="day-desc">Shaved beef, saut&eacute;ed peppers and onions, melted provolone on a toasted hoagie. The perfect end to the week.</p>
+              <p class="day-price">$10.50</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="carousel-nav">
+          <button class="carousel-btn" id="carouselPrev" aria-label="Previous day">&larr;</button>
+          <div class="carousel-dots" id="carouselDots">
+            <button class="carousel-dot active" data-index="0" aria-label="Monday"></button>
+            <button class="carousel-dot" data-index="1" aria-label="Tuesday"></button>
+            <button class="carousel-dot" data-index="2" aria-label="Wednesday"></button>
+            <button class="carousel-dot" data-index="3" aria-label="Thursday"></button>
+            <button class="carousel-dot" data-index="4" aria-label="Friday"></button>
+          </div>
+          <button class="carousel-btn" id="carouselNext" aria-label="Next day">&rarr;</button>
         </div>
       </div>
     </div>
@@ -1144,6 +1256,46 @@
     }, appearOptions);
 
     faders.forEach(fader => appearOnScroll.observe(fader));
+
+    // Lunch specials carousel
+    const track = document.getElementById('carouselTrack');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+    let current = 0;
+    const total = dots.length;
+
+    function goTo(index) {
+      current = (index + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => goTo(Number(dot.dataset.index)));
+    });
+
+    // Auto-advance every 5 seconds, pause on hover
+    let autoSlide = setInterval(() => goTo(current + 1), 5000);
+    const carousel = document.querySelector('.special-carousel');
+    if (carousel) {
+      carousel.addEventListener('mouseenter', () => clearInterval(autoSlide));
+      carousel.addEventListener('mouseleave', () => {
+        autoSlide = setInterval(() => goTo(current + 1), 5000);
+      });
+    }
+
+    // Swipe support for mobile
+    let touchStartX = 0;
+    if (track) {
+      track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+      });
+    }
 
     // Smooth scroll offset for fixed header
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
