@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gatsby's Speakeasy & Supperclub | Hendricks, MN</title>
+  <meta name="description" content="Gatsby's Speakeasy & Supperclub — a prohibition-era inspired supper club and bar in the heart of Hendricks, Minnesota. Steaks, seafood, classic cocktails, and lakeside small-town charm.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0A0A0A;
+      --deep-black: #111111;
+      --charcoal: #1A1A1A;
+      --dark-gray: #252525;
+      --gold: #C9A84C;
+      --bright-gold: #D4B85C;
+      --pale-gold: #E8D9A0;
+      --burgundy: #6B1D2A;
+      --wine: #8B2F3F;
+      --cream: #F0E8D8;
+      --off-white: #DDD5C4;
+      --text-light: #B8B0A0;
+      --text-muted: #8A8278;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      color: var(--cream);
+      background: var(--black);
+      line-height: 1.7;
+      font-size: 16px;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    a { color: var(--gold); text-decoration: none; transition: color 0.3s; }
+    a:hover { color: var(--bright-gold); }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---- ART DECO DECORATIONS ---- */
+    .deco-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .deco-line::before,
+    .deco-line::after {
+      content: '';
+      flex: 1;
+      max-width: 120px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .deco-diamond {
+      width: 10px;
+      height: 10px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 48px;
+    }
+
+    /* ---- HEADER ---- */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .site-header.scrolled {
+      background: rgba(10, 10, 10, 0.98);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 72px;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .logo span {
+      font-weight: 400;
+      font-size: 0.7rem;
+      display: block;
+      letter-spacing: 0.25em;
+      color: var(--text-muted);
+      margin-top: -2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--off-white);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 4px;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+      transition: all 0.3s;
+      display: block;
+    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        position: fixed;
+        top: 72px; left: 0; right: 0;
+        background: rgba(10, 10, 10, 0.98);
+        flex-direction: column;
+        align-items: center;
+        padding: 32px 0;
+        gap: 24px;
+        transform: translateY(-120%);
+        transition: transform 0.4s ease;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+      }
+      .nav-links.open { transform: translateY(0); }
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(107, 29, 42, 0.2) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 80%, rgba(201, 168, 76, 0.05) 0%, transparent 50%),
+        var(--black);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 60px,
+          rgba(201, 168, 76, 0.03) 60px,
+          rgba(201, 168, 76, 0.03) 61px
+        );
+      pointer-events: none;
+    }
+    /* Art deco corner ornaments */
+    .hero-corner {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-color: var(--gold);
+      border-style: solid;
+      opacity: 0.25;
+    }
+    .hero-corner.tl { top: 40px; left: 40px; border-width: 2px 0 0 2px; }
+    .hero-corner.tr { top: 40px; right: 40px; border-width: 2px 2px 0 0; }
+    .hero-corner.bl { bottom: 40px; left: 40px; border-width: 0 0 2px 2px; }
+    .hero-corner.br { bottom: 40px; right: 40px; border-width: 0 2px 2px 0; }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 24px;
+    }
+    .hero-tagline {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(3rem, 10vw, 6.5rem);
+      color: var(--cream);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .hero h1 em {
+      display: block;
+      font-size: 0.28em;
+      font-style: italic;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      font-weight: 400;
+      margin-top: 8px;
+    }
+    .hero-location {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      letter-spacing: 0.15em;
+      margin-top: 32px;
+    }
+    .hero-cta {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 14px 40px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+    .hero-cta:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      animation: bob 2s ease-in-out infinite;
+    }
+    .scroll-indicator span {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .scroll-indicator .chevron {
+      width: 20px;
+      height: 20px;
+      border-right: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+      transform: rotate(45deg);
+      opacity: 0.5;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ---- ABOUT ---- */
+    .about {
+      padding: 100px 0;
+      background: var(--deep-black);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .about-image {
+      aspect-ratio: 4/5;
+      background:
+        linear-gradient(135deg, var(--charcoal) 0%, var(--dark-gray) 100%);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-image::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(201, 168, 76, 0.1);
+    }
+    .about-image-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: rgba(201, 168, 76, 0.12);
+      font-style: italic;
+    }
+    .about-text h2 {
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .about-text p {
+      color: var(--text-light);
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+      line-height: 1.85;
+    }
+    .about-text p strong {
+      color: var(--cream);
+      font-weight: 600;
+    }
+    .about-detail-row {
+      display: flex;
+      gap: 32px;
+      margin-top: 32px;
+    }
+    .about-detail {
+      text-align: center;
+      flex: 1;
+    }
+    .about-detail .number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--gold);
+    }
+    .about-detail .label {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-image { max-height: 300px; }
+    }
+
+    /* ---- MENU ---- */
+    .menu {
+      padding: 100px 0;
+      background: var(--black);
+    }
+    .menu-disclaimer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: -32px;
+      margin-bottom: 48px;
+    }
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+    .menu-tab {
+      background: none;
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      color: var(--text-muted);
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 10px 24px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .menu-tab:hover { border-color: var(--gold); color: var(--gold); }
+    .menu-tab.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--black);
+    }
+    .menu-panel { display: none; }
+    .menu-panel.active { display: block; }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px 64px;
+    }
+    .menu-item {
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+    }
+    .menu-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+    .menu-item-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--cream);
+      font-weight: 700;
+    }
+    .menu-item-dots {
+      flex: 1;
+      border-bottom: 1px dotted rgba(201, 168, 76, 0.2);
+      min-width: 20px;
+      margin-bottom: 4px;
+    }
+    .menu-item-price {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .menu-item-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .menu-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+
+    /* ---- COCKTAILS SPECIAL SECTION ---- */
+    .cocktail-showcase {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .cocktail-card {
+      background: linear-gradient(135deg, var(--charcoal), var(--dark-gray));
+      border: 1px solid rgba(201, 168, 76, 0.12);
+      padding: 32px 24px;
+      text-align: center;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .cocktail-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+    .cocktail-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .cocktail-card h4 {
+      font-size: 1.15rem;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .cocktail-card p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .cocktail-card .price {
+      margin-top: 12px;
+      font-family: 'Playfair Display', serif;
+      color: var(--bright-gold);
+      font-size: 1.05rem;
+    }
+    @media (max-width: 768px) {
+      .cocktail-showcase { grid-template-columns: 1fr; }
+    }
+
+    /* ---- EVENTS ---- */
+    .events {
+      padding: 100px 0;
+      background: var(--deep-black);
+    }
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .event-card {
+      background: var(--charcoal);
+      border: 1px solid rgba(201, 168, 76, 0.1);
+      padding: 40px 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .event-card:hover { border-color: rgba(201, 168, 76, 0.4); }
+    .event-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%; transform: translateX(-50%);
+      width: 40px;
+      height: 3px;
+      background: var(--gold);
+    }
+    .event-day {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .event-card h3 {
+      font-size: 1.4rem;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .event-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    @media (max-width: 768px) {
+      .events-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ---- LOCATION / HOURS ---- */
+    .location {
+      padding: 100px 0;
+      background: var(--black);
+    }
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .location-map {
+      aspect-ratio: 1;
+      background: var(--charcoal);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+      padding: 32px;
+    }
+    .location-map .pin {
+      font-size: 2.5rem;
+      opacity: 0.6;
+    }
+    .location-map p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+    .location-map a {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 10px 28px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+    .location-map a:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .location-info h3 {
+      font-size: 1.6rem;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .hours-table {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.06);
+      font-size: 0.92rem;
+    }
+    .hours-row .day { color: var(--cream); font-weight: 500; }
+    .hours-row .time { color: var(--text-muted); }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: var(--text-light);
+      font-size: 0.92rem;
+    }
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    @media (max-width: 768px) {
+      .location-grid { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    /* ---- FOOTER ---- */
+    .site-footer {
+      padding: 48px 0 32px;
+      background: var(--charcoal);
+      border-top: 1px solid rgba(201, 168, 76, 0.1);
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .footer-tagline {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .footer-social a {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      transition: all 0.3s;
+    }
+    .footer-social a:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+    .footer-divider {
+      width: 60px;
+      height: 1px;
+      background: rgba(201, 168, 76, 0.2);
+      margin: 24px auto;
+    }
+    .footer-credit {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+    .footer-credit a { color: var(--gold); }
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(138, 130, 120, 0.5);
+      margin-top: 8px;
+    }
+
+    /* ---- SCROLL REVEAL ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---- AMBIENT GLOW ---- */
+    .glow {
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201, 168, 76, 0.03) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: top 0.8s ease, left 0.8s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow" id="glow"></div>
+
+  <!-- HEADER -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <div class="logo">
+        Gatsby's
+        <span>Speakeasy &amp; Supperclub</span>
+      </div>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#location">Visit</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-corner tl"></div>
+    <div class="hero-corner tr"></div>
+    <div class="hero-corner bl"></div>
+    <div class="hero-corner br"></div>
+    <div class="hero-content">
+      <div class="hero-tagline">Est. Hendricks, Minnesota</div>
+      <h1>
+        Gatsby's
+        <em>Speakeasy &amp; Supperclub</em>
+      </h1>
+      <div class="deco-line"><div class="deco-diamond"></div></div>
+      <div class="hero-location">206 S Main St &middot; Hendricks, MN 56136</div>
+      <a href="#menu" class="hero-cta">View the Menu</a>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="chevron"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid reveal">
+        <div class="about-image">
+          <div class="about-image-text">G</div>
+        </div>
+        <div class="about-text">
+          <h2>A Hidden Gem in Little Europe</h2>
+          <p>
+            Tucked along Main Street in Hendricks, Minnesota, <strong>Gatsby's Speakeasy &amp; Supperclub</strong> brings prohibition-era charm to the heart of lake country. Step through the door and leave the ordinary behind.
+          </p>
+          <p>
+            From hand-cut steaks and fresh seafood to craft cocktails mixed with care, every evening at Gatsby's is an occasion. We're a gathering place for locals and lakeside visitors alike &mdash; where the food is honest, the drinks are strong, and the atmosphere takes you back to a time when supper was an event.
+          </p>
+          <p>
+            Whether you're celebrating a special night or just escaping the everyday, you'll find a seat at our table.
+          </p>
+          <div class="about-detail-row">
+            <div class="about-detail">
+              <div class="number">44+</div>
+              <div class="label">Google Reviews</div>
+            </div>
+            <div class="about-detail">
+              <div class="number">206</div>
+              <div class="label">S Main St</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <h2 class="section-title reveal">The Menu</h2>
+      <div class="section-subtitle reveal">Supper club fare, done right</div>
+      <p class="menu-disclaimer reveal">* Sample menu for demonstration purposes. Prices and items are hypothetical.</p>
+
+      <div class="menu-tabs reveal">
+        <button class="menu-tab active" data-tab="starters">Starters</button>
+        <button class="menu-tab" data-tab="entrees">Entrees</button>
+        <button class="menu-tab" data-tab="cocktails">Cocktails</button>
+      </div>
+
+      <!-- STARTERS -->
+      <div class="menu-panel active" id="panel-starters">
+        <div class="menu-grid reveal">
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Crispy Fried Cheese Curds</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$10</span>
+            </div>
+            <div class="menu-item-desc">Beer-battered Wisconsin curds with house ranch</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Shrimp Cocktail</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$14</span>
+            </div>
+            <div class="menu-item-desc">Chilled jumbo shrimp, house cocktail sauce, lemon</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Bacon-Wrapped Jalape&ntilde;os</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$11</span>
+            </div>
+            <div class="menu-item-desc">Stuffed with cream cheese, drizzled with honey</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <span class="menu-item-name">French Onion Soup</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$9</span>
+            </div>
+            <div class="menu-item-desc">Caramelized onion broth, gruy&egrave;re crouton</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Bruschetta Board</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$12</span>
+            </div>
+            <div class="menu-item-desc">Tomato, basil, balsamic &mdash; with toasted crostini</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Walleye Bites</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$13</span>
+            </div>
+            <div class="menu-item-desc">Panko-crusted local walleye, tartar sauce</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENTREES -->
+      <div class="menu-panel" id="panel-entrees">
+        <div class="menu-grid reveal">
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <span class="menu-item-name">12 oz Ribeye</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$32</span>
+            </div>
+            <div class="menu-item-desc">Hand-cut, char-grilled, garlic butter, baked potato</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <span class="menu-item-name">8 oz Filet Mignon</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$36</span>
+            </div>
+            <div class="menu-item-desc">Bacon-wrapped, peppercorn cream, roasted asparagus</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Walleye Dinner</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$24</span>
+            </div>
+            <div class="menu-item-desc">Beer-battered or pan-fried, coleslaw, fries, tartar</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Surf &amp; Turf</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$42</span>
+            </div>
+            <div class="menu-item-desc">Petite filet with grilled lobster tail, drawn butter</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Smoked Pork Chop</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$22</span>
+            </div>
+            <div class="menu-item-desc">Thick-cut, apple chutney, mashed potatoes, green beans</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Gatsby's Burger</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$16</span>
+            </div>
+            <div class="menu-item-desc">Half-pound smash patty, cheddar, bacon, special sauce, fries</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Chicken Alfredo</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$18</span>
+            </div>
+            <div class="menu-item-desc">Grilled chicken, fettuccine, house alfredo, garlic bread</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Prime Rib</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$30</span>
+            </div>
+            <div class="menu-item-desc">Slow-roasted, au jus, horseradish cream &mdash; Friday &amp; Saturday</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COCKTAILS -->
+      <div class="menu-panel" id="panel-cocktails">
+        <div class="cocktail-showcase reveal">
+          <div class="cocktail-card">
+            <div class="cocktail-icon">&#127864;</div>
+            <h4>The Gatsby</h4>
+            <p>Bourbon, honey syrup, fresh lemon, egg white foam, Angostura mist</p>
+            <div class="price">$12</div>
+          </div>
+          <div class="cocktail-card">
+            <div class="cocktail-icon">&#127865;</div>
+            <h4>Bee's Knees</h4>
+            <p>Gin, honey, fresh lemon &mdash; a prohibition classic</p>
+            <div class="price">$10</div>
+          </div>
+          <div class="cocktail-card">
+            <div class="cocktail-icon">&#129347;</div>
+            <h4>Lakeside Old Fashioned</h4>
+            <p>Rye whiskey, demerara sugar, orange peel, Luxardo cherry</p>
+            <div class="price">$11</div>
+          </div>
+          <div class="cocktail-card">
+            <div class="cocktail-icon">&#127863;</div>
+            <h4>The Speakeasy Sour</h4>
+            <p>Bourbon, amaretto, fresh lemon, cherry garnish</p>
+            <div class="price">$10</div>
+          </div>
+          <div class="cocktail-card">
+            <div class="cocktail-icon">&#127862;</div>
+            <h4>Hendricks French 75</h4>
+            <p>Gin, champagne, lemon, sugar &mdash; named for the town</p>
+            <div class="price">$13</div>
+          </div>
+          <div class="cocktail-card">
+            <div class="cocktail-icon">&#127867;</div>
+            <h4>Draft &amp; Domestic Beer</h4>
+            <p>Rotating taps, plus cans and bottles from local &amp; national breweries</p>
+            <div class="price">$4 &ndash; $7</div>
+          </div>
+        </div>
+        <div class="menu-grid reveal" style="margin-top: 40px;">
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <span class="menu-item-name">House Wine</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$8</span>
+            </div>
+            <div class="menu-item-desc">Red or white, by the glass</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Bottle Wine Selection</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$28 &ndash; $45</span>
+            </div>
+            <div class="menu-item-desc">Ask your server for tonight's selection</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="events" id="events">
+    <div class="container">
+      <h2 class="section-title reveal">Events &amp; Specials</h2>
+      <div class="section-subtitle reveal">There's always a reason to visit</div>
+      <div class="deco-line reveal"><div class="deco-diamond"></div></div>
+
+      <div class="events-grid">
+        <div class="event-card reveal">
+          <div class="event-day">Friday &amp; Saturday</div>
+          <h3>Prime Rib Night</h3>
+          <p>Slow-roasted prime rib served with all the fixings. First come, first served &mdash; it goes fast.</p>
+        </div>
+        <div class="event-card reveal">
+          <div class="event-day">Wednesday</div>
+          <h3>Burger &amp; Beer</h3>
+          <p>Gatsby's signature burger with a domestic pint. A midweek tradition.</p>
+        </div>
+        <div class="event-card reveal">
+          <div class="event-day">Thursday</div>
+          <h3>Steak Night</h3>
+          <p>Special pricing on hand-cut steaks. Pair with one of our classic cocktails.</p>
+        </div>
+        <div class="event-card reveal">
+          <div class="event-day">Seasonal</div>
+          <h3>Live Music &amp; Events</h3>
+          <p>Local musicians, holiday celebrations, and themed nights throughout the year. Follow us on Facebook for updates.</p>
+        </div>
+        <div class="event-card reveal">
+          <div class="event-day">Available Nightly</div>
+          <h3>Cocktail Hour</h3>
+          <p>Classic prohibition-era cocktails crafted with care. Ask about our seasonal specialty drinks.</p>
+        </div>
+        <div class="event-card reveal">
+          <div class="event-day">Private Events</div>
+          <h3>Book Gatsby's</h3>
+          <p>Birthdays, anniversaries, rehearsal dinners &mdash; let us host your next celebration. Call for details.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION / HOURS -->
+  <section class="location" id="location">
+    <div class="container">
+      <h2 class="section-title reveal">Find Us</h2>
+      <div class="section-subtitle reveal">Hendricks, Minnesota &mdash; the heart of Little Europe</div>
+      <div class="deco-line reveal"><div class="deco-diamond"></div></div>
+
+      <div class="location-grid reveal">
+        <div class="location-map">
+          <div class="pin">&#128205;</div>
+          <p>
+            <strong style="color: var(--cream); display: block; margin-bottom: 8px;">206 S Main St</strong>
+            Hendricks, MN 56136
+          </p>
+          <a href="https://www.google.com/maps/search/?api=1&query=206+S+Main+St+Hendricks+MN+56136" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+
+        <div class="location-info">
+          <h3>Hours</h3>
+          <div class="hours-table">
+            <div class="hours-row">
+              <span class="day">Monday</span>
+              <span class="time">Closed</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">Tuesday</span>
+              <span class="time">Closed</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">Wednesday</span>
+              <span class="time">4:00 PM &ndash; 10:00 PM</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">Thursday</span>
+              <span class="time">4:00 PM &ndash; 10:00 PM</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">Friday</span>
+              <span class="time">4:00 PM &ndash; 12:00 AM</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">Saturday</span>
+              <span class="time">4:00 PM &ndash; 12:00 AM</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">Sunday</span>
+              <span class="time">Closed</span>
+            </div>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-muted); font-style: italic; margin-bottom: 32px;">
+            * Hours are hypothetical and for demonstration purposes.
+          </p>
+
+          <h3>Contact</h3>
+          <div class="contact-detail">
+            <div class="contact-icon">&#9742;</div>
+            <a href="tel:+15072753586">(507) 275-3586</a>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">&#9993;</div>
+            <span>206 S Main St, Hendricks, MN 56136</span>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">f</div>
+            <a href="https://www.facebook.com/profile.php?id=100063592498498" target="_blank" rel="noopener">Follow us on Facebook</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-logo">Gatsby's</div>
+      <div class="footer-tagline">Speakeasy &amp; Supperclub &middot; Hendricks, MN</div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=100063592498498" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="tel:+15072753586" aria-label="Call us">&#9742;</a>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-credit">
+        Website by <a href="https://brookeruhdhockett-ux.github.io/brooke-co-digital/" target="_blank" rel="noopener">Brooke Co. Digital</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 Gatsby's Speakeasy &amp; Supperclub. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
+    });
+    // Close nav on link click (mobile)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Scroll reveal with IntersectionObserver
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // Menu tabs
+    const tabs = document.querySelectorAll('.menu-tab');
+    const panels = document.querySelectorAll('.menu-panel');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+        // Trigger reveal on newly visible panels
+        document.querySelectorAll('.menu-panel.active .reveal:not(.visible)').forEach(el => {
+          revealObserver.observe(el);
+        });
+      });
+    });
+
+    // Subtle ambient glow follows scroll
+    const glow = document.getElementById('glow');
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+          glow.style.top = (scrollPercent * 100) + '%';
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  </script>
+</body>
+</html>
