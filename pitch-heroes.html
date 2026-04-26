@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heroes — Website Preview | Brooke Co. Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ───── Reset ───── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ───── Page / Print Setup ───── */
+@page {
+  size: letter;
+  margin: 0;
+}
+
+html, body {
+  width: 8.5in;
+  margin: 0 auto;
+  padding: 0;
+  background: #faf6f1;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  color: #3a3632;
+  line-height: 1.6;
+  font-size: 11pt;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+@media print {
+  html, body {
+    width: 100%;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .no-print { display: none; }
+}
+
+h1, h2, h3, h4 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #3a3632;
+}
+
+/* ───── Brooke Co. Colors ───── */
+:root {
+  --cream: #faf6f1;
+  --sage: #8a9f85;
+  --sage-light: #b5c4b1;
+  --blush: #f2ddd5;
+  --charcoal: #3a3632;
+  --text: #4a4540;
+  --text-light: #7d756c;
+  /* Heroes colors */
+  --hr-navy: #0f1923;
+  --hr-navy-light: #182633;
+  --hr-gold: #d4a017;
+  --hr-gold-light: #e8b82e;
+  --hr-orange: #e07a2f;
+  --hr-white: #f5f5f0;
+  --hr-gray: #a0a8b0;
+  --hr-card-bg: #1a2a38;
+}
+
+/* ───── PAGE 1 ───── */
+.page {
+  width: 8.5in;
+  min-height: 11in;
+  padding: 0.6in 0.7in;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-2 {
+  page-break-before: always;
+}
+
+/* ── Header ── */
+.bc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20pt;
+  border-bottom: 1.5px solid var(--sage-light);
+  margin-bottom: 28pt;
+}
+
+.bc-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18pt;
+  color: var(--charcoal);
+  letter-spacing: -0.01em;
+}
+
+.bc-logo span {
+  color: var(--sage);
+}
+
+.bc-tagline {
+  font-size: 8.5pt;
+  color: var(--text-light);
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+}
+
+/* ── Title Block ── */
+.title-block {
+  text-align: center;
+  margin-bottom: 30pt;
+}
+
+.title-block h1 {
+  font-size: 32pt;
+  color: var(--charcoal);
+  margin-bottom: 6pt;
+  letter-spacing: -0.02em;
+}
+
+.title-block .prepared-for {
+  font-size: 14pt;
+  color: var(--sage);
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  margin-bottom: 4pt;
+}
+
+.title-block .date {
+  font-size: 9pt;
+  color: var(--text-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Browser Mockup ── */
+.browser-frame {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(58, 54, 50, 0.12), 0 1px 4px rgba(58, 54, 50, 0.06);
+  overflow: hidden;
+  margin-bottom: 24pt;
+}
+
+.browser-chrome {
+  background: #f0eeeb;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.browser-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.browser-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.browser-dots span:nth-child(1) { background: #EF6B5F; }
+.browser-dots span:nth-child(2) { background: #F4BF4F; }
+.browser-dots span:nth-child(3) { background: #61C554; }
+
+.browser-url {
+  flex: 1;
+  background: #fff;
+  border-radius: 5px;
+  padding: 5px 12px;
+  font-size: 8pt;
+  color: #999;
+  font-family: 'Outfit', sans-serif;
+}
+
+.browser-body {
+  padding: 0;
+}
+
+/* ── Heroes Hero Mockup ── */
+.hr-hero-mockup {
+  background: var(--hr-navy);
+  padding: 36pt 24pt 30pt;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hr-hero-mockup::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 60%, rgba(212, 160, 23, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 40%, rgba(224, 122, 47, 0.06) 0%, transparent 50%);
+}
+
+.hr-hero-mockup > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hr-hero-badge {
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 6.5pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--hr-gold);
+  border: 1px solid var(--hr-gold);
+  padding: 4pt 14pt;
+  margin-bottom: 14pt;
+}
+
+.hr-hero-mockup h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 42pt;
+  color: var(--hr-white);
+  line-height: 0.95;
+  margin-bottom: 4pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hr-hero-mockup h2 em {
+  color: var(--hr-gold);
+  font-style: normal;
+}
+
+.hr-hero-sub {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10pt;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--hr-gray);
+  margin-bottom: 14pt;
+}
+
+.hr-hero-buttons {
+  display: flex;
+  gap: 10pt;
+  justify-content: center;
+}
+
+.hr-btn-primary {
+  display: inline-block;
+  padding: 8px 24px;
+  background: var(--hr-gold);
+  color: var(--hr-navy);
+  font-family: 'Oswald', sans-serif;
+  font-size: 8pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hr-btn-outline {
+  display: inline-block;
+  padding: 8px 24px;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: var(--hr-white);
+  font-family: 'Oswald', sans-serif;
+  font-size: 8pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ── Section Label ── */
+.section-label {
+  font-size: 9pt;
+  color: var(--sage);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 8pt;
+}
+
+/* ── Game Day Specials Mockup ── */
+.hr-specials-mockup {
+  background: var(--hr-navy-light);
+  padding: 20pt 14pt;
+  color: var(--hr-white);
+}
+
+.hr-specials-header {
+  text-align: center;
+  margin-bottom: 14pt;
+}
+
+.hr-specials-header p {
+  font-family: 'Oswald', sans-serif;
+  font-size: 7pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--hr-gold);
+  margin-bottom: 4pt;
+}
+
+.hr-specials-header h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 18pt;
+  color: var(--hr-white);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hr-specials-divider {
+  width: 40pt;
+  height: 3px;
+  background: var(--hr-gold);
+  margin: 0 auto 14pt;
+}
+
+.hr-specials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8pt;
+}
+
+.hr-special-card {
+  background: var(--hr-card-bg);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 12pt 10pt;
+  text-align: center;
+}
+
+.hr-special-day {
+  font-family: 'Oswald', sans-serif;
+  font-size: 6.5pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--hr-gold);
+  margin-bottom: 4pt;
+}
+
+.hr-special-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--hr-white);
+  margin-bottom: 3pt;
+}
+
+.hr-special-desc {
+  font-size: 6.5pt;
+  color: var(--hr-gray);
+  margin-bottom: 5pt;
+  font-family: 'Inter', sans-serif;
+}
+
+.hr-special-price {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12pt;
+  font-weight: 700;
+  color: var(--hr-gold);
+}
+
+/* ───── PAGE 2 ───── */
+
+.bc-header-sm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 14pt;
+  border-bottom: 1px solid var(--sage-light);
+  margin-bottom: 28pt;
+}
+
+.bc-header-sm .bc-logo {
+  font-size: 13pt;
+}
+
+.bc-header-sm .bc-tagline {
+  font-size: 7.5pt;
+}
+
+.section {
+  margin-bottom: 28pt;
+}
+
+.section h2 {
+  font-size: 18pt;
+  margin-bottom: 14pt;
+  color: var(--charcoal);
+}
+
+.section h2 .accent {
+  color: var(--sage);
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+}
+
+.checklist li {
+  padding: 7pt 0 7pt 28pt;
+  position: relative;
+  font-size: 10.5pt;
+  color: var(--text);
+  border-bottom: 1px solid rgba(178, 196, 177, 0.2);
+  line-height: 1.5;
+}
+
+.checklist li:last-child {
+  border-bottom: none;
+}
+
+.checklist li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10pt;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background: var(--sage);
+  opacity: 0.85;
+}
+
+.checklist li::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 13pt;
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16pt;
+}
+
+.step {
+  text-align: center;
+  padding: 18pt 12pt;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(58, 54, 50, 0.05);
+}
+
+.step-number {
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 10pt;
+  background: var(--sage);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 12pt;
+}
+
+.step h4 {
+  font-size: 11pt;
+  margin-bottom: 5pt;
+  color: var(--charcoal);
+}
+
+.step p {
+  font-size: 9pt;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.pricing-box {
+  background: var(--blush);
+  border-radius: 12px;
+  padding: 22pt 28pt;
+  text-align: center;
+}
+
+.pricing-box p {
+  font-size: 10.5pt;
+  color: var(--text);
+  line-height: 1.7;
+  max-width: 5.5in;
+  margin: 0 auto;
+}
+
+.contact-footer {
+  margin-top: 28pt;
+  padding-top: 18pt;
+  border-top: 1.5px solid var(--sage-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.contact-info h3 {
+  font-size: 12pt;
+  color: var(--charcoal);
+  margin-bottom: 6pt;
+}
+
+.contact-info p {
+  font-size: 9pt;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.contact-brand {
+  text-align: right;
+}
+
+.contact-brand .bc-logo {
+  font-size: 14pt;
+  margin-bottom: 2pt;
+}
+
+.contact-brand .bc-tagline {
+  font-size: 7.5pt;
+}
+
+.accent-line {
+  width: 40pt;
+  height: 2.5px;
+  background: var(--sage);
+  border-radius: 2px;
+  margin: 0 auto 18pt;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ PAGE 1 ═══════════════════ -->
+<div class="page page-1">
+
+  <!-- Header -->
+  <div class="bc-header">
+    <div class="bc-logo">Brooke Co. <span>Digital</span></div>
+    <div class="bc-tagline">websites + social media for small businesses</div>
+  </div>
+
+  <!-- Title Block -->
+  <div class="title-block">
+    <h1>Website Preview</h1>
+    <div class="prepared-for">Prepared for Heroes Sports Bar &amp; Grill</div>
+    <div class="date">April 2026</div>
+  </div>
+
+  <!-- Hero Mockup -->
+  <div class="section-label">Homepage Preview</div>
+  <div class="browser-frame">
+    <div class="browser-chrome">
+      <div class="browser-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="browser-url">heroescanby.com</div>
+    </div>
+    <div class="browser-body">
+      <div class="hr-hero-mockup">
+        <div class="hr-hero-badge">Canby, Minnesota</div>
+        <h2>Heroes <em>Sports Bar</em> &amp; Grill</h2>
+        <div class="hr-hero-sub">Burgers &bull; Brews &bull; Big Games</div>
+        <div class="hr-hero-buttons">
+          <div class="hr-btn-primary">See the Menu</div>
+          <div class="hr-btn-outline">Find Us</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Day Specials Mockup -->
+  <div class="section-label">Game Day Specials Preview</div>
+  <div class="browser-frame">
+    <div class="browser-chrome">
+      <div class="browser-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="browser-url">heroescanby.com/#gameday</div>
+    </div>
+    <div class="browser-body">
+      <div class="hr-specials-mockup">
+        <div class="hr-specials-header">
+          <p>Every Week</p>
+          <h3>Game Day Specials</h3>
+        </div>
+        <div class="hr-specials-divider"></div>
+        <div class="hr-specials-grid">
+          <div class="hr-special-card">
+            <div class="hr-special-day">Tuesday</div>
+            <div class="hr-special-name">Taco Tuesday</div>
+            <div class="hr-special-desc">Street tacos with all the fixings</div>
+            <div class="hr-special-price">$2 each</div>
+          </div>
+          <div class="hr-special-card">
+            <div class="hr-special-day">Wednesday</div>
+            <div class="hr-special-name">Wing Night</div>
+            <div class="hr-special-desc">Bone-in wings, any sauce</div>
+            <div class="hr-special-price">75&cent; each</div>
+          </div>
+          <div class="hr-special-card">
+            <div class="hr-special-day">Thursday</div>
+            <div class="hr-special-name">Burger &amp; Beer</div>
+            <div class="hr-special-desc">Classic burger plus a domestic pint</div>
+            <div class="hr-special-price">$9.99</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════ PAGE 2 ═══════════════════ -->
+<div class="page page-2">
+
+  <!-- Smaller Header -->
+  <div class="bc-header-sm">
+    <div class="bc-logo">Brooke Co. <span>Digital</span></div>
+    <div class="bc-tagline">Heroes — Website Preview</div>
+  </div>
+
+  <!-- What's Included -->
+  <div class="section">
+    <h2>What's <span class="accent">Included</span></h2>
+    <ul class="checklist">
+      <li>Custom designed website matching your brand</li>
+      <li>Full menu with burgers, starters, entrees, and drinks</li>
+      <li>Game day specials section with weekly deals</li>
+      <li>Mobile-friendly — looks great on phones</li>
+      <li>Hours, location, and contact info</li>
+      <li>Easy updates — just text me (one-time fee per update, or optional monthly plan)</li>
+      <li>Live link you can share on Facebook</li>
+    </ul>
+  </div>
+
+  <!-- How It Works -->
+  <div class="section">
+    <h2>How It <span class="accent">Works</span></h2>
+    <div class="accent-line" style="margin-left:0;"></div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h4>You tell me</h4>
+        <p>Share any changes, additions, or ideas you have in mind</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h4>I build it</h4>
+        <p>Everything is designed and ready in under a week</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h4>You go live</h4>
+        <p>Your site is live and customers can find you online</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing -->
+  <div class="section">
+    <h2>Pricing</h2>
+    <div class="accent-line" style="margin-left:0;"></div>
+    <div class="pricing-box">
+      <p>I'm currently offering a discounted rate for my first few clients. Message me and we'll figure out what works for your budget. No pressure, no commitment.</p>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-footer">
+    <div class="contact-info">
+      <h3>Let's talk</h3>
+      <p>
+        Brooke Hockett<br>
+        hellomrshockett@gmail.com<br>
+        Facebook: @brookecohome
+      </p>
+    </div>
+    <div class="contact-brand">
+      <div class="bc-logo">Brooke Co. <span>Digital</span></div>
+      <div class="bc-tagline">websites + social media for small businesses</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
