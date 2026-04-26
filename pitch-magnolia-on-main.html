@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magnolia on Main — Website Preview | Brooke Co. Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ───── Reset ───── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+@page { size: letter; margin: 0; }
+
+html, body {
+  width: 8.5in;
+  margin: 0 auto;
+  padding: 0;
+  background: #faf6f1;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  color: #3a3632;
+  line-height: 1.6;
+  font-size: 11pt;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+@media print {
+  html, body { width: 100%; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+h1, h2, h3, h4 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #3a3632;
+}
+
+:root {
+  --cream: #faf6f1;
+  --sage: #8a9f85;
+  --sage-light: #b5c4b1;
+  --blush: #f2ddd5;
+  --charcoal: #3a3632;
+  --text: #4a4540;
+  --text-light: #7d756c;
+}
+
+/* ───── PAGE ───── */
+.page {
+  width: 8.5in;
+  min-height: 11in;
+  padding: 0.6in 0.7in;
+  position: relative;
+  overflow: hidden;
+}
+.page-2 { page-break-before: always; }
+
+/* ── Brooke Co. Header ── */
+.bc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20pt;
+  border-bottom: 1.5px solid var(--sage-light);
+  margin-bottom: 28pt;
+}
+.bc-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18pt;
+  color: var(--charcoal);
+}
+.bc-logo span { color: var(--sage); }
+.bc-tagline {
+  font-size: 8.5pt;
+  color: var(--text-light);
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+}
+
+/* ── Title ── */
+.title-block {
+  text-align: center;
+  margin-bottom: 24pt;
+}
+.title-block h1 {
+  font-size: 32pt;
+  color: var(--charcoal);
+  margin-bottom: 6pt;
+}
+.title-block .prepared-for {
+  font-size: 14pt;
+  color: var(--sage);
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  margin-bottom: 4pt;
+}
+.title-block .date {
+  font-size: 9pt;
+  color: var(--text-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Browser Frame ── */
+.browser-frame {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(58,54,50,0.12), 0 1px 4px rgba(58,54,50,0.06);
+  overflow: hidden;
+  margin-bottom: 18pt;
+}
+.browser-chrome {
+  background: #f0eeeb;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.browser-dots { display: flex; gap: 6px; }
+.browser-dots span { width: 10px; height: 10px; border-radius: 50%; }
+.browser-dots span:nth-child(1) { background: #EF6B5F; }
+.browser-dots span:nth-child(2) { background: #F4BF4F; }
+.browser-dots span:nth-child(3) { background: #61C554; }
+.browser-url {
+  flex: 1;
+  background: #fff;
+  border-radius: 5px;
+  padding: 5px 12px;
+  font-size: 8pt;
+  color: #999;
+  font-family: 'Outfit', sans-serif;
+}
+.browser-body { padding: 0; }
+
+.section-label {
+  font-size: 9pt;
+  color: var(--sage);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 8pt;
+}
+
+/* ═══════ MOCKUP STYLES ═══════ */
+
+/* Announcement bar */
+.mock-announce {
+  background: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  padding: 6pt 12pt;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 6pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+/* Nav */
+.mock-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10pt 18pt;
+  border-bottom: 1px solid #f0ebe3;
+  background: rgba(248,245,240,0.97);
+}
+.mock-nav img {
+  height: 28px;
+  width: auto;
+}
+.mock-nav-links {
+  display: flex;
+  gap: 18pt;
+}
+.mock-nav-links span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 6pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #3a3a3a;
+  font-weight: 500;
+}
+.mock-nav-icons {
+  display: flex;
+  gap: 10pt;
+  color: #3a3a3a;
+  font-size: 10pt;
+}
+
+/* Hero */
+.mock-hero {
+  background: linear-gradient(180deg, #f0ebe3 0%, #f8f5f0 100%);
+  padding: 28pt 18pt 24pt;
+  text-align: center;
+}
+.mock-hero img {
+  max-width: 200px;
+  margin: 0 auto 10pt;
+  display: block;
+}
+.mock-hero-divider {
+  width: 36pt;
+  height: 1px;
+  background: #b8a99a;
+  margin: 0 auto 10pt;
+}
+.mock-hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 14pt;
+  font-weight: 400;
+  color: #2c2c2c;
+  margin-bottom: 4pt;
+}
+.mock-hero p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 7pt;
+  color: #888;
+  letter-spacing: 0.06em;
+  font-weight: 300;
+  margin-bottom: 12pt;
+}
+.mock-hero-btn {
+  display: inline-block;
+  padding: 7pt 28pt;
+  background: #1a1a1a;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 6pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Category Cards */
+.mock-cats {
+  padding: 18pt;
+  background: #fff;
+}
+.mock-cats-header {
+  text-align: center;
+  margin-bottom: 12pt;
+}
+.mock-cats-header h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 11pt;
+  font-weight: 400;
+  color: #2c2c2c;
+  margin-bottom: 2pt;
+}
+.mock-cats-header p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 6pt;
+  color: #888;
+  font-weight: 300;
+}
+.mock-cats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8pt;
+}
+.mock-cat-card {
+  aspect-ratio: 3/4;
+  background: #f0ebe3;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+.mock-cat-card-overlay {
+  width: 100%;
+  padding: 8pt 10pt;
+  background: linear-gradient(180deg, transparent 0%, rgba(26,26,26,0.45) 100%);
+  position: absolute;
+  bottom: 0;
+}
+.mock-cat-label {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 6pt;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.mock-cat-emoji {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  font-size: 22pt;
+  opacity: 0.2;
+}
+
+/* Products */
+.mock-products {
+  padding: 18pt;
+  background: #f8f5f0;
+}
+.mock-products-header {
+  text-align: center;
+  margin-bottom: 12pt;
+}
+.mock-products-header h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 11pt;
+  font-weight: 400;
+  color: #2c2c2c;
+  margin-bottom: 2pt;
+}
+.mock-products-header p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 6pt;
+  color: #888;
+  font-weight: 300;
+}
+.mock-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8pt;
+}
+.mock-product-card {
+  background: #fff;
+}
+.mock-product-img {
+  aspect-ratio: 3/4;
+  background: #f0ebe3;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mock-product-emoji {
+  font-size: 16pt;
+  opacity: 0.2;
+}
+.mock-product-badge {
+  position: absolute;
+  top: 4pt;
+  left: 4pt;
+  background: #1a1a1a;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4.5pt;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2pt 6pt;
+}
+.mock-product-info {
+  padding: 6pt 8pt 8pt;
+}
+.mock-product-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5pt;
+  color: #888;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1pt;
+}
+.mock-product-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 7pt;
+  color: #2c2c2c;
+  margin-bottom: 3pt;
+  font-weight: 400;
+}
+.mock-product-price {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 6.5pt;
+  color: #3a3a3a;
+}
+.mock-product-price .orig {
+  text-decoration: line-through;
+  color: #bbb;
+  font-weight: 300;
+  margin-right: 4pt;
+}
+
+/* About bar */
+.mock-about {
+  background: #f0ebe3;
+  padding: 18pt;
+  text-align: center;
+}
+.mock-about-icon {
+  font-size: 14pt;
+  opacity: 0.5;
+  margin-bottom: 6pt;
+}
+.mock-about h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 10pt;
+  font-weight: 400;
+  color: #2c2c2c;
+  margin-bottom: 4pt;
+}
+.mock-about p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 6pt;
+  color: #4a4a4a;
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 360pt;
+  margin: 0 auto 8pt;
+}
+.mock-values {
+  display: flex;
+  justify-content: center;
+  gap: 28pt;
+  margin-top: 8pt;
+}
+.mock-value {
+  text-align: center;
+}
+.mock-value-icon {
+  width: 24pt;
+  height: 24pt;
+  margin: 0 auto 4pt;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8pt;
+}
+.mock-value span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5pt;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #3a3a3a;
+}
+
+/* Newsletter */
+.mock-newsletter {
+  background: #2c2c2c;
+  padding: 14pt 18pt;
+  text-align: center;
+}
+.mock-newsletter h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 10pt;
+  color: #fff;
+  margin-bottom: 3pt;
+  font-weight: 400;
+}
+.mock-newsletter p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 6pt;
+  color: rgba(255,255,255,0.5);
+  font-weight: 300;
+  margin-bottom: 8pt;
+}
+.mock-email-row {
+  display: flex;
+  max-width: 200pt;
+  margin: 0 auto;
+}
+.mock-email-input {
+  flex: 1;
+  padding: 5pt 8pt;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5.5pt;
+  color: rgba(255,255,255,0.4);
+}
+.mock-email-btn {
+  padding: 5pt 12pt;
+  background: #fff;
+  color: #1a1a1a;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5pt;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+}
+
+/* Mock footer */
+.mock-footer {
+  background: #1a1a1a;
+  padding: 12pt 18pt 8pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.mock-footer-brand h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 8pt;
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 2pt;
+}
+.mock-footer-brand p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5pt;
+  color: rgba(255,255,255,0.4);
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 140pt;
+}
+.mock-footer-cols {
+  display: flex;
+  gap: 24pt;
+}
+.mock-footer-col h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5pt;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 4pt;
+}
+.mock-footer-col p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5pt;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+}
+.mock-footer-credit {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5pt;
+  color: rgba(255,255,255,0.3);
+  padding: 6pt 18pt 8pt;
+  background: #1a1a1a;
+}
+
+/* ═══════ PAGE 2 STYLES ═══════ */
+.bc-header-sm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 14pt;
+  border-bottom: 1px solid var(--sage-light);
+  margin-bottom: 28pt;
+}
+.bc-header-sm .bc-logo { font-size: 13pt; }
+.bc-header-sm .bc-tagline { font-size: 7.5pt; }
+
+.section { margin-bottom: 28pt; }
+.section h2 {
+  font-size: 18pt;
+  margin-bottom: 14pt;
+  color: var(--charcoal);
+}
+.section h2 .accent { color: var(--sage); }
+
+.checklist { list-style: none; padding: 0; }
+.checklist li {
+  padding: 7pt 0 7pt 28pt;
+  position: relative;
+  font-size: 10.5pt;
+  color: var(--text);
+  border-bottom: 1px solid rgba(178,196,177,0.2);
+  line-height: 1.5;
+}
+.checklist li:last-child { border-bottom: none; }
+.checklist li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 10pt;
+  width: 16px; height: 16px;
+  border-radius: 4px;
+  background: var(--sage);
+  opacity: 0.85;
+}
+.checklist li::after {
+  content: '';
+  position: absolute;
+  left: 4px; top: 13pt;
+  width: 8px; height: 4px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16pt;
+}
+.step {
+  text-align: center;
+  padding: 18pt 12pt;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(58,54,50,0.05);
+}
+.step-number {
+  width: 36px; height: 36px;
+  margin: 0 auto 10pt;
+  background: var(--sage);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 12pt;
+}
+.step h4 { font-size: 11pt; margin-bottom: 5pt; color: var(--charcoal); }
+.step p { font-size: 9pt; color: var(--text-light); line-height: 1.5; }
+
+.pricing-box {
+  background: var(--blush);
+  border-radius: 12px;
+  padding: 22pt 28pt;
+  text-align: center;
+}
+.pricing-box p {
+  font-size: 10.5pt;
+  color: var(--text);
+  line-height: 1.7;
+  max-width: 5.5in;
+  margin: 0 auto;
+}
+
+.contact-footer {
+  margin-top: 28pt;
+  padding-top: 18pt;
+  border-top: 1.5px solid var(--sage-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.contact-info h3 { font-size: 12pt; color: var(--charcoal); margin-bottom: 6pt; }
+.contact-info p { font-size: 9pt; color: var(--text-light); line-height: 1.8; }
+.contact-brand { text-align: right; }
+.contact-brand .bc-logo { font-size: 14pt; margin-bottom: 2pt; }
+.contact-brand .bc-tagline { font-size: 7.5pt; }
+
+.accent-line {
+  width: 40pt; height: 2.5px;
+  background: var(--sage);
+  border-radius: 2px;
+  margin: 0 auto 18pt;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ PAGE 1 ═══════════════ -->
+<div class="page page-1">
+
+  <div class="bc-header">
+    <div class="bc-logo">Brooke Co. <span>Digital</span></div>
+    <div class="bc-tagline">websites + social media for small businesses</div>
+  </div>
+
+  <div class="title-block">
+    <h1>Website Preview</h1>
+    <div class="prepared-for">Prepared for Magnolia on Main</div>
+    <div class="date">April 2026</div>
+  </div>
+
+  <div class="section-label">Homepage Preview</div>
+  <div class="browser-frame">
+    <div class="browser-chrome">
+      <div class="browser-dots"><span></span><span></span><span></span></div>
+      <div class="browser-url">magnoliaonmain.com</div>
+    </div>
+    <div class="browser-body">
+
+      <!-- Announcement -->
+      <div class="mock-announce">Welcome to Magnolia on Main &mdash; formerly Florals &amp; Finds</div>
+
+      <!-- Nav -->
+      <div class="mock-nav">
+        <img src="logo.jpg" alt="Magnolia on Main">
+        <div class="mock-nav-links">
+          <span>Shop</span>
+          <span>New Arrivals</span>
+          <span>About</span>
+          <span>Contact</span>
+        </div>
+        <div class="mock-nav-icons">&#x1F50D; &#x1F6D2;</div>
+      </div>
+
+      <!-- Hero -->
+      <div class="mock-hero">
+        <img src="logo.jpg" alt="Magnolia on Main">
+        <div class="mock-hero-divider"></div>
+        <h2>A New Chapter, the Same Heart</h2>
+        <p>Curated clothing, accessories &amp; home goods &mdash; South Dakota</p>
+        <div class="mock-hero-btn">Shop the Collection</div>
+      </div>
+
+      <!-- Categories -->
+      <div class="mock-cats">
+        <div class="mock-cats-header">
+          <h3>Shop by Category</h3>
+          <p>Find your style, from everyday essentials to statement pieces</p>
+        </div>
+        <div class="mock-cats-grid">
+          <div class="mock-cat-card">
+            <div class="mock-cat-emoji">👚</div>
+            <div class="mock-cat-card-overlay"><div class="mock-cat-label">Tops &amp; Sweaters</div></div>
+          </div>
+          <div class="mock-cat-card">
+            <div class="mock-cat-emoji">👗</div>
+            <div class="mock-cat-card-overlay"><div class="mock-cat-label">Dresses</div></div>
+          </div>
+          <div class="mock-cat-card">
+            <div class="mock-cat-emoji">👜</div>
+            <div class="mock-cat-card-overlay"><div class="mock-cat-label">Accessories</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ PAGE 2 ═══════════════ -->
+<div class="page page-2">
+
+  <div class="bc-header-sm">
+    <div class="bc-logo">Brooke Co. <span>Digital</span></div>
+    <div class="bc-tagline">Magnolia on Main — Website Preview</div>
+  </div>
+
+  <div class="section-label">Products &amp; Footer Preview</div>
+  <div class="browser-frame" style="margin-bottom: 24pt;">
+    <div class="browser-chrome">
+      <div class="browser-dots"><span></span><span></span><span></span></div>
+      <div class="browser-url">magnoliaonmain.com/#new-arrivals</div>
+    </div>
+    <div class="browser-body">
+
+      <!-- Products -->
+      <div class="mock-products">
+        <div class="mock-products-header">
+          <h3>New Arrivals</h3>
+          <p>Fresh picks for the season</p>
+        </div>
+        <div class="mock-products-grid">
+          <div class="mock-product-card">
+            <div class="mock-product-img">
+              <div class="mock-product-emoji">🌸</div>
+              <div class="mock-product-badge">New</div>
+            </div>
+            <div class="mock-product-info">
+              <div class="mock-product-brand">Tribal</div>
+              <div class="mock-product-name">Crew Neck Appliqu&eacute; Sweater</div>
+              <div class="mock-product-price">$45.00</div>
+            </div>
+          </div>
+          <div class="mock-product-card">
+            <div class="mock-product-img">
+              <div class="mock-product-emoji">🧶</div>
+              <div class="mock-product-badge">New</div>
+            </div>
+            <div class="mock-product-info">
+              <div class="mock-product-brand">Tribal</div>
+              <div class="mock-product-name">Crochet V-Neck Top</div>
+              <div class="mock-product-price"><span class="orig">$99.99</span> $79.99</div>
+            </div>
+          </div>
+          <div class="mock-product-card">
+            <div class="mock-product-img">
+              <div class="mock-product-emoji">👕</div>
+            </div>
+            <div class="mock-product-info">
+              <div class="mock-product-brand">Tribal</div>
+              <div class="mock-product-name">Raglan Crew Neck Top</div>
+              <div class="mock-product-price">$54.00</div>
+            </div>
+          </div>
+          <div class="mock-product-card">
+            <div class="mock-product-img">
+              <div class="mock-product-emoji">🌿</div>
+            </div>
+            <div class="mock-product-info">
+              <div class="mock-product-brand">Tribal</div>
+              <div class="mock-product-name">Sweater W/Side Slits</div>
+              <div class="mock-product-price"><span class="orig">$108.00</span> $86.40</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About -->
+      <div class="mock-about">
+        <div class="mock-about-icon">🌺</div>
+        <h3>Perseverance. Resilience. Dignity.</h3>
+        <p>Magnolias symbolize all the things we strive for here at our shop &mdash; for ourselves and for every customer who walks through our doors.</p>
+        <div class="mock-values">
+          <div class="mock-value"><div class="mock-value-icon">🤍</div><span>Personal Service</span></div>
+          <div class="mock-value"><div class="mock-value-icon">📦</div><span>Free Shipping 75+</span></div>
+          <div class="mock-value"><div class="mock-value-icon">🏠</div><span>Shop Local</span></div>
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="mock-newsletter">
+        <h3>Stay in the Loop</h3>
+        <p>New arrivals, sales, and store updates</p>
+        <div class="mock-email-row">
+          <div class="mock-email-input">Enter your email</div>
+          <div class="mock-email-btn">Subscribe</div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="mock-footer">
+        <div class="mock-footer-brand">
+          <h4>Magnolia on Main</h4>
+          <p>Curated clothing, accessories &amp; home goods. Same heart, new name.</p>
+        </div>
+        <div class="mock-footer-cols">
+          <div class="mock-footer-col">
+            <h5>Shop</h5>
+            <p>New Arrivals<br>Tops<br>Dresses<br>Accessories</p>
+          </div>
+          <div class="mock-footer-col">
+            <h5>Info</h5>
+            <p>About Us<br>Shipping<br>Returns<br>Contact</p>
+          </div>
+          <div class="mock-footer-col">
+            <h5>Connect</h5>
+            <p>Facebook<br>Instagram</p>
+          </div>
+        </div>
+      </div>
+      <div class="mock-footer-credit">&copy; 2026 Magnolia on Main &nbsp;|&nbsp; Website by Brooke Co. Digital</div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ PAGE 3 ═══════════════ -->
+<div class="page page-2">
+
+  <div class="bc-header-sm">
+    <div class="bc-logo">Brooke Co. <span>Digital</span></div>
+    <div class="bc-tagline">Magnolia on Main — Website Rebrand</div>
+  </div>
+
+  <div class="section">
+    <h2>What's <span class="accent">Included</span></h2>
+    <ul class="checklist">
+      <li>Custom designed website matching your new brand</li>
+      <li>Your Magnolia on Main logo across the entire site</li>
+      <li>Product pages with categories and new arrivals</li>
+      <li>About section with your brand story and values</li>
+      <li>Mobile-friendly &mdash; looks great on phones</li>
+      <li>Newsletter signup to grow your email list</li>
+      <li>New domain setup with redirect from floralsfinds.com</li>
+      <li>SEO, social links, and "Website by Brooke Co." footer credit</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>How It <span class="accent">Works</span></h2>
+    <div class="accent-line" style="margin-left:0;"></div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h4>You tell me</h4>
+        <p>Share your logo files, brand colors, and any ideas you have in mind</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h4>I build it</h4>
+        <p>Everything is designed and ready for you to preview before going live</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h4>You go live</h4>
+        <p>Approve it, we flip the switch, and your customers see the new you</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Pricing</h2>
+    <div class="accent-line" style="margin-left:0;"></div>
+    <div class="pricing-box">
+      <p>I'm currently offering a discounted rate for my first few clients. Message me and we'll figure out what works for your budget. No pressure, no commitment.</p>
+    </div>
+  </div>
+
+  <div class="contact-footer">
+    <div class="contact-info">
+      <h3>Let's talk</h3>
+      <p>
+        Brooke Hockett<br>
+        hellomrshockett@gmail.com<br>
+        Facebook: @brookecohome
+      </p>
+    </div>
+    <div class="contact-brand">
+      <div class="bc-logo">Brooke Co. <span>Digital</span></div>
+      <div class="bc-tagline">websites + social media for small businesses</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
