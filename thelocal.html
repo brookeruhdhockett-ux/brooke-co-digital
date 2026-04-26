@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Local | Dinner Restaurant & Bar | Watertown, SD</title>
+  <meta name="description" content="The Local — an upscale-casual dinner restaurant and bar in Downtown Watertown, SD. Craft cocktails, inventive small plates, and entrees designed to surprise and delight.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0D0D0D;
+      --charcoal: #1A1A1A;
+      --dark-surface: #222222;
+      --copper: #B87333;
+      --copper-light: #D4956A;
+      --copper-glow: rgba(184, 115, 51, 0.15);
+      --terracotta: #C27D5F;
+      --cream: #F2EAE0;
+      --cream-dim: #D6CDBE;
+      --olive: #4A5A3A;
+      --olive-light: #6B7D56;
+      --forest: #2E3D28;
+      --text-primary: #F2EAE0;
+      --text-muted: #9E9689;
+      --text-dim: #6E6860;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      color: var(--cream);
+      background: var(--black);
+      line-height: 1.7;
+      font-size: 16px;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      line-height: 1.15;
+    }
+
+    a { color: var(--copper-light); text-decoration: none; transition: color 0.3s; }
+    a:hover { color: var(--copper); }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---- DECORATIVE DIVIDERS ---- */
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin: 28px auto;
+      max-width: 300px;
+    }
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--copper), transparent);
+    }
+    .divider-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--copper);
+      flex-shrink: 0;
+    }
+
+    /* ---- HEADER / NAV ---- */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(13, 13, 13, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(184, 115, 51, 0.12);
+      transition: background 0.3s;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      height: 72px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .nav-brand span {
+      color: var(--copper);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--cream-dim);
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: var(--copper);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 8px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--cream);
+      transition: all 0.3s;
+    }
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: rgba(13, 13, 13, 0.97);
+        flex-direction: column;
+        gap: 0;
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(184, 115, 51, 0.12);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { text-align: center; }
+      .nav-links a {
+        display: block;
+        padding: 14px 24px;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(184, 115, 51, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(74, 90, 58, 0.06) 0%, transparent 50%),
+        linear-gradient(180deg, var(--black) 0%, var(--charcoal) 50%, var(--black) 100%);
+    }
+
+    /* Subtle grain texture */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 24px;
+    }
+
+    .hero-tag {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.2rem, 8vw, 6.5rem);
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--copper-light);
+      margin-bottom: 40px;
+    }
+
+    .hero-details {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 2;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      margin-top: 48px;
+      padding: 14px 48px;
+      border: 1px solid var(--copper);
+      color: var(--copper);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      transition: all 0.4s;
+    }
+    .hero-cta:hover {
+      background: var(--copper);
+      color: var(--black);
+    }
+
+    /* ---- SECTIONS ---- */
+    section {
+      padding: 100px 0;
+    }
+
+    .section-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--copper);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      text-align: center;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    /* ---- ABOUT ---- */
+    .about {
+      background: var(--charcoal);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      margin-top: 48px;
+    }
+
+    .about-image {
+      aspect-ratio: 4/5;
+      background:
+        linear-gradient(135deg, rgba(184, 115, 51, 0.1), rgba(46, 61, 40, 0.15)),
+        var(--dark-surface);
+      border: 1px solid rgba(184, 115, 51, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .about-image-icon {
+      font-size: 3rem;
+      opacity: 0.2;
+    }
+    .about-image-text {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .about-text p {
+      color: var(--cream-dim);
+      margin-bottom: 20px;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    .about-text p:first-child::first-letter {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      float: left;
+      line-height: 1;
+      margin-right: 8px;
+      margin-top: 4px;
+      color: var(--copper);
+    }
+
+    .about-signature {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--copper-light);
+      margin-top: 32px;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .about-image { max-height: 300px; }
+    }
+
+    /* ---- MENU ---- */
+    .menu {
+      background: var(--black);
+    }
+
+    .menu-disclaimer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      font-style: italic;
+      margin-bottom: 48px;
+      padding: 12px 20px;
+      border: 1px dashed rgba(184, 115, 51, 0.2);
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .menu .container > .menu-disclaimer {
+      display: block;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .menu-categories {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+    .menu-tab {
+      padding: 10px 24px;
+      border: 1px solid rgba(184, 115, 51, 0.25);
+      background: transparent;
+      color: var(--text-muted);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .menu-tab:hover,
+    .menu-tab.active {
+      background: var(--copper);
+      color: var(--black);
+      border-color: var(--copper);
+    }
+
+    .menu-section {
+      display: none;
+    }
+    .menu-section.active {
+      display: block;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px 64px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .menu-item {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(184, 115, 51, 0.08);
+    }
+
+    .menu-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .menu-item-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--cream);
+    }
+
+    .menu-item-price {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--copper);
+      white-space: nowrap;
+    }
+
+    .menu-item-dots {
+      flex: 1;
+      border-bottom: 1px dotted rgba(184, 115, 51, 0.2);
+      min-width: 20px;
+      margin-bottom: 4px;
+    }
+
+    .menu-item-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+
+    /* ---- BAR / COCKTAILS HIGHLIGHT ---- */
+    .bar-highlight {
+      background: linear-gradient(180deg, var(--charcoal), var(--black));
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .bar-highlight blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--cream);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .bar-highlight blockquote span {
+      color: var(--copper);
+    }
+
+    /* ---- EXPERIENCE / AMBIANCE ---- */
+    .experience {
+      background: var(--charcoal);
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .experience-card {
+      background: rgba(184, 115, 51, 0.04);
+      border: 1px solid rgba(184, 115, 51, 0.1);
+      padding: 40px 28px;
+      text-align: center;
+      transition: all 0.4s;
+    }
+    .experience-card:hover {
+      border-color: rgba(184, 115, 51, 0.3);
+      background: rgba(184, 115, 51, 0.08);
+    }
+
+    .experience-icon {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .experience-card h3 {
+      font-size: 1.3rem;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+
+    .experience-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ---- HOURS / LOCATION ---- */
+    .info {
+      background: var(--black);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      gap: 48px;
+      max-width: 800px;
+      margin: 48px auto 0;
+      align-items: start;
+    }
+
+    .info-divider {
+      background: linear-gradient(180deg, transparent, var(--copper), transparent);
+      height: 100%;
+      min-height: 150px;
+    }
+
+    .info-block {
+      text-align: center;
+    }
+
+    .info-block h3 {
+      font-size: 1.4rem;
+      color: var(--cream);
+      margin-bottom: 24px;
+    }
+
+    .info-block p {
+      font-size: 0.95rem;
+      color: var(--cream-dim);
+      line-height: 2;
+    }
+
+    .info-block .accent {
+      color: var(--copper-light);
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .info-divider {
+        display: none;
+      }
+    }
+
+    /* ---- RESERVATIONS / CTA ---- */
+    .reservations {
+      background:
+        linear-gradient(180deg, var(--charcoal) 0%, var(--black) 100%);
+      text-align: center;
+    }
+
+    .reservations p {
+      color: var(--cream-dim);
+      font-size: 1rem;
+      max-width: 550px;
+      margin: 0 auto 36px;
+      line-height: 1.8;
+    }
+
+    .contact-methods {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .contact-item {
+      text-align: center;
+    }
+
+    .contact-label {
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+
+    .contact-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--copper-light);
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 16px 56px;
+      background: var(--copper);
+      color: var(--black);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      transition: all 0.4s;
+      border: 1px solid var(--copper);
+    }
+    .cta-btn:hover {
+      background: transparent;
+      color: var(--copper);
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: var(--black);
+      border-top: 1px solid rgba(184, 115, 51, 0.1);
+      padding: 48px 0 32px;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .footer-address {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      letter-spacing: 1px;
+      margin-bottom: 32px;
+    }
+
+    .footer-credit {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      letter-spacing: 1px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(184, 115, 51, 0.06);
+    }
+    .footer-credit a {
+      color: var(--copper);
+    }
+
+    /* ---- SCROLL REVEAL ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ---- MAP PLACEHOLDER ---- */
+    .map-placeholder {
+      margin-top: 48px;
+      height: 280px;
+      background:
+        linear-gradient(135deg, rgba(184, 115, 51, 0.06), rgba(46, 61, 40, 0.08)),
+        var(--dark-surface);
+      border: 1px solid rgba(184, 115, 51, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .map-placeholder-icon {
+      font-size: 2rem;
+      opacity: 0.2;
+    }
+    .map-placeholder-text {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <a href="#" class="nav-brand">The <span>Local</span></a>
+      <button class="hamburger" aria-label="Menu" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#hours">Hours</a></li>
+        <li><a href="#reservations">Reservations</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <p class="hero-tag">Now Open in Downtown Watertown</p>
+      <h1>The Local</h1>
+      <p class="hero-subtitle">Dinner, reimagined for the region</p>
+      <div class="divider"><div class="divider-dot"></div></div>
+      <p class="hero-details">
+        Upscale-casual dining &amp; craft cocktails<br>
+        Dinner service only &bull; Opened December 2025
+      </p>
+      <a href="#menu" class="hero-cta">Explore the Menu</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <p class="section-label reveal">Our Story</p>
+      <h2 class="section-title reveal">Something New for Watertown</h2>
+      <div class="divider reveal"><div class="divider-dot"></div></div>
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <div class="about-image-icon">&#9670;</div>
+          <div class="about-image-text">Interior photo</div>
+        </div>
+        <div class="about-text reveal reveal-delay-1">
+          <p>When Kyle Lalim envisioned The Local, the goal was simple but ambitious: bring something genuinely new to Watertown. Not another chain. Not another sports bar. Something that makes you slow down, sit a little longer, and actually savor the evening.</p>
+          <p>The Local is a dinner-only restaurant and bar built around the idea that great food and thoughtful cocktails can exist right here in the heart of South Dakota. The menu features dishes and flavors not traditionally available in the area, designed to surprise, delight, and tantalize without pretension.</p>
+          <p>With a brand new bar, a carefully curated atmosphere, and a kitchen that takes real pride in every plate, The Local is Watertown's invitation to experience something a little different, right in your own backyard.</p>
+          <p class="about-signature">&mdash; Kyle Lalim, Owner</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAR HIGHLIGHT -->
+  <section class="bar-highlight">
+    <div class="container reveal">
+      <blockquote>
+        "Designed to <span>surprise, delight,</span> and <span>tantalize</span> &mdash; with menu selections not traditionally available in the area."
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <p class="section-label reveal">The Menu</p>
+      <h2 class="section-title reveal">Dinner Service</h2>
+      <div class="divider reveal"><div class="divider-dot"></div></div>
+      <p class="section-subtitle reveal">Upscale-casual fare crafted with intention</p>
+      <div class="menu-disclaimer reveal">Sample menu for demonstration purposes</div>
+
+      <div class="menu-categories reveal">
+        <button class="menu-tab active" data-tab="starters">Starters</button>
+        <button class="menu-tab" data-tab="entrees">Entrees</button>
+        <button class="menu-tab" data-tab="cocktails">Cocktails</button>
+        <button class="menu-tab" data-tab="desserts">Desserts</button>
+      </div>
+
+      <!-- STARTERS -->
+      <div class="menu-section active" id="tab-starters">
+        <div class="menu-grid">
+          <div class="menu-item reveal">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Charred Shishito Peppers</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$14</span>
+            </div>
+            <p class="menu-item-desc">Blistered with sea salt, smoked aioli, lime zest</p>
+          </div>
+          <div class="menu-item reveal reveal-delay-1">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Burrata &amp; Stone Fruit</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$17</span>
+            </div>
+            <p class="menu-item-desc">Creamy burrata, seasonal stone fruit, pistachio, aged balsamic, grilled sourdough</p>
+          </div>
+          <div class="menu-item reveal">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Tuna Tartare</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$19</span>
+            </div>
+            <p class="menu-item-desc">Sushi-grade ahi, avocado mousse, crispy wontons, soy-ginger reduction</p>
+          </div>
+          <div class="menu-item reveal reveal-delay-1">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Roasted Bone Marrow</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$18</span>
+            </div>
+            <p class="menu-item-desc">Herb gremolata, flaky sea salt, charred bread</p>
+          </div>
+          <div class="menu-item reveal">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Wild Mushroom Flatbread</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$16</span>
+            </div>
+            <p class="menu-item-desc">Truffle cream, fontina, arugula, shaved parmesan</p>
+          </div>
+          <div class="menu-item reveal reveal-delay-1">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Crispy Brussels Sprouts</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$14</span>
+            </div>
+            <p class="menu-item-desc">Flash-fried, chili-honey glaze, toasted almonds, pecorino</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENTREES -->
+      <div class="menu-section" id="tab-entrees">
+        <div class="menu-grid">
+          <div class="menu-item reveal">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Braised Short Rib</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$38</span>
+            </div>
+            <p class="menu-item-desc">Red wine reduction, creamy polenta, roasted root vegetables, gremolata</p>
+          </div>
+          <div class="menu-item reveal reveal-delay-1">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Pan-Seared Salmon</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$34</span>
+            </div>
+            <p class="menu-item-desc">Miso-glazed, forbidden black rice, bok choy, citrus beurre blanc</p>
+          </div>
+          <div class="menu-item reveal">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Duck Breast</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$36</span>
+            </div>
+            <p class="menu-item-desc">Cherry-port reduction, sweet potato puree, crispy sage, toasted hazelnuts</p>
+          </div>
+          <div class="menu-item reveal reveal-delay-1">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Filet Mignon</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$38</span>
+            </div>
+            <p class="menu-item-desc">8 oz center-cut, compound herb butter, roasted fingerlings, asparagus</p>
+          </div>
+          <div class="menu-item reveal">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Lamb Chops</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$36</span>
+            </div>
+            <p class="menu-item-desc">Herb-crusted, pistachio-mint pesto, whipped feta, roasted broccolini</p>
+          </div>
+          <div class="menu-item reveal reveal-delay-1">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Handmade Pappardelle</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$28</span>
+            </div>
+            <p class="menu-item-desc">Slow-braised pork ragu, San Marzano tomatoes, fresh ricotta, basil</p>
+          </div>
+          <div class="menu-item reveal">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Seared Scallops</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$34</span>
+            </div>
+            <p class="menu-item-desc">Cauliflower puree, brown butter, crispy pancetta, microgreens</p>
+          </div>
+          <div class="menu-item reveal reveal-delay-1">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Mushroom Risotto</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$26</span>
+            </div>
+            <p class="menu-item-desc">Wild mushroom medley, truffle oil, aged parmesan, fresh thyme</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- COCKTAILS -->
+      <div class="menu-section" id="tab-cocktails">
+        <div class="menu-grid">
+          <div class="menu-item reveal">
+            <div class="menu-item-header">
+              <span class="menu-item-name">The Local Old Fashioned</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$15</span>
+            </div>
+            <p class="menu-item-desc">Small-batch bourbon, demerara, house bitters, smoked orange peel</p>
+          </div>
+          <div class="menu-item reveal reveal-delay-1">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Prairie Sage Gimlet</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$14</span>
+            </div>
+            <p class="menu-item-desc">London dry gin, fresh sage, lime, honey, egg white foam</p>
+          </div>
+          <div class="menu-item reveal">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Copper Mule</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$14</span>
+            </div>
+            <p class="menu-item-desc">Premium vodka, house ginger beer, charred lime, copper cup</p>
+          </div>
+          <div class="menu-item reveal reveal-delay-1">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Smoked Maple Manhattan</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$16</span>
+            </div>
+            <p class="menu-item-desc">Rye whiskey, sweet vermouth, maple bitters, brandied cherry</p>
+          </div>
+          <div class="menu-item reveal">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Espresso Martini</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$15</span>
+            </div>
+            <p class="menu-item-desc">Vodka, fresh-pulled espresso, coffee liqueur, vanilla</p>
+          </div>
+          <div class="menu-item reveal reveal-delay-1">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Seasonal Spritz</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$13</span>
+            </div>
+            <p class="menu-item-desc">Rotating seasonal fruits, prosecco, house-made shrub, soda</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESSERTS -->
+      <div class="menu-section" id="tab-desserts">
+        <div class="menu-grid">
+          <div class="menu-item reveal">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Creme Brulee</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$14</span>
+            </div>
+            <p class="menu-item-desc">Madagascar vanilla bean, torched sugar crust, fresh berries</p>
+          </div>
+          <div class="menu-item reveal reveal-delay-1">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Chocolate Lava Cake</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$15</span>
+            </div>
+            <p class="menu-item-desc">Valrhona dark chocolate, salted caramel, vanilla bean ice cream</p>
+          </div>
+          <div class="menu-item reveal">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Affogato</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$12</span>
+            </div>
+            <p class="menu-item-desc">Double espresso, house-made gelato, amaretti crumble</p>
+          </div>
+          <div class="menu-item reveal reveal-delay-1">
+            <div class="menu-item-header">
+              <span class="menu-item-name">Seasonal Cheesecake</span>
+              <span class="menu-item-dots"></span>
+              <span class="menu-item-price">$14</span>
+            </div>
+            <p class="menu-item-desc">New York-style, rotating seasonal compote, whipped cream</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <p class="section-label reveal">The Experience</p>
+      <h2 class="section-title reveal">More Than a Meal</h2>
+      <div class="divider reveal"><div class="divider-dot"></div></div>
+      <div class="experience-grid">
+        <div class="experience-card reveal">
+          <span class="experience-icon">&#127863;</span>
+          <h3>Craft Bar</h3>
+          <p>A brand new bar featuring craft cocktails, curated wines, and local brews. Every drink made with care and intention.</p>
+        </div>
+        <div class="experience-card reveal reveal-delay-1">
+          <span class="experience-icon">&#127860;</span>
+          <h3>Chef-Driven Kitchen</h3>
+          <p>Seasonal, ingredient-forward dishes that bring something genuinely new to the area. Upscale flavors, approachable atmosphere.</p>
+        </div>
+        <div class="experience-card reveal reveal-delay-2">
+          <span class="experience-icon">&#10024;</span>
+          <h3>The Atmosphere</h3>
+          <p>Warm lighting, thoughtful design, and a pace that lets you actually enjoy the evening. Sophisticated without the stiffness.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS & LOCATION -->
+  <section class="info" id="hours">
+    <div class="container">
+      <p class="section-label reveal">Visit Us</p>
+      <h2 class="section-title reveal">Hours &amp; Location</h2>
+      <div class="divider reveal"><div class="divider-dot"></div></div>
+      <div class="info-grid reveal">
+        <div class="info-block">
+          <h3>Dinner Hours</h3>
+          <p>
+            <span class="accent">Tuesday &ndash; Thursday</span><br>5:00 PM &ndash; 9:00 PM<br><br>
+            <span class="accent">Friday &ndash; Saturday</span><br>5:00 PM &ndash; 10:00 PM<br><br>
+            <span class="accent">Sunday &ndash; Monday</span><br>Closed
+          </p>
+        </div>
+        <div class="info-divider"></div>
+        <div class="info-block">
+          <h3>Location</h3>
+          <p>
+            Downtown Watertown, SD<br>
+            <span style="font-size: 0.8rem; color: var(--text-dim);">(Exact address coming soon)</span>
+          </p>
+          <br>
+          <h3>Bar</h3>
+          <p>
+            Full bar open during<br>all dinner hours<br>
+            <span class="accent">Happy Hour</span><br>
+            Tue &ndash; Fri, 5:00 &ndash; 6:00 PM
+          </p>
+        </div>
+      </div>
+      <div class="map-placeholder reveal">
+        <div class="map-placeholder-icon">&#9673;</div>
+        <div class="map-placeholder-text">Map &mdash; Downtown Watertown, SD</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVATIONS -->
+  <section class="reservations" id="reservations">
+    <div class="container">
+      <p class="section-label reveal">Reserve a Table</p>
+      <h2 class="section-title reveal">Join Us for Dinner</h2>
+      <div class="divider reveal"><div class="divider-dot"></div></div>
+      <p class="reveal">Walk-ins are always welcome, but reservations ensure your table is ready when you are. For parties of six or more, please call ahead.</p>
+      <a href="tel:+16058000000" class="cta-btn reveal">Make a Reservation</a>
+      <div class="contact-methods reveal">
+        <div class="contact-item">
+          <p class="contact-label">Phone</p>
+          <p class="contact-value">(605) 000-0000</p>
+        </div>
+        <div class="contact-item">
+          <p class="contact-label">Email</p>
+          <p class="contact-value">hello@thelocalwatertown.com</p>
+        </div>
+        <div class="contact-item">
+          <p class="contact-label">Location</p>
+          <p class="contact-value">Downtown Watertown, SD</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p class="footer-brand">The Local</p>
+      <p class="footer-tagline">Dinner, reimagined for the region</p>
+      <p class="footer-address">Downtown Watertown, South Dakota</p>
+      <p class="footer-credit">Website by <a href="https://brookeruhdhockett-ux.github.io/brooke-co-digital/" target="_blank" rel="noopener">Brooke Co. Digital</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
+    });
+
+    // Close mobile menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // Menu tabs
+    const tabs = document.querySelectorAll('.menu-tab');
+    const sections = document.querySelectorAll('.menu-section');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        tabs.forEach(t => t.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('tab-' + target).classList.add('active');
+
+        // Re-trigger reveal for newly visible items
+        document.querySelectorAll('#tab-' + target + ' .reveal').forEach(el => {
+          el.classList.remove('visible');
+          setTimeout(() => observer.observe(el), 50);
+        });
+      });
+    });
+
+    // Scroll reveal with IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Header background on scroll
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.style.background = 'rgba(13, 13, 13, 0.98)';
+      } else {
+        header.style.background = 'rgba(13, 13, 13, 0.92)';
+      }
+    });
+  </script>
+
+</body>
+</html>
