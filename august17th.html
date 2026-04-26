@@ -615,6 +615,93 @@
       background: var(--honey);
     }
 
+    /* ---- MONTHLY SPECIAL ---- */
+    .special-section {
+      background: var(--cream);
+      padding: 5rem 2rem;
+    }
+
+    .special-card {
+      max-width: 700px;
+      margin: 0 auto;
+      background: var(--warm-white);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid var(--amber);
+      box-shadow: 0 8px 32px rgba(74, 52, 31, 0.08);
+    }
+
+    .special-header {
+      background: var(--espresso);
+      color: var(--amber);
+      text-align: center;
+      padding: 1.2rem 2rem;
+      font-family: 'Fraunces', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .special-body {
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    .special-month {
+      font-family: 'Fraunces', serif;
+      font-size: 1.8rem;
+      color: var(--espresso);
+      margin-bottom: 0.5rem;
+    }
+
+    .special-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem;
+      color: var(--amber);
+      margin-bottom: 1rem;
+    }
+
+    .special-desc {
+      color: var(--brown-light);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .special-items {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem;
+    }
+
+    .special-items li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(74, 52, 31, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.92rem;
+    }
+
+    .special-items li:last-child { border-bottom: none; }
+
+    .special-items .item-name {
+      color: var(--espresso);
+      font-weight: 500;
+    }
+
+    .special-items .item-price {
+      color: var(--amber);
+      font-family: 'Fraunces', serif;
+      font-size: 1rem;
+    }
+
+    .special-note {
+      font-size: 0.82rem;
+      color: var(--brown-light);
+      font-style: italic;
+    }
+
     /* ---- FOOTER ---- */
     .site-footer {
       background: var(--espresso);
@@ -948,6 +1035,45 @@
           <div class="quote-mark">&ldquo;</div>
           <p>A necessary business to have in Clear Lake. Great coffee, friendly owners, cozy atmosphere.</p>
           <div class="reviewer">&mdash; Community Member</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MONTHLY SPECIAL -->
+  <section class="special-section" id="specials">
+    <div class="section-inner">
+      <div class="text-center fade-in">
+        <p class="section-label">This Month</p>
+        <h2 class="section-title">Monthly Lunch Special</h2>
+        <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
+      </div>
+
+      <div class="special-card fade-in" style="margin-top:2.5rem;">
+        <div class="special-header">Limited Time &bull; May 2026</div>
+        <div class="special-body">
+          <p class="special-month">May Lunch Special</p>
+          <p class="special-name">Spring on the Prairie</p>
+          <p class="special-desc">Warm up your lunch break with our May specials, available Monday through Friday while supplies last.</p>
+          <ul class="special-items">
+            <li>
+              <span class="item-name">Turkey Bacon Ranch Melt</span>
+              <span class="item-price">$9.50</span>
+            </li>
+            <li>
+              <span class="item-name">Garden Veggie Soup &amp; Half Sub Combo</span>
+              <span class="item-price">$10.00</span>
+            </li>
+            <li>
+              <span class="item-name">Iced Honey Lavender Latte</span>
+              <span class="item-price">$5.50</span>
+            </li>
+            <li>
+              <span class="item-name">Combo: Any Special + Drink</span>
+              <span class="item-price">$13.00</span>
+            </li>
+          </ul>
+          <p class="special-note">Specials available during lunch hours only. Menu items and prices may change.</p>
         </div>
       </div>
     </div>
