@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>August 17th | Gourmet Coffee & Sandwich Shoppe | Clear Lake, SD</title>
+  <meta name="description" content="August 17th Gourmet Coffee & Sandwich Shoppe — gourmet coffee, breakfast sandwiches, and specialty subs in downtown Clear Lake, South Dakota.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --espresso: #3B2416;
+      --dark-roast: #5C3A28;
+      --warm-brown: #7A5240;
+      --amber: #C4883A;
+      --honey: #D4A04A;
+      --cream: #F5EDE0;
+      --light-cream: #FAF7F2;
+      --sage: #8A9A7B;
+      --dusty-sage: #A3B396;
+      --burgundy: #7A3B3B;
+      --text: #3B2416;
+      --text-light: #6B5242;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      color: var(--text);
+      background: var(--light-cream);
+      line-height: 1.7;
+      font-size: 17px;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    /* ---- HEADER ---- */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(245, 237, 224, 0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(59, 36, 22, 0.08);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .site-header.scrolled {
+      box-shadow: 0 2px 20px rgba(59, 36, 22, 0.1);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.8rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--espresso);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .logo span { color: var(--amber); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--warm-brown);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--amber); }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--espresso);
+      margin: 6px 0;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 6px);
+    }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -6px);
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(196, 136, 58, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(138, 154, 123, 0.06) 0%, transparent 50%),
+        linear-gradient(170deg, var(--cream) 0%, var(--light-cream) 50%, #EDE5D8 100%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba(196, 136, 58, 0.1);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 700px; }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1.5rem;
+      padding: 0.4rem 1.2rem;
+      border: 1px solid rgba(196, 136, 58, 0.3);
+      border-radius: 2rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      color: var(--espresso);
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .hero h1 .date-accent {
+      display: block;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--amber);
+      font-size: 0.55em;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-tagline {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--text-light);
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 2.5rem;
+      line-height: 1.5;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--espresso);
+      color: var(--cream);
+      padding: 0.9rem 2.2rem;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    .hero-cta:hover {
+      background: var(--warm-brown);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(59, 36, 22, 0.2);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-light);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    .scroll-hint .arrow {
+      width: 1px;
+      height: 30px;
+      background: var(--warm-brown);
+      position: relative;
+      animation: scrollPulse 2s ease infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    /* ---- SECTIONS COMMON ---- */
+    section { padding: 5rem 2rem; }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--espresso);
+      margin-bottom: 1.5rem;
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: var(--amber);
+      margin-bottom: 2rem;
+    }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---- ABOUT ---- */
+    .about {
+      background: var(--light-cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-image {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background:
+        linear-gradient(135deg, var(--cream) 0%, #E8DED0 100%);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-image::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(196, 136, 58, 0.15);
+      border-radius: 4px;
+    }
+
+    .about-image-text {
+      font-family: 'Fraunces', serif;
+      font-size: 3rem;
+      color: var(--amber);
+      opacity: 0.25;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .about-text p {
+      color: var(--text-light);
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+
+    .about-text p:first-of-type::first-letter {
+      font-family: 'Fraunces', serif;
+      font-size: 3.2em;
+      float: left;
+      line-height: 0.8;
+      margin-right: 0.1em;
+      color: var(--espresso);
+    }
+
+    .about-detail {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(59, 36, 22, 0.08);
+    }
+
+    .about-detail-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--cream);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .about-detail-text {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .about-detail-text strong {
+      display: block;
+      color: var(--espresso);
+      font-weight: 600;
+    }
+
+    /* ---- MENU ---- */
+    .menu { background: var(--cream); }
+
+    .menu-intro {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      color: var(--text-light);
+      font-size: 1.05rem;
+    }
+
+    .menu-intro .section-label,
+    .menu-intro .section-title,
+    .menu-intro .divider { margin-left: auto; margin-right: auto; }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+
+    .menu-card {
+      background: var(--light-cream);
+      border-radius: 8px;
+      padding: 2.2rem 1.8rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(59, 36, 22, 0.08);
+    }
+
+    .menu-card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .menu-card h3 {
+      font-size: 1.3rem;
+      color: var(--espresso);
+      margin-bottom: 0.3rem;
+    }
+
+    .menu-card-sub {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1.2rem;
+    }
+
+    .menu-card ul {
+      list-style: none;
+    }
+
+    .menu-card li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(59, 36, 22, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+
+    .menu-card li:last-child { border-bottom: none; }
+
+    .menu-card .item-name { font-weight: 500; color: var(--text); }
+
+    .menu-note {
+      text-align: center;
+      margin-top: 2.5rem;
+      font-style: italic;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    /* ---- HOURS & LOCATION ---- */
+    .location { background: var(--light-cream); }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .location-info h3 {
+      font-size: 1.4rem;
+      color: var(--espresso);
+      margin-bottom: 1.2rem;
+    }
+
+    .info-block { margin-bottom: 2rem; }
+
+    .info-block h4 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.6rem;
+    }
+
+    .info-block p {
+      color: var(--text-light);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .info-block a {
+      color: var(--warm-brown);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .info-block a:hover { color: var(--amber); }
+
+    .season-note {
+      display: inline-block;
+      background: rgba(138, 154, 123, 0.12);
+      color: var(--sage);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.3rem 0.8rem;
+      border-radius: 3px;
+      margin-top: 0.5rem;
+    }
+
+    .map-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 350px;
+      background:
+        linear-gradient(135deg, #E8E0D4 0%, #DDD5C8 100%);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      color: var(--text-light);
+    }
+
+    .map-placeholder .pin {
+      font-size: 2rem;
+    }
+
+    .map-placeholder p {
+      font-size: 0.85rem;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* ---- TESTIMONIALS ---- */
+    .testimonials { background: var(--espresso); color: var(--cream); }
+
+    .testimonials .section-label { color: var(--honey); }
+    .testimonials .section-title { color: var(--cream); }
+    .testimonials .divider { background: var(--honey); }
+
+    .testimonial-text-center {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 2rem;
+    }
+
+    .testimonial-card .quote-mark {
+      font-family: 'Fraunces', serif;
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--honey);
+      opacity: 0.5;
+      margin-bottom: 0.5rem;
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(245, 237, 224, 0.85);
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-card .reviewer {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--honey);
+    }
+
+    /* ---- CTA BANNER ---- */
+    .cta-banner {
+      text-align: center;
+      background:
+        linear-gradient(135deg, var(--cream) 0%, #EDE5D8 100%);
+      padding: 4rem 2rem;
+    }
+
+    .cta-banner h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      color: var(--espresso);
+      margin-bottom: 1rem;
+    }
+
+    .cta-banner p {
+      color: var(--text-light);
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-banner .hero-cta {
+      background: var(--amber);
+      color: var(--espresso);
+    }
+
+    .cta-banner .hero-cta:hover {
+      background: var(--honey);
+    }
+
+    /* ---- FOOTER ---- */
+    .site-footer {
+      background: var(--espresso);
+      color: rgba(245, 237, 224, 0.5);
+      text-align: center;
+      padding: 2.5rem 2rem;
+      font-size: 0.85rem;
+    }
+
+    .footer-brand {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links a {
+      color: rgba(245, 237, 224, 0.5);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--honey); }
+
+    .footer-credit {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(245, 237, 224, 0.08);
+      font-size: 0.75rem;
+    }
+
+    .footer-credit a {
+      color: var(--honey);
+      text-decoration: none;
+    }
+
+    /* ---- MOBILE NAV OVERLAY ---- */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(59, 36, 22, 0.97);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .mobile-nav.open {
+      display: flex;
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-nav ul {
+      list-style: none;
+      text-align: center;
+    }
+
+    .mobile-nav li { margin: 1.5rem 0; }
+
+    .mobile-nav a {
+      font-family: 'Fraunces', serif;
+      font-size: 1.8rem;
+      color: var(--cream);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .mobile-nav a:hover { color: var(--honey); }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+
+      .about-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      section { padding: 3.5rem 1.5rem; }
+
+      .header-inner { padding: 0.8rem 1.5rem; }
+
+      .about-image { min-height: 250px; }
+    }
+
+    @media (max-width: 500px) {
+      .hero { min-height: 90vh; padding: 5rem 1.2rem 3rem; }
+      .hero h1 { font-size: 2.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo">August <span>17th</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#location">Visit</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#menu" class="mobile-link">Menu</a></li>
+      <li><a href="#location" class="mobile-link">Visit</a></li>
+      <li><a href="#testimonials" class="mobile-link">Reviews</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Clear Lake, South Dakota</div>
+      <h1>
+        August 17th
+        <span class="date-accent">Gourmet Coffee &amp; Sandwich Shoppe</span>
+      </h1>
+      <p class="hero-tagline">Good coffee, honest food, and a warm seat<br>in the heart of downtown Clear Lake</p>
+      <a href="#menu" class="hero-cta">See the Menu</a>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="arrow"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-image fade-in">
+          <div class="about-image-text">est.<br>Aug 17th</div>
+        </div>
+        <div class="about-text fade-in">
+          <div class="section-label">Our Story</div>
+          <h2 class="section-title">More Than Just a Coffee Shop</h2>
+          <div class="divider"></div>
+          <p>Nestled on 3rd Avenue in downtown Clear Lake, August 17th is the kind of place where mornings feel right. Jon and Mary built this shop to be exactly what a small town needs &mdash; a warm, welcoming spot where neighbors catch up over fresh coffee and a good breakfast sandwich.</p>
+          <p>We brew Dark Canyon Coffee, make our sandwiches fresh to order, and keep our prices honest. Whether you are grabbing a quick cappuccino on your way to work or settling in with pancakes and a newspaper, there is always a seat and a smile waiting for you.</p>
+          <div class="about-detail">
+            <div class="about-detail-icon">&#9749;</div>
+            <div class="about-detail-text">
+              <strong>Proudly Brewing Dark Canyon Coffee</strong>
+              Small-batch roasted, served fresh every morning
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu" id="menu">
+    <div class="section-inner">
+      <div class="menu-intro fade-in">
+        <div class="section-label">What We Serve</div>
+        <h2 class="section-title">The Menu</h2>
+        <div class="divider"></div>
+        <p>Made fresh, priced fair, served with a smile. From our signature coffee to our stacked breakfast sandwiches, every item is crafted to make your morning a little better.</p>
+      </div>
+
+      <div class="menu-grid">
+        <!-- Coffee -->
+        <div class="menu-card fade-in">
+          <div class="menu-card-icon">&#9749;</div>
+          <h3>Coffee &amp; Espresso</h3>
+          <div class="menu-card-sub">Dark Canyon Coffee</div>
+          <ul>
+            <li><span class="item-name">Drip Coffee</span></li>
+            <li><span class="item-name">Latte</span></li>
+            <li><span class="item-name">Cappuccino</span></li>
+            <li><span class="item-name">Mocha</span></li>
+            <li><span class="item-name">Americano</span></li>
+            <li><span class="item-name">Espresso</span></li>
+            <li><span class="item-name">Chai Latte</span></li>
+            <li><span class="item-name">Hot Chocolate</span></li>
+            <li><span class="item-name">Iced Coffee</span></li>
+          </ul>
+        </div>
+
+        <!-- Breakfast -->
+        <div class="menu-card fade-in">
+          <div class="menu-card-icon">&#127859;</div>
+          <h3>Breakfast</h3>
+          <div class="menu-card-sub">Served Fresh Every Morning</div>
+          <ul>
+            <li><span class="item-name">Breakfast Sandwich</span></li>
+            <li><span class="item-name">Egg &amp; Cheese Croissant</span></li>
+            <li><span class="item-name">Bacon, Egg &amp; Cheese</span></li>
+            <li><span class="item-name">Sausage &amp; Egg Wrap</span></li>
+            <li><span class="item-name">Pancakes</span></li>
+            <li><span class="item-name">Eggs &amp; Bacon</span></li>
+            <li><span class="item-name">Eggs &amp; Sausage</span></li>
+            <li><span class="item-name">Oatmeal</span></li>
+          </ul>
+        </div>
+
+        <!-- Sandwiches -->
+        <div class="menu-card fade-in">
+          <div class="menu-card-icon">&#129386;</div>
+          <h3>Sandwiches &amp; More</h3>
+          <div class="menu-card-sub">Specialty Subs &amp; Soups</div>
+          <ul>
+            <li><span class="item-name">Turkey Club Sub</span></li>
+            <li><span class="item-name">Italian Sub</span></li>
+            <li><span class="item-name">Ham &amp; Swiss</span></li>
+            <li><span class="item-name">BLT</span></li>
+            <li><span class="item-name">Grilled Cheese</span></li>
+            <li><span class="item-name">Soup of the Day</span></li>
+            <li><span class="item-name">Soup &amp; Sandwich Combo</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="menu-note fade-in">Menu items and availability may vary. Ask us about daily specials and seasonal offerings.</p>
+    </div>
+  </section>
+
+  <!-- HOURS & LOCATION -->
+  <section class="location" id="location">
+    <div class="section-inner">
+      <div class="section-label fade-in">Find Us</div>
+      <h2 class="section-title fade-in">Hours &amp; Location</h2>
+      <div class="divider fade-in"></div>
+
+      <div class="location-grid">
+        <div class="location-info fade-in">
+          <div class="info-block">
+            <h4>Address</h4>
+            <p>
+              213 3rd Ave S<br>
+              Clear Lake, SD 57226
+            </p>
+          </div>
+
+          <div class="info-block">
+            <h4>Contact</h4>
+            <p>
+              <a href="tel:6058744000">605.874.4000</a><br>
+              <a href="mailto:Info@august-17th.com">Info@august-17th.com</a>
+            </p>
+          </div>
+
+          <div class="info-block">
+            <h4>Hours</h4>
+            <p>
+              Monday &ndash; Saturday<br>
+              Open for breakfast and lunch<br>
+              <em>(Hours vary &mdash; check our Facebook for today's hours)</em>
+            </p>
+            <div class="season-note">&#9728; Summer hours: Breakfast only, 7:00 AM &ndash; 10:30 AM</div>
+          </div>
+
+          <div class="info-block">
+            <h4>Follow Us</h4>
+            <p><a href="https://www.facebook.com/August17thGCSS" target="_blank" rel="noopener">Facebook &mdash; @August17thGCSS</a></p>
+          </div>
+        </div>
+
+        <div class="map-placeholder fade-in">
+          <div class="pin">&#128205;</div>
+          <p>213 3rd Ave S<br>Clear Lake, SD 57226</p>
+          <p style="font-size: 0.75rem; opacity: 0.6;">Interactive map coming soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-inner">
+      <div class="testimonial-text-center fade-in">
+        <div class="section-label">What People Say</div>
+        <h2 class="section-title">Loved by Clear Lake</h2>
+        <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
+      </div>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card fade-in">
+          <div class="quote-mark">&ldquo;</div>
+          <p>My favorite breakfast sandwich and coffee place. Always fresh, always good.</p>
+          <div class="reviewer">&mdash; Local Regular</div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <div class="quote-mark">&ldquo;</div>
+          <p>Simple, delicious AND reasonably priced. You really cannot beat it. A gem in Clear Lake.</p>
+          <div class="reviewer">&mdash; Visitor Review</div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <div class="quote-mark">&ldquo;</div>
+          <p>A necessary business to have in Clear Lake. Great coffee, friendly owners, cozy atmosphere.</p>
+          <div class="reviewer">&mdash; Community Member</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="section-inner fade-in">
+      <h2>Come on in. The coffee's on.</h2>
+      <p>Start your morning the right way &mdash; with a fresh cup and friendly faces in downtown Clear Lake.</p>
+      <a href="https://www.facebook.com/August17thGCSS" target="_blank" rel="noopener" class="hero-cta">Follow Us on Facebook</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-brand">August 17th</div>
+    <ul class="footer-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#location">Visit</a></li>
+      <li><a href="https://www.facebook.com/August17thGCSS" target="_blank" rel="noopener">Facebook</a></li>
+    </ul>
+    <p>&copy; 2026 August 17th Gourmet Coffee &amp; Sandwich Shoppe. All rights reserved.</p>
+    <p class="footer-credit">Website by <a href="#">Brooke Co. Digital</a></p>
+  </footer>
+
+  <script>
+    // Sticky header shadow
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // IntersectionObserver for fade-in animations
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => appearOnScroll.observe(fader));
+
+    // Smooth scroll offset for fixed header
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = header.offsetHeight + 10;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
