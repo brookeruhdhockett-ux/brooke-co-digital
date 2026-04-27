@@ -66,8 +66,7 @@ header.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.15)}
   display:flex;align-items:center;justify-content:space-between;height:70px;
 }
 
-.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--cream);letter-spacing:.02em;font-weight:500}
-.logo span{font-weight:300;font-size:.65em;letter-spacing:.15em;text-transform:uppercase;display:block;color:var(--tan);margin-top:-2px}
+.logo img{height:44px;width:auto}
 
 nav{display:flex;align-items:center;gap:28px}
 nav a{font-size:.82rem;font-weight:400;letter-spacing:.03em;color:var(--tan);transition:color .25s}
@@ -116,13 +115,10 @@ nav a:hover{color:var(--cream)}
 .hero-content{position:relative;z-index:1;max-width:660px}
 
 .hero-badge{
-  display:inline-flex;align-items:center;justify-content:center;
-  width:90px;height:120px;border:1.5px solid rgba(232,224,212,.2);
-  border-radius:50px;margin-bottom:28px;position:relative;
+  display:inline-block;margin-bottom:28px;
 }
-.hero-badge::before{
-  content:'A';font-family:'Cormorant Garamond',serif;font-size:2.8rem;
-  color:var(--cream);font-weight:400;
+.hero-badge img{
+  width:100px;height:auto;border-radius:50px;
 }
 
 .hero-label{font-size:.75rem;font-weight:500;letter-spacing:.2em;color:var(--caramel);margin-bottom:18px;text-transform:uppercase}
@@ -329,7 +325,7 @@ footer p{font-size:.76rem;color:rgba(232,224,212,.3);line-height:1.8}
 <!-- HEADER -->
 <header id="header">
   <div class="header-inner">
-    <a href="#" class="logo">Abide<span>Audiology</span></a>
+    <a href="#" class="logo"><img src="abide-logo.jpg" alt="Abide Audiology"></a>
     <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
       <span></span><span></span><span></span>
     </div>
@@ -346,7 +342,7 @@ footer p{font-size:.76rem;color:rgba(232,224,212,.3);line-height:1.8}
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-content">
-    <div class="hero-badge reveal"></div>
+    <div class="hero-badge reveal"><img src="abide-thumbnail.jpg" alt="Abide Audiology"></div>
     <p class="hero-label reveal">compassionate hearing care</p>
     <h1 class="reveal">Abide <em>Audiology</em></h1>
     <p class="reveal">hearing care rooted in patience, expertise, and genuine connection. because better hearing means a better life.</p>
