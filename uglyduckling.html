@@ -77,13 +77,23 @@
     }
 
     .logo {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.45rem;
-      color: var(--wood-dark);
       text-decoration: none;
-      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
     }
-    .logo span { color: var(--sage-dark); }
+    .logo img {
+      height: 44px;
+      width: auto;
+    }
+
+    .hero-badge img {
+      width: 100px;
+      height: auto;
+      border-radius: 50%;
+      border: 3px solid var(--wheat-light);
+      background: var(--white);
+      padding: 6px;
+    }
 
     nav { display: flex; gap: 2rem; align-items: center; }
     nav a {
@@ -176,15 +186,6 @@
 
     .hero-badge {
       display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--sage-dark);
-      background: rgba(122,142,110,0.12);
-      border: 1px solid rgba(122,142,110,0.25);
-      padding: 0.4rem 1.2rem;
-      border-radius: 100px;
       margin-bottom: 1.5rem;
     }
 
@@ -601,7 +602,7 @@
   <!-- HEADER -->
   <header class="site-header" id="header">
     <div class="header-inner">
-      <a href="#" class="logo">The Ugly <span>Duckling</span></a>
+      <a href="#" class="logo"><img src="uglyduckling-logo.jpg" alt="The Ugly Duckling"></a>
       <nav>
         <a href="#about">About</a>
         <a href="#offerings">What We Offer</a>
@@ -625,7 +626,7 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-content">
-      <div class="hero-badge reveal">Est. 2016 &middot; Downtown Brookings</div>
+      <div class="hero-badge reveal"><img src="uglyduckling-badge.jpg" alt="The Ugly Duckling duck logo"></div>
       <h1 class="reveal reveal-delay-1">The Ugly Duckling</h1>
       <div class="hero-tagline reveal reveal-delay-2">Where old things find new life</div>
       <p class="reveal reveal-delay-3">
@@ -787,7 +788,7 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <a href="#" class="logo">The Ugly <span>Duckling</span></a>
+        <a href="#" class="logo"><img src="uglyduckling-logo.jpg" alt="The Ugly Duckling"></a>
         <p>Upcycled goods & vintage finds in downtown Brookings, SD</p>
       </div>
       <div class="footer-links">
