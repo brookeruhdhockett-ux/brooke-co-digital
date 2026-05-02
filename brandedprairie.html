@@ -70,7 +70,7 @@ header.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.15)}
   letter-spacing:.12em;color:var(--cream);text-transform:uppercase;
   display:flex;align-items:center;gap:6px;
 }
-.logo-flower{font-size:1.2rem;opacity:.8}
+.logo-flower-img{height:18px;width:auto;display:inline-block;vertical-align:middle;margin:0 4px;opacity:.8;filter:invert(1) brightness(1.5)}
 
 nav{display:flex;align-items:center;gap:28px}
 nav a{font-size:.82rem;font-weight:500;letter-spacing:.03em;color:var(--tan);transition:color .25s}
@@ -124,9 +124,10 @@ nav a:hover{color:var(--cream)}
   font-size:clamp(2.2rem,5vw,3.4rem);letter-spacing:.08em;
   color:var(--cream);text-transform:uppercase;line-height:1.15;
 }
-.hero-logo-text .flower{
-  display:inline-block;font-style:normal;font-size:.7em;
+.hero-flower-img{
+  display:inline-block;height:.7em;width:auto;
   vertical-align:middle;margin:0 4px;opacity:.7;
+  filter:invert(1) brightness(1.5);
 }
 .hero-logo-sub{
   font-family:'Playfair Display',serif;font-weight:500;
@@ -265,7 +266,7 @@ section{padding:90px 0}
   font-size:1.1rem;letter-spacing:.15em;color:var(--brown-light);
   text-transform:uppercase;margin-top:6px;
 }
-.about-brand-mark .mark-flower{font-size:2rem;color:var(--sage);margin-bottom:12px;display:block}
+.mark-flower-img{height:48px;width:auto;margin:0 auto 12px;display:block}
 .about-text h2{font-size:clamp(1.5rem,3vw,2.1rem);color:var(--charcoal);margin-bottom:16px}
 .about-text p{color:var(--text-lt);margin-bottom:14px;font-size:.95rem;line-height:1.85;font-weight:400}
 .about-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
@@ -320,6 +321,7 @@ footer{
   font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;
   letter-spacing:.1em;color:var(--cream);text-transform:uppercase;margin-bottom:8px;
 }
+.footer-flower-img{height:16px;width:auto;display:inline-block;vertical-align:middle;margin:0 2px;filter:invert(1) brightness(1.5);opacity:.8}
 .footer-brand p{font-size:.82rem;color:rgba(245,240,232,.4);line-height:1.7}
 .footer-links{display:flex;flex-direction:column;gap:8px}
 .footer-links a{font-size:.82rem;color:rgba(245,240,232,.4);transition:color .2s;font-weight:500}
@@ -351,7 +353,7 @@ footer{
 <!-- HEADER -->
 <header id="header">
   <div class="header-inner">
-    <a href="#" class="logo-text">Branded<span class="logo-flower">&#x2740;</span>Prairie</a>
+    <a href="#" class="logo-text">Branded<img src="brandedprairie-flower.png" alt="" class="logo-flower-img">Prairie</a>
     <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
       <span></span><span></span><span></span>
     </div>
@@ -368,7 +370,7 @@ footer{
 <section class="hero" id="hero">
   <div class="hero-content">
     <div class="hero-logo reveal">
-      <div class="hero-logo-text">BRANDED<span class="flower">&#x2740;</span>PRAIRIE</div>
+      <div class="hero-logo-text">BRANDED<img src="brandedprairie-flower.png" alt="" class="hero-flower-img">PRAIRIE</div>
       <div class="hero-logo-sub">COMPANY</div>
     </div>
     <p class="hero-label reveal">custom apparel &amp; western branding</p>
@@ -504,7 +506,7 @@ footer{
     <div class="about-inner">
       <div class="about-visual reveal">
         <div class="about-brand-mark">
-          <span class="mark-flower">&#x2740;</span>
+          <img src="brandedprairie-flower.png" alt="" class="mark-flower-img">
           <div class="mark-text">Branded Prairie</div>
           <div class="mark-sub">Company</div>
         </div>
@@ -563,7 +565,7 @@ footer{
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
-        <div class="footer-logo">Branded &#x2740; Prairie Company</div>
+        <div class="footer-logo">Branded <img src="brandedprairie-flower.png" alt="" class="footer-flower-img"> Prairie Company</div>
         <p>custom apparel &amp; western branding<br>South Dakota</p>
       </div>
       <div class="footer-links">
