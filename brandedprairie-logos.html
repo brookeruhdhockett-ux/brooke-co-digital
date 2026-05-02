@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Branded Prairie Company — Logo Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --sage:#5B7A5E;
+  --cream:#F5F0E8;
+  --dark:#3A3530;
+  --wheat:#C8B898;
+  --white:#FFFFFF;
+}
+body{
+  font-family:'Playfair Display',serif;
+  color:var(--dark);
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+}
+.page-header{
+  text-align:center;
+  padding:60px 24px 20px;
+  border-bottom:1px solid #e8e4dc;
+  margin-bottom:48px;
+}
+.page-header h1{
+  font-size:28px;
+  font-weight:600;
+  letter-spacing:0.02em;
+  color:var(--dark);
+}
+.page-header p{
+  font-size:14px;
+  font-weight:400;
+  color:#8a8078;
+  margin-top:8px;
+  font-style:italic;
+}
+.concept-section{
+  max-width:1100px;
+  margin:0 auto 64px;
+  padding:0 24px;
+}
+.concept-label{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--sage);
+  margin-bottom:4px;
+}
+.concept-title{
+  font-size:22px;
+  font-weight:600;
+  margin-bottom:6px;
+}
+.concept-desc{
+  font-size:13px;
+  font-weight:400;
+  color:#8a8078;
+  margin-bottom:28px;
+  font-style:italic;
+  max-width:500px;
+}
+.variant-row{
+  display:flex;
+  gap:40px;
+  margin-bottom:32px;
+}
+.variant-col{
+  flex:1;
+}
+.variant-label{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:#b0a898;
+  margin-bottom:16px;
+  text-align:center;
+}
+.size-row{
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:40px;
+  padding:40px 24px;
+  border-radius:12px;
+  min-height:200px;
+}
+.size-row.light-bg{
+  background:var(--white);
+  border:1px solid #e8e4dc;
+}
+.size-row.dark-bg{
+  background:var(--sage);
+}
+.size-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+}
+.size-label{
+  font-size:9px;
+  font-weight:400;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  opacity:0.5;
+}
+.light-bg .size-label{color:var(--dark)}
+.dark-bg .size-label{color:var(--cream)}
+.divider{
+  width:100%;
+  max-width:1100px;
+  margin:0 auto 64px;
+  border:none;
+  border-top:1px solid #e8e4dc;
+}
+.footer{
+  text-align:center;
+  padding:40px 24px 60px;
+  border-top:1px solid #e8e4dc;
+}
+.footer p{
+  font-size:12px;
+  color:#b0a898;
+  font-style:italic;
+}
+@media(max-width:700px){
+  .variant-row{flex-direction:column;gap:24px}
+  .size-row{gap:20px;padding:24px 12px;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <h1>Branded Prairie Company &mdash; Logo Concepts</h1>
+  <p>Compact logo &amp; monogram options for social media, favicons, and brand marks</p>
+</header>
+
+<!-- ============================================================
+     PASQUE FLOWER SVG DEFINITIONS (reusable)
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <defs>
+    <!-- Pasque flower: 5 petals with round center -->
+    <symbol id="pasque-dark" viewBox="0 0 40 40">
+      <g fill="none" stroke="#3A3530" stroke-width="1.2">
+        <!-- 5 petals arranged radially -->
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(0 20 20)" fill="#3A3530" opacity="0.15"/>
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(72 20 20)" fill="#3A3530" opacity="0.15"/>
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(144 20 20)" fill="#3A3530" opacity="0.15"/>
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(216 20 20)" fill="#3A3530" opacity="0.15"/>
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(288 20 20)" fill="#3A3530" opacity="0.15"/>
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(0 20 20)"/>
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(72 20 20)"/>
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(144 20 20)"/>
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(216 20 20)"/>
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(288 20 20)"/>
+      </g>
+      <!-- Center -->
+      <circle cx="20" cy="20" r="4.5" fill="#C8B898" stroke="#3A3530" stroke-width="1.2"/>
+      <circle cx="20" cy="20" r="2" fill="#3A3530"/>
+    </symbol>
+    <symbol id="pasque-light" viewBox="0 0 40 40">
+      <g fill="none" stroke="#F5F0E8" stroke-width="1.2">
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(0 20 20)" fill="#F5F0E8" opacity="0.15"/>
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(72 20 20)" fill="#F5F0E8" opacity="0.15"/>
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(144 20 20)" fill="#F5F0E8" opacity="0.15"/>
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(216 20 20)" fill="#F5F0E8" opacity="0.15"/>
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(288 20 20)" fill="#F5F0E8" opacity="0.15"/>
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(0 20 20)"/>
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(72 20 20)"/>
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(144 20 20)"/>
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(216 20 20)"/>
+        <ellipse cx="20" cy="8" rx="5" ry="10" transform="rotate(288 20 20)"/>
+      </g>
+      <circle cx="20" cy="20" r="4.5" fill="#C8B898" stroke="#F5F0E8" stroke-width="1.2"/>
+      <circle cx="20" cy="20" r="2" fill="#F5F0E8"/>
+    </symbol>
+  </defs>
+</svg>
+
+
+<!-- ============================================================
+     CONCEPT 1 — Stacked Monogram Square
+     ============================================================ -->
+<section class="concept-section">
+  <div class="concept-label">Concept 1</div>
+  <div class="concept-title">Stacked Monogram Square</div>
+  <div class="concept-desc">"B" on top, "PC" below, thin square frame. Pasque flower accent in the top-right corner. Clean editorial feel.</div>
+
+  <div class="variant-row">
+    <div class="variant-col">
+      <div class="variant-label">Dark on Light</div>
+      <div class="size-row light-bg">
+        <div class="size-item">
+          <svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="160" height="160" fill="none" stroke="#3A3530" stroke-width="1.5"/>
+            <text x="90" y="82" text-anchor="middle" font-family="'Playfair Display',serif" font-size="62" font-weight="700" fill="#3A3530">B</text>
+            <text x="90" y="138" text-anchor="middle" font-family="'Playfair Display',serif" font-size="42" font-weight="600" letter-spacing="6" fill="#3A3530">PC</text>
+            <use href="#pasque-dark" x="130" y="6" width="28" height="28"/>
+          </svg>
+          <span class="size-label">Large</span>
+        </div>
+        <div class="size-item">
+          <svg width="150" height="150" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="160" height="160" fill="none" stroke="#3A3530" stroke-width="1.5"/>
+            <text x="90" y="82" text-anchor="middle" font-family="'Playfair Display',serif" font-size="62" font-weight="700" fill="#3A3530">B</text>
+            <text x="90" y="138" text-anchor="middle" font-family="'Playfair Display',serif" font-size="42" font-weight="600" letter-spacing="6" fill="#3A3530">PC</text>
+            <use href="#pasque-dark" x="130" y="6" width="28" height="28"/>
+          </svg>
+          <span class="size-label">Profile ~150px</span>
+        </div>
+        <div class="size-item">
+          <svg width="40" height="40" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="160" height="160" fill="none" stroke="#3A3530" stroke-width="4"/>
+            <text x="90" y="82" text-anchor="middle" font-family="'Playfair Display',serif" font-size="62" font-weight="700" fill="#3A3530">B</text>
+            <text x="90" y="138" text-anchor="middle" font-family="'Playfair Display',serif" font-size="42" font-weight="600" letter-spacing="6" fill="#3A3530">PC</text>
+            <use href="#pasque-dark" x="130" y="6" width="28" height="28"/>
+          </svg>
+          <span class="size-label">Icon ~40px</span>
+        </div>
+      </div>
+    </div>
+    <div class="variant-col">
+      <div class="variant-label">Light on Dark</div>
+      <div class="size-row dark-bg">
+        <div class="size-item">
+          <svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="160" height="160" fill="none" stroke="#F5F0E8" stroke-width="1.5"/>
+            <text x="90" y="82" text-anchor="middle" font-family="'Playfair Display',serif" font-size="62" font-weight="700" fill="#F5F0E8">B</text>
+            <text x="90" y="138" text-anchor="middle" font-family="'Playfair Display',serif" font-size="42" font-weight="600" letter-spacing="6" fill="#F5F0E8">PC</text>
+            <use href="#pasque-light" x="130" y="6" width="28" height="28"/>
+          </svg>
+          <span class="size-label">Large</span>
+        </div>
+        <div class="size-item">
+          <svg width="150" height="150" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="160" height="160" fill="none" stroke="#F5F0E8" stroke-width="1.5"/>
+            <text x="90" y="82" text-anchor="middle" font-family="'Playfair Display',serif" font-size="62" font-weight="700" fill="#F5F0E8">B</text>
+            <text x="90" y="138" text-anchor="middle" font-family="'Playfair Display',serif" font-size="42" font-weight="600" letter-spacing="6" fill="#F5F0E8">PC</text>
+            <use href="#pasque-light" x="130" y="6" width="28" height="28"/>
+          </svg>
+          <span class="size-label">Profile ~150px</span>
+        </div>
+        <div class="size-item">
+          <svg width="40" height="40" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="160" height="160" fill="none" stroke="#F5F0E8" stroke-width="4"/>
+            <text x="90" y="82" text-anchor="middle" font-family="'Playfair Display',serif" font-size="62" font-weight="700" fill="#F5F0E8">B</text>
+            <text x="90" y="138" text-anchor="middle" font-family="'Playfair Display',serif" font-size="42" font-weight="600" letter-spacing="6" fill="#F5F0E8">PC</text>
+            <use href="#pasque-light" x="130" y="6" width="28" height="28"/>
+          </svg>
+          <span class="size-label">Icon ~40px</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ============================================================
+     CONCEPT 2 — Circle Badge
+     ============================================================ -->
+<section class="concept-section">
+  <div class="concept-label">Concept 2</div>
+  <div class="concept-title">Circle Badge</div>
+  <div class="concept-desc">Centered "BPC" initials in a circle with a pasque flower perched on the top border. Stamp/seal aesthetic.</div>
+
+  <div class="variant-row">
+    <div class="variant-col">
+      <div class="variant-label">Dark on Light</div>
+      <div class="size-row light-bg">
+        <div class="size-item">
+          <svg width="180" height="195" viewBox="0 0 180 195" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="90" cy="105" r="78" fill="none" stroke="#3A3530" stroke-width="1.8"/>
+            <circle cx="90" cy="105" r="72" fill="none" stroke="#3A3530" stroke-width="0.6"/>
+            <text x="90" y="118" text-anchor="middle" font-family="'Playfair Display',serif" font-size="44" font-weight="700" letter-spacing="5" fill="#3A3530">BPC</text>
+            <use href="#pasque-dark" x="70" y="4" width="40" height="40"/>
+          </svg>
+          <span class="size-label">Large</span>
+        </div>
+        <div class="size-item">
+          <svg width="150" height="163" viewBox="0 0 180 195" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="90" cy="105" r="78" fill="none" stroke="#3A3530" stroke-width="1.8"/>
+            <circle cx="90" cy="105" r="72" fill="none" stroke="#3A3530" stroke-width="0.6"/>
+            <text x="90" y="118" text-anchor="middle" font-family="'Playfair Display',serif" font-size="44" font-weight="700" letter-spacing="5" fill="#3A3530">BPC</text>
+            <use href="#pasque-dark" x="70" y="4" width="40" height="40"/>
+          </svg>
+          <span class="size-label">Profile ~150px</span>
+        </div>
+        <div class="size-item">
+          <svg width="40" height="43" viewBox="0 0 180 195" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="90" cy="105" r="78" fill="none" stroke="#3A3530" stroke-width="4"/>
+            <text x="90" y="118" text-anchor="middle" font-family="'Playfair Display',serif" font-size="44" font-weight="700" letter-spacing="5" fill="#3A3530">BPC</text>
+            <use href="#pasque-dark" x="70" y="4" width="40" height="40"/>
+          </svg>
+          <span class="size-label">Icon ~40px</span>
+        </div>
+      </div>
+    </div>
+    <div class="variant-col">
+      <div class="variant-label">Light on Dark</div>
+      <div class="size-row dark-bg">
+        <div class="size-item">
+          <svg width="180" height="195" viewBox="0 0 180 195" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="90" cy="105" r="78" fill="none" stroke="#F5F0E8" stroke-width="1.8"/>
+            <circle cx="90" cy="105" r="72" fill="none" stroke="#F5F0E8" stroke-width="0.6"/>
+            <text x="90" y="118" text-anchor="middle" font-family="'Playfair Display',serif" font-size="44" font-weight="700" letter-spacing="5" fill="#F5F0E8">BPC</text>
+            <use href="#pasque-light" x="70" y="4" width="40" height="40"/>
+          </svg>
+          <span class="size-label">Large</span>
+        </div>
+        <div class="size-item">
+          <svg width="150" height="163" viewBox="0 0 180 195" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="90" cy="105" r="78" fill="none" stroke="#F5F0E8" stroke-width="1.8"/>
+            <circle cx="90" cy="105" r="72" fill="none" stroke="#F5F0E8" stroke-width="0.6"/>
+            <text x="90" y="118" text-anchor="middle" font-family="'Playfair Display',serif" font-size="44" font-weight="700" letter-spacing="5" fill="#F5F0E8">BPC</text>
+            <use href="#pasque-light" x="70" y="4" width="40" height="40"/>
+          </svg>
+          <span class="size-label">Profile ~150px</span>
+        </div>
+        <div class="size-item">
+          <svg width="40" height="43" viewBox="0 0 180 195" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="90" cy="105" r="78" fill="none" stroke="#F5F0E8" stroke-width="4"/>
+            <text x="90" y="118" text-anchor="middle" font-family="'Playfair Display',serif" font-size="44" font-weight="700" letter-spacing="5" fill="#F5F0E8">BPC</text>
+            <use href="#pasque-light" x="70" y="4" width="40" height="40"/>
+          </svg>
+          <span class="size-label">Icon ~40px</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ============================================================
+     CONCEPT 3 — Flower Lettermark
+     ============================================================ -->
+<section class="concept-section">
+  <div class="concept-label">Concept 3</div>
+  <div class="concept-title">Flower Lettermark</div>
+  <div class="concept-desc">"BP" in elegant bold serif with a tiny pasque flower replacing the period. Minimal and clean.</div>
+
+  <div class="variant-row">
+    <div class="variant-col">
+      <div class="variant-label">Dark on Light</div>
+      <div class="size-row light-bg">
+        <div class="size-item">
+          <svg width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+            <text x="10" y="90" font-family="'Playfair Display',serif" font-size="80" font-weight="700" fill="#3A3530">BP</text>
+            <use href="#pasque-dark" x="148" y="62" width="30" height="30"/>
+          </svg>
+          <span class="size-label">Large</span>
+        </div>
+        <div class="size-item">
+          <svg width="150" height="90" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+            <text x="10" y="90" font-family="'Playfair Display',serif" font-size="80" font-weight="700" fill="#3A3530">BP</text>
+            <use href="#pasque-dark" x="148" y="62" width="30" height="30"/>
+          </svg>
+          <span class="size-label">Profile ~150px</span>
+        </div>
+        <div class="size-item">
+          <svg width="66" height="40" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+            <text x="10" y="90" font-family="'Playfair Display',serif" font-size="80" font-weight="700" fill="#3A3530">BP</text>
+            <use href="#pasque-dark" x="148" y="62" width="30" height="30"/>
+          </svg>
+          <span class="size-label">Icon ~40px</span>
+        </div>
+      </div>
+    </div>
+    <div class="variant-col">
+      <div class="variant-label">Light on Dark</div>
+      <div class="size-row dark-bg">
+        <div class="size-item">
+          <svg width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+            <text x="10" y="90" font-family="'Playfair Display',serif" font-size="80" font-weight="700" fill="#F5F0E8">BP</text>
+            <use href="#pasque-light" x="148" y="62" width="30" height="30"/>
+          </svg>
+          <span class="size-label">Large</span>
+        </div>
+        <div class="size-item">
+          <svg width="150" height="90" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+            <text x="10" y="90" font-family="'Playfair Display',serif" font-size="80" font-weight="700" fill="#F5F0E8">BP</text>
+            <use href="#pasque-light" x="148" y="62" width="30" height="30"/>
+          </svg>
+          <span class="size-label">Profile ~150px</span>
+        </div>
+        <div class="size-item">
+          <svg width="66" height="40" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+            <text x="10" y="90" font-family="'Playfair Display',serif" font-size="80" font-weight="700" fill="#F5F0E8">BP</text>
+            <use href="#pasque-light" x="148" y="62" width="30" height="30"/>
+          </svg>
+          <span class="size-label">Icon ~40px</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ============================================================
+     CONCEPT 4 — Split Monogram
+     ============================================================ -->
+<section class="concept-section">
+  <div class="concept-label">Concept 4</div>
+  <div class="concept-title">Split Monogram</div>
+  <div class="concept-desc">Large "B" on the left, vertical line divider, "PC" stacked smaller on the right. Pasque flower above the divider. Modern editorial.</div>
+
+  <div class="variant-row">
+    <div class="variant-col">
+      <div class="variant-label">Dark on Light</div>
+      <div class="size-row light-bg">
+        <div class="size-item">
+          <svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+            <text x="20" y="120" font-family="'Playfair Display',serif" font-size="100" font-weight="700" fill="#3A3530">B</text>
+            <line x1="105" y1="30" x2="105" y2="140" stroke="#3A3530" stroke-width="1.2"/>
+            <text x="150" y="80" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#3A3530">P</text>
+            <text x="150" y="120" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#3A3530">C</text>
+            <use href="#pasque-dark" x="88" y="4" width="34" height="34"/>
+          </svg>
+          <span class="size-label">Large</span>
+        </div>
+        <div class="size-item">
+          <svg width="150" height="120" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+            <text x="20" y="120" font-family="'Playfair Display',serif" font-size="100" font-weight="700" fill="#3A3530">B</text>
+            <line x1="105" y1="30" x2="105" y2="140" stroke="#3A3530" stroke-width="1.2"/>
+            <text x="150" y="80" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#3A3530">P</text>
+            <text x="150" y="120" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#3A3530">C</text>
+            <use href="#pasque-dark" x="88" y="4" width="34" height="34"/>
+          </svg>
+          <span class="size-label">Profile ~150px</span>
+        </div>
+        <div class="size-item">
+          <svg width="50" height="40" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+            <text x="20" y="120" font-family="'Playfair Display',serif" font-size="100" font-weight="700" fill="#3A3530">B</text>
+            <line x1="105" y1="30" x2="105" y2="140" stroke="#3A3530" stroke-width="3"/>
+            <text x="150" y="80" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#3A3530">P</text>
+            <text x="150" y="120" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#3A3530">C</text>
+            <use href="#pasque-dark" x="88" y="4" width="34" height="34"/>
+          </svg>
+          <span class="size-label">Icon ~40px</span>
+        </div>
+      </div>
+    </div>
+    <div class="variant-col">
+      <div class="variant-label">Light on Dark</div>
+      <div class="size-row dark-bg">
+        <div class="size-item">
+          <svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+            <text x="20" y="120" font-family="'Playfair Display',serif" font-size="100" font-weight="700" fill="#F5F0E8">B</text>
+            <line x1="105" y1="30" x2="105" y2="140" stroke="#F5F0E8" stroke-width="1.2"/>
+            <text x="150" y="80" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#F5F0E8">P</text>
+            <text x="150" y="120" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#F5F0E8">C</text>
+            <use href="#pasque-light" x="88" y="4" width="34" height="34"/>
+          </svg>
+          <span class="size-label">Large</span>
+        </div>
+        <div class="size-item">
+          <svg width="150" height="120" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+            <text x="20" y="120" font-family="'Playfair Display',serif" font-size="100" font-weight="700" fill="#F5F0E8">B</text>
+            <line x1="105" y1="30" x2="105" y2="140" stroke="#F5F0E8" stroke-width="1.2"/>
+            <text x="150" y="80" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#F5F0E8">P</text>
+            <text x="150" y="120" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#F5F0E8">C</text>
+            <use href="#pasque-light" x="88" y="4" width="34" height="34"/>
+          </svg>
+          <span class="size-label">Profile ~150px</span>
+        </div>
+        <div class="size-item">
+          <svg width="50" height="40" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+            <text x="20" y="120" font-family="'Playfair Display',serif" font-size="100" font-weight="700" fill="#F5F0E8">B</text>
+            <line x1="105" y1="30" x2="105" y2="140" stroke="#F5F0E8" stroke-width="3"/>
+            <text x="150" y="80" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#F5F0E8">P</text>
+            <text x="150" y="120" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#F5F0E8">C</text>
+            <use href="#pasque-light" x="88" y="4" width="34" height="34"/>
+          </svg>
+          <span class="size-label">Icon ~40px</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ============================================================
+     CONCEPT 5 — Oval Badge
+     ============================================================ -->
+<section class="concept-section">
+  <div class="concept-label">Concept 5</div>
+  <div class="concept-title">Oval Badge</div>
+  <div class="concept-desc">"BRANDED PRAIRIE" curved along the top of an oval, "CO." at the bottom, pasque flower centered. Vintage Western badge.</div>
+
+  <div class="variant-row">
+    <div class="variant-col">
+      <div class="variant-label">Dark on Light</div>
+      <div class="size-row light-bg">
+        <div class="size-item">
+          <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <path id="topArc" d="M 30,100 A 70,85 0 0 1 170,100" fill="none"/>
+              <path id="bottomArc" d="M 40,120 A 60,70 0 0 0 160,120" fill="none"/>
+            </defs>
+            <ellipse cx="100" cy="100" rx="85" ry="90" fill="none" stroke="#3A3530" stroke-width="1.8"/>
+            <ellipse cx="100" cy="100" rx="79" ry="84" fill="none" stroke="#3A3530" stroke-width="0.6"/>
+            <text font-family="'Playfair Display',serif" font-size="14" font-weight="600" letter-spacing="4" fill="#3A3530">
+              <textPath href="#topArc" startOffset="50%" text-anchor="middle">BRANDED PRAIRIE</textPath>
+            </text>
+            <text font-family="'Playfair Display',serif" font-size="14" font-weight="600" letter-spacing="4" fill="#3A3530">
+              <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">CO.</textPath>
+            </text>
+            <use href="#pasque-dark" x="78" y="72" width="44" height="44"/>
+            <!-- Decorative dots -->
+            <circle cx="38" cy="100" r="2" fill="#3A3530"/>
+            <circle cx="162" cy="100" r="2" fill="#3A3530"/>
+          </svg>
+          <span class="size-label">Large</span>
+        </div>
+        <div class="size-item">
+          <svg width="150" height="150" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <path id="topArc2" d="M 30,100 A 70,85 0 0 1 170,100" fill="none"/>
+              <path id="bottomArc2" d="M 40,120 A 60,70 0 0 0 160,120" fill="none"/>
+            </defs>
+            <ellipse cx="100" cy="100" rx="85" ry="90" fill="none" stroke="#3A3530" stroke-width="1.8"/>
+            <ellipse cx="100" cy="100" rx="79" ry="84" fill="none" stroke="#3A3530" stroke-width="0.6"/>
+            <text font-family="'Playfair Display',serif" font-size="14" font-weight="600" letter-spacing="4" fill="#3A3530">
+              <textPath href="#topArc2" startOffset="50%" text-anchor="middle">BRANDED PRAIRIE</textPath>
+            </text>
+            <text font-family="'Playfair Display',serif" font-size="14" font-weight="600" letter-spacing="4" fill="#3A3530">
+              <textPath href="#bottomArc2" startOffset="50%" text-anchor="middle">CO.</textPath>
+            </text>
+            <use href="#pasque-dark" x="78" y="72" width="44" height="44"/>
+            <circle cx="38" cy="100" r="2" fill="#3A3530"/>
+            <circle cx="162" cy="100" r="2" fill="#3A3530"/>
+          </svg>
+          <span class="size-label">Profile ~150px</span>
+        </div>
+        <div class="size-item">
+          <svg width="40" height="40" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="100" cy="100" rx="85" ry="90" fill="none" stroke="#3A3530" stroke-width="4"/>
+            <use href="#pasque-dark" x="78" y="72" width="44" height="44"/>
+          </svg>
+          <span class="size-label">Icon ~40px</span>
+        </div>
+      </div>
+    </div>
+    <div class="variant-col">
+      <div class="variant-label">Light on Dark</div>
+      <div class="size-row dark-bg">
+        <div class="size-item">
+          <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <path id="topArc3" d="M 30,100 A 70,85 0 0 1 170,100" fill="none"/>
+              <path id="bottomArc3" d="M 40,120 A 60,70 0 0 0 160,120" fill="none"/>
+            </defs>
+            <ellipse cx="100" cy="100" rx="85" ry="90" fill="none" stroke="#F5F0E8" stroke-width="1.8"/>
+            <ellipse cx="100" cy="100" rx="79" ry="84" fill="none" stroke="#F5F0E8" stroke-width="0.6"/>
+            <text font-family="'Playfair Display',serif" font-size="14" font-weight="600" letter-spacing="4" fill="#F5F0E8">
+              <textPath href="#topArc3" startOffset="50%" text-anchor="middle">BRANDED PRAIRIE</textPath>
+            </text>
+            <text font-family="'Playfair Display',serif" font-size="14" font-weight="600" letter-spacing="4" fill="#F5F0E8">
+              <textPath href="#bottomArc3" startOffset="50%" text-anchor="middle">CO.</textPath>
+            </text>
+            <use href="#pasque-light" x="78" y="72" width="44" height="44"/>
+            <circle cx="38" cy="100" r="2" fill="#F5F0E8"/>
+            <circle cx="162" cy="100" r="2" fill="#F5F0E8"/>
+          </svg>
+          <span class="size-label">Large</span>
+        </div>
+        <div class="size-item">
+          <svg width="150" height="150" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <path id="topArc4" d="M 30,100 A 70,85 0 0 1 170,100" fill="none"/>
+              <path id="bottomArc4" d="M 40,120 A 60,70 0 0 0 160,120" fill="none"/>
+            </defs>
+            <ellipse cx="100" cy="100" rx="85" ry="90" fill="none" stroke="#F5F0E8" stroke-width="1.8"/>
+            <ellipse cx="100" cy="100" rx="79" ry="84" fill="none" stroke="#F5F0E8" stroke-width="0.6"/>
+            <text font-family="'Playfair Display',serif" font-size="14" font-weight="600" letter-spacing="4" fill="#F5F0E8">
+              <textPath href="#topArc4" startOffset="50%" text-anchor="middle">BRANDED PRAIRIE</textPath>
+            </text>
+            <text font-family="'Playfair Display',serif" font-size="14" font-weight="600" letter-spacing="4" fill="#F5F0E8">
+              <textPath href="#bottomArc4" startOffset="50%" text-anchor="middle">CO.</textPath>
+            </text>
+            <use href="#pasque-light" x="78" y="72" width="44" height="44"/>
+            <circle cx="38" cy="100" r="2" fill="#F5F0E8"/>
+            <circle cx="162" cy="100" r="2" fill="#F5F0E8"/>
+          </svg>
+          <span class="size-label">Profile ~150px</span>
+        </div>
+        <div class="size-item">
+          <svg width="40" height="40" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="100" cy="100" rx="85" ry="90" fill="none" stroke="#F5F0E8" stroke-width="4"/>
+            <use href="#pasque-light" x="78" y="72" width="44" height="44"/>
+          </svg>
+          <span class="size-label">Icon ~40px</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>Branded Prairie Company &mdash; Logo concept presentation &mdash; Brooke Co. Digital</p>
+</footer>
+
+</body>
+</html>
