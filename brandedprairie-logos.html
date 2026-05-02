@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Branded Prairie Company — Logo Concepts</title>
+<title>Branded Prairie Company — Logo & Brand Mark Options</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --sage:#5B7A5E;
+  --sage:#4A5E42;
   --cream:#F5F0E8;
   --dark:#3A3530;
   --wheat:#C8B898;
@@ -22,14 +22,16 @@ body{
   background:var(--white);
   -webkit-font-smoothing:antialiased;
 }
+
+/* Header */
 .page-header{
   text-align:center;
-  padding:60px 24px 20px;
+  padding:64px 24px 24px;
   border-bottom:1px solid #e8e4dc;
-  margin-bottom:48px;
+  margin-bottom:56px;
 }
 .page-header h1{
-  font-size:28px;
+  font-size:26px;
   font-weight:600;
   letter-spacing:0.02em;
   color:var(--dark);
@@ -41,6 +43,8 @@ body{
   margin-top:8px;
   font-style:italic;
 }
+
+/* Sections */
 .concept-section{
   max-width:1100px;
   margin:0 auto 64px;
@@ -65,8 +69,10 @@ body{
   color:#8a8078;
   margin-bottom:28px;
   font-style:italic;
-  max-width:500px;
+  max-width:600px;
 }
+
+/* Layout */
 .variant-row{
   display:flex;
   gap:40px;
@@ -84,11 +90,13 @@ body{
   margin-bottom:16px;
   text-align:center;
 }
+
+/* Size display rows */
 .size-row{
   display:flex;
-  align-items:flex-end;
+  align-items:center;
   justify-content:center;
-  gap:40px;
+  gap:48px;
   padding:40px 24px;
   border-radius:12px;
   min-height:200px;
@@ -100,21 +108,94 @@ body{
 .size-row.dark-bg{
   background:var(--sage);
 }
+.size-row.cream-bg{
+  background:var(--cream);
+  border:1px solid #e0d9ce;
+}
 .size-item{
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:8px;
+  gap:12px;
 }
 .size-label{
   font-size:9px;
   font-weight:400;
   letter-spacing:0.08em;
   text-transform:uppercase;
-  opacity:0.5;
+  opacity:0.55;
 }
-.light-bg .size-label{color:var(--dark)}
+.light-bg .size-label,
+.cream-bg .size-label{color:var(--dark)}
 .dark-bg .size-label{color:var(--cream)}
+
+/* Image treatments */
+.logo-img{
+  display:block;
+  object-fit:contain;
+}
+.logo-img.invert{
+  filter:invert(1) brightness(2);
+}
+.logo-img.sage-tint{
+  filter:invert(42%) sepia(10%) saturate(800%) hue-rotate(75deg) brightness(85%);
+}
+.logo-img.gold-tint{
+  filter:invert(75%) sepia(20%) saturate(500%) hue-rotate(10deg) brightness(90%) contrast(90%);
+}
+
+/* Framed marks */
+.frame-circle,
+.frame-square{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.frame-circle{
+  border:1.5px solid var(--dark);
+  border-radius:50%;
+}
+.frame-circle.light-frame{
+  border-color:var(--dark);
+}
+.frame-circle.dark-frame{
+  border-color:var(--cream);
+}
+.frame-square{
+  border:1.5px solid var(--dark);
+  border-radius:4px;
+}
+.frame-square.light-frame{
+  border-color:var(--dark);
+}
+.frame-square.dark-frame{
+  border-color:var(--cream);
+}
+
+/* Color swatch row */
+.color-row{
+  display:flex;
+  gap:32px;
+  flex-wrap:wrap;
+}
+.color-card{
+  flex:1;
+  min-width:200px;
+  border-radius:12px;
+  padding:40px 24px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:16px;
+}
+.color-card .color-name{
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+}
+
+/* Divider */
 .divider{
   width:100%;
   max-width:1100px;
@@ -122,6 +203,8 @@ body{
   border:none;
   border-top:1px solid #e8e4dc;
 }
+
+/* Footer */
 .footer{
   text-align:center;
   padding:40px 24px 60px;
@@ -132,92 +215,65 @@ body{
   color:#b0a898;
   font-style:italic;
 }
+
 @media(max-width:700px){
   .variant-row{flex-direction:column;gap:24px}
-  .size-row{gap:20px;padding:24px 12px;flex-wrap:wrap}
+  .size-row{gap:24px;padding:24px 12px;flex-wrap:wrap}
+  .color-row{flex-direction:column}
 }
 </style>
 </head>
 <body>
 
 <header class="page-header">
-  <h1>Branded Prairie Company &mdash; Logo Concepts</h1>
-  <p>Compact logo &amp; monogram options for social media, favicons, and brand marks</p>
+  <h1>Branded Prairie Company &mdash; Logo &amp; Brand Mark Options</h1>
+  <p>Presentation of logo variations, monogram options, and brand color treatments</p>
 </header>
-
-<!-- Pasque flower PNG used via <image> tags throughout -->
 
 
 <!-- ============================================================
-     CONCEPT 1 — Stacked Monogram Square
+     CONCEPT 1 — Full Logo
      ============================================================ -->
 <section class="concept-section">
   <div class="concept-label">Concept 1</div>
-  <div class="concept-title">Stacked Monogram Square</div>
-  <div class="concept-desc">"B" on top, "PC" below, thin square frame. Pasque flower accent in the top-right corner. Clean editorial feel.</div>
+  <div class="concept-title">Full Logo</div>
+  <div class="concept-desc">The primary wordmark &mdash; &ldquo;Branded Prairie Company&rdquo; in serif with the pasque flower. Used for headers, website, and print collateral.</div>
 
   <div class="variant-row">
     <div class="variant-col">
-      <div class="variant-label">Dark on Light</div>
+      <div class="variant-label">On Light Background</div>
       <div class="size-row light-bg">
         <div class="size-item">
-          <svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <rect x="10" y="10" width="160" height="160" fill="none" stroke="#3A3530" stroke-width="1.5"/>
-            <text x="90" y="82" text-anchor="middle" font-family="'Playfair Display',serif" font-size="62" font-weight="700" fill="#3A3530">B</text>
-            <text x="90" y="138" text-anchor="middle" font-family="'Playfair Display',serif" font-size="42" font-weight="600" letter-spacing="6" fill="#3A3530">PC</text>
-            <image href="brandedprairie-flower.png" x="130" y="6" width="20" height="70"/>
-          </svg>
+          <img src="brandedprairie-logo.png" alt="Full logo large" class="logo-img" style="width:476px;height:auto;">
           <span class="size-label">Large</span>
         </div>
         <div class="size-item">
-          <svg width="150" height="150" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <rect x="10" y="10" width="160" height="160" fill="none" stroke="#3A3530" stroke-width="1.5"/>
-            <text x="90" y="82" text-anchor="middle" font-family="'Playfair Display',serif" font-size="62" font-weight="700" fill="#3A3530">B</text>
-            <text x="90" y="138" text-anchor="middle" font-family="'Playfair Display',serif" font-size="42" font-weight="600" letter-spacing="6" fill="#3A3530">PC</text>
-            <image href="brandedprairie-flower.png" x="130" y="6" width="20" height="70"/>
-          </svg>
-          <span class="size-label">Profile ~150px</span>
+          <img src="brandedprairie-logo.png" alt="Full logo profile" class="logo-img" style="width:300px;height:auto;">
+          <span class="size-label">Profile ~150px height</span>
         </div>
         <div class="size-item">
-          <svg width="28" height="100" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <rect x="10" y="10" width="160" height="160" fill="none" stroke="#3A3530" stroke-width="4"/>
-            <text x="90" y="82" text-anchor="middle" font-family="'Playfair Display',serif" font-size="62" font-weight="700" fill="#3A3530">B</text>
-            <text x="90" y="138" text-anchor="middle" font-family="'Playfair Display',serif" font-size="42" font-weight="600" letter-spacing="6" fill="#3A3530">PC</text>
-            <image href="brandedprairie-flower.png" x="130" y="6" width="20" height="70"/>
-          </svg>
-          <span class="size-label">Icon ~40px</span>
+          <img src="brandedprairie-logo.png" alt="Full logo small" class="logo-img" style="width:160px;height:auto;">
+          <span class="size-label">Small</span>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="variant-row">
     <div class="variant-col">
-      <div class="variant-label">Light on Dark</div>
+      <div class="variant-label">On Dark Sage Background</div>
       <div class="size-row dark-bg">
         <div class="size-item">
-          <svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <rect x="10" y="10" width="160" height="160" fill="none" stroke="#F5F0E8" stroke-width="1.5"/>
-            <text x="90" y="82" text-anchor="middle" font-family="'Playfair Display',serif" font-size="62" font-weight="700" fill="#F5F0E8">B</text>
-            <text x="90" y="138" text-anchor="middle" font-family="'Playfair Display',serif" font-size="42" font-weight="600" letter-spacing="6" fill="#F5F0E8">PC</text>
-            <image href="brandedprairie-flower.png" style="filter:invert(1) brightness(2)" x="130" y="6" width="20" height="70"/>
-          </svg>
+          <img src="brandedprairie-logo.png" alt="Full logo large inverted" class="logo-img invert" style="width:476px;height:auto;">
           <span class="size-label">Large</span>
         </div>
         <div class="size-item">
-          <svg width="150" height="150" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <rect x="10" y="10" width="160" height="160" fill="none" stroke="#F5F0E8" stroke-width="1.5"/>
-            <text x="90" y="82" text-anchor="middle" font-family="'Playfair Display',serif" font-size="62" font-weight="700" fill="#F5F0E8">B</text>
-            <text x="90" y="138" text-anchor="middle" font-family="'Playfair Display',serif" font-size="42" font-weight="600" letter-spacing="6" fill="#F5F0E8">PC</text>
-            <image href="brandedprairie-flower.png" style="filter:invert(1) brightness(2)" x="130" y="6" width="20" height="70"/>
-          </svg>
-          <span class="size-label">Profile ~150px</span>
+          <img src="brandedprairie-logo.png" alt="Full logo profile inverted" class="logo-img invert" style="width:300px;height:auto;">
+          <span class="size-label">Profile ~150px height</span>
         </div>
         <div class="size-item">
-          <svg width="28" height="100" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <rect x="10" y="10" width="160" height="160" fill="none" stroke="#F5F0E8" stroke-width="4"/>
-            <text x="90" y="82" text-anchor="middle" font-family="'Playfair Display',serif" font-size="62" font-weight="700" fill="#F5F0E8">B</text>
-            <text x="90" y="138" text-anchor="middle" font-family="'Playfair Display',serif" font-size="42" font-weight="600" letter-spacing="6" fill="#F5F0E8">PC</text>
-            <image href="brandedprairie-flower.png" style="filter:invert(1) brightness(2)" x="130" y="6" width="20" height="70"/>
-          </svg>
-          <span class="size-label">Icon ~40px</span>
+          <img src="brandedprairie-logo.png" alt="Full logo small inverted" class="logo-img invert" style="width:160px;height:auto;">
+          <span class="size-label">Small</span>
         </div>
       </div>
     </div>
@@ -226,73 +282,49 @@ body{
 
 <hr class="divider">
 
+
 <!-- ============================================================
-     CONCEPT 2 — Circle Badge
+     CONCEPT 2 — BP Monogram
      ============================================================ -->
 <section class="concept-section">
   <div class="concept-label">Concept 2</div>
-  <div class="concept-title">Circle Badge</div>
-  <div class="concept-desc">Centered "BPC" initials in a circle with a pasque flower perched on the top border. Stamp/seal aesthetic.</div>
+  <div class="concept-title">BP Monogram</div>
+  <div class="concept-desc">The primary compact mark &mdash; serif &ldquo;BP&rdquo; with the pasque flower growing between the letters. Ideal for social media profiles, favicons, and watermarks.</div>
 
   <div class="variant-row">
     <div class="variant-col">
-      <div class="variant-label">Dark on Light</div>
+      <div class="variant-label">On Light Background</div>
       <div class="size-row light-bg">
         <div class="size-item">
-          <svg width="180" height="195" viewBox="0 0 180 195" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <circle cx="90" cy="105" r="78" fill="none" stroke="#3A3530" stroke-width="1.8"/>
-            <circle cx="90" cy="105" r="72" fill="none" stroke="#3A3530" stroke-width="0.6"/>
-            <text x="90" y="118" text-anchor="middle" font-family="'Playfair Display',serif" font-size="44" font-weight="700" letter-spacing="5" fill="#3A3530">BPC</text>
-            <image href="brandedprairie-flower.png" x="70" y="4" width="28" height="100"/>
-          </svg>
+          <img src="brandedprairie-bp.png" alt="BP monogram large" class="logo-img" style="height:200px;width:auto;">
           <span class="size-label">Large</span>
         </div>
         <div class="size-item">
-          <svg width="150" height="163" viewBox="0 0 180 195" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <circle cx="90" cy="105" r="78" fill="none" stroke="#3A3530" stroke-width="1.8"/>
-            <circle cx="90" cy="105" r="72" fill="none" stroke="#3A3530" stroke-width="0.6"/>
-            <text x="90" y="118" text-anchor="middle" font-family="'Playfair Display',serif" font-size="44" font-weight="700" letter-spacing="5" fill="#3A3530">BPC</text>
-            <image href="brandedprairie-flower.png" x="70" y="4" width="28" height="100"/>
-          </svg>
+          <img src="brandedprairie-bp.png" alt="BP monogram profile" class="logo-img" style="height:150px;width:auto;">
           <span class="size-label">Profile ~150px</span>
         </div>
         <div class="size-item">
-          <svg width="40" height="43" viewBox="0 0 180 195" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <circle cx="90" cy="105" r="78" fill="none" stroke="#3A3530" stroke-width="4"/>
-            <text x="90" y="118" text-anchor="middle" font-family="'Playfair Display',serif" font-size="44" font-weight="700" letter-spacing="5" fill="#3A3530">BPC</text>
-            <image href="brandedprairie-flower.png" x="70" y="4" width="28" height="100"/>
-          </svg>
+          <img src="brandedprairie-bp.png" alt="BP monogram icon" class="logo-img" style="height:40px;width:auto;">
           <span class="size-label">Icon ~40px</span>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="variant-row">
     <div class="variant-col">
-      <div class="variant-label">Light on Dark</div>
+      <div class="variant-label">On Dark Sage Background</div>
       <div class="size-row dark-bg">
         <div class="size-item">
-          <svg width="180" height="195" viewBox="0 0 180 195" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <circle cx="90" cy="105" r="78" fill="none" stroke="#F5F0E8" stroke-width="1.8"/>
-            <circle cx="90" cy="105" r="72" fill="none" stroke="#F5F0E8" stroke-width="0.6"/>
-            <text x="90" y="118" text-anchor="middle" font-family="'Playfair Display',serif" font-size="44" font-weight="700" letter-spacing="5" fill="#F5F0E8">BPC</text>
-            <image href="brandedprairie-flower.png" style="filter:invert(1) brightness(2)" x="70" y="4" width="28" height="100"/>
-          </svg>
+          <img src="brandedprairie-bp.png" alt="BP monogram large inverted" class="logo-img invert" style="height:200px;width:auto;">
           <span class="size-label">Large</span>
         </div>
         <div class="size-item">
-          <svg width="150" height="163" viewBox="0 0 180 195" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <circle cx="90" cy="105" r="78" fill="none" stroke="#F5F0E8" stroke-width="1.8"/>
-            <circle cx="90" cy="105" r="72" fill="none" stroke="#F5F0E8" stroke-width="0.6"/>
-            <text x="90" y="118" text-anchor="middle" font-family="'Playfair Display',serif" font-size="44" font-weight="700" letter-spacing="5" fill="#F5F0E8">BPC</text>
-            <image href="brandedprairie-flower.png" style="filter:invert(1) brightness(2)" x="70" y="4" width="28" height="100"/>
-          </svg>
+          <img src="brandedprairie-bp.png" alt="BP monogram profile inverted" class="logo-img invert" style="height:150px;width:auto;">
           <span class="size-label">Profile ~150px</span>
         </div>
         <div class="size-item">
-          <svg width="40" height="43" viewBox="0 0 180 195" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <circle cx="90" cy="105" r="78" fill="none" stroke="#F5F0E8" stroke-width="4"/>
-            <text x="90" y="118" text-anchor="middle" font-family="'Playfair Display',serif" font-size="44" font-weight="700" letter-spacing="5" fill="#F5F0E8">BPC</text>
-            <image href="brandedprairie-flower.png" style="filter:invert(1) brightness(2)" x="70" y="4" width="28" height="100"/>
-          </svg>
+          <img src="brandedprairie-bp.png" alt="BP monogram icon inverted" class="logo-img invert" style="height:40px;width:auto;">
           <span class="size-label">Icon ~40px</span>
         </div>
       </div>
@@ -302,63 +334,61 @@ body{
 
 <hr class="divider">
 
+
 <!-- ============================================================
-     CONCEPT 3 — Flower Lettermark
+     CONCEPT 3 — BP Monogram in Circle
      ============================================================ -->
 <section class="concept-section">
   <div class="concept-label">Concept 3</div>
-  <div class="concept-title">Flower Lettermark</div>
-  <div class="concept-desc">"BP" in elegant bold serif with a tiny pasque flower replacing the period. Minimal and clean.</div>
+  <div class="concept-title">BP Monogram in Circle</div>
+  <div class="concept-desc">The BP monogram enclosed in a thin circular border. A refined badge treatment for profile pictures and stamps.</div>
 
   <div class="variant-row">
     <div class="variant-col">
-      <div class="variant-label">Dark on Light</div>
+      <div class="variant-label">On Light Background</div>
       <div class="size-row light-bg">
         <div class="size-item">
-          <svg width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <text x="10" y="90" font-family="'Playfair Display',serif" font-size="80" font-weight="700" fill="#3A3530">BP</text>
-            <image href="brandedprairie-flower.png" x="148" y="62" width="22" height="76"/>
-          </svg>
+          <div class="frame-circle light-frame" style="width:220px;height:220px;">
+            <img src="brandedprairie-bp.png" alt="BP circle large" class="logo-img" style="height:140px;width:auto;">
+          </div>
           <span class="size-label">Large</span>
         </div>
         <div class="size-item">
-          <svg width="150" height="90" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <text x="10" y="90" font-family="'Playfair Display',serif" font-size="80" font-weight="700" fill="#3A3530">BP</text>
-            <image href="brandedprairie-flower.png" x="148" y="62" width="22" height="76"/>
-          </svg>
+          <div class="frame-circle light-frame" style="width:150px;height:150px;">
+            <img src="brandedprairie-bp.png" alt="BP circle profile" class="logo-img" style="height:95px;width:auto;">
+          </div>
           <span class="size-label">Profile ~150px</span>
         </div>
         <div class="size-item">
-          <svg width="66" height="40" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <text x="10" y="90" font-family="'Playfair Display',serif" font-size="80" font-weight="700" fill="#3A3530">BP</text>
-            <image href="brandedprairie-flower.png" x="148" y="62" width="22" height="76"/>
-          </svg>
+          <div class="frame-circle light-frame" style="width:56px;height:56px;">
+            <img src="brandedprairie-bp.png" alt="BP circle icon" class="logo-img" style="height:34px;width:auto;">
+          </div>
           <span class="size-label">Icon ~40px</span>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="variant-row">
     <div class="variant-col">
-      <div class="variant-label">Light on Dark</div>
+      <div class="variant-label">On Dark Sage Background</div>
       <div class="size-row dark-bg">
         <div class="size-item">
-          <svg width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <text x="10" y="90" font-family="'Playfair Display',serif" font-size="80" font-weight="700" fill="#F5F0E8">BP</text>
-            <image href="brandedprairie-flower.png" style="filter:invert(1) brightness(2)" x="148" y="62" width="22" height="76"/>
-          </svg>
+          <div class="frame-circle dark-frame" style="width:220px;height:220px;">
+            <img src="brandedprairie-bp.png" alt="BP circle large inverted" class="logo-img invert" style="height:140px;width:auto;">
+          </div>
           <span class="size-label">Large</span>
         </div>
         <div class="size-item">
-          <svg width="150" height="90" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <text x="10" y="90" font-family="'Playfair Display',serif" font-size="80" font-weight="700" fill="#F5F0E8">BP</text>
-            <image href="brandedprairie-flower.png" style="filter:invert(1) brightness(2)" x="148" y="62" width="22" height="76"/>
-          </svg>
+          <div class="frame-circle dark-frame" style="width:150px;height:150px;">
+            <img src="brandedprairie-bp.png" alt="BP circle profile inverted" class="logo-img invert" style="height:95px;width:auto;">
+          </div>
           <span class="size-label">Profile ~150px</span>
         </div>
         <div class="size-item">
-          <svg width="66" height="40" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <text x="10" y="90" font-family="'Playfair Display',serif" font-size="80" font-weight="700" fill="#F5F0E8">BP</text>
-            <image href="brandedprairie-flower.png" style="filter:invert(1) brightness(2)" x="148" y="62" width="22" height="76"/>
-          </svg>
+          <div class="frame-circle dark-frame" style="width:56px;height:56px;">
+            <img src="brandedprairie-bp.png" alt="BP circle icon inverted" class="logo-img invert" style="height:34px;width:auto;">
+          </div>
           <span class="size-label">Icon ~40px</span>
         </div>
       </div>
@@ -368,81 +398,61 @@ body{
 
 <hr class="divider">
 
+
 <!-- ============================================================
-     CONCEPT 4 — Split Monogram
+     CONCEPT 4 — BP Monogram in Square
      ============================================================ -->
 <section class="concept-section">
   <div class="concept-label">Concept 4</div>
-  <div class="concept-title">Split Monogram</div>
-  <div class="concept-desc">Large "B" on the left, vertical line divider, "PC" stacked smaller on the right. Pasque flower above the divider. Modern editorial.</div>
+  <div class="concept-title">BP Monogram in Square</div>
+  <div class="concept-desc">The BP monogram inside a thin square border. Clean and structured &mdash; works well for app icons and branded tiles.</div>
 
   <div class="variant-row">
     <div class="variant-col">
-      <div class="variant-label">Dark on Light</div>
+      <div class="variant-label">On Light Background</div>
       <div class="size-row light-bg">
         <div class="size-item">
-          <svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <text x="20" y="120" font-family="'Playfair Display',serif" font-size="100" font-weight="700" fill="#3A3530">B</text>
-            <line x1="105" y1="30" x2="105" y2="140" stroke="#3A3530" stroke-width="1.2"/>
-            <text x="150" y="80" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#3A3530">P</text>
-            <text x="150" y="120" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#3A3530">C</text>
-            <image href="brandedprairie-flower.png" x="88" y="4" width="24" height="84"/>
-          </svg>
+          <div class="frame-square light-frame" style="width:220px;height:220px;">
+            <img src="brandedprairie-bp.png" alt="BP square large" class="logo-img" style="height:150px;width:auto;">
+          </div>
           <span class="size-label">Large</span>
         </div>
         <div class="size-item">
-          <svg width="150" height="120" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <text x="20" y="120" font-family="'Playfair Display',serif" font-size="100" font-weight="700" fill="#3A3530">B</text>
-            <line x1="105" y1="30" x2="105" y2="140" stroke="#3A3530" stroke-width="1.2"/>
-            <text x="150" y="80" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#3A3530">P</text>
-            <text x="150" y="120" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#3A3530">C</text>
-            <image href="brandedprairie-flower.png" x="88" y="4" width="24" height="84"/>
-          </svg>
+          <div class="frame-square light-frame" style="width:150px;height:150px;">
+            <img src="brandedprairie-bp.png" alt="BP square profile" class="logo-img" style="height:100px;width:auto;">
+          </div>
           <span class="size-label">Profile ~150px</span>
         </div>
         <div class="size-item">
-          <svg width="50" height="40" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <text x="20" y="120" font-family="'Playfair Display',serif" font-size="100" font-weight="700" fill="#3A3530">B</text>
-            <line x1="105" y1="30" x2="105" y2="140" stroke="#3A3530" stroke-width="3"/>
-            <text x="150" y="80" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#3A3530">P</text>
-            <text x="150" y="120" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#3A3530">C</text>
-            <image href="brandedprairie-flower.png" x="88" y="4" width="24" height="84"/>
-          </svg>
+          <div class="frame-square light-frame" style="width:56px;height:56px;">
+            <img src="brandedprairie-bp.png" alt="BP square icon" class="logo-img" style="height:36px;width:auto;">
+          </div>
           <span class="size-label">Icon ~40px</span>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="variant-row">
     <div class="variant-col">
-      <div class="variant-label">Light on Dark</div>
+      <div class="variant-label">On Dark Sage Background</div>
       <div class="size-row dark-bg">
         <div class="size-item">
-          <svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <text x="20" y="120" font-family="'Playfair Display',serif" font-size="100" font-weight="700" fill="#F5F0E8">B</text>
-            <line x1="105" y1="30" x2="105" y2="140" stroke="#F5F0E8" stroke-width="1.2"/>
-            <text x="150" y="80" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#F5F0E8">P</text>
-            <text x="150" y="120" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#F5F0E8">C</text>
-            <image href="brandedprairie-flower.png" style="filter:invert(1) brightness(2)" x="88" y="4" width="24" height="84"/>
-          </svg>
+          <div class="frame-square dark-frame" style="width:220px;height:220px;">
+            <img src="brandedprairie-bp.png" alt="BP square large inverted" class="logo-img invert" style="height:150px;width:auto;">
+          </div>
           <span class="size-label">Large</span>
         </div>
         <div class="size-item">
-          <svg width="150" height="120" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <text x="20" y="120" font-family="'Playfair Display',serif" font-size="100" font-weight="700" fill="#F5F0E8">B</text>
-            <line x1="105" y1="30" x2="105" y2="140" stroke="#F5F0E8" stroke-width="1.2"/>
-            <text x="150" y="80" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#F5F0E8">P</text>
-            <text x="150" y="120" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#F5F0E8">C</text>
-            <image href="brandedprairie-flower.png" style="filter:invert(1) brightness(2)" x="88" y="4" width="24" height="84"/>
-          </svg>
+          <div class="frame-square dark-frame" style="width:150px;height:150px;">
+            <img src="brandedprairie-bp.png" alt="BP square profile inverted" class="logo-img invert" style="height:100px;width:auto;">
+          </div>
           <span class="size-label">Profile ~150px</span>
         </div>
         <div class="size-item">
-          <svg width="50" height="40" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <text x="20" y="120" font-family="'Playfair Display',serif" font-size="100" font-weight="700" fill="#F5F0E8">B</text>
-            <line x1="105" y1="30" x2="105" y2="140" stroke="#F5F0E8" stroke-width="3"/>
-            <text x="150" y="80" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#F5F0E8">P</text>
-            <text x="150" y="120" text-anchor="middle" font-family="'Playfair Display',serif" font-size="36" font-weight="600" fill="#F5F0E8">C</text>
-            <image href="brandedprairie-flower.png" style="filter:invert(1) brightness(2)" x="88" y="4" width="24" height="84"/>
-          </svg>
+          <div class="frame-square dark-frame" style="width:56px;height:56px;">
+            <img src="brandedprairie-bp.png" alt="BP square icon inverted" class="logo-img invert" style="height:36px;width:auto;">
+          </div>
           <span class="size-label">Icon ~40px</span>
         </div>
       </div>
@@ -452,125 +462,45 @@ body{
 
 <hr class="divider">
 
+
 <!-- ============================================================
-     CONCEPT 5 — Oval Badge
+     CONCEPT 5 — Color Variations
      ============================================================ -->
 <section class="concept-section">
   <div class="concept-label">Concept 5</div>
-  <div class="concept-title">Oval Badge</div>
-  <div class="concept-desc">"BRANDED PRAIRIE" curved along the top of an oval, "CO." at the bottom, pasque flower centered. Vintage Western badge.</div>
+  <div class="concept-title">Color Variations</div>
+  <div class="concept-desc">The BP monogram shown in different brand-appropriate color treatments for various contexts and applications.</div>
 
-  <div class="variant-row">
-    <div class="variant-col">
-      <div class="variant-label">Dark on Light</div>
-      <div class="size-row light-bg">
-        <div class="size-item">
-          <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <defs>
-              <path id="topArc" d="M 30,100 A 70,85 0 0 1 170,100" fill="none"/>
-              <path id="bottomArc" d="M 40,120 A 60,70 0 0 0 160,120" fill="none"/>
-            </defs>
-            <ellipse cx="100" cy="100" rx="85" ry="90" fill="none" stroke="#3A3530" stroke-width="1.8"/>
-            <ellipse cx="100" cy="100" rx="79" ry="84" fill="none" stroke="#3A3530" stroke-width="0.6"/>
-            <text font-family="'Playfair Display',serif" font-size="14" font-weight="600" letter-spacing="4" fill="#3A3530">
-              <textPath href="#topArc" startOffset="50%" text-anchor="middle">BRANDED PRAIRIE</textPath>
-            </text>
-            <text font-family="'Playfair Display',serif" font-size="14" font-weight="600" letter-spacing="4" fill="#3A3530">
-              <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">CO.</textPath>
-            </text>
-            <image href="brandedprairie-flower.png" x="78" y="72" width="44" height="44"/>
-            <!-- Decorative dots -->
-            <circle cx="38" cy="100" r="2" fill="#3A3530"/>
-            <circle cx="162" cy="100" r="2" fill="#3A3530"/>
-          </svg>
-          <span class="size-label">Large</span>
-        </div>
-        <div class="size-item">
-          <svg width="150" height="150" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <defs>
-              <path id="topArc2" d="M 30,100 A 70,85 0 0 1 170,100" fill="none"/>
-              <path id="bottomArc2" d="M 40,120 A 60,70 0 0 0 160,120" fill="none"/>
-            </defs>
-            <ellipse cx="100" cy="100" rx="85" ry="90" fill="none" stroke="#3A3530" stroke-width="1.8"/>
-            <ellipse cx="100" cy="100" rx="79" ry="84" fill="none" stroke="#3A3530" stroke-width="0.6"/>
-            <text font-family="'Playfair Display',serif" font-size="14" font-weight="600" letter-spacing="4" fill="#3A3530">
-              <textPath href="#topArc2" startOffset="50%" text-anchor="middle">BRANDED PRAIRIE</textPath>
-            </text>
-            <text font-family="'Playfair Display',serif" font-size="14" font-weight="600" letter-spacing="4" fill="#3A3530">
-              <textPath href="#bottomArc2" startOffset="50%" text-anchor="middle">CO.</textPath>
-            </text>
-            <image href="brandedprairie-flower.png" x="78" y="72" width="44" height="44"/>
-            <circle cx="38" cy="100" r="2" fill="#3A3530"/>
-            <circle cx="162" cy="100" r="2" fill="#3A3530"/>
-          </svg>
-          <span class="size-label">Profile ~150px</span>
-        </div>
-        <div class="size-item">
-          <svg width="28" height="100" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <ellipse cx="100" cy="100" rx="85" ry="90" fill="none" stroke="#3A3530" stroke-width="4"/>
-            <image href="brandedprairie-flower.png" x="78" y="72" width="44" height="44"/>
-          </svg>
-          <span class="size-label">Icon ~40px</span>
-        </div>
-      </div>
+  <div class="color-row">
+    <!-- Black on Cream -->
+    <div class="color-card" style="background:var(--cream);border:1px solid #e0d9ce;">
+      <img src="brandedprairie-bp.png" alt="BP black on cream" class="logo-img" style="height:120px;width:auto;">
+      <span class="color-name" style="color:var(--dark);">Black on Cream</span>
     </div>
-    <div class="variant-col">
-      <div class="variant-label">Light on Dark</div>
-      <div class="size-row dark-bg">
-        <div class="size-item">
-          <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <defs>
-              <path id="topArc3" d="M 30,100 A 70,85 0 0 1 170,100" fill="none"/>
-              <path id="bottomArc3" d="M 40,120 A 60,70 0 0 0 160,120" fill="none"/>
-            </defs>
-            <ellipse cx="100" cy="100" rx="85" ry="90" fill="none" stroke="#F5F0E8" stroke-width="1.8"/>
-            <ellipse cx="100" cy="100" rx="79" ry="84" fill="none" stroke="#F5F0E8" stroke-width="0.6"/>
-            <text font-family="'Playfair Display',serif" font-size="14" font-weight="600" letter-spacing="4" fill="#F5F0E8">
-              <textPath href="#topArc3" startOffset="50%" text-anchor="middle">BRANDED PRAIRIE</textPath>
-            </text>
-            <text font-family="'Playfair Display',serif" font-size="14" font-weight="600" letter-spacing="4" fill="#F5F0E8">
-              <textPath href="#bottomArc3" startOffset="50%" text-anchor="middle">CO.</textPath>
-            </text>
-            <image href="brandedprairie-flower.png" style="filter:invert(1) brightness(2)" x="78" y="72" width="44" height="44"/>
-            <circle cx="38" cy="100" r="2" fill="#F5F0E8"/>
-            <circle cx="162" cy="100" r="2" fill="#F5F0E8"/>
-          </svg>
-          <span class="size-label">Large</span>
-        </div>
-        <div class="size-item">
-          <svg width="150" height="150" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <defs>
-              <path id="topArc4" d="M 30,100 A 70,85 0 0 1 170,100" fill="none"/>
-              <path id="bottomArc4" d="M 40,120 A 60,70 0 0 0 160,120" fill="none"/>
-            </defs>
-            <ellipse cx="100" cy="100" rx="85" ry="90" fill="none" stroke="#F5F0E8" stroke-width="1.8"/>
-            <ellipse cx="100" cy="100" rx="79" ry="84" fill="none" stroke="#F5F0E8" stroke-width="0.6"/>
-            <text font-family="'Playfair Display',serif" font-size="14" font-weight="600" letter-spacing="4" fill="#F5F0E8">
-              <textPath href="#topArc4" startOffset="50%" text-anchor="middle">BRANDED PRAIRIE</textPath>
-            </text>
-            <text font-family="'Playfair Display',serif" font-size="14" font-weight="600" letter-spacing="4" fill="#F5F0E8">
-              <textPath href="#bottomArc4" startOffset="50%" text-anchor="middle">CO.</textPath>
-            </text>
-            <image href="brandedprairie-flower.png" style="filter:invert(1) brightness(2)" x="78" y="72" width="44" height="44"/>
-            <circle cx="38" cy="100" r="2" fill="#F5F0E8"/>
-            <circle cx="162" cy="100" r="2" fill="#F5F0E8"/>
-          </svg>
-          <span class="size-label">Profile ~150px</span>
-        </div>
-        <div class="size-item">
-          <svg width="28" height="100" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <ellipse cx="100" cy="100" rx="85" ry="90" fill="none" stroke="#F5F0E8" stroke-width="4"/>
-            <image href="brandedprairie-flower.png" style="filter:invert(1) brightness(2)" x="78" y="72" width="44" height="44"/>
-          </svg>
-          <span class="size-label">Icon ~40px</span>
-        </div>
-      </div>
+
+    <!-- White on Sage -->
+    <div class="color-card" style="background:var(--sage);">
+      <img src="brandedprairie-bp.png" alt="BP white on sage" class="logo-img invert" style="height:120px;width:auto;">
+      <span class="color-name" style="color:var(--cream);">White on Sage</span>
+    </div>
+
+    <!-- Sage Green Tinted -->
+    <div class="color-card" style="background:var(--white);border:1px solid #e8e4dc;">
+      <img src="brandedprairie-bp.png" alt="BP sage tinted" class="logo-img sage-tint" style="height:120px;width:auto;">
+      <span class="color-name" style="color:var(--sage);">Sage Green Tint</span>
+    </div>
+
+    <!-- Gold/Wheat Tinted -->
+    <div class="color-card" style="background:var(--white);border:1px solid #e8e4dc;">
+      <img src="brandedprairie-bp.png" alt="BP gold tinted" class="logo-img gold-tint" style="height:120px;width:auto;">
+      <span class="color-name" style="color:var(--wheat);">Gold / Wheat Tint</span>
     </div>
   </div>
 </section>
 
+
 <footer class="footer">
-  <p>Branded Prairie Company &mdash; Logo concept presentation &mdash; Brooke Co. Digital</p>
+  <p>Branded Prairie Company &mdash; Logo &amp; brand mark presentation &mdash; Brooke Co. Digital</p>
 </footer>
 
 </body>
