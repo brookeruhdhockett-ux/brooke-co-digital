@@ -132,37 +132,52 @@ img{max-width:100%;display:block}
 }
 .callout p{font-size:14px;color:rgba(245,240,232,.85);line-height:1.7}
 
-/* ===== LOGO ITERATIONS ===== */
-.logo-grid{
-  display:grid;grid-template-columns:1fr 1fr 1fr;
-  gap:24px;margin-bottom:40px;
+/* ===== LOGO CONCEPTS ===== */
+.concept-block{margin-bottom:16px}
+.concept-num{
+  font-size:10px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  color:#7D8A74;margin-bottom:4px;
 }
-.logo-card{
-  border:1px solid #e0d9ce;border-radius:14px;
-  overflow:hidden;text-align:center;
-}
-.logo-card .logo-preview{
-  padding:32px 20px;min-height:180px;
-  display:flex;align-items:center;justify-content:center;
-}
-.logo-card .logo-preview.dark{background:#7D8A74}
-.logo-card .logo-preview.cream{background:#F5F0E8}
-.logo-card .logo-preview.white{background:#fff}
-.logo-card .logo-info{
-  padding:14px 16px;border-top:1px solid #e0d9ce;
-}
-.logo-card .logo-info h4{
+.concept-name{
   font-family:'Playfair Display',serif;
-  font-size:14px;font-weight:600;margin-bottom:2px;
+  font-size:20px;font-weight:600;margin-bottom:6px;
 }
-.logo-card .logo-info p{
-  font-size:11px;color:#8a8078;
+.concept-note{
+  font-size:12px;color:#8a8078;font-style:italic;
+  max-width:560px;margin-bottom:20px;
 }
-.logo-card img{
-  max-height:110px;width:auto;margin:0 auto;
+.concept-divider{
+  border:none;border-top:1px solid #e8e4dc;
+  margin:32px 0;
 }
-.logo-card img.invert{filter:invert(1) brightness(2)}
-.logo-card img.sage-tint{filter:invert(42%) sepia(10%) saturate(800%) hue-rotate(75deg) brightness(85%)}
+.size-label-row{
+  font-size:9px;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:#b0a898;text-align:center;
+  margin-bottom:10px;margin-top:16px;
+}
+.size-row{
+  display:flex;align-items:center;justify-content:center;
+  gap:40px;padding:32px 20px;border-radius:12px;
+  min-height:160px;margin-bottom:8px;
+}
+.size-row.light-bg{
+  background:#fff;border:1px solid #e8e4dc;
+}
+.size-row.dark-bg{
+  background:#7D8A74;
+}
+.size-item{
+  display:flex;flex-direction:column;
+  align-items:center;gap:10px;
+}
+.sz-label{
+  font-size:9px;font-weight:400;
+  letter-spacing:0.08em;text-transform:uppercase;
+  opacity:0.55;color:#3A3530;
+}
+img.invert{filter:invert(1) brightness(2)}
 
 /* ===== SITE PREVIEW ===== */
 .preview-link{
@@ -387,151 +402,189 @@ img{max-width:100%;display:block}
   <div class="section-title">logo concepts</div>
   <div class="section-desc">variations of your BP monogram and full wordmark — designed for your website, social media, packaging, and print.</div>
 
-  <!-- ROW 1: Full Monogram — light & dark -->
-  <div style="margin-bottom:12px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#7D8A74;margin-bottom:6px;">Concept 1 — Full Monogram</div>
-    <div style="font-size:12px;color:#8a8078;font-style:italic;margin-bottom:16px;">The BP monogram as-is — serif "BP" with pasque flower, "EST. 2024," and "BRANDED PRAIRIE" underneath.</div>
-  </div>
-  <div class="logo-grid" style="grid-template-columns:1fr 1fr;margin-bottom:32px;">
-    <div class="logo-card">
-      <div class="logo-preview white" style="min-height:200px;">
-        <img src="brandedprairie-bp.png" alt="BP monogram on white" style="max-height:140px;">
+  <!-- CONCEPT 1 — Full Monogram -->
+  <div class="concept-block">
+    <div class="concept-num">Concept 1</div>
+    <div class="concept-name">Full Monogram</div>
+    <div class="concept-note">The BP monogram as-is — serif "BP" with pasque flower, "EST. 2024," and "BRANDED PRAIRIE" underneath. Shown at three sizes on light and dark backgrounds.</div>
+
+    <div class="size-label-row">Light Version</div>
+    <div class="size-row light-bg">
+      <div class="size-item">
+        <img src="brandedprairie-bp.png" alt="BP large" style="height:150px;width:auto;">
+        <span class="sz-label">Large ~200px</span>
       </div>
-      <div class="logo-info"><h4>On White / Cream</h4><p>Original dark mark</p></div>
+      <div class="size-item">
+        <img src="brandedprairie-bp.png" alt="BP profile" style="height:90px;width:auto;">
+        <span class="sz-label">Profile ~120px</span>
+      </div>
+      <div class="size-item">
+        <img src="brandedprairie-bp.png" alt="BP icon" style="height:40px;width:auto;">
+        <span class="sz-label">Icon ~50px</span>
+      </div>
     </div>
-    <div class="logo-card">
-      <div class="logo-preview dark" style="min-height:200px;">
-        <img src="brandedprairie-bp.png" alt="BP monogram inverted" class="invert" style="max-height:140px;">
+
+    <div class="size-label-row">Dark Version</div>
+    <div class="size-row dark-bg">
+      <div class="size-item">
+        <img src="brandedprairie-bp.png" alt="BP large inv" class="invert" style="height:150px;width:auto;">
+        <span class="sz-label" style="color:#F5F0E8;">Large ~200px</span>
       </div>
-      <div class="logo-info"><h4>Inverted on Sage</h4><p>White on dark background</p></div>
+      <div class="size-item">
+        <img src="brandedprairie-bp.png" alt="BP profile inv" class="invert" style="height:90px;width:auto;">
+        <span class="sz-label" style="color:#F5F0E8;">Profile ~120px</span>
+      </div>
+      <div class="size-item">
+        <img src="brandedprairie-bp.png" alt="BP icon inv" class="invert" style="height:40px;width:auto;">
+        <span class="sz-label" style="color:#F5F0E8;">Icon ~50px</span>
+      </div>
     </div>
   </div>
 
-  <!-- ROW 2: Circle Frame & Square Frame -->
-  <div style="margin-bottom:12px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#7D8A74;margin-bottom:6px;">Concept 2 & 3 — Circle & Square Frame</div>
-    <div style="font-size:12px;color:#8a8078;font-style:italic;margin-bottom:16px;">The monogram enclosed in thin borders — refined badges for profile pictures, stamps, watermarks, and app icons.</div>
-  </div>
-  <div class="logo-grid" style="grid-template-columns:1fr 1fr 1fr 1fr;margin-bottom:32px;">
-    <div class="logo-card">
-      <div class="logo-preview white" style="min-height:180px;">
-        <div style="width:130px;height:130px;border-radius:50%;border:1.5px solid #3A3530;display:flex;align-items:center;justify-content:center;">
-          <img src="brandedprairie-bp.png" alt="BP circle light" style="max-height:80px;">
+  <hr class="concept-divider">
+
+  <!-- CONCEPT 2 — Circle Frame -->
+  <div class="concept-block">
+    <div class="concept-num">Concept 2</div>
+    <div class="concept-name">Monogram in Circle Frame</div>
+    <div class="concept-note">The BP monogram enclosed in a thin circular border — a refined badge for profile pictures, stamps, and watermarks.</div>
+
+    <div class="size-label-row">Light Version</div>
+    <div class="size-row light-bg">
+      <div class="size-item">
+        <div style="width:180px;height:180px;border-radius:50%;border:1.5px solid #3A3530;display:flex;align-items:center;justify-content:center;">
+          <img src="brandedprairie-bp.png" alt="BP circle lg" style="height:110px;width:auto;">
         </div>
+        <span class="sz-label">Large</span>
       </div>
-      <div class="logo-info"><h4>Circle — Light</h4></div>
+      <div class="size-item">
+        <div style="width:120px;height:120px;border-radius:50%;border:1.5px solid #3A3530;display:flex;align-items:center;justify-content:center;">
+          <img src="brandedprairie-bp.png" alt="BP circle md" style="height:72px;width:auto;">
+        </div>
+        <span class="sz-label">Profile</span>
+      </div>
+      <div class="size-item">
+        <div style="width:56px;height:56px;border-radius:50%;border:1.5px solid #3A3530;display:flex;align-items:center;justify-content:center;">
+          <img src="brandedprairie-bp.png" alt="BP circle sm" style="height:34px;width:auto;">
+        </div>
+        <span class="sz-label">Icon</span>
+      </div>
     </div>
-    <div class="logo-card">
-      <div class="logo-preview dark" style="min-height:180px;">
-        <div style="width:130px;height:130px;border-radius:50%;border:1.5px solid #F5F0E8;display:flex;align-items:center;justify-content:center;">
-          <img src="brandedprairie-bp.png" alt="BP circle dark" class="invert" style="max-height:80px;">
+
+    <div class="size-label-row">Dark Version</div>
+    <div class="size-row dark-bg">
+      <div class="size-item">
+        <div style="width:180px;height:180px;border-radius:50%;border:1.5px solid #F5F0E8;display:flex;align-items:center;justify-content:center;">
+          <img src="brandedprairie-bp.png" alt="BP circle lg inv" class="invert" style="height:110px;width:auto;">
         </div>
+        <span class="sz-label" style="color:#F5F0E8;">Large</span>
       </div>
-      <div class="logo-info"><h4>Circle — Dark</h4></div>
-    </div>
-    <div class="logo-card">
-      <div class="logo-preview white" style="min-height:180px;">
-        <div style="width:130px;height:130px;border-radius:4px;border:1.5px solid #3A3530;display:flex;align-items:center;justify-content:center;">
-          <img src="brandedprairie-bp.png" alt="BP square light" style="max-height:85px;">
+      <div class="size-item">
+        <div style="width:120px;height:120px;border-radius:50%;border:1.5px solid #F5F0E8;display:flex;align-items:center;justify-content:center;">
+          <img src="brandedprairie-bp.png" alt="BP circle md inv" class="invert" style="height:72px;width:auto;">
         </div>
+        <span class="sz-label" style="color:#F5F0E8;">Profile</span>
       </div>
-      <div class="logo-info"><h4>Square — Light</h4></div>
-    </div>
-    <div class="logo-card">
-      <div class="logo-preview dark" style="min-height:180px;">
-        <div style="width:130px;height:130px;border-radius:4px;border:1.5px solid #F5F0E8;display:flex;align-items:center;justify-content:center;">
-          <img src="brandedprairie-bp.png" alt="BP square dark" class="invert" style="max-height:85px;">
+      <div class="size-item">
+        <div style="width:56px;height:56px;border-radius:50%;border:1.5px solid #F5F0E8;display:flex;align-items:center;justify-content:center;">
+          <img src="brandedprairie-bp.png" alt="BP circle sm inv" class="invert" style="height:34px;width:auto;">
         </div>
+        <span class="sz-label" style="color:#F5F0E8;">Icon</span>
       </div>
-      <div class="logo-info"><h4>Square — Dark</h4></div>
     </div>
   </div>
 
-  <!-- ROW 3: Cream Card Mockups -->
-  <div style="margin-bottom:12px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#7D8A74;margin-bottom:6px;">Concept 4 — Brand Cards</div>
-    <div style="font-size:12px;color:#8a8078;font-style:italic;margin-bottom:16px;">The monogram on warm cream cards — social media profile, business card, and compact formats.</div>
-  </div>
-  <div class="logo-grid" style="grid-template-columns:1fr 1fr 1fr;margin-bottom:32px;">
-    <div class="logo-card">
-      <div class="logo-preview cream" style="min-height:180px;">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-          <img src="brandedprairie-bp.png" alt="BP social card" style="max-height:90px;">
-          <span style="font-size:8px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#7D8A74;">Branded Prairie Company</span>
-          <span style="font-size:10px;color:#8a8078;font-style:italic;">Est. 2024</span>
+  <hr class="concept-divider">
+
+  <!-- CONCEPT 3 — Square Frame -->
+  <div class="concept-block">
+    <div class="concept-num">Concept 3</div>
+    <div class="concept-name">Monogram in Square Frame</div>
+    <div class="concept-note">The BP monogram inside a thin square border — clean and structured for app icons, branded tiles, and packaging.</div>
+
+    <div class="size-label-row">Light Version</div>
+    <div class="size-row light-bg">
+      <div class="size-item">
+        <div style="width:180px;height:180px;border-radius:4px;border:1.5px solid #3A3530;display:flex;align-items:center;justify-content:center;">
+          <img src="brandedprairie-bp.png" alt="BP square lg" style="height:120px;width:auto;">
         </div>
+        <span class="sz-label">Large</span>
       </div>
-      <div class="logo-info"><h4>Social Profile</h4></div>
-    </div>
-    <div class="logo-card">
-      <div class="logo-preview cream" style="min-height:180px;">
-        <div style="display:flex;align-items:center;gap:16px;">
-          <img src="brandedprairie-bp.png" alt="BP business card" style="max-height:70px;">
-          <div style="text-align:left;">
-            <div style="font-size:8px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#7D8A74;">Branded Prairie</div>
-            <div style="font-size:10px;color:#8a8078;font-style:italic;">South Dakota</div>
-          </div>
+      <div class="size-item">
+        <div style="width:120px;height:120px;border-radius:4px;border:1.5px solid #3A3530;display:flex;align-items:center;justify-content:center;">
+          <img src="brandedprairie-bp.png" alt="BP square md" style="height:78px;width:auto;">
         </div>
+        <span class="sz-label">Profile</span>
       </div>
-      <div class="logo-info"><h4>Business Card</h4></div>
+      <div class="size-item">
+        <div style="width:56px;height:56px;border-radius:4px;border:1.5px solid #3A3530;display:flex;align-items:center;justify-content:center;">
+          <img src="brandedprairie-bp.png" alt="BP square sm" style="height:36px;width:auto;">
+        </div>
+        <span class="sz-label">Icon</span>
+      </div>
     </div>
-    <div class="logo-card">
-      <div class="logo-preview cream" style="min-height:180px;">
-        <img src="brandedprairie-bp.png" alt="BP compact" style="max-height:70px;">
+
+    <div class="size-label-row">Dark Version</div>
+    <div class="size-row dark-bg">
+      <div class="size-item">
+        <div style="width:180px;height:180px;border-radius:4px;border:1.5px solid #F5F0E8;display:flex;align-items:center;justify-content:center;">
+          <img src="brandedprairie-bp.png" alt="BP square lg inv" class="invert" style="height:120px;width:auto;">
+        </div>
+        <span class="sz-label" style="color:#F5F0E8;">Large</span>
       </div>
-      <div class="logo-info"><h4>Compact</h4></div>
+      <div class="size-item">
+        <div style="width:120px;height:120px;border-radius:4px;border:1.5px solid #F5F0E8;display:flex;align-items:center;justify-content:center;">
+          <img src="brandedprairie-bp.png" alt="BP square md inv" class="invert" style="height:78px;width:auto;">
+        </div>
+        <span class="sz-label" style="color:#F5F0E8;">Profile</span>
+      </div>
+      <div class="size-item">
+        <div style="width:56px;height:56px;border-radius:4px;border:1.5px solid #F5F0E8;display:flex;align-items:center;justify-content:center;">
+          <img src="brandedprairie-bp.png" alt="BP square sm inv" class="invert" style="height:36px;width:auto;">
+        </div>
+        <span class="sz-label" style="color:#F5F0E8;">Icon</span>
+      </div>
     </div>
   </div>
 
-  <!-- ROW 4: Color Treatments -->
-  <div style="margin-bottom:12px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#7D8A74;margin-bottom:6px;">Concept 5 — Color Treatments</div>
-    <div style="font-size:12px;color:#8a8078;font-style:italic;margin-bottom:16px;">The monogram in brand-appropriate color treatments for various contexts.</div>
-  </div>
-  <div class="logo-grid" style="grid-template-columns:1fr 1fr 1fr 1fr;margin-bottom:32px;">
-    <div class="logo-card">
-      <div class="logo-preview white" style="min-height:160px;border:1px solid #e0d9ce;">
-        <img src="brandedprairie-bp.png" alt="BP original" style="max-height:90px;">
-      </div>
-      <div class="logo-info"><h4>Original</h4><p>Black on white</p></div>
-    </div>
-    <div class="logo-card">
-      <div class="logo-preview dark" style="min-height:160px;">
-        <img src="brandedprairie-bp.png" alt="BP white on sage" class="invert" style="max-height:90px;">
-      </div>
-      <div class="logo-info"><h4>White on Sage</h4><p>#7D8A74</p></div>
-    </div>
-    <div class="logo-card">
-      <div class="logo-preview white" style="min-height:160px;border:1px solid #e0d9ce;">
-        <img src="brandedprairie-bp.png" alt="BP sage tint" class="sage-tint" style="max-height:90px;">
-      </div>
-      <div class="logo-info"><h4>Sage Tint</h4><p>Monochrome green</p></div>
-    </div>
-    <div class="logo-card">
-      <div class="logo-preview white" style="min-height:160px;border:1px solid #e0d9ce;">
-        <img src="brandedprairie-bp.png" alt="BP wheat tint" style="max-height:90px;filter:invert(75%) sepia(20%) saturate(500%) hue-rotate(10deg) brightness(90%) contrast(90%);">
-      </div>
-      <div class="logo-info"><h4>Wheat / Gold</h4><p>Warm neutral</p></div>
-    </div>
-  </div>
+  <hr class="concept-divider">
 
-  <!-- ROW 5: Full Wordmark -->
-  <div style="margin-bottom:12px;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#7D8A74;margin-bottom:6px;">Concept 6 — Full Wordmark</div>
-    <div style="font-size:12px;color:#8a8078;font-style:italic;margin-bottom:16px;">The full "Branded Prairie Company" wordmark with pasque flower — for headers, banners, and print.</div>
-  </div>
-  <div class="logo-grid" style="grid-template-columns:1fr 1fr;margin-bottom:32px;">
-    <div class="logo-card">
-      <div class="logo-preview white" style="min-height:160px;padding:32px 20px;border:1px solid #e0d9ce;">
-        <img src="brandedprairie-logo.png" alt="Wordmark on white" style="max-height:70px;max-width:100%;">
+  <!-- CONCEPT 4 — Full Wordmark -->
+  <div class="concept-block">
+    <div class="concept-num">Concept 4</div>
+    <div class="concept-name">Full Wordmark</div>
+    <div class="concept-note">The full "Branded Prairie Company" wordmark with pasque flower. Used for headers, website banners, and print collateral.</div>
+
+    <div class="size-label-row">On Light Background</div>
+    <div class="size-row light-bg" style="flex-direction:column;gap:24px;">
+      <div class="size-item">
+        <img src="brandedprairie-logo.png" alt="Wordmark large" style="width:440px;height:auto;max-width:100%;">
+        <span class="sz-label">Large</span>
       </div>
-      <div class="logo-info"><h4>On Light Background</h4></div>
+      <div class="size-item">
+        <img src="brandedprairie-logo.png" alt="Wordmark medium" style="width:280px;height:auto;max-width:100%;">
+        <span class="sz-label">Medium</span>
+      </div>
+      <div class="size-item">
+        <img src="brandedprairie-logo.png" alt="Wordmark small" style="width:160px;height:auto;max-width:100%;">
+        <span class="sz-label">Small</span>
+      </div>
     </div>
-    <div class="logo-card">
-      <div class="logo-preview dark" style="min-height:160px;padding:32px 20px;">
-        <img src="brandedprairie-logo.png" alt="Wordmark inverted" class="invert" style="max-height:70px;max-width:100%;">
+
+    <div class="size-label-row">Inverted on Dark Sage</div>
+    <div class="size-row dark-bg" style="flex-direction:column;gap:24px;">
+      <div class="size-item">
+        <img src="brandedprairie-logo.png" alt="Wordmark large inv" class="invert" style="width:440px;height:auto;max-width:100%;">
+        <span class="sz-label" style="color:#F5F0E8;">Large</span>
       </div>
-      <div class="logo-info"><h4>Inverted on Sage</h4></div>
+      <div class="size-item">
+        <img src="brandedprairie-logo.png" alt="Wordmark medium inv" class="invert" style="width:280px;height:auto;max-width:100%;">
+        <span class="sz-label" style="color:#F5F0E8;">Medium</span>
+      </div>
+      <div class="size-item">
+        <img src="brandedprairie-logo.png" alt="Wordmark small inv" class="invert" style="width:160px;height:auto;max-width:100%;">
+        <span class="sz-label" style="color:#F5F0E8;">Small</span>
+      </div>
     </div>
   </div>
 
