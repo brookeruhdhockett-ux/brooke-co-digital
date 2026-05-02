@@ -12,22 +12,22 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 
 :root{
-  --navy:#3B4F5C;
-  --navy-dark:#2E3F4A;
-  --navy-deep:#243340;
-  --cream:#E8E0D4;
-  --cream-light:#F4F0EB;
+  --navy:#22333c;
+  --navy-dark:#22333c;
+  --navy-deep:#22333c;
+  --cream:#d8d2c4;
+  --cream-light:#d8d2c4;
   --cream-page:#FAF8F5;
-  --caramel:#B08A5E;
-  --caramel-dark:#967445;
-  --taupe:#8F8375;
-  --taupe-light:#A89B8E;
-  --tan:#C9BFB0;
-  --gray-cool:#A8ABAE;
-  --gray-light:#C8C6C3;
-  --charcoal:#2E2C29;
-  --text:#4A4540;
-  --text-lt:#7D756C;
+  --caramel:#a07b5b;
+  --caramel-dark:#8a6849;
+  --taupe:#9f8e7a;
+  --taupe-light:#9f8e7a;
+  --tan:#d8d2c4;
+  --gray-cool:#bebebd;
+  --gray-light:#bebebd;
+  --charcoal:#22333c;
+  --text:#445251;
+  --text-lt:#9f8e7a;
   --white:#FFFFFF;
   --radius:14px;
   --radius-lg:20px;
@@ -59,7 +59,7 @@ img{max-width:100%;display:block}
 }
 header{
   position:relative;
-  background:rgba(59,79,92,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  background:rgba(34,51,60,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(232,224,212,.08);transition:box-shadow .3s;
 }
 .top-bar-wrap.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.15)}
@@ -108,7 +108,7 @@ nav a:hover{color:var(--cream)}
 }
 .hero::before{
   content:'';position:absolute;top:-20%;right:-12%;width:55vw;height:55vw;
-  border-radius:50%;background:radial-gradient(circle,rgba(176,138,94,.08) 0%,transparent 70%);pointer-events:none;
+  border-radius:50%;background:radial-gradient(circle,rgba(160,123,91,.08) 0%,transparent 70%);pointer-events:none;
 }
 .hero::after{
   content:'';position:absolute;bottom:-15%;left:-10%;width:45vw;height:45vw;
@@ -178,17 +178,15 @@ section{padding:90px 0}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .service-card{
   background:var(--white);border-radius:var(--radius-lg);padding:36px 28px;
-  text-align:center;border:1px solid rgba(176,138,94,.08);
+  text-align:center;border:1px solid rgba(160,123,91,.08);
   transition:transform .35s ease,box-shadow .35s;
 }
-.service-card:hover{transform:translateY(-6px);box-shadow:0 14px 44px rgba(59,79,92,.08)}
-.service-icon{
-  width:60px;height:60px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 18px;font-size:1.5rem;
-  background:var(--navy);color:var(--cream);
+.service-card:hover{transform:translateY(-6px);box-shadow:0 14px 44px rgba(34,51,60,.08)}
+.service-card h3{
+  font-size:1.1rem;color:var(--white);margin-bottom:12px;
+  background:var(--navy);display:inline-block;padding:8px 22px;
+  border-radius:30px;
 }
-.service-card h3{font-size:1.1rem;color:var(--charcoal);margin-bottom:8px}
 .service-card p{font-size:.85rem;color:var(--text);line-height:1.7}
 
 @media(max-width:768px){.services-grid{grid-template-columns:1fr;max-width:380px;margin:0 auto}}
@@ -200,12 +198,12 @@ section{padding:90px 0}
 .signs-inner p.sub{color:var(--tan);font-size:.95rem;margin-bottom:36px}
 .signs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 .sign-item{
-  display:flex;align-items:flex-start;gap:14px;
-  padding:18px 20px;border-radius:var(--radius);
+  display:flex;align-items:center;justify-content:center;
+  padding:20px 24px;border-radius:var(--radius);
   background:rgba(232,224,212,.06);border:1px solid rgba(232,224,212,.06);
+  text-align:center;
 }
-.sign-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px}
-.sign-item p{font-size:.9rem;color:var(--tan);line-height:1.6}
+.sign-item p{font-size:1.1rem;color:var(--tan);line-height:1.6;font-weight:500}
 .signs-cta{margin-top:36px;text-align:center}
 
 @media(max-width:600px){.signs-grid{grid-template-columns:1fr}}
@@ -238,7 +236,7 @@ section{padding:90px 0}
 .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:920px;margin:0 auto}
 .testimonial{
   background:var(--white);border-radius:var(--radius-lg);padding:32px 26px;position:relative;
-  border:1px solid rgba(176,138,94,.08);
+  border:1px solid rgba(160,123,91,.08);
 }
 .testimonial::before{
   content:'\201C';font-family:'Cormorant Garamond',serif;font-size:3.5rem;
@@ -345,7 +343,7 @@ footer .footer-tagline{font-size:.88rem;color:var(--tan);font-family:'Cormorant 
   text-align:center;border:1px solid rgba(176,138,94,.1);
   transition:transform .35s,box-shadow .35s;
 }
-.support-card:hover{transform:translateY(-6px);box-shadow:0 14px 44px rgba(59,79,92,.08)}
+.support-card:hover{transform:translateY(-6px);box-shadow:0 14px 44px rgba(34,51,60,.08)}
 .support-card h3{font-size:1.1rem;color:var(--charcoal);margin-bottom:10px}
 .support-card p{font-size:.88rem;color:var(--text);line-height:1.8;margin-bottom:18px}
 .support-card .card-cta{
@@ -409,13 +407,13 @@ footer .footer-tagline{font-size:.88rem;color:var(--tan);font-family:'Cormorant 
       <div class="about-text">
         <p class="section-label reveal">Meet Your Audiologist</p>
         <h2 class="reveal">Hey, I'm Angela.</h2>
-        <p class="reveal">I started Abide Audiology because I believe hearing care should be unhurried, thorough, and built on trust. I take the time to listen to your story — not just test your hearing — so we can find solutions that actually fit your life.</p>
+        <p class="reveal">I founded Abide Audiology for a simple purpose: to help people hear more clearly, communicate more confidently, and stay connected in life. I believe hearing care should be unhurried, thorough, and built on trust. I take the time to listen to your story — not just test your hearing — so we can find solutions that actually fit your life.</p>
         <p class="reveal">Whether you're noticing changes for the first time or managing hearing aids you've had for years, I'm here to walk alongside you with patience and expertise.</p>
-        <p class="reveal">Every ear is different. Every person is different. And your care should reflect that. When I'm not in the clinic, I'm home with my husband and our four kids — so I get it. Life is busy. Let's make hearing one less thing to worry about.</p>
+        <p class="reveal">Every ear is different. Every person is different. And your care should reflect that. When I'm not in the clinic, I'm home with my husband and our four kids — so I get it. Life is busy. Hearing well is living well — let's get you there!</p>
         <div class="about-credentials reveal">
           <span class="credential">Doctor of Audiology</span>
           <span class="credential">Board Certified</span>
-          <span class="credential">Locally Owned</span>
+          <span class="credential">8 Years Clinical Experience</span>
         </div>
       </div>
     </div>
@@ -432,34 +430,28 @@ footer .footer-tagline{font-size:.88rem;color:var(--tan);font-family:'Cormorant 
     </div>
     <div class="services-grid stagger">
       <div class="service-card reveal">
-        <div class="service-icon">🔊</div>
         <h3>Hearing Evaluations</h3>
-        <p>Comprehensive diagnostic testing to understand your hearing health. Thorough, unhurried, and explained in plain language.</p>
+        <p>Comprehensive diagnostic testing to understand your hearing health. We partner with your physician for any medical concerns. Thorough, unhurried, and explained in plain language.</p>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon">🦻</div>
-        <h3>Hearing Aids</h3>
-        <p>Personalized fitting, programming, and ongoing adjustments. We work with top brands to find the perfect match for your lifestyle.</p>
+        <h3>Pediatric Hearing</h3>
+        <p>Gentle, kid-friendly hearing assessments for speech and language development. Early detection makes all the difference.</p>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon">🔔</div>
         <h3>Tinnitus Management</h3>
         <p>Ringing, buzzing, or humming in your ears? We'll evaluate what's happening and create a management plan that brings relief.</p>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon">👶</div>
-        <h3>Pediatric Hearing</h3>
-        <p>Gentle, kid-friendly hearing assessments. Early detection makes all the difference for speech and development.</p>
+        <h3>Hearing Aids</h3>
+        <p>Personalized fitting using Real Ear Verification for comfort and clarity, programming, and ongoing adjustments. We work with top brands to find the perfect match for your lifestyle.</p>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon">🛡️</div>
-        <h3>Custom Ear Protection</h3>
-        <p>Custom-molded earplugs for musicians, hunters, swimmers, and industrial workers. Protect the hearing you have.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon">🔧</div>
         <h3>Hearing Aid Repairs</h3>
-        <p>Cleaning, troubleshooting, and repairs for all brands. Walk-ins welcome for quick fixes — we'll get you hearing again.</p>
+        <p>Cleaning, troubleshooting, and repairs. Come on in for quick fixes — we'll get you hearing again.</p>
+      </div>
+      <div class="service-card reveal">
+        <h3>Custom Hearing Protection</h3>
+        <p>Custom-molded earplugs for musicians, hunters, swimmers, and industrial workers. Protect the hearing you have.</p>
       </div>
     </div>
   </div>
@@ -475,27 +467,21 @@ footer .footer-tagline{font-size:.88rem;color:var(--tan);font-family:'Cormorant 
     </div>
     <div class="signs-grid stagger">
       <div class="sign-item reveal">
-        <span class="sign-icon">📺</span>
         <p>You've been turning the TV up louder than everyone else</p>
       </div>
       <div class="sign-item reveal">
-        <span class="sign-icon">🗣️</span>
         <p>You frequently ask people to repeat themselves</p>
       </div>
       <div class="sign-item reveal">
-        <span class="sign-icon">🍽️</span>
         <p>Conversations in noisy restaurants feel impossible</p>
       </div>
       <div class="sign-item reveal">
-        <span class="sign-icon">📱</span>
         <p>Phone calls are harder to understand than they used to be</p>
       </div>
       <div class="sign-item reveal">
-        <span class="sign-icon">🔔</span>
         <p>You hear ringing, buzzing, or humming that others don't</p>
       </div>
       <div class="sign-item reveal">
-        <span class="sign-icon">😓</span>
         <p>You feel exhausted after social situations from straining to hear</p>
       </div>
     </div>
@@ -516,7 +502,7 @@ footer .footer-tagline{font-size:.88rem;color:var(--tan);font-family:'Cormorant 
     <div class="steps stagger">
       <div class="step reveal">
         <div class="step-num">1</div>
-        <h3>Book Online</h3>
+        <h3>Book Online or Call Us</h3>
         <p>Schedule a time that works for you. New patients welcome.</p>
       </div>
       <div class="step reveal">
@@ -602,7 +588,7 @@ footer .footer-tagline{font-size:.88rem;color:var(--tan);font-family:'Cormorant 
       <p class="section-label reveal">Insurance &amp; Payment</p>
       <h2 class="section-title reveal">How We Handle Payment</h2>
       <div class="divider"></div>
-      <p class="body-text reveal">Abide Audiology is primarily a cash-based practice. We participate with Medicare as required and intend to serve as a non-participating provider. This approach helps preserve clinical independence, reduce insurance-related limitations on hearing aid options and follow-up care, and support treatment decisions based on what is best for you. If you have questions about coverage or payment options, we are always happy to help.</p>
+      <p class="body-text reveal">We are committed to providing exceptional audiological services to enhance your hearing health and overall well-being. As a full-service audiology clinic, we keep our hearing test pricing straightforward, so you always know what you're paying for. Abide Audiology is cash-based, with Medicare accepted as a non-participating provider. This allows for more personalized care and greater flexibility in your treatment recommendations. If you're not sure where to begin, reach out and we'll help you find the right next step for your hearing care needs.</p>
     </div>
   </div>
 </section>
@@ -659,9 +645,8 @@ footer .footer-tagline{font-size:.88rem;color:var(--tan);font-family:'Cormorant 
           <a href="#">✉️ [Your Email]</a>
         </div>
         <p class="hours-label reveal">Office Hours</p>
-        <p class="hours-row reveal">Monday – Thursday: 8:00 AM – 5:00 PM</p>
-        <p class="hours-row reveal">Friday: 8:00 AM – 12:00 PM</p>
-        <p class="hours-row reveal">Saturday – Sunday: Closed</p>
+        <p class="hours-row reveal">Monday – Thursday: 9:00 AM – 3:00 PM</p>
+        <p class="hours-row reveal">Friday – Sunday: Closed</p>
         <div class="map-embed reveal">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.0!2d-96.6826!3d44.7633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s321+3rd+Ave+S%2C+Clear+Lake%2C+SD!5e0!3m2!1sen!2sus!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
