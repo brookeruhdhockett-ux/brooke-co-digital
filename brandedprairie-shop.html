@@ -79,6 +79,26 @@ nav a{font-size:.82rem;font-weight:500;letter-spacing:.03em;color:var(--tan);tra
 nav a:hover{color:var(--cream)}
 nav a.active{color:var(--cream);font-weight:700}
 
+.nav-dropdown{position:relative}
+.nav-dropdown > a{cursor:pointer}
+.nav-dropdown > a::after{content:' ▾';font-size:.65rem;opacity:.6}
+.dropdown-menu{
+  position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  background:rgba(74,94,66,.97);backdrop-filter:blur(12px);
+  border-radius:10px;padding:10px 0;min-width:200px;
+  opacity:0;visibility:hidden;transform:translateX(-50%) translateY(8px);
+  transition:opacity .25s,visibility .25s,transform .25s;
+  box-shadow:0 8px 32px rgba(0,0,0,.2);margin-top:12px;
+}
+.nav-dropdown:hover .dropdown-menu{
+  opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);
+}
+.dropdown-menu a{
+  display:block;padding:10px 20px;font-size:.8rem;font-weight:500;
+  color:var(--tan);letter-spacing:.02em;white-space:nowrap;transition:all .2s;
+}
+.dropdown-menu a:hover{color:var(--cream);background:rgba(245,240,232,.08)}
+
 .nav-cta{
   background:var(--wheat-dark);color:var(--white);padding:10px 24px;
   border-radius:50px;font-weight:600;font-size:.78rem;letter-spacing:.05em;
@@ -102,6 +122,11 @@ nav a.active{color:var(--cream);font-weight:700}
   }
   nav.open{right:0}
   nav a{font-size:1.1rem;color:var(--cream)}
+  .dropdown-menu{position:static;transform:none;opacity:1;visibility:visible;
+    background:none;box-shadow:none;padding:0 0 0 16px;margin-top:0;min-width:0;
+    backdrop-filter:none;border-radius:0;border-left:1px solid rgba(245,240,232,.15)}
+  .dropdown-menu a{padding:6px 12px;font-size:.95rem}
+  .nav-dropdown > a::after{display:none}
 }
 
 /* shop hero */
@@ -286,7 +311,15 @@ footer{
     </div>
     <nav id="nav">
       <a href="brandedprairie.html">Home</a>
-      <a href="brandedprairie-shop.html" class="active">Shop</a>
+      <div class="nav-dropdown">
+        <a href="brandedprairie-shop.html" class="active">Shop</a>
+        <div class="dropdown-menu">
+          <a href="brandedprairie-shop.html">All Collections</a>
+          <a href="brandedprairie-shop.html#rodeo">Crystal Springs Rodeo</a>
+          <a href="brandedprairie-shop.html#cardinals">Deuel Cardinals</a>
+          <a href="brandedprairie-shop.html#warriors">Castlewood Warriors</a>
+        </div>
+      </div>
       <a href="brandedprairie.html#custom">Custom Orders</a>
       <a href="brandedprairie.html#about">About</a>
       <a href="brandedprairie.html#contact" class="nav-cta">Contact Us</a>
