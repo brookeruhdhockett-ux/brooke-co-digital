@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Branded Prairie Company — Logo & Brand Mark Options</title>
+<title>Branded Prairie Company — Brand Mark Options</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --sage:#4A5E42;
+  --sage:#7D8A74;
   --cream:#F5F0E8;
   --dark:#3A3530;
   --wheat:#C8B898;
@@ -196,6 +196,39 @@ body{
   text-transform:uppercase;
 }
 
+/* Cream profile card */
+.cream-card{
+  background:var(--cream);
+  border-radius:16px;
+  box-shadow:0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+  padding:48px 40px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:20px;
+  max-width:360px;
+}
+.cream-card .card-label{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--sage);
+}
+.cream-card .card-tagline{
+  font-size:13px;
+  font-weight:400;
+  color:#8a8078;
+  font-style:italic;
+  text-align:center;
+}
+.card-row{
+  display:flex;
+  gap:40px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
 /* Divider */
 .divider{
   width:100%;
@@ -221,92 +254,41 @@ body{
   .variant-row{flex-direction:column;gap:24px}
   .size-row{gap:24px;padding:24px 12px;flex-wrap:wrap}
   .color-row{flex-direction:column}
+  .card-row{flex-direction:column;align-items:center}
 }
 </style>
 </head>
 <body>
 
 <header class="page-header">
-  <h1>Branded Prairie Company &mdash; Logo &amp; Brand Mark Options</h1>
-  <p>Presentation of logo variations, monogram options, and brand color treatments</p>
+  <h1>Branded Prairie Company &mdash; Brand Mark Options</h1>
+  <p>Presentation of monogram variations, framing options, color treatments, and full wordmark</p>
 </header>
 
 
 <!-- ============================================================
-     CONCEPT 1 — Full Logo
+     CONCEPT 1 — Full Monogram
      ============================================================ -->
 <section class="concept-section">
   <div class="concept-label">Concept 1</div>
-  <div class="concept-title">Full Logo</div>
-  <div class="concept-desc">The primary wordmark &mdash; &ldquo;Branded Prairie Company&rdquo; in serif with the pasque flower. Used for headers, website, and print collateral.</div>
+  <div class="concept-title">Full Monogram</div>
+  <div class="concept-desc">The BP monogram as-is &mdash; serif &ldquo;BP&rdquo; with pasque flower, &ldquo;EST. 2024,&rdquo; and &ldquo;BRANDED PRAIRIE&rdquo; underneath. Shown at three sizes on light and dark backgrounds.</div>
 
   <div class="variant-row">
     <div class="variant-col">
-      <div class="variant-label">On Light Background</div>
-      <div class="size-row light-bg">
-        <div class="size-item">
-          <img src="brandedprairie-logo.png" alt="Full logo large" class="logo-img" style="width:476px;height:auto;">
-          <span class="size-label">Large</span>
-        </div>
-        <div class="size-item">
-          <img src="brandedprairie-logo.png" alt="Full logo profile" class="logo-img" style="width:300px;height:auto;">
-          <span class="size-label">Profile ~150px height</span>
-        </div>
-        <div class="size-item">
-          <img src="brandedprairie-logo.png" alt="Full logo small" class="logo-img" style="width:160px;height:auto;">
-          <span class="size-label">Small</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="variant-row">
-    <div class="variant-col">
-      <div class="variant-label">On Dark Sage Background</div>
-      <div class="size-row dark-bg">
-        <div class="size-item">
-          <img src="brandedprairie-logo.png" alt="Full logo large inverted" class="logo-img invert" style="width:476px;height:auto;">
-          <span class="size-label">Large</span>
-        </div>
-        <div class="size-item">
-          <img src="brandedprairie-logo.png" alt="Full logo profile inverted" class="logo-img invert" style="width:300px;height:auto;">
-          <span class="size-label">Profile ~150px height</span>
-        </div>
-        <div class="size-item">
-          <img src="brandedprairie-logo.png" alt="Full logo small inverted" class="logo-img invert" style="width:160px;height:auto;">
-          <span class="size-label">Small</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-
-<!-- ============================================================
-     CONCEPT 2 — BP Monogram
-     ============================================================ -->
-<section class="concept-section">
-  <div class="concept-label">Concept 2</div>
-  <div class="concept-title">BP Monogram</div>
-  <div class="concept-desc">The primary compact mark &mdash; serif &ldquo;BP&rdquo; with the pasque flower growing between the letters. Ideal for social media profiles, favicons, and watermarks.</div>
-
-  <div class="variant-row">
-    <div class="variant-col">
-      <div class="variant-label">On Light Background</div>
+      <div class="variant-label">On White / Cream Background</div>
       <div class="size-row light-bg">
         <div class="size-item">
           <img src="brandedprairie-bp.png" alt="BP monogram large" class="logo-img" style="height:200px;width:auto;">
-          <span class="size-label">Large</span>
+          <span class="size-label">Large ~200px</span>
         </div>
         <div class="size-item">
-          <img src="brandedprairie-bp.png" alt="BP monogram profile" class="logo-img" style="height:150px;width:auto;">
-          <span class="size-label">Profile ~150px</span>
+          <img src="brandedprairie-bp.png" alt="BP monogram profile" class="logo-img" style="height:120px;width:auto;">
+          <span class="size-label">Profile ~120px</span>
         </div>
         <div class="size-item">
-          <img src="brandedprairie-bp.png" alt="BP monogram icon" class="logo-img" style="height:40px;width:auto;">
-          <span class="size-label">Icon ~40px</span>
+          <img src="brandedprairie-bp.png" alt="BP monogram icon" class="logo-img" style="height:50px;width:auto;">
+          <span class="size-label">Icon ~50px</span>
         </div>
       </div>
     </div>
@@ -314,19 +296,19 @@ body{
 
   <div class="variant-row">
     <div class="variant-col">
-      <div class="variant-label">On Dark Sage Background</div>
+      <div class="variant-label">Inverted on Dark Sage (#7D8A74)</div>
       <div class="size-row dark-bg">
         <div class="size-item">
           <img src="brandedprairie-bp.png" alt="BP monogram large inverted" class="logo-img invert" style="height:200px;width:auto;">
-          <span class="size-label">Large</span>
+          <span class="size-label">Large ~200px</span>
         </div>
         <div class="size-item">
-          <img src="brandedprairie-bp.png" alt="BP monogram profile inverted" class="logo-img invert" style="height:150px;width:auto;">
-          <span class="size-label">Profile ~150px</span>
+          <img src="brandedprairie-bp.png" alt="BP monogram profile inverted" class="logo-img invert" style="height:120px;width:auto;">
+          <span class="size-label">Profile ~120px</span>
         </div>
         <div class="size-item">
-          <img src="brandedprairie-bp.png" alt="BP monogram icon inverted" class="logo-img invert" style="height:40px;width:auto;">
-          <span class="size-label">Icon ~40px</span>
+          <img src="brandedprairie-bp.png" alt="BP monogram icon inverted" class="logo-img invert" style="height:50px;width:auto;">
+          <span class="size-label">Icon ~50px</span>
         </div>
       </div>
     </div>
@@ -337,34 +319,98 @@ body{
 
 
 <!-- ============================================================
-     CONCEPT 3 — BP Monogram in Circle
+     CONCEPT 2 — Monogram in Circle Frame
+     ============================================================ -->
+<section class="concept-section">
+  <div class="concept-label">Concept 2</div>
+  <div class="concept-title">Monogram in Circle Frame</div>
+  <div class="concept-desc">The BP monogram enclosed in a thin circular border &mdash; a refined badge for profile pictures, stamps, and watermarks.</div>
+
+  <div class="variant-row">
+    <div class="variant-col">
+      <div class="variant-label">Light Version</div>
+      <div class="size-row light-bg">
+        <div class="size-item">
+          <div class="frame-circle light-frame" style="width:240px;height:240px;">
+            <img src="brandedprairie-bp.png" alt="BP circle large" class="logo-img" style="height:150px;width:auto;">
+          </div>
+          <span class="size-label">Large</span>
+        </div>
+        <div class="size-item">
+          <div class="frame-circle light-frame" style="width:160px;height:160px;">
+            <img src="brandedprairie-bp.png" alt="BP circle profile" class="logo-img" style="height:100px;width:auto;">
+          </div>
+          <span class="size-label">Profile</span>
+        </div>
+        <div class="size-item">
+          <div class="frame-circle light-frame" style="width:70px;height:70px;">
+            <img src="brandedprairie-bp.png" alt="BP circle icon" class="logo-img" style="height:42px;width:auto;">
+          </div>
+          <span class="size-label">Icon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="variant-row">
+    <div class="variant-col">
+      <div class="variant-label">Dark Version</div>
+      <div class="size-row dark-bg">
+        <div class="size-item">
+          <div class="frame-circle dark-frame" style="width:240px;height:240px;">
+            <img src="brandedprairie-bp.png" alt="BP circle large inverted" class="logo-img invert" style="height:150px;width:auto;">
+          </div>
+          <span class="size-label">Large</span>
+        </div>
+        <div class="size-item">
+          <div class="frame-circle dark-frame" style="width:160px;height:160px;">
+            <img src="brandedprairie-bp.png" alt="BP circle profile inverted" class="logo-img invert" style="height:100px;width:auto;">
+          </div>
+          <span class="size-label">Profile</span>
+        </div>
+        <div class="size-item">
+          <div class="frame-circle dark-frame" style="width:70px;height:70px;">
+            <img src="brandedprairie-bp.png" alt="BP circle icon inverted" class="logo-img invert" style="height:42px;width:auto;">
+          </div>
+          <span class="size-label">Icon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ============================================================
+     CONCEPT 3 — Monogram in Square Frame
      ============================================================ -->
 <section class="concept-section">
   <div class="concept-label">Concept 3</div>
-  <div class="concept-title">BP Monogram in Circle</div>
-  <div class="concept-desc">The BP monogram enclosed in a thin circular border. A refined badge treatment for profile pictures and stamps.</div>
+  <div class="concept-title">Monogram in Square Frame</div>
+  <div class="concept-desc">The BP monogram inside a thin square border &mdash; clean and structured for app icons, branded tiles, and packaging.</div>
 
   <div class="variant-row">
     <div class="variant-col">
-      <div class="variant-label">On Light Background</div>
+      <div class="variant-label">Light Version</div>
       <div class="size-row light-bg">
         <div class="size-item">
-          <div class="frame-circle light-frame" style="width:220px;height:220px;">
-            <img src="brandedprairie-bp.png" alt="BP circle large" class="logo-img" style="height:140px;width:auto;">
+          <div class="frame-square light-frame" style="width:240px;height:240px;">
+            <img src="brandedprairie-bp.png" alt="BP square large" class="logo-img" style="height:160px;width:auto;">
           </div>
           <span class="size-label">Large</span>
         </div>
         <div class="size-item">
-          <div class="frame-circle light-frame" style="width:150px;height:150px;">
-            <img src="brandedprairie-bp.png" alt="BP circle profile" class="logo-img" style="height:95px;width:auto;">
+          <div class="frame-square light-frame" style="width:160px;height:160px;">
+            <img src="brandedprairie-bp.png" alt="BP square profile" class="logo-img" style="height:105px;width:auto;">
           </div>
-          <span class="size-label">Profile ~150px</span>
+          <span class="size-label">Profile</span>
         </div>
         <div class="size-item">
-          <div class="frame-circle light-frame" style="width:56px;height:56px;">
-            <img src="brandedprairie-bp.png" alt="BP circle icon" class="logo-img" style="height:34px;width:auto;">
+          <div class="frame-square light-frame" style="width:70px;height:70px;">
+            <img src="brandedprairie-bp.png" alt="BP square icon" class="logo-img" style="height:44px;width:auto;">
           </div>
-          <span class="size-label">Icon ~40px</span>
+          <span class="size-label">Icon</span>
         </div>
       </div>
     </div>
@@ -372,25 +418,25 @@ body{
 
   <div class="variant-row">
     <div class="variant-col">
-      <div class="variant-label">On Dark Sage Background</div>
+      <div class="variant-label">Dark Version</div>
       <div class="size-row dark-bg">
         <div class="size-item">
-          <div class="frame-circle dark-frame" style="width:220px;height:220px;">
-            <img src="brandedprairie-bp.png" alt="BP circle large inverted" class="logo-img invert" style="height:140px;width:auto;">
+          <div class="frame-square dark-frame" style="width:240px;height:240px;">
+            <img src="brandedprairie-bp.png" alt="BP square large inverted" class="logo-img invert" style="height:160px;width:auto;">
           </div>
           <span class="size-label">Large</span>
         </div>
         <div class="size-item">
-          <div class="frame-circle dark-frame" style="width:150px;height:150px;">
-            <img src="brandedprairie-bp.png" alt="BP circle profile inverted" class="logo-img invert" style="height:95px;width:auto;">
+          <div class="frame-square dark-frame" style="width:160px;height:160px;">
+            <img src="brandedprairie-bp.png" alt="BP square profile inverted" class="logo-img invert" style="height:105px;width:auto;">
           </div>
-          <span class="size-label">Profile ~150px</span>
+          <span class="size-label">Profile</span>
         </div>
         <div class="size-item">
-          <div class="frame-circle dark-frame" style="width:56px;height:56px;">
-            <img src="brandedprairie-bp.png" alt="BP circle icon inverted" class="logo-img invert" style="height:34px;width:auto;">
+          <div class="frame-square dark-frame" style="width:70px;height:70px;">
+            <img src="brandedprairie-bp.png" alt="BP square icon inverted" class="logo-img invert" style="height:44px;width:auto;">
           </div>
-          <span class="size-label">Icon ~40px</span>
+          <span class="size-label">Icon</span>
         </div>
       </div>
     </div>
@@ -401,62 +447,31 @@ body{
 
 
 <!-- ============================================================
-     CONCEPT 4 — BP Monogram in Square
+     CONCEPT 4 — Monogram on Cream Card
      ============================================================ -->
 <section class="concept-section">
   <div class="concept-label">Concept 4</div>
-  <div class="concept-title">BP Monogram in Square</div>
-  <div class="concept-desc">The BP monogram inside a thin square border. Clean and structured &mdash; works well for app icons and branded tiles.</div>
+  <div class="concept-title">Monogram on Cream Card</div>
+  <div class="concept-desc">The BP monogram presented on warm cream cards with subtle shadow &mdash; social media profile card and business card mockup style.</div>
 
-  <div class="variant-row">
-    <div class="variant-col">
-      <div class="variant-label">On Light Background</div>
-      <div class="size-row light-bg">
-        <div class="size-item">
-          <div class="frame-square light-frame" style="width:220px;height:220px;">
-            <img src="brandedprairie-bp.png" alt="BP square large" class="logo-img" style="height:150px;width:auto;">
-          </div>
-          <span class="size-label">Large</span>
-        </div>
-        <div class="size-item">
-          <div class="frame-square light-frame" style="width:150px;height:150px;">
-            <img src="brandedprairie-bp.png" alt="BP square profile" class="logo-img" style="height:100px;width:auto;">
-          </div>
-          <span class="size-label">Profile ~150px</span>
-        </div>
-        <div class="size-item">
-          <div class="frame-square light-frame" style="width:56px;height:56px;">
-            <img src="brandedprairie-bp.png" alt="BP square icon" class="logo-img" style="height:36px;width:auto;">
-          </div>
-          <span class="size-label">Icon ~40px</span>
-        </div>
+  <div class="card-row">
+    <div class="cream-card">
+      <img src="brandedprairie-bp.png" alt="BP on cream card" class="logo-img" style="height:140px;width:auto;">
+      <div class="card-label">Social Profile Card</div>
+      <div class="card-tagline">Branded Prairie Company &mdash; Est. 2024</div>
+    </div>
+
+    <div class="cream-card" style="max-width:520px;flex-direction:row;gap:32px;padding:40px 48px;">
+      <img src="brandedprairie-bp.png" alt="BP on cream business card" class="logo-img" style="height:100px;width:auto;">
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:8px;">
+        <div class="card-label">Business Card</div>
+        <div class="card-tagline" style="text-align:left;">Branded Prairie Company<br>South Dakota</div>
       </div>
     </div>
-  </div>
 
-  <div class="variant-row">
-    <div class="variant-col">
-      <div class="variant-label">On Dark Sage Background</div>
-      <div class="size-row dark-bg">
-        <div class="size-item">
-          <div class="frame-square dark-frame" style="width:220px;height:220px;">
-            <img src="brandedprairie-bp.png" alt="BP square large inverted" class="logo-img invert" style="height:150px;width:auto;">
-          </div>
-          <span class="size-label">Large</span>
-        </div>
-        <div class="size-item">
-          <div class="frame-square dark-frame" style="width:150px;height:150px;">
-            <img src="brandedprairie-bp.png" alt="BP square profile inverted" class="logo-img invert" style="height:100px;width:auto;">
-          </div>
-          <span class="size-label">Profile ~150px</span>
-        </div>
-        <div class="size-item">
-          <div class="frame-square dark-frame" style="width:56px;height:56px;">
-            <img src="brandedprairie-bp.png" alt="BP square icon inverted" class="logo-img invert" style="height:36px;width:auto;">
-          </div>
-          <span class="size-label">Icon ~40px</span>
-        </div>
-      </div>
+    <div class="cream-card" style="max-width:200px;padding:24px;">
+      <img src="brandedprairie-bp.png" alt="BP on cream mini card" class="logo-img" style="height:80px;width:auto;">
+      <div class="card-label" style="font-size:8px;">Compact</div>
     </div>
   </div>
 </section>
@@ -465,24 +480,24 @@ body{
 
 
 <!-- ============================================================
-     CONCEPT 5 — Color Variations
+     CONCEPT 5 — Color Treatments
      ============================================================ -->
 <section class="concept-section">
   <div class="concept-label">Concept 5</div>
-  <div class="concept-title">Color Variations</div>
-  <div class="concept-desc">The BP monogram shown in different brand-appropriate color treatments for various contexts and applications.</div>
+  <div class="concept-title">Color Treatments</div>
+  <div class="concept-desc">The BP monogram in four brand-appropriate color treatments for various contexts and applications.</div>
 
   <div class="color-row">
-    <!-- Black on Cream -->
-    <div class="color-card" style="background:var(--cream);border:1px solid #e0d9ce;">
-      <img src="brandedprairie-bp.png" alt="BP black on cream" class="logo-img" style="height:120px;width:auto;">
-      <span class="color-name" style="color:var(--dark);">Black on Cream</span>
+    <!-- Black on White -->
+    <div class="color-card" style="background:var(--white);border:1px solid #e8e4dc;">
+      <img src="brandedprairie-bp.png" alt="BP black on white" class="logo-img" style="height:120px;width:auto;">
+      <span class="color-name" style="color:var(--dark);">Original Black on White</span>
     </div>
 
     <!-- White on Sage -->
     <div class="color-card" style="background:var(--sage);">
       <img src="brandedprairie-bp.png" alt="BP white on sage" class="logo-img invert" style="height:120px;width:auto;">
-      <span class="color-name" style="color:var(--cream);">White on Sage</span>
+      <span class="color-name" style="color:var(--cream);">White on Sage Green</span>
     </div>
 
     <!-- Sage Green Tinted -->
@@ -493,15 +508,67 @@ body{
 
     <!-- Gold/Wheat Tinted -->
     <div class="color-card" style="background:var(--white);border:1px solid #e8e4dc;">
-      <img src="brandedprairie-bp.png" alt="BP gold tinted" class="logo-img gold-tint" style="height:120px;width:auto;">
-      <span class="color-name" style="color:var(--wheat);">Gold / Wheat Tint</span>
+      <img src="brandedprairie-bp.png" alt="BP wheat tinted" class="logo-img gold-tint" style="height:120px;width:auto;">
+      <span class="color-name" style="color:var(--wheat);">Wheat / Gold Tint</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ============================================================
+     CONCEPT 6 — Full Wordmark
+     ============================================================ -->
+<section class="concept-section">
+  <div class="concept-label">Concept 6</div>
+  <div class="concept-title">Full Wordmark</div>
+  <div class="concept-desc">The full &ldquo;Branded Prairie Company&rdquo; wordmark with pasque flower. Used for headers, website banners, and print collateral.</div>
+
+  <div class="variant-row">
+    <div class="variant-col">
+      <div class="variant-label">On Light Background</div>
+      <div class="size-row light-bg">
+        <div class="size-item">
+          <img src="brandedprairie-logo.png" alt="Wordmark large" class="logo-img" style="width:500px;height:auto;max-width:100%;">
+          <span class="size-label">Large</span>
+        </div>
+        <div class="size-item">
+          <img src="brandedprairie-logo.png" alt="Wordmark medium" class="logo-img" style="width:320px;height:auto;max-width:100%;">
+          <span class="size-label">Medium</span>
+        </div>
+        <div class="size-item">
+          <img src="brandedprairie-logo.png" alt="Wordmark small" class="logo-img" style="width:180px;height:auto;max-width:100%;">
+          <span class="size-label">Small</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="variant-row">
+    <div class="variant-col">
+      <div class="variant-label">Inverted on Dark Sage (#7D8A74)</div>
+      <div class="size-row dark-bg">
+        <div class="size-item">
+          <img src="brandedprairie-logo.png" alt="Wordmark large inverted" class="logo-img invert" style="width:500px;height:auto;max-width:100%;">
+          <span class="size-label">Large</span>
+        </div>
+        <div class="size-item">
+          <img src="brandedprairie-logo.png" alt="Wordmark medium inverted" class="logo-img invert" style="width:320px;height:auto;max-width:100%;">
+          <span class="size-label">Medium</span>
+        </div>
+        <div class="size-item">
+          <img src="brandedprairie-logo.png" alt="Wordmark small inverted" class="logo-img invert" style="width:180px;height:auto;max-width:100%;">
+          <span class="size-label">Small</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 
 <footer class="footer">
-  <p>Branded Prairie Company &mdash; Logo &amp; brand mark presentation &mdash; Brooke Co. Digital</p>
+  <p>Branded Prairie Company &mdash; Brand mark presentation &mdash; Brooke Co. Digital</p>
 </footer>
 
 </body>
