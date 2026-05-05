@@ -74,8 +74,8 @@
       </div>
 
       <div class="question">
-        <span class="q-label">2. Pick your TOP 3 biggest time sucks outside of going live:
-          <span class="q-sub">Select up to 3</span>
+        <span class="q-label">2. What are your biggest time sucks outside of going live?
+          <span class="q-sub">Select all that apply</span>
         </span>
         <div class="checkbox-group" id="timeSucks">
           <label><input type="checkbox" name="time_sucks" value="captions"><span>Writing captions and post descriptions</span></label>
@@ -91,7 +91,7 @@
           <label><input type="checkbox" name="time_sucks" value="growing_platforms"><span>Growing on other platforms (IG, Pinterest, YouTube, blog)</span></label>
           <label><input type="checkbox" name="time_sucks" value="trends"><span>Keeping up with trends and what's selling</span></label>
         </div>
-        <div class="counter" id="checkCount">0 of 3 selected</div>
+        <div class="counter" id="checkCount">0 selected</div>
         <div class="error-msg" id="err2">Please select at least 1</div>
       </div>
 
@@ -112,16 +112,6 @@
         <textarea name="want_to_learn" placeholder="Anything you're curious about, struggling with, or wish someone would just show you..." rows="3"></textarea>
       </div>
 
-      <div class="question">
-        <span class="q-label">6. Would you attend a live training on AI tools for your business?</span>
-        <div class="radio-group">
-          <label><input type="radio" name="attend_training" value="yes definitely"><span>Yes, 100%</span></label>
-          <label><input type="radio" name="attend_training" value="maybe"><span>Maybe, depends on the topic</span></label>
-          <label><input type="radio" name="attend_training" value="prefer recorded"><span>I'd prefer a recorded version I can watch later</span></label>
-          <label><input type="radio" name="attend_training" value="not interested"><span>Not really my thing</span></label>
-        </div>
-      </div>
-
       <button type="submit" class="submit-btn" id="submitBtn">Submit</button>
     </form>
   </div>
@@ -133,20 +123,13 @@
 </div>
 
 <script>
-  // Limit checkboxes to 3
   const checkboxes = document.querySelectorAll('input[name="time_sucks"]');
   const counter = document.getElementById('checkCount');
 
   checkboxes.forEach(cb => {
     cb.addEventListener('change', () => {
       const checked = document.querySelectorAll('input[name="time_sucks"]:checked');
-      counter.textContent = checked.length + ' of 3 selected';
-      counter.className = checked.length > 3 ? 'counter warn' : 'counter';
-      if (checked.length > 3) {
-        cb.checked = false;
-        counter.textContent = '3 of 3 selected';
-        counter.className = 'counter';
-      }
+      counter.textContent = checked.length + ' selected';
     });
   });
 
@@ -177,8 +160,7 @@
       time_sucks: Array.from(checked).map(c => c.value).join(', '),
       pain_point: document.querySelector('textarea[name="pain_point"]').value,
       ai_wish: document.querySelector('textarea[name="ai_wish"]').value,
-      want_to_learn: document.querySelector('textarea[name="want_to_learn"]').value,
-      attend_training: (document.querySelector('input[name="attend_training"]:checked') || {}).value || ''
+      want_to_learn: document.querySelector('textarea[name="want_to_learn"]').value
     };
 
     // Send each response as an email via formsubmit.co (no signup needed)
@@ -188,11 +170,10 @@
       body: JSON.stringify({
         _subject: 'New AI Survey Response',
         'AI Level': data.ai_level,
-        'Top 3 Time Sucks': data.time_sucks,
+        'Time Sucks': data.time_sucks,
         'Biggest Pain Point': data.pain_point,
         'AI Wish': data.ai_wish,
         'Want to Learn': data.want_to_learn,
-        'Would Attend Training': data.attend_training,
         _template: 'table'
       })
     }).then(r => r.json()).then(d => {
