@@ -162,22 +162,24 @@
       ai_wish: document.querySelector('textarea[name="ai_wish"]').value
     };
 
-    if (SCRIPT_URL) {
-      fetch(SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      }).then(() => showSuccess()).catch(() => showSuccess());
-    } else {
-      // No backend — just log and show success
-      console.log('Survey response:', data);
-      // Store in localStorage as backup
-      const responses = JSON.parse(localStorage.getItem('survey_responses') || '[]');
-      responses.push(data);
-      localStorage.setItem('survey_responses', JSON.stringify(responses));
-      showSuccess();
-    }
+    // Send each response as an email via formsubmit.co (no signup needed)
+    fetch('https://formsubmit.co/ajax/brooke.ruhd.hockett@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: 'New AI Survey Response',
+        'AI Level': data.ai_level,
+        'Top 3 Time Sucks': data.time_sucks,
+        'Biggest Pain Point': data.pain_point,
+        'AI Wish': data.ai_wish,
+        _template: 'table'
+      })
+    }).then(r => r.json()).then(d => {
+      if (d.success) { showSuccess(); }
+      else { btn.disabled = false; btn.textContent = 'Submit'; alert('Something went wrong, please try again.'); }
+    }).catch(() => {
+      btn.disabled = false; btn.textContent = 'Submit'; alert('Something went wrong, please try again.');
+    });
 
     return false;
   }
