@@ -105,6 +105,23 @@
         <textarea name="ai_wish" placeholder="If you could wave a magic wand..." rows="3"></textarea>
       </div>
 
+      <div class="question">
+        <span class="q-label">5. Is there anything specific about AI you'd love to learn?
+          <span class="q-sub">What could I teach you that would actually help?</span>
+        </span>
+        <textarea name="want_to_learn" placeholder="Anything you're curious about, struggling with, or wish someone would just show you..." rows="3"></textarea>
+      </div>
+
+      <div class="question">
+        <span class="q-label">6. Would you attend a live training on AI tools for your business?</span>
+        <div class="radio-group">
+          <label><input type="radio" name="attend_training" value="yes definitely"><span>Yes, 100%</span></label>
+          <label><input type="radio" name="attend_training" value="maybe"><span>Maybe, depends on the topic</span></label>
+          <label><input type="radio" name="attend_training" value="prefer recorded"><span>I'd prefer a recorded version I can watch later</span></label>
+          <label><input type="radio" name="attend_training" value="not interested"><span>Not really my thing</span></label>
+        </div>
+      </div>
+
       <button type="submit" class="submit-btn" id="submitBtn">Submit</button>
     </form>
   </div>
@@ -159,7 +176,9 @@
       ai_level: level.value,
       time_sucks: Array.from(checked).map(c => c.value).join(', '),
       pain_point: document.querySelector('textarea[name="pain_point"]').value,
-      ai_wish: document.querySelector('textarea[name="ai_wish"]').value
+      ai_wish: document.querySelector('textarea[name="ai_wish"]').value,
+      want_to_learn: document.querySelector('textarea[name="want_to_learn"]').value,
+      attend_training: (document.querySelector('input[name="attend_training"]:checked') || {}).value || ''
     };
 
     // Send each response as an email via formsubmit.co (no signup needed)
@@ -172,6 +191,8 @@
         'Top 3 Time Sucks': data.time_sucks,
         'Biggest Pain Point': data.pain_point,
         'AI Wish': data.ai_wish,
+        'Want to Learn': data.want_to_learn,
+        'Would Attend Training': data.attend_training,
         _template: 'table'
       })
     }).then(r => r.json()).then(d => {
