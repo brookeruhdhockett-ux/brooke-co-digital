@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI for Live Streamers — Quick Survey</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #faf8f5; color: #2d2d2d; min-height: 100vh; padding: 20px; }
+  .container { max-width: 600px; margin: 0 auto; }
+  .header { background: linear-gradient(135deg, #4a7c6f, #6ba893); color: white; padding: 32px 28px; border-radius: 16px 16px 0 0; }
+  .header h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+  .header p { font-size: 14px; opacity: 0.9; }
+  .form-body { background: white; padding: 28px; border-radius: 0 0 16px 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .question { margin-bottom: 28px; }
+  .question:last-of-type { margin-bottom: 20px; }
+  .q-label { font-size: 16px; font-weight: 600; margin-bottom: 12px; display: block; }
+  .q-sub { font-size: 13px; color: #888; font-weight: 400; margin-top: 2px; }
+  .radio-group, .checkbox-group { display: flex; flex-direction: column; gap: 8px; }
+  .radio-group label, .checkbox-group label {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 8px; border: 1px solid #e8e8e8;
+    cursor: pointer; font-size: 14px; transition: all 0.15s;
+  }
+  .radio-group label:hover, .checkbox-group label:hover { background: #f5f5f5; border-color: #ccc; }
+  .radio-group input:checked + span, .checkbox-group input:checked + span { font-weight: 600; }
+  .radio-group label:has(input:checked), .checkbox-group label:has(input:checked) { background: #eef6f2; border-color: #4a7c6f; }
+  input[type="radio"], input[type="checkbox"] { accent-color: #4a7c6f; width: 18px; height: 18px; flex-shrink: 0; }
+  textarea {
+    width: 100%; border: 1px solid #e8e8e8; border-radius: 8px;
+    padding: 12px; font-size: 14px; font-family: inherit;
+    resize: vertical; min-height: 80px; transition: border-color 0.15s;
+  }
+  textarea:focus { outline: none; border-color: #4a7c6f; }
+  .counter { font-size: 12px; color: #888; margin-top: 4px; text-align: right; }
+  .counter.warn { color: #e74c3c; }
+  .submit-btn {
+    width: 100%; padding: 14px; background: #4a7c6f; color: white;
+    border: none; border-radius: 10px; font-size: 16px; font-weight: 600;
+    cursor: pointer; transition: background 0.2s;
+  }
+  .submit-btn:hover { background: #3d6b5f; }
+  .submit-btn:disabled { background: #ccc; cursor: not-allowed; }
+  .success { display: none; text-align: center; padding: 60px 20px; }
+  .success h2 { font-size: 24px; margin-bottom: 8px; color: #4a7c6f; }
+  .success p { font-size: 15px; color: #666; }
+  .error-msg { color: #e74c3c; font-size: 13px; margin-top: 4px; display: none; }
+  @media (max-width: 480px) {
+    body { padding: 12px; }
+    .header { padding: 24px 20px; }
+    .form-body { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>AI for Live Streamers</h1>
+    <p>Quick 2-minute survey to help us build something you'll actually use</p>
+  </div>
+
+  <div class="form-body" id="formBody">
+    <form id="surveyForm" onsubmit="return submitForm(event)">
+
+      <div class="question">
+        <span class="q-label">1. Where are you with AI right now?</span>
+        <div class="radio-group">
+          <label><input type="radio" name="ai_level" value="haven't used it" required><span>I haven't really used it yet</span></label>
+          <label><input type="radio" name="ai_level" value="played with it"><span>I've played with ChatGPT a few times</span></label>
+          <label><input type="radio" name="ai_level" value="use regularly"><span>I use it regularly for a few things</span></label>
+          <label><input type="radio" name="ai_level" value="daily workflow"><span>I use it daily and it's part of my workflow</span></label>
+        </div>
+        <div class="error-msg" id="err1">Please select one</div>
+      </div>
+
+      <div class="question">
+        <span class="q-label">2. Pick your TOP 3 biggest time sucks outside of going live:
+          <span class="q-sub">Select up to 3</span>
+        </span>
+        <div class="checkbox-group" id="timeSucks">
+          <label><input type="checkbox" name="time_sucks" value="captions"><span>Writing captions and post descriptions</span></label>
+          <label><input type="checkbox" name="time_sucks" value="comments_dms"><span>Replying to comments and DMs</span></label>
+          <label><input type="checkbox" name="time_sucks" value="emails"><span>Reading and replying to emails</span></label>
+          <label><input type="checkbox" name="time_sucks" value="finding_products"><span>Finding new products to promote</span></label>
+          <label><input type="checkbox" name="time_sucks" value="content_creation"><span>Creating content for social media</span></label>
+          <label><input type="checkbox" name="time_sucks" value="scheduling"><span>Scheduling posts across platforms</span></label>
+          <label><input type="checkbox" name="time_sucks" value="tracking_commissions"><span>Tracking commissions and income</span></label>
+          <label><input type="checkbox" name="time_sucks" value="taxes"><span>Taxes and bookkeeping</span></label>
+          <label><input type="checkbox" name="time_sucks" value="planning_streams"><span>Planning what to stream next</span></label>
+          <label><input type="checkbox" name="time_sucks" value="editing_clips"><span>Editing or clipping content from lives</span></label>
+          <label><input type="checkbox" name="time_sucks" value="growing_platforms"><span>Growing on other platforms (IG, Pinterest, YouTube, blog)</span></label>
+          <label><input type="checkbox" name="time_sucks" value="trends"><span>Keeping up with trends and what's selling</span></label>
+        </div>
+        <div class="counter" id="checkCount">0 of 3 selected</div>
+        <div class="error-msg" id="err2">Please select at least 1</div>
+      </div>
+
+      <div class="question">
+        <span class="q-label">3. Which one drives you the most crazy? Tell us about it.</span>
+        <textarea name="pain_point" placeholder="What's the one thing that eats up your time or drives you nuts..." rows="3"></textarea>
+      </div>
+
+      <div class="question">
+        <span class="q-label">4. If AI could do ONE thing perfectly for your business, what would it be?</span>
+        <textarea name="ai_wish" placeholder="If you could wave a magic wand..." rows="3"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">Submit</button>
+    </form>
+  </div>
+
+  <div class="success" id="successMsg">
+    <h2>Thank you!</h2>
+    <p>Your answers help us build something that actually makes your life easier.</p>
+  </div>
+</div>
+
+<script>
+  // Limit checkboxes to 3
+  const checkboxes = document.querySelectorAll('input[name="time_sucks"]');
+  const counter = document.getElementById('checkCount');
+
+  checkboxes.forEach(cb => {
+    cb.addEventListener('change', () => {
+      const checked = document.querySelectorAll('input[name="time_sucks"]:checked');
+      counter.textContent = checked.length + ' of 3 selected';
+      counter.className = checked.length > 3 ? 'counter warn' : 'counter';
+      if (checked.length > 3) {
+        cb.checked = false;
+        counter.textContent = '3 of 3 selected';
+        counter.className = 'counter';
+      }
+    });
+  });
+
+  // Google Sheets submission via Apps Script Web App
+  // To connect: create a Google Apps Script with a doPost function,
+  // deploy as web app, and paste the URL below
+  const SCRIPT_URL = ''; // Paste your Google Apps Script web app URL here
+
+  function submitForm(e) {
+    e.preventDefault();
+
+    // Validate
+    const level = document.querySelector('input[name="ai_level"]:checked');
+    const checked = document.querySelectorAll('input[name="time_sucks"]:checked');
+
+    document.getElementById('err1').style.display = level ? 'none' : 'block';
+    document.getElementById('err2').style.display = checked.length > 0 ? 'none' : 'block';
+
+    if (!level || checked.length === 0) return false;
+
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+
+    const data = {
+      timestamp: new Date().toISOString(),
+      ai_level: level.value,
+      time_sucks: Array.from(checked).map(c => c.value).join(', '),
+      pain_point: document.querySelector('textarea[name="pain_point"]').value,
+      ai_wish: document.querySelector('textarea[name="ai_wish"]').value
+    };
+
+    if (SCRIPT_URL) {
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(() => showSuccess()).catch(() => showSuccess());
+    } else {
+      // No backend — just log and show success
+      console.log('Survey response:', data);
+      // Store in localStorage as backup
+      const responses = JSON.parse(localStorage.getItem('survey_responses') || '[]');
+      responses.push(data);
+      localStorage.setItem('survey_responses', JSON.stringify(responses));
+      showSuccess();
+    }
+
+    return false;
+  }
+
+  function showSuccess() {
+    document.getElementById('formBody').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  }
+</script>
+</body>
+</html>
