@@ -144,8 +144,8 @@ section{padding:60px 0}
 <section class="hero">
   <div class="hero-inner">
     <p class="hero-label">For Women Over 40</p>
-    <h1>Which peptides does <em>your</em> body actually need?</h1>
-    <p>Take the free 2-minute quiz and get a personalized peptide recommendation based on your symptoms, goals, and body.</p>
+    <h1>What's your body <em>actually</em> asking for?</h1>
+    <p>Not sure if peptides are even right for you? This 2-minute quiz maps your symptoms to what your body might be missing — no jargon, no pressure.</p>
     <a href="#quiz" class="btn btn-primary">Take the Free Quiz</a>
     <p class="hero-meta">7 questions &middot; 2 minutes &middot; No purchase required</p>
   </div>
@@ -254,7 +254,7 @@ section{padding:60px 0}
 const QUESTIONS = [
   {
     q: "What's your #1 health concern right now?",
-    opts: ["Joint pain or inflammation","Hair loss or thinning","Low energy or fatigue","Skin aging or slow healing","Gut issues or digestion","Sleep quality","Muscle loss or weakness","Weight management"],
+    opts: ["Joint pain or inflammation","Hair loss or thinning","Low energy or fatigue","Skin aging or slow healing","Gut issues or digestion","Sleep quality","Muscle loss or weakness","Weight, blood sugar, or metabolic health"],
     tags: {0:'bpc',1:'ghk',2:'cjc',3:'ghk',4:'bpc',5:'cjc',6:'cjc',7:'reta'}
   },
   {
@@ -283,9 +283,9 @@ const QUESTIONS = [
     tags: {1:'cjc',2:'cjc',3:'cjc'}
   },
   {
-    q: "Have you noticed changes in your weight or metabolism?",
-    opts: ["Yes — gaining weight despite no diet changes","Yes — can't lose weight no matter what I try","My metabolism feels slower than it used to","Not really — weight has been stable"],
-    tags: {0:'reta',1:'reta',2:'reta'}
+    q: "Have you noticed any metabolic changes?",
+    opts: ["Weight shifts despite no lifestyle changes","Blood sugar feels less stable (energy crashes, cravings)","Overall inflammation — puffiness, bloating, stiffness","My body just doesn't respond like it used to","Not really"],
+    tags: {0:'reta',1:'reta',2:'reta',3:'reta'}
   },
   {
     q: "What matters most to you in a supplement?",
@@ -318,10 +318,10 @@ const PEPTIDE_DATA = {
   },
   reta: {
     name: 'Retatrutide',
-    tag: 'Weight Management + Metabolism',
+    tag: 'Metabolic + Inflammatory Reset',
     tagClass: 'result-secondary',
-    desc: 'Your answers suggest your metabolism has shifted — which is extremely common for women over 40, especially during perimenopause and menopause. Retatrutide is a triple-action peptide that targets GLP-1, GIP, and glucagon receptors to support healthy weight management, reduce appetite, and improve metabolic function.',
-    expect: 'Appetite changes within the first 1-2 weeks. Noticeable weight changes by week 4-6. Best results seen over 12-16 weeks with consistent use.'
+    desc: 'Your answers point to a metabolic shift — which goes way beyond weight. Retatrutide is a triple-action peptide that targets GLP-1, GIP, and glucagon receptors. It supports metabolic health, reduces systemic inflammation, improves blood sugar regulation, and has shown benefits for cardiovascular and liver health. For women over 40 whose bodies just aren\'t responding the way they used to, this is the compound getting the most attention right now.',
+    expect: 'Metabolic improvements within 2-4 weeks. Reduced inflammation and cravings early on. Full systemic benefits build over 12-16 weeks.'
   }
 };
 
