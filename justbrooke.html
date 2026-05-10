@@ -544,7 +544,7 @@ function submitStackEmail() {
     headers: {'Content-Type':'application/json'},
     body: JSON.stringify({email, name: '', source: 'justbrooke-stack', tags: ['stack','protocol']})
   }).catch(() => {});
-  document.querySelector('.email-box').innerHTML = '<h2>Check your inbox</h2><p style="font-size:.88rem;color:var(--text);margin-top:12px">Your protocol breakdown is on the way.</p>';
+  document.querySelector('.email-box').innerHTML = '<h2>Here\'s your download</h2><p style="font-size:.88rem;color:var(--text);margin-top:12px;margin-bottom:16px">My full protocol breakdown -- what I take, why, and what to ask your doctor.</p><a href="brooke-peptide-protocol.pdf" download class="btn btn-primary" style="display:inline-block;padding:14px 32px">Download the PDF</a>';
 }
 </script>
 </body>
