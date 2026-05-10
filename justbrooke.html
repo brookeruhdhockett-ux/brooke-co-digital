@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Just Brooke — Peptides for Women Over 40</title>
+<meta name="description" content="Discover which peptides your body actually needs. Free quiz, real education, no gatekeeping.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --sand:#F5F0E8;--sand-light:#FAF8F3;--sand-warm:#EDE6DA;
+  --sage:#7A8B72;--sage-light:#B5C4AC;--sage-dark:#5C6D55;
+  --mauve:#9B7B8E;--mauve-light:#D4BFC9;--mauve-soft:#F3ECF0;
+  --gold:#B8975A;--gold-light:#E8D9BC;
+  --charcoal:#2D2D2D;--text:#5A5A5A;--text-light:#8A8A8A;--white:#FFFFFF;
+  --radius:12px;--radius-lg:20px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--charcoal);background:var(--sand-light);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.2}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* header */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,243,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,.04)}
+.header-inner{max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--mauve)}
+.header-links{display:flex;gap:20px;align-items:center}
+.header-links a{font-size:.78rem;font-weight:500;color:var(--text);transition:color .2s}
+.header-links a:hover{color:var(--mauve)}
+.header-cta{background:var(--sage);color:var(--white);padding:7px 18px;border-radius:50px;font-weight:600;font-size:.75rem;letter-spacing:.02em}
+.header-cta:hover{background:var(--sage-dark);color:var(--white)}
+
+/* hero */
+.hero{padding:100px 24px 60px;text-align:center;background:linear-gradient(170deg,var(--mauve-soft) 0%,var(--sand-light) 50%)}
+.hero-inner{max-width:600px;margin:0 auto}
+.hero-label{font-size:.68rem;font-weight:600;letter-spacing:.18em;color:var(--sage);text-transform:uppercase;margin-bottom:14px;display:inline-block;padding:5px 14px;border-radius:20px;background:rgba(122,139,114,.08)}
+.hero h1{font-size:clamp(2rem,5vw,3rem);color:var(--charcoal);margin-bottom:14px}
+.hero h1 em{font-style:italic;color:var(--mauve)}
+.hero p{font-size:.95rem;color:var(--text);max-width:480px;margin:0 auto 28px;line-height:1.85}
+.btn{display:inline-block;padding:14px 32px;border-radius:50px;font-family:'Inter',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.02em;transition:all .3s;cursor:pointer;border:none}
+.btn-primary{background:var(--sage);color:var(--white)}
+.btn-primary:hover{background:var(--sage-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(92,109,85,.2)}
+.hero-meta{font-size:.75rem;color:var(--text-light);margin-top:14px}
+
+/* link in bio */
+.linkinbio{padding:40px 24px 60px}
+.linkinbio-inner{max-width:420px;margin:0 auto}
+.link-item{
+  display:block;width:100%;padding:16px 24px;margin-bottom:12px;
+  border-radius:var(--radius);text-align:center;font-weight:600;font-size:.88rem;
+  transition:transform .2s,box-shadow .2s;
+}
+.link-item:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.link-primary{background:var(--sage);color:var(--white)}
+.link-primary:hover{background:var(--sage-dark);color:var(--white)}
+.link-secondary{background:var(--white);color:var(--charcoal);border:1px solid rgba(0,0,0,.08)}
+.link-secondary:hover{background:var(--sand)}
+.link-accent{background:var(--mauve);color:var(--white)}
+.link-accent:hover{background:#876B7D;color:var(--white)}
+.link-item .link-sub{display:block;font-size:.72rem;font-weight:400;opacity:.7;margin-top:2px}
+
+/* sections */
+section{padding:60px 0}
+.container{max-width:800px;margin:0 auto;padding:0 24px}
+.section-label{font-size:.68rem;font-weight:600;letter-spacing:.18em;color:var(--sage);text-transform:uppercase;margin-bottom:8px}
+.section-title{font-size:clamp(1.5rem,3.5vw,2.2rem);margin-bottom:8px}
+.text-center{text-align:center}
+
+/* quiz section */
+.quiz-section{background:var(--white)}
+.quiz-container{max-width:560px;margin:0 auto;text-align:center}
+.quiz-card{background:var(--sand-light);border-radius:var(--radius-lg);padding:40px 32px;border:1px solid rgba(0,0,0,.04)}
+.quiz-progress{height:4px;background:var(--sand-warm);border-radius:2px;margin-bottom:28px;overflow:hidden}
+.quiz-progress-fill{height:100%;background:var(--sage);border-radius:2px;transition:width .4s ease}
+.quiz-q{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;margin-bottom:24px;line-height:1.3}
+.quiz-options{display:flex;flex-direction:column;gap:10px}
+.quiz-opt{
+  padding:14px 20px;border-radius:var(--radius);border:1px solid rgba(0,0,0,.08);
+  background:var(--white);font-size:.88rem;text-align:left;cursor:pointer;
+  transition:border-color .2s,background .2s;font-family:'Inter',sans-serif;
+}
+.quiz-opt:hover{border-color:var(--sage);background:rgba(122,139,114,.04)}
+.quiz-opt.selected{border-color:var(--sage);background:rgba(122,139,114,.08);font-weight:500}
+.quiz-nav{display:flex;justify-content:space-between;margin-top:24px}
+.quiz-nav button{padding:10px 24px;border-radius:50px;border:none;font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;cursor:pointer}
+.quiz-back{background:transparent;color:var(--text)}
+.quiz-next{background:var(--sage);color:var(--white)}
+.quiz-next:hover{background:var(--sage-dark)}
+.quiz-next:disabled{opacity:.4;cursor:not-allowed}
+
+/* email gate */
+.email-gate{display:none}
+.email-gate h2{font-size:1.6rem;margin-bottom:8px}
+.email-gate p{font-size:.88rem;color:var(--text);margin-bottom:24px}
+.email-gate input{width:100%;padding:13px 18px;border-radius:var(--radius);border:1px solid rgba(0,0,0,.08);margin-bottom:12px;font-family:'Inter',sans-serif;font-size:.88rem;background:var(--white)}
+.email-gate input:focus{outline:none;border-color:var(--sage)}
+
+/* results */
+.results-section{display:none}
+.result-card{background:var(--white);border-radius:var(--radius-lg);padding:32px;margin-bottom:16px;border:1px solid rgba(0,0,0,.04)}
+.result-card h3{font-size:1.1rem;margin-bottom:8px}
+.result-card p{font-size:.88rem;color:var(--text);line-height:1.8}
+.result-tag{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:16px;display:inline-block;margin-bottom:12px}
+.result-primary{background:rgba(122,139,114,.1);color:var(--sage-dark)}
+.result-secondary{background:var(--mauve-soft);color:var(--mauve)}
+.shop-cta{margin-top:24px;padding:24px;background:var(--sand);border-radius:var(--radius-lg);text-align:center}
+.shop-cta p{font-size:.85rem;color:var(--text);margin-bottom:14px}
+.shop-cta .code{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--sage);margin-bottom:8px}
+
+/* blog preview */
+.blog-section{background:var(--sand)}
+.blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.blog-card{background:var(--white);border-radius:var(--radius-lg);padding:24px;border:1px solid rgba(0,0,0,.03);transition:transform .2s}
+.blog-card:hover{transform:translateY(-3px)}
+.blog-card .blog-tag{font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--sage);margin-bottom:8px}
+.blog-card h3{font-size:1rem;margin-bottom:6px;font-family:'Cormorant Garamond',serif}
+.blog-card p{font-size:.8rem;color:var(--text);line-height:1.6}
+@media(max-width:600px){.blog-grid{grid-template-columns:1fr}}
+
+/* footer */
+.site-footer{padding:32px 0;text-align:center;border-top:1px solid rgba(0,0,0,.04)}
+.site-footer p{font-size:.72rem;color:var(--text-light)}
+.site-footer a{color:var(--mauve)}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#" class="logo">just brooke</a>
+    <div class="header-links">
+      <a href="#quiz">Quiz</a>
+      <a href="#blog">Learn</a>
+      <a href="#quiz" class="header-cta">Take the Quiz</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-label">For Women Over 40</p>
+    <h1>Which peptides does <em>your</em> body actually need?</h1>
+    <p>Take the free 2-minute quiz and get a personalized peptide recommendation based on your symptoms, goals, and body.</p>
+    <a href="#quiz" class="btn btn-primary">Take the Free Quiz</a>
+    <p class="hero-meta">7 questions &middot; 2 minutes &middot; No purchase required</p>
+  </div>
+</section>
+
+<!-- LINK IN BIO -->
+<section class="linkinbio">
+  <div class="linkinbio-inner">
+    <a href="#quiz" class="link-item link-primary">
+      Take the Free Peptide Quiz
+      <span class="link-sub">Find out exactly what your body needs</span>
+    </a>
+    <a href="#blog" class="link-item link-secondary">
+      Read the Blog
+      <span class="link-sub">Protocols, dosing guides, and real talk</span>
+    </a>
+    <a href="https://nativepeptide.com?ref=justbrooke" target="_blank" class="link-item link-accent">
+      Shop Native Peptide — Use Code MAYA10
+      <span class="link-sub">10% off your first order</span>
+    </a>
+    <a href="#" class="link-item link-secondary">
+      Download the Dosing Guide
+      <span class="link-sub">Free PDF — everything you need to start</span>
+    </a>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz-section" id="quiz">
+  <div class="container">
+    <div class="quiz-container">
+      <div id="quiz-card" class="quiz-card">
+        <div class="quiz-progress"><div class="quiz-progress-fill" id="quiz-progress" style="width:14%"></div></div>
+        <div id="quiz-content">
+          <!-- Populated by JS -->
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-back" id="quiz-back" onclick="quizBack()" style="visibility:hidden">Back</button>
+          <button class="quiz-next" id="quiz-next" onclick="quizNext()" disabled>Next</button>
+        </div>
+      </div>
+
+      <div class="email-gate" id="email-gate">
+        <h2>Almost there</h2>
+        <p>Enter your email to get your personalized peptide protocol. We'll send the full breakdown straight to your inbox.</p>
+        <input type="text" id="gate-name" placeholder="First name">
+        <input type="email" id="gate-email" placeholder="Your best email" required>
+        <button class="btn btn-primary" style="width:100%" onclick="submitQuizEmail()">See My Results</button>
+        <p style="font-size:.72rem;color:var(--text-light);margin-top:12px">No spam. Unsubscribe anytime.</p>
+      </div>
+
+      <div class="results-section" id="results-section">
+        <h2 style="font-size:1.8rem;margin-bottom:6px;text-align:center">Your Personalized Protocol</h2>
+        <p style="font-size:.88rem;color:var(--text);text-align:center;margin-bottom:28px">Based on your answers, here's what your body is telling us:</p>
+        <div id="results-cards"></div>
+        <div class="shop-cta">
+          <p>Ready to start? The only source I trust:</p>
+          <div class="code">MAYA10</div>
+          <p style="font-size:.78rem;color:var(--text-light);margin-bottom:14px">10% off your first order at Native Peptide</p>
+          <a href="https://nativepeptide.com?ref=justbrooke" target="_blank" class="btn btn-primary">Shop Now with MAYA10</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog-section" id="blog">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:32px">
+      <p class="section-label">Learn</p>
+      <h2 class="section-title">Real education, no gatekeeping</h2>
+    </div>
+    <div class="blog-grid">
+      <a href="#" class="blog-card">
+        <div class="blog-tag">Protocol</div>
+        <h3>GHK-Cu for Hair Loss: The Complete Timeline</h3>
+        <p>What to expect week by week, from shedding to regrowth.</p>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-tag">Education</div>
+        <h3>Peptides vs HRT: It's Not Either/Or</h3>
+        <p>Why most women over 40 benefit from both — and how to talk to your doctor.</p>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-tag">Guide</div>
+        <h3>The Muscle Loss Nobody Warns You About</h3>
+        <p>How perimenopause accelerates muscle breakdown and what actually helps.</p>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-tag">Safety</div>
+        <h3>How to Source Peptides You Can Actually Trust</h3>
+        <p>Red flags, quality markers, and the one question to always ask.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>just brooke &middot; Peptide education for women who want real answers</p>
+  <p style="margin-top:6px">Part of <a href="https://the-posy-production.up.railway.app">The Posy Academy</a> by Brooke Co</p>
+</footer>
+
+<script>
+const QUESTIONS = [
+  {
+    q: "What's your #1 health concern right now?",
+    opts: ["Joint pain or inflammation","Hair loss or thinning","Low energy or fatigue","Skin aging or slow healing","Gut issues or digestion","Sleep quality","Muscle loss or weakness"],
+    tags: {0:'bpc',1:'ghk',2:'cjc',3:'ghk',4:'bpc',5:'cjc',6:'cjc'}
+  },
+  {
+    q: "How old are you?",
+    opts: ["35–39","40–44","45–49","50–54","55–59","60+"],
+    tags: {}
+  },
+  {
+    q: "Are you currently going through perimenopause or menopause?",
+    opts: ["Yes, perimenopause","Yes, menopause/post-menopause","Not sure","No"],
+    tags: {}
+  },
+  {
+    q: "How would you describe your recovery after exercise?",
+    opts: ["Fine — I bounce back quickly","Takes a day or two longer than it used to","I'm sore for days and it's getting worse","I've stopped exercising because of pain/fatigue"],
+    tags: {2:'bpc',3:'bpc'}
+  },
+  {
+    q: "Have you noticed changes in your skin, hair, or nails?",
+    opts: ["Yes — skin is thinner, less elastic","Yes — hair shedding or thinning","Yes — nails are brittle or slow-growing","Yes — all of the above","Not really"],
+    tags: {0:'ghk',1:'ghk',2:'ghk',3:'ghk'}
+  },
+  {
+    q: "How's your sleep?",
+    opts: ["I sleep well most nights","I fall asleep fine but wake up at 3am","I can't fall asleep","I sleep but never feel rested"],
+    tags: {1:'cjc',2:'cjc',3:'cjc'}
+  },
+  {
+    q: "What matters most to you in a supplement?",
+    opts: ["Backed by research","Easy to use daily","Fast visible results","Affordable / good value"],
+    tags: {}
+  }
+];
+
+const PEPTIDE_DATA = {
+  bpc: {
+    name: 'BPC-157',
+    tag: 'Repair + Recovery',
+    tagClass: 'result-primary',
+    desc: 'Your answers point to inflammation and recovery as your biggest challenge. BPC-157 is a body-protective compound that supports gut healing, joint repair, and tissue recovery. Women in perimenopause often see the biggest difference here because inflammation tends to ramp up as hormones shift.',
+    expect: 'Most women notice reduced joint stiffness within 2-3 weeks. Gut improvements can take 4-6 weeks. Full recovery benefits build over 8-12 weeks.'
+  },
+  ghk: {
+    name: 'GHK-Cu',
+    tag: 'Skin + Hair + Collagen',
+    tagClass: 'result-secondary',
+    desc: 'Your body is showing the classic signs of collagen loss — which accelerates dramatically after 40. GHK-Cu is a copper peptide that signals your body to ramp up collagen production, improve skin elasticity, and support hair follicle health.',
+    expect: 'Skin texture improvements in 3-4 weeks. Hair shedding typically slows by week 6. Fuller, stronger nails within 8 weeks.'
+  },
+  cjc: {
+    name: 'CJC-1295 / Ipamorelin',
+    tag: 'Energy + Sleep + Muscle',
+    tagClass: 'result-primary',
+    desc: 'Your answers suggest your growth hormone levels may be declining — which is normal after 40 but not inevitable. CJC-1295 with Ipamorelin gently supports your body\'s natural GH production, improving sleep quality, energy, body composition, and muscle preservation.',
+    expect: 'Better sleep quality within 1-2 weeks. Energy improvements by week 3-4. Body composition changes over 8-12 weeks.'
+  }
+};
+
+let currentQ = 0;
+let answers = [];
+let tags = {};
+
+function renderQuestion() {
+  const q = QUESTIONS[currentQ];
+  document.getElementById('quiz-progress').style.width = ((currentQ+1)/QUESTIONS.length*100)+'%';
+  document.getElementById('quiz-back').style.visibility = currentQ === 0 ? 'hidden' : 'visible';
+  document.getElementById('quiz-next').disabled = answers[currentQ] === undefined;
+  const sel = answers[currentQ];
+  document.getElementById('quiz-content').innerHTML = `
+    <div class="quiz-q">${q.q}</div>
+    <div class="quiz-options">
+      ${q.opts.map((o,i) => `<div class="quiz-opt${sel===i?' selected':''}" onclick="selectOpt(${i})">${o}</div>`).join('')}
+    </div>`;
+}
+
+function selectOpt(i) {
+  answers[currentQ] = i;
+  document.getElementById('quiz-next').disabled = false;
+  document.querySelectorAll('.quiz-opt').forEach((el,j) => el.classList.toggle('selected', j===i));
+}
+
+function quizNext() {
+  if (answers[currentQ] === undefined) return;
+  const q = QUESTIONS[currentQ];
+  if (q.tags[answers[currentQ]] !== undefined) {
+    const t = q.tags[answers[currentQ]];
+    tags[t] = (tags[t]||0) + 1;
+  }
+  if (currentQ < QUESTIONS.length - 1) {
+    currentQ++;
+    renderQuestion();
+  } else {
+    showEmailGate();
+  }
+}
+
+function quizBack() {
+  if (currentQ > 0) { currentQ--; renderQuestion(); }
+}
+
+function showEmailGate() {
+  document.getElementById('quiz-card').style.display = 'none';
+  document.getElementById('email-gate').style.display = 'block';
+}
+
+function submitQuizEmail() {
+  const email = document.getElementById('gate-email').value.trim();
+  const name = document.getElementById('gate-name').value.trim();
+  if (!email) return;
+  // Save subscriber
+  fetch('/api/subscribe', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({email, name, source: 'quiz', tags: Object.keys(tags)})
+  }).catch(() => {});
+  showResults();
+}
+
+function showResults() {
+  document.getElementById('email-gate').style.display = 'none';
+  document.getElementById('results-section').style.display = 'block';
+  // Sort tags by score
+  const sorted = Object.entries(tags).sort((a,b) => b[1]-a[1]);
+  const top = sorted.length ? sorted[0][0] : 'bpc';
+  const secondary = sorted.length > 1 ? sorted[1][0] : (top === 'bpc' ? 'ghk' : 'bpc');
+  const primary = PEPTIDE_DATA[top];
+  const sec = PEPTIDE_DATA[secondary];
+  document.getElementById('results-cards').innerHTML = `
+    <div class="result-card">
+      <span class="result-tag ${primary.tagClass}">${primary.tag}</span>
+      <h3>Your #1 Match: ${primary.name}</h3>
+      <p>${primary.desc}</p>
+      <p style="margin-top:12px;font-size:.82rem;color:var(--sage-dark);font-weight:500">${primary.expect}</p>
+    </div>
+    <div class="result-card">
+      <span class="result-tag ${sec.tagClass}">${sec.tag}</span>
+      <h3>Also Consider: ${sec.name}</h3>
+      <p>${sec.desc}</p>
+      <p style="margin-top:12px;font-size:.82rem;color:var(--sage-dark);font-weight:500">${sec.expect}</p>
+    </div>`;
+  document.getElementById('results-section').scrollIntoView({behavior:'smooth'});
+}
+
+renderQuestion();
+</script>
+</body>
+</html>
