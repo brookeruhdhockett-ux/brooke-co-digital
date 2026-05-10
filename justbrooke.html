@@ -111,6 +111,36 @@ section{padding:60px 0}
 .shop-cta p{font-size:.85rem;color:var(--text);margin-bottom:14px}
 .shop-cta .code{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--sage);margin-bottom:8px}
 
+/* my stack */
+.stack-section{padding:60px 0}
+.stack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px}
+.stack-card{background:var(--white);border-radius:var(--radius-lg);padding:28px 24px;border:1px solid rgba(0,0,0,.04);text-align:center}
+.stack-card .stack-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.stack-card .stack-icon svg{width:22px;height:22px;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.stack-card:nth-child(1) .stack-icon{background:rgba(122,139,114,.1)}
+.stack-card:nth-child(1) .stack-icon svg{stroke:var(--sage)}
+.stack-card:nth-child(2) .stack-icon{background:var(--mauve-soft)}
+.stack-card:nth-child(2) .stack-icon svg{stroke:var(--mauve)}
+.stack-card:nth-child(3) .stack-icon{background:rgba(184,151,90,.1)}
+.stack-card:nth-child(3) .stack-icon svg{stroke:var(--gold)}
+.stack-card h3{font-family:'Cormorant Garamond',serif;font-size:1.15rem;margin-bottom:6px}
+.stack-card .stack-why{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--sage);margin-bottom:10px}
+.stack-card p{font-size:.82rem;color:var(--text);line-height:1.7}
+.stack-note{max-width:560px;margin:0 auto;text-align:center;font-size:.88rem;color:var(--text);line-height:1.85;padding:28px;background:var(--sand);border-radius:var(--radius-lg)}
+.stack-note strong{color:var(--sage-dark)}
+@media(max-width:600px){.stack-grid{grid-template-columns:1fr}}
+
+/* email capture */
+.email-section{background:var(--sand);padding:48px 0}
+.email-box{max-width:480px;margin:0 auto;text-align:center}
+.email-box h2{font-size:1.5rem;margin-bottom:8px}
+.email-box p{font-size:.88rem;color:var(--text);margin-bottom:24px;line-height:1.7}
+.email-form{display:flex;gap:10px}
+.email-form input{flex:1;padding:13px 18px;border-radius:var(--radius);border:1px solid rgba(0,0,0,.08);font-family:'Inter',sans-serif;font-size:.88rem;background:var(--white)}
+.email-form input:focus{outline:none;border-color:var(--sage)}
+.email-form button{white-space:nowrap}
+@media(max-width:500px){.email-form{flex-direction:column}}
+
 /* blog preview */
 .blog-section{background:var(--sand)}
 .blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
@@ -157,6 +187,10 @@ section{padding:60px 0}
     <a href="#quiz" class="link-item link-primary">
       Take the Free Peptide Quiz
       <span class="link-sub">Find out exactly what your body needs</span>
+    </a>
+    <a href="#my-stack" class="link-item link-secondary">
+      My Signature Stack
+      <span class="link-sub">What I'm currently taking and why</span>
     </a>
     <a href="#research" class="link-item link-secondary">
       Research & Reading
@@ -212,7 +246,56 @@ section{padding:60px 0}
   </div>
 </section>
 
-<!-- BLOG -->
+<!-- MY STACK -->
+<section class="stack-section" id="my-stack">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:32px">
+      <p class="section-label">@justbrooketalks</p>
+      <h2 class="section-title">My signature stack</h2>
+      <p style="font-size:.88rem;color:var(--text);max-width:520px;margin:12px auto 0;line-height:1.7">The three peptides I'm personally taking right now. I deal with Hashimoto's and chronic inflammation — this stack is what's actually helping me feel like myself again.</p>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-card">
+        <div class="stack-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>BPC-157</h3>
+        <div class="stack-why">Gut + Recovery</div>
+        <p>My gut was a mess. Bloating, inflammation, the whole thing. BPC-157 is a body-protective compound that supports gut lining repair, reduces inflammation, and speeds up tissue recovery.</p>
+      </div>
+      <div class="stack-card">
+        <div class="stack-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+        <h3>GHK-Cu</h3>
+        <div class="stack-why">Skin + Hair + Collagen</div>
+        <p>Hashimoto's wrecked my hair and skin. GHK-Cu is a copper peptide that signals your body to produce more collagen, support hair follicle health, and repair skin at the cellular level.</p>
+      </div>
+      <div class="stack-card">
+        <div class="stack-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Retatrutide</h3>
+        <div class="stack-why">Metabolic + Inflammation</div>
+        <p>This isn't just about weight. Reta targets GLP-1, GIP, and glucagon receptors to support metabolic health, reduce systemic inflammation, stabilize blood sugar, and improve cardiovascular markers.</p>
+      </div>
+    </div>
+    <div class="stack-note">
+      <p><strong>A note on inflammation:</strong> If you're dealing with an autoimmune condition like Hashimoto's, PCOS, or chronic fatigue — your body is fighting itself. Peptides aren't a cure, but they're helping me manage symptoms that nothing else was touching. Always work with your doctor.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL CAPTURE -->
+<section class="email-section">
+  <div class="container">
+    <div class="email-box">
+      <h2>Get my full protocol breakdown</h2>
+      <p>What I take, when I take it, and what I've learned along the way. Delivered straight to your inbox.</p>
+      <div class="email-form">
+        <input type="email" id="stack-email" placeholder="Your best email">
+        <button class="btn btn-primary" onclick="submitStackEmail()">Send It</button>
+      </div>
+      <p style="font-size:.72rem;color:var(--text-light);margin-top:12px">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
 <section class="blog-section" id="research">
   <div class="container">
     <div class="text-center" style="margin-bottom:32px">
@@ -418,7 +501,7 @@ function submitQuizEmail() {
   const name = document.getElementById('gate-name').value.trim();
   if (!email) return;
   // Save subscriber
-  fetch('/api/subscribe', {
+  fetch('https://the-posy-production.up.railway.app/api/subscribe', {
     method: 'POST',
     headers: {'Content-Type':'application/json'},
     body: JSON.stringify({email, name, source: 'quiz', tags: Object.keys(tags)})
@@ -452,6 +535,17 @@ function showResults() {
 }
 
 renderQuestion();
+
+function submitStackEmail() {
+  const email = document.getElementById('stack-email').value.trim();
+  if (!email) return;
+  fetch('https://the-posy-production.up.railway.app/api/subscribe', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({email, name: '', source: 'justbrooke-stack', tags: ['stack','protocol']})
+  }).catch(() => {});
+  document.querySelector('.email-box').innerHTML = '<h2>Check your inbox</h2><p style="font-size:.88rem;color:var(--text);margin-top:12px">Your protocol breakdown is on the way.</p>';
+}
 </script>
 </body>
 </html>
