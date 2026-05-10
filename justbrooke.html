@@ -254,8 +254,8 @@ section{padding:60px 0}
 const QUESTIONS = [
   {
     q: "What's your #1 health concern right now?",
-    opts: ["Joint pain or inflammation","Hair loss or thinning","Low energy or fatigue","Skin aging or slow healing","Gut issues or digestion","Sleep quality","Muscle loss or weakness"],
-    tags: {0:'bpc',1:'ghk',2:'cjc',3:'ghk',4:'bpc',5:'cjc',6:'cjc'}
+    opts: ["Joint pain or inflammation","Hair loss or thinning","Low energy or fatigue","Skin aging or slow healing","Gut issues or digestion","Sleep quality","Muscle loss or weakness","Weight management"],
+    tags: {0:'bpc',1:'ghk',2:'cjc',3:'ghk',4:'bpc',5:'cjc',6:'cjc',7:'reta'}
   },
   {
     q: "How old are you?",
@@ -269,8 +269,8 @@ const QUESTIONS = [
   },
   {
     q: "How would you describe your recovery after exercise?",
-    opts: ["Fine — I bounce back quickly","Takes a day or two longer than it used to","I'm sore for days and it's getting worse","I've stopped exercising because of pain/fatigue"],
-    tags: {2:'bpc',3:'bpc'}
+    opts: ["Fine — I bounce back quickly","Takes a day or two longer than it used to","I'm sore for days and it's getting worse","I've stopped exercising because of pain/fatigue","I'm active but struggling to lose weight"],
+    tags: {2:'bpc',3:'bpc',4:'reta'}
   },
   {
     q: "Have you noticed changes in your skin, hair, or nails?",
@@ -281,6 +281,11 @@ const QUESTIONS = [
     q: "How's your sleep?",
     opts: ["I sleep well most nights","I fall asleep fine but wake up at 3am","I can't fall asleep","I sleep but never feel rested"],
     tags: {1:'cjc',2:'cjc',3:'cjc'}
+  },
+  {
+    q: "Have you noticed changes in your weight or metabolism?",
+    opts: ["Yes — gaining weight despite no diet changes","Yes — can't lose weight no matter what I try","My metabolism feels slower than it used to","Not really — weight has been stable"],
+    tags: {0:'reta',1:'reta',2:'reta'}
   },
   {
     q: "What matters most to you in a supplement?",
@@ -310,6 +315,13 @@ const PEPTIDE_DATA = {
     tagClass: 'result-primary',
     desc: 'Your answers suggest your growth hormone levels may be declining — which is normal after 40 but not inevitable. CJC-1295 with Ipamorelin gently supports your body\'s natural GH production, improving sleep quality, energy, body composition, and muscle preservation.',
     expect: 'Better sleep quality within 1-2 weeks. Energy improvements by week 3-4. Body composition changes over 8-12 weeks.'
+  },
+  reta: {
+    name: 'Retatrutide',
+    tag: 'Weight Management + Metabolism',
+    tagClass: 'result-secondary',
+    desc: 'Your answers suggest your metabolism has shifted — which is extremely common for women over 40, especially during perimenopause and menopause. Retatrutide is a triple-action peptide that targets GLP-1, GIP, and glucagon receptors to support healthy weight management, reduce appetite, and improve metabolic function.',
+    expect: 'Appetite changes within the first 1-2 weeks. Noticeable weight changes by week 4-6. Best results seen over 12-16 weeks with consistent use.'
   }
 };
 
