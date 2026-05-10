@@ -142,7 +142,8 @@ section{padding:90px 0}
   padding:18px 24px;border-radius:var(--radius);margin-bottom:12px;
   background:var(--blush-soft);border:1px solid rgba(232,196,184,.15);
 }
-.pain-icon{font-size:1.2rem;flex-shrink:0;margin-top:2px}
+.pain-icon{flex-shrink:0;margin-top:2px;width:32px;height:32px;border-radius:10px;background:var(--blush-soft);display:flex;align-items:center;justify-content:center}
+.pain-icon svg{width:16px;height:16px;stroke:var(--rose);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .pain-item p{font-size:.92rem;color:var(--text);line-height:1.7}
 
 /* data section */
@@ -164,7 +165,14 @@ section{padding:90px 0}
   padding:32px 24px;border-radius:var(--radius-lg);
   background:var(--cream);text-align:center;border:1px solid rgba(0,0,0,.03);
 }
-.audience-emoji{font-size:2rem;margin-bottom:12px}
+.audience-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.audience-icon svg{width:22px;height:22px;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.audience-card:nth-child(1) .audience-icon{background:var(--blush-soft)}
+.audience-card:nth-child(1) .audience-icon svg{stroke:var(--rose)}
+.audience-card:nth-child(2) .audience-icon{background:rgba(143,166,138,.1)}
+.audience-card:nth-child(2) .audience-icon svg{stroke:var(--sage-dark)}
+.audience-card:nth-child(3) .audience-icon{background:var(--blush-soft)}
+.audience-card:nth-child(3) .audience-icon svg{stroke:var(--rose-dark)}
 .audience-card h3{font-size:1rem;margin-bottom:8px;font-family:'DM Sans',sans-serif;font-weight:600}
 .audience-card p{font-size:.85rem;color:var(--text);line-height:1.7}
 
@@ -379,23 +387,23 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
     </div>
     <div class="pain-list">
       <div class="pain-item reveal">
-        <span class="pain-icon">🙋‍♀️</span>
+        <span class="pain-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
         <p>You've tried ChatGPT but you're mostly asking it to write captions that sound nothing like you</p>
       </div>
       <div class="pain-item reveal">
-        <span class="pain-icon">😫</span>
+        <span class="pain-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
         <p>You spend 2+ hours editing a single video that gets 200 views</p>
       </div>
       <div class="pain-item reveal">
-        <span class="pain-icon">🤷‍♀️</span>
+        <span class="pain-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
         <p>You know AI could help but every tutorial is made by a dude in a hoodie talking about "prompt engineering"</p>
       </div>
       <div class="pain-item reveal">
-        <span class="pain-icon">💸</span>
+        <span class="pain-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
         <p>You're making money but have no clue what you actually keep after taxes and expenses</p>
       </div>
       <div class="pain-item reveal">
-        <span class="pain-icon">😵‍💫</span>
+        <span class="pain-icon"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></span>
         <p>You feel like everyone else has figured out AI and you're falling behind</p>
       </div>
     </div>
@@ -439,17 +447,17 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
     </div>
     <div class="audience-grid stagger">
       <div class="audience-card reveal">
-        <div class="audience-emoji">🛍️</div>
+        <div class="audience-icon"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
         <h3>The TikTok Shop Affiliate</h3>
         <p>You're posting product videos, building a shop, and want to scale without burning out or hiring a team.</p>
       </div>
       <div class="audience-card reveal">
-        <div class="audience-emoji">📱</div>
+        <div class="audience-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
         <h3>The Content Creator</h3>
         <p>You make content across platforms but editing, planning, and tracking income eats all your time.</p>
       </div>
       <div class="audience-card reveal">
-        <div class="audience-emoji">🌱</div>
+        <div class="audience-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <h3>The Side Hustler</h3>
         <p>You're building a creator business while working a job or raising kids and need to be ruthlessly efficient.</p>
       </div>

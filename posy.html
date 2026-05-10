@@ -160,7 +160,8 @@ section{padding:90px 0}
   padding:24px;border-radius:var(--radius);
   background:var(--blush-soft);border:1px solid rgba(232,196,184,.2);
 }
-.pain-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px}
+.pain-icon{flex-shrink:0;margin-top:2px;width:36px;height:36px;border-radius:10px;background:rgba(232,196,184,.15);display:flex;align-items:center;justify-content:center}
+.pain-icon svg{width:16px;height:16px;stroke:var(--rose);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .pain-item p{font-size:.92rem;color:var(--text);line-height:1.7}
 
 @media(max-width:600px){.pain-grid{grid-template-columns:1fr}}
@@ -181,7 +182,14 @@ section{padding:90px 0}
 .tool-card:nth-child(1)::before{background:var(--blush)}
 .tool-card:nth-child(2)::before{background:var(--sage)}
 .tool-card:nth-child(3)::before{background:var(--rose)}
-.tool-emoji{font-size:2.4rem;margin-bottom:16px}
+.tool-icon{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.tool-icon svg{width:24px;height:24px;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.tool-card:nth-child(1) .tool-icon{background:var(--blush-soft)}
+.tool-card:nth-child(1) .tool-icon svg{stroke:var(--rose)}
+.tool-card:nth-child(2) .tool-icon{background:rgba(143,166,138,.1)}
+.tool-card:nth-child(2) .tool-icon svg{stroke:var(--sage-dark)}
+.tool-card:nth-child(3) .tool-icon{background:var(--blush-soft)}
+.tool-card:nth-child(3) .tool-icon svg{stroke:var(--rose-dark)}
 .tool-card h3{font-size:1.2rem;color:var(--charcoal);margin-bottom:8px}
 .tool-card .tool-tag{
   font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
@@ -363,19 +371,19 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
     </div>
     <div class="pain-grid stagger">
       <div class="pain-item reveal">
-        <span class="pain-icon">😩</span>
+        <span class="pain-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
         <p>You're spending more time editing videos than actually creating content.</p>
       </div>
       <div class="pain-item reveal">
-        <span class="pain-icon">🤯</span>
+        <span class="pain-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
         <p>Tax season hits and you have no idea what you made, what you spent, or what you owe.</p>
       </div>
       <div class="pain-item reveal">
-        <span class="pain-icon">🎯</span>
+        <span class="pain-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
         <p>You're guessing which products to promote instead of knowing what's actually trending.</p>
       </div>
       <div class="pain-item reveal">
-        <span class="pain-icon">😵‍💫</span>
+        <span class="pain-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
         <p>You're paying for 5 different AI tools and using maybe one and a half of them.</p>
       </div>
     </div>
@@ -392,20 +400,20 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
     </div>
     <div class="tools-grid stagger">
       <div class="tool-card reveal">
-        <div class="tool-emoji">💰</div>
+        <div class="tool-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
         <span class="tool-tag">Finance</span>
         <h3>The Posy Money</h3>
         <p>Track income across TikTok Shop, Amazon, and Mavely. Log expenses. Know exactly what to set aside for taxes. No spreadsheets, no stress.</p>
       </div>
       <div class="tool-card reveal">
-        <div class="tool-emoji">✂️</div>
+        <div class="tool-icon"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
         <span class="tool-tag">Video</span>
         <h3>The Posy Edit</h3>
         <p>AI-powered video editing that removes filler words, adds captions, and cuts dead air. Two minutes instead of two hours.</p>
       </div>
       <div class="tool-card reveal" style="position:relative">
         <span class="coming-soon-badge">Coming Soon</span>
-        <div class="tool-emoji">📊</div>
+        <div class="tool-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
         <span class="tool-tag">Analytics</span>
         <h3>The Posy Intel</h3>
         <p>See what products are trending before everyone else. Know what to film next based on real data, not guesses.</p>
