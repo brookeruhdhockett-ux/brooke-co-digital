@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Prep Assistant — The Posy Academy</title>
+<meta name="description" content="Free guide: set up an AI assistant that preps you for every TikTok live with talking points and objection handlers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blush:#E8C4B8;--blush-light:#F5E1DA;--blush-soft:#FDF5F2;
+  --cream:#FAF8F5;--cream-warm:#F5F0EB;
+  --sage:#8FA68A;--sage-dark:#6B8B65;
+  --rose:#C4897A;--rose-dark:#A8705F;
+  --charcoal:#3D3D3D;--text:#555;--text-light:#888;--white:#FFF;
+}
+body{font-family:'DM Sans',sans-serif;color:var(--charcoal);background:var(--cream);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:600;line-height:1.3}
+a{color:inherit;text-decoration:none}
+
+.top-bar{background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.04);padding:18px 24px;text-align:center}
+.top-bar a{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:600;color:var(--rose)}
+.top-bar span{font-size:.75rem;color:var(--text-light);display:block;font-family:'DM Sans',sans-serif;margin-top:2px}
+
+.landing{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 24px}
+.landing-card{background:var(--white);border-radius:20px;max-width:480px;width:100%;padding:48px 36px;text-align:center;box-shadow:0 4px 24px rgba(0,0,0,.04)}
+.landing-icon{width:56px;height:56px;border-radius:14px;background:var(--blush);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.landing-icon svg{width:26px;height:26px;stroke:var(--charcoal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.landing-card h1{font-size:1.6rem;margin-bottom:12px}
+.landing-card .desc{font-size:.95rem;color:var(--text);margin-bottom:28px;line-height:1.6}
+
+.form-group{margin-bottom:14px}
+.form-group input{
+  width:100%;padding:14px 18px;border:1px solid #ddd;border-radius:10px;
+  font-size:.95rem;font-family:'DM Sans',sans-serif;background:var(--cream);
+  transition:border-color .2s;outline:none;
+}
+.form-group input:focus{border-color:var(--sage)}
+.form-group input::placeholder{color:#aaa}
+
+.submit-btn{
+  width:100%;padding:14px;background:var(--sage);color:var(--white);
+  border:none;border-radius:10px;font-size:1rem;font-weight:600;
+  font-family:'DM Sans',sans-serif;cursor:pointer;transition:background .2s;
+  margin-top:6px;
+}
+.submit-btn:hover{background:var(--sage-dark)}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed}
+
+.fine-print{font-size:.75rem;color:var(--text-light);margin-top:14px}
+
+/* success state */
+.success-msg{display:none}
+.success-msg h2{font-size:1.4rem;margin-bottom:12px;color:var(--sage-dark)}
+.success-msg p{font-size:.95rem;color:var(--text);margin-bottom:20px}
+.download-btn{
+  display:inline-block;padding:14px 32px;background:var(--sage);color:var(--white);
+  border-radius:10px;font-size:1rem;font-weight:600;text-decoration:none;
+  transition:background .2s;
+}
+.download-btn:hover{background:var(--sage-dark);color:var(--white)}
+
+.error-msg{color:var(--rose-dark);font-size:.85rem;margin-top:8px;display:none}
+
+.site-footer{text-align:center;padding:24px;border-top:1px solid rgba(0,0,0,.06)}
+.site-footer p{font-size:.8rem;color:var(--text-light)}
+.site-footer a{color:var(--rose)}
+
+@media(max-width:500px){
+  .landing-card{padding:36px 24px}
+  .landing-card h1{font-size:1.35rem}
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="posy.html">The Posy Academy<span>by Brooke Co</span></a>
+</div>
+
+<div class="landing">
+  <div class="landing-card">
+    <div class="landing-icon">
+      <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+    </div>
+
+    <div id="form-view">
+      <h1>Live Prep Assistant</h1>
+      <p class="desc">Walk into every live with objection answers, engagement prompts, and talking points -- without spending an hour prepping.</p>
+      <form id="capture-form" onsubmit="return handleSubmit(event)">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="First name (optional)">
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your email" required>
+        </div>
+        <button type="submit" class="submit-btn" id="submit-btn">Send me the free guide</button>
+        <p class="error-msg" id="error-msg"></p>
+      </form>
+      <p class="fine-print">No spam. Just the guide. Unsubscribe anytime.</p>
+    </div>
+
+    <div class="success-msg" id="success-view">
+      <h2>Check your inbox (just kidding)</h2>
+      <p>Your guide is ready. Click below to download it now.</p>
+      <a id="download-link" href="#" class="download-btn" target="_blank">Download PDF</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p><a href="posy-freebies.html">Browse all free tools</a> &middot; <a href="posy.html">The Posy Academy</a></p>
+</footer>
+
+<script>
+const API_URL = 'https://the-posy-production.up.railway.app/api/subscribe';
+const SLUG = 'live-prep';
+const FALLBACK_PDF = 'https://brookeruhdhockett-ux.github.io/brooke-co-digital/posy-live-prep-assistant.pdf';
+
+async function handleSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  const err = document.getElementById('error-msg');
+  const form = document.getElementById('capture-form');
+  const email = form.email.value.trim();
+  const name = form.name.value.trim();
+
+  if (!email) { err.textContent = 'Email is required.'; err.style.display = 'block'; return false; }
+  err.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, name, lead_magnet: SLUG })
+    });
+    const data = await res.json();
+    if (data.success) {
+      document.getElementById('form-view').style.display = 'none';
+      document.getElementById('success-view').style.display = 'block';
+      document.getElementById('download-link').href = data.pdf_url || FALLBACK_PDF;
+    } else {
+      throw new Error(data.error || 'Something went wrong');
+    }
+  } catch (e) {
+    // If API is down, still deliver the PDF
+    document.getElementById('form-view').style.display = 'none';
+    document.getElementById('success-view').style.display = 'block';
+    document.getElementById('download-link').href = FALLBACK_PDF;
+  }
+  return false;
+}
+</script>
+</body>
+</html>
