@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Posy Academy — AI Quick Start</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: #faf9f6; color: #1a1a1a; }
+  .page { max-width: 680px; margin: 0 auto; padding: 40px 24px; }
+
+  .header { text-align: center; margin-bottom: 36px; }
+  .header .badge { display: inline-block; background: #e8e0d4; color: #6b5c4c; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 20px; margin-bottom: 14px; }
+  .header h1 { font-family: 'DM Serif Display', serif; font-size: 30px; margin-bottom: 8px; }
+  .header .sub { color: #6b6b6b; font-size: 14px; line-height: 1.6; max-width: 500px; margin: 0 auto; }
+
+  .section { margin-bottom: 32px; }
+  .section h2 { font-family: 'DM Serif Display', serif; font-size: 22px; margin-bottom: 14px; }
+  .section h3 { font-size: 12px; font-weight: 700; color: #6b5c4c; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+
+  .step { background: #fff; border: 1px solid #e8e0d4; border-radius: 14px; padding: 20px; margin-bottom: 12px; }
+  .step .step-num { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #a09080; margin-bottom: 6px; }
+  .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; text-transform: none; letter-spacing: 0; color: #1a1a1a; }
+  .step .step-desc { font-size: 13px; color: #6b6b6b; line-height: 1.5; margin-bottom: 10px; }
+  .step .try-it { font-size: 13px; line-height: 1.5; }
+  .step .try-label { font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #6b5c4c; margin-bottom: 6px; }
+
+  .prompt { background: #f5f0ea; border-radius: 8px; padding: 12px 14px; margin: 6px 0; font-size: 13px; line-height: 1.5; color: #3a3a3a; font-style: italic; }
+
+  .dark-card { background: #1a1a1a; color: #fff; border-radius: 14px; padding: 24px; margin-bottom: 28px; }
+  .dark-card h2 { font-family: 'DM Serif Display', serif; font-size: 20px; margin-bottom: 8px; color: #fff; }
+  .dark-card p { font-size: 14px; color: #c0c0c0; line-height: 1.6; }
+
+  .tools { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; }
+  .tool { background: #fff; border: 1px solid #e8e0d4; border-radius: 10px; padding: 14px; }
+  .tool .tool-name { font-weight: 700; font-size: 14px; margin-bottom: 2px; }
+  .tool .tool-desc { font-size: 12px; color: #6b6b6b; line-height: 1.4; }
+  .tool .tool-rec { font-size: 11px; font-weight: 600; color: #4a9; margin-top: 4px; }
+
+  .cta { background: linear-gradient(135deg, #e8e0d4, #d4c9b8); border-radius: 14px; padding: 24px; text-align: center; margin-top: 32px; }
+  .cta h2 { font-family: 'DM Serif Display', serif; font-size: 20px; margin-bottom: 8px; }
+  .cta p { font-size: 14px; color: #4a4a4a; line-height: 1.5; }
+
+  .footer { text-align: center; margin-top: 32px; padding-top: 20px; border-top: 1px solid #e8e0d4; }
+  .footer .brand { font-family: 'DM Serif Display', serif; font-size: 18px; margin-bottom: 4px; }
+  .footer p { font-size: 12px; color: #a0a0a0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="badge">Free Pre-Launch Resource</div>
+    <h1>AI Quick Start for Creators</h1>
+    <p class="sub">Start using AI in your business today. No tech skills needed. Just open one of these tools and try the prompts below.</p>
+  </div>
+
+  <div class="section">
+    <h2>Pick Your Tool</h2>
+    <p style="font-size: 13px; color: #6b6b6b; margin-bottom: 12px;">You only need one. All of these are free to start.</p>
+    <div class="tools">
+      <div class="tool">
+        <div class="tool-name">ChatGPT</div>
+        <div class="tool-desc">Most popular. Good for beginners. Free version available.</div>
+        <div class="tool-rec">chatgpt.com</div>
+      </div>
+      <div class="tool">
+        <div class="tool-name">Claude</div>
+        <div class="tool-desc">Better for business tasks. Doesn't train on your data.</div>
+        <div class="tool-rec">claude.ai — recommended</div>
+      </div>
+      <div class="tool">
+        <div class="tool-name">Gemini</div>
+        <div class="tool-desc">Google's AI. Good if you're already in the Google ecosystem.</div>
+        <div class="tool-rec">gemini.google.com</div>
+      </div>
+      <div class="tool">
+        <div class="tool-name">Any of them</div>
+        <div class="tool-desc">These prompts work with all of them. Just pick one and start.</div>
+        <div class="tool-rec">no wrong choice</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dark-card">
+    <h2>The One Rule</h2>
+    <p>Talk to AI like you're talking to a really smart new employee. Be specific. Give context. Tell it what you want back. The more detail you give, the better the answer.</p>
+  </div>
+
+  <div class="section">
+    <h2>Try These Today</h2>
+
+    <div class="step">
+      <div class="step-num">Start Here</div>
+      <h3>Write a Product Script</h3>
+      <div class="step-desc">Instead of staring at your phone trying to think of what to say, let AI draft it and you make it sound like you.</div>
+      <div class="try-it">
+        <div class="try-label">Copy and paste this:</div>
+        <div class="prompt">"I'm a TikTok Shop affiliate. I need a 30-second script for [product name]. My style is casual and relatable, like I'm talking to a friend. Include a hook in the first 2 seconds, one key benefit, and a soft call to action. Don't make it sound salesy."</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">Try This</div>
+      <h3>Find Your Tax Deductions</h3>
+      <div class="step-desc">Most creators leave thousands of dollars on the table because they don't know what counts as a business expense.</div>
+      <div class="try-it">
+        <div class="try-label">Copy and paste this:</div>
+        <div class="prompt">"I'm a content creator and TikTok Shop affiliate working from home. I spend money on [ring lights, products to review, internet, phone, etc.]. What can I write off on my taxes? Give me a simple list with a one-line explanation for each. I'm not an accountant — keep it simple."</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">Try This</div>
+      <h3>Plan Your Content for the Week</h3>
+      <div class="step-desc">Stop waking up every day wondering what to post. Let AI map out your week in 2 minutes.</div>
+      <div class="try-it">
+        <div class="try-label">Copy and paste this:</div>
+        <div class="prompt">"I'm a TikTok creator who posts [how many] times a week. My niche is [your niche]. Give me a 7-day content plan with a specific video idea for each day. Include the hook for each video. Mix trending formats with evergreen content."</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">Try This</div>
+      <h3>Analyze What's Working</h3>
+      <div class="step-desc">Paste your recent video stats and let AI tell you what the patterns are — instead of guessing.</div>
+      <div class="try-it">
+        <div class="try-label">Copy and paste this:</div>
+        <div class="prompt">"Here are my last 10 TikTok videos with their view counts: [paste your data]. Which ones performed best? What do the top performers have in common? What should I do more of and what should I stop doing? Be honest."</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">Try This</div>
+      <h3>Write a Brand Pitch</h3>
+      <div class="step-desc">Reaching out to brands is awkward. Let AI write the first draft so you just have to tweak it.</div>
+      <div class="try-it">
+        <div class="try-label">Copy and paste this:</div>
+        <div class="prompt">"Write a DM I can send to a brand I want to work with. I'm a content creator with [your follower count] followers on TikTok. I want to pitch [brand name] for a paid collaboration. Keep it short, professional, and confident — not desperate. Max 4 sentences."</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">Try This</div>
+      <h3>Get Unstuck on Anything</h3>
+      <div class="step-desc">This is the one prompt that changes everything. Use it whenever you're stuck, overwhelmed, or don't know where to start.</div>
+      <div class="try-it">
+        <div class="try-label">Copy and paste this:</div>
+        <div class="prompt">"I'm a [your role] and I'm stuck on [your problem]. I've tried [what you've tried]. I need a simple, actionable plan to move forward. Give me 3-5 specific steps I can start today. Talk to me like a smart friend who's been through this."</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="dark-card">
+    <h2>What You Just Learned</h2>
+    <p style="margin-bottom: 8px;">You just saved hours of work with 6 prompts. That's the tip of the iceberg.</p>
+    <p>The Posy Academy teaches you how to build entire systems around this — AI that handles your money, your content, your analytics, and your scheduling while you focus on what only you can do.</p>
+  </div>
+
+  <div class="cta">
+    <h2>This is Just the Beginning</h2>
+    <p>The full Posy Academy launches this fall with 200+ prompts, video walkthroughs, the Posy Shop finance app, and step-by-step guides to building AI systems that run your business for you. Beta spots opening soon.</p>
+  </div>
+
+  <div class="footer">
+    <p class="brand">The Posy Academy</p>
+    <p>by Brooke Hockett — @hellomrshockett</p>
+  </div>
+
+</div>
+</body>
+</html>
