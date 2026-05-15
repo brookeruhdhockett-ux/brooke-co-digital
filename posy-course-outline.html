@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Posy Academy — Course Outline</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: #faf9f6; color: #1a1a1a; }
+  .page { max-width: 720px; margin: 0 auto; padding: 40px 24px; }
+
+  .header { text-align: center; margin-bottom: 40px; }
+  .header h1 { font-family: 'DM Serif Display', serif; font-size: 34px; margin-bottom: 8px; }
+  .header .sub { color: #6b6b6b; font-size: 15px; line-height: 1.6; max-width: 520px; margin: 0 auto; }
+
+  .tier-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; margin-top: 40px; }
+  .tier-header .dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+  .tier-header h2 { font-family: 'DM Serif Display', serif; font-size: 26px; }
+  .tier-header .price { font-size: 14px; color: #6b6b6b; margin-left: auto; }
+
+  .tier-desc { font-size: 14px; color: #6b6b6b; line-height: 1.6; margin-bottom: 20px; padding-left: 26px; max-width: 560px; }
+
+  .starter .dot { background: #d4c9b8; }
+  .pro .dot { background: #1a1a1a; }
+
+  .module { background: #fff; border: 1px solid #e8e0d4; border-radius: 14px; padding: 20px; margin-bottom: 12px; }
+  .module .mod-num { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #a09080; margin-bottom: 6px; }
+  .module h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+  .module .mod-desc { font-size: 13px; color: #6b6b6b; line-height: 1.5; margin-bottom: 12px; }
+  .module .lessons { list-style: none; }
+  .module .lessons li { font-size: 13px; padding: 6px 0; border-top: 1px solid #f0ebe4; color: #3a3a3a; padding-left: 20px; position: relative; }
+  .module .lessons li::before { content: ""; position: absolute; left: 0; top: 13px; width: 8px; height: 8px; border-radius: 50%; }
+
+  .starter .module { border-left: 3px solid #d4c9b8; }
+  .starter .lessons li::before { background: #d4c9b8; }
+
+  .pro .module { border-left: 3px solid #1a1a1a; }
+  .pro .lessons li::before { background: #1a1a1a; }
+
+  .includes-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .inc { background: #fff; border: 1px solid #e8e0d4; border-radius: 10px; padding: 14px; }
+  .inc .inc-title { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+  .inc .inc-desc { font-size: 11px; color: #6b6b6b; }
+
+  .divider { height: 1px; background: #e8e0d4; margin: 40px 0; }
+
+  .pro-banner { background: #1a1a1a; color: #fff; border-radius: 14px; padding: 20px 24px; margin-bottom: 20px; }
+  .pro-banner p { font-size: 14px; color: #c0c0c0; line-height: 1.6; }
+  .pro-banner strong { color: #fff; }
+
+  .comparison { margin-top: 40px; }
+  .comparison h2 { font-family: 'DM Serif Display', serif; font-size: 22px; margin-bottom: 16px; text-align: center; }
+  .comp-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .comp-table th { text-align: left; padding: 10px 12px; border-bottom: 2px solid #1a1a1a; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #6b5c4c; }
+  .comp-table td { padding: 10px 12px; border-bottom: 1px solid #f0ebe4; }
+  .comp-table .feat { color: #3a3a3a; }
+  .comp-table .check { text-align: center; color: #4a9; font-weight: 700; font-size: 16px; }
+  .comp-table .dash { text-align: center; color: #d0d0d0; }
+  .comp-table tr:last-child td { border-bottom: none; }
+
+  .pricing-footer { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+  .price-card { border-radius: 14px; padding: 24px; text-align: center; }
+  .price-card.starter-price { background: #fff; border: 1px solid #e8e0d4; }
+  .price-card.pro-price { background: #1a1a1a; color: #fff; }
+  .price-card .p-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+  .price-card.starter-price .p-label { color: #a09080; }
+  .price-card.pro-price .p-label { color: #a0a0a0; }
+  .price-card .p-amount { font-family: 'DM Serif Display', serif; font-size: 36px; margin-bottom: 4px; }
+  .price-card .p-plan { font-size: 12px; color: #6b6b6b; }
+  .price-card.pro-price .p-plan { color: #a0a0a0; }
+  .price-card .p-desc { font-size: 12px; margin-top: 10px; line-height: 1.4; }
+  .price-card.starter-price .p-desc { color: #6b6b6b; }
+  .price-card.pro-price .p-desc { color: #a0a0a0; }
+
+  .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e8e0d4; }
+  .footer .brand { font-family: 'DM Serif Display', serif; font-size: 18px; margin-bottom: 4px; }
+  .footer p { font-size: 12px; color: #a0a0a0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <h1>The Posy Academy</h1>
+    <p class="sub">Two paths, one goal: get your time back. Starter teaches you to use AI like a pro. Pro teaches you to build AI systems that work without you.</p>
+  </div>
+
+  <!-- STARTER TIER -->
+  <div class="starter">
+    <div class="tier-header">
+      <div class="dot"></div>
+      <h2>Starter</h2>
+      <span class="price">$497 or $97/mo x 6</span>
+    </div>
+    <p class="tier-desc">Learn to use AI tools (ChatGPT, Claude, etc.) to save hours every week. Better prompts, better workflows, better results — without learning to code.</p>
+
+    <div class="module">
+      <div class="mod-num">Module 1</div>
+      <h3>AI Foundations</h3>
+      <div class="mod-desc">What AI actually is, what it can and can't do, and how to think about it as a business tool — not a toy.</div>
+      <ul class="lessons">
+        <li>The difference between ChatGPT, Claude, Gemini — and which to use when</li>
+        <li>How to talk to AI so it gives you what you actually need</li>
+        <li>Setting up your AI workspace (accounts, settings, privacy)</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <div class="mod-num">Module 2</div>
+      <h3>Prompt Mastery</h3>
+      <div class="mod-desc">The skill that makes everything else work. Learn to write prompts that get real, usable results on the first try.</div>
+      <ul class="lessons">
+        <li>The anatomy of a great prompt (role, context, format, examples)</li>
+        <li>Prompt chains: how to break big tasks into steps AI can handle</li>
+        <li>When to use templates vs. when to freestyle</li>
+        <li>The Posy Prompt Library: 200+ ready-to-use prompts by category</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <div class="mod-num">Module 3</div>
+      <h3>Your Money, Simplified</h3>
+      <div class="mod-desc">Use AI to track income, categorize expenses, and never miss a tax deduction — without spreadsheets or an accountant.</div>
+      <ul class="lessons">
+        <li>Setting up your income and expense tracking with AI</li>
+        <li>The deduction checklist every creator misses</li>
+        <li>Monthly money check-in: the 15-minute routine that saves thousands</li>
+        <li>Quarterly tax prep made painless</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <div class="mod-num">Module 4</div>
+      <h3>Content Workflows</h3>
+      <div class="mod-desc">Stop spending 4 hours on what should take 30 minutes. Use AI to handle the parts of content creation that drain you.</div>
+      <ul class="lessons">
+        <li>AI-assisted scripts and captions (with your voice, not robot voice)</li>
+        <li>Product research and trend spotting with AI</li>
+        <li>Building a content calendar you'll actually follow</li>
+        <li>Batch workflows: plan a week of content in one sitting</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <div class="mod-num">Module 5</div>
+      <h3>AI Safety and Privacy</h3>
+      <div class="mod-desc">What's safe to share with AI and what isn't. Protect your business, your data, and your customers.</div>
+      <ul class="lessons">
+        <li>What AI companies do with your data (the honest version)</li>
+        <li>Settings you need to change right now</li>
+        <li>What to never put into a free AI tool</li>
+        <li>Keeping your customers' info safe</li>
+      </ul>
+    </div>
+
+    <div class="includes-row">
+      <div class="inc">
+        <div class="inc-title">Prompt Library</div>
+        <div class="inc-desc">200+ prompts for business, content, money, and life</div>
+      </div>
+      <div class="inc">
+        <div class="inc-title">Templates</div>
+        <div class="inc-desc">Scripts, trackers, planners, checklists</div>
+      </div>
+      <div class="inc">
+        <div class="inc-title">Discord Community</div>
+        <div class="inc-desc">Ask questions, share wins, get help</div>
+      </div>
+      <div class="inc">
+        <div class="inc-title">Lifetime Updates</div>
+        <div class="inc-desc">AI moves fast — the course stays current</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PRO TIER -->
+  <div class="pro">
+    <div class="tier-header">
+      <div class="dot"></div>
+      <h2>Pro</h2>
+      <span class="price">$997 or $197/mo x 6</span>
+    </div>
+
+    <div class="pro-banner">
+      <p><strong>Everything in Starter, plus:</strong> Learn how to set up AI agents that run your business while you sleep. This is the "8 employees" system — content, analytics, finances, scheduling, all automated.</p>
+    </div>
+
+    <div class="module">
+      <div class="mod-num">Module 6</div>
+      <h3>The AI Employee System</h3>
+      <div class="mod-desc">How one person runs a full creator business with AI agents handling content, analytics, finances, and outreach — 24/7.</div>
+      <ul class="lessons">
+        <li>What an AI agent actually is (and isn't)</li>
+        <li>The difference between chatting with AI and building AI systems</li>
+        <li>Mapping your business: which tasks should be automated first</li>
+        <li>The real cost breakdown: what this replaces vs. hiring</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <div class="mod-num">Module 7</div>
+      <h3>Setting Up Claude Code</h3>
+      <div class="mod-desc">Install and configure the tool that makes AI agents possible. Step by step, no coding experience needed.</div>
+      <ul class="lessons">
+        <li>Installing Claude Code on your computer (Mac or PC)</li>
+        <li>Your first agent: a simple task that runs on its own</li>
+        <li>Understanding how agents read files, make decisions, and take action</li>
+        <li>The configuration files that tell your agents what to do</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <div class="mod-num">Module 8</div>
+      <h3>Build Your Money Agent</h3>
+      <div class="mod-desc">Set up an AI system that tracks your income, flags expenses, categorizes deductions, and keeps your finances organized automatically.</div>
+      <ul class="lessons">
+        <li>Connecting your income sources</li>
+        <li>Automated expense categorization</li>
+        <li>Tax deduction tracking that runs in the background</li>
+        <li>Monthly reports generated without you lifting a finger</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <div class="mod-num">Module 9</div>
+      <h3>Build Your Content Agent</h3>
+      <div class="mod-desc">Set up AI systems that handle content research, script drafting, scheduling, and analytics — so you can focus on being on camera.</div>
+      <ul class="lessons">
+        <li>Product research agent: finds trending items and commission rates</li>
+        <li>Script and caption agent: drafts in your voice from templates</li>
+        <li>Scheduling agent: posts go out on time without you remembering</li>
+        <li>Analytics agent: tracks what's working and tells you what to do more of</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <div class="mod-num">Module 10</div>
+      <h3>Build Your Analytics Engine</h3>
+      <div class="mod-desc">Stop guessing what's working. Set up systems that pull your data, find patterns, and give you clear next steps.</div>
+      <ul class="lessons">
+        <li>Connecting your TikTok Shop, live stream, and affiliate data</li>
+        <li>Automated performance reports</li>
+        <li>AI-powered insights: what the numbers mean in plain English</li>
+        <li>Decision dashboards that tell you where to focus</li>
+      </ul>
+    </div>
+
+    <div class="module">
+      <div class="mod-num">Module 11</div>
+      <h3>Running Your AI Team</h3>
+      <div class="mod-desc">Put it all together. Manage multiple agents, handle edge cases, and keep everything running smoothly long-term.</div>
+      <ul class="lessons">
+        <li>Organizing your agents so they don't step on each other</li>
+        <li>What to do when something breaks (it will — here's how to fix it)</li>
+        <li>Adding new agents as your business grows</li>
+        <li>The weekly 15-minute check-in that keeps everything humming</li>
+      </ul>
+    </div>
+
+    <div class="includes-row">
+      <div class="inc">
+        <div class="inc-title">Everything in Starter</div>
+        <div class="inc-desc">Full course, prompts, templates, community</div>
+      </div>
+      <div class="inc">
+        <div class="inc-title">Posy Shop Access</div>
+        <div class="inc-desc">AI-powered finance and analytics app</div>
+      </div>
+      <div class="inc">
+        <div class="inc-title">Agent Templates</div>
+        <div class="inc-desc">Pre-built agent configs you can customize</div>
+      </div>
+      <div class="inc">
+        <div class="inc-title">Setup Walkthroughs</div>
+        <div class="inc-desc">Screen-share videos for every step</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- COMPARISON TABLE -->
+  <div class="comparison">
+    <h2>Side by Side</h2>
+    <table class="comp-table">
+      <thead>
+        <tr><th class="feat">Feature</th><th>Starter</th><th>Pro</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="feat">Video lessons</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td class="feat">200+ Prompt Library</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td class="feat">Templates & SOPs</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td class="feat">Discord community</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td class="feat">Lifetime updates</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td class="feat">AI Safety & Privacy module</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td class="feat">Posy Shop access</td><td class="dash">&mdash;</td><td class="check">&#10003;</td></tr>
+        <tr><td class="feat">Agent setup modules (6-11)</td><td class="dash">&mdash;</td><td class="check">&#10003;</td></tr>
+        <tr><td class="feat">Pre-built agent templates</td><td class="dash">&mdash;</td><td class="check">&#10003;</td></tr>
+        <tr><td class="feat">Screen-share walkthroughs</td><td class="dash">&mdash;</td><td class="check">&#10003;</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PRICING -->
+  <div class="pricing-footer">
+    <div class="price-card starter-price">
+      <div class="p-label">Starter</div>
+      <div class="p-amount">$497</div>
+      <div class="p-plan">or $97/mo x 6</div>
+      <div class="p-desc">Use AI like a pro. Better prompts, faster workflows, more time back.</div>
+    </div>
+    <div class="price-card pro-price">
+      <div class="p-label">Pro</div>
+      <div class="p-amount">$997</div>
+      <div class="p-plan">or $197/mo x 6</div>
+      <div class="p-desc">Build AI systems that run your business while you do literally anything else.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p class="brand">The Posy Academy</p>
+    <p>by Brooke Hockett</p>
+  </div>
+
+</div>
+</body>
+</html>
