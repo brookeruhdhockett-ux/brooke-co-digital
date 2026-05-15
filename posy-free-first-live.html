@@ -116,8 +116,9 @@ a{color:inherit;text-decoration:none}
 </footer>
 
 <script>
-const API_URL = 'https://the-posy-production.up.railway.app/api/subscribe';
+const API_URL = 'https://email-hub-production.up.railway.app/api/subscribe';
 const SLUG = 'first-live';
+const SOURCE = 'posy-first-live';
 const FALLBACK_PDF = 'https://brookeruhdhockett-ux.github.io/brooke-co-digital/posy-first-live-guide.pdf';
 
 async function handleSubmit(e) {
@@ -137,10 +138,10 @@ async function handleSubmit(e) {
     const res = await fetch(API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, name, lead_magnet: SLUG })
+      body: JSON.stringify({ email, name, source: SOURCE })
     });
     const data = await res.json();
-    if (data.success) {
+    if (data.ok) {
       document.getElementById('form-view').style.display = 'none';
       document.getElementById('success-view').style.display = 'block';
       document.getElementById('download-link').href = data.pdf_url || FALLBACK_PDF;

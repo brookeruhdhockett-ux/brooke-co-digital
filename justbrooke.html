@@ -501,10 +501,10 @@ function submitQuizEmail() {
   const name = document.getElementById('gate-name').value.trim();
   if (!email) return;
   // Save subscriber
-  fetch('https://justbrooke-api-production.up.railway.app/api/subscribe', {
+  fetch('https://email-hub-production.up.railway.app/api/subscribe', {
     method: 'POST',
     headers: {'Content-Type':'application/json'},
-    body: JSON.stringify({email, name, source: 'quiz', tags: Object.keys(tags)})
+    body: JSON.stringify({email, name, source: 'justbrooke-quiz', tags: Object.keys(tags)})
   }).catch(() => {});
   showResults();
 }
@@ -539,7 +539,7 @@ renderQuestion();
 function submitStackEmail() {
   const email = document.getElementById('stack-email').value.trim();
   if (!email) return;
-  fetch('https://justbrooke-api-production.up.railway.app/api/subscribe', {
+  fetch('https://email-hub-production.up.railway.app/api/subscribe', {
     method: 'POST',
     headers: {'Content-Type':'application/json'},
     body: JSON.stringify({email, name: '', source: 'justbrooke-stack', tags: ['stack','protocol']})

@@ -410,6 +410,16 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
   </div>
 </section>
 
+<!-- QUIZ CTA -->
+<section style="background:var(--blush-soft);padding:48px 0;text-align:center">
+  <div class="container reveal">
+    <p style="font-size:.85rem;color:var(--rose);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Free 2-minute quiz</p>
+    <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:12px">How AI-ready is your creator business?</h2>
+    <p style="font-size:.95rem;color:var(--text);max-width:480px;margin:0 auto 24px">Find out how much time you're leaving on the table — and which tools would make the biggest difference for you.</p>
+    <a href="posy-ai-scorecard.html" class="btn btn-primary" style="padding:16px 36px;font-size:.95rem">Take the Scorecard Quiz</a>
+  </div>
+</section>
+
 <!-- HARD DATA -->
 <section class="data-section">
   <div class="container">
@@ -627,9 +637,11 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
         <p style="font-size:.82rem;color:var(--text-light);margin-bottom:24px">Live 4-session cohort</p>
         <div style="font-family:'Playfair Display',serif;font-size:2.8rem;color:var(--sage);font-weight:700;margin-bottom:4px">$0</div>
         <p style="font-size:.78rem;color:var(--text-light);margin-bottom:28px">Limited spots for the first live cohort</p>
-        <form onsubmit="event.preventDefault();this.innerHTML='<p style=\'color:var(--sage);font-size:1rem;padding:14px;font-weight:600\'>You\'re in! Check your email for details.</p>'">
-          <input type="text" placeholder="Your name" required style="width:100%;padding:14px 20px;border-radius:12px;border:1px solid rgba(0,0,0,.08);margin-bottom:12px;font-family:'DM Sans',sans-serif;font-size:.88rem;background:var(--cream)">
-          <input type="email" placeholder="Your email" required style="width:100%;padding:14px 20px;border-radius:12px;border:1px solid rgba(0,0,0,.08);margin-bottom:20px;font-family:'DM Sans',sans-serif;font-size:.88rem;background:var(--cream)">
+        <form action="https://email-hub-production.up.railway.app/subscribe" method="post">
+          <input type="hidden" name="source" value="posy-academy-waitlist">
+          <input type="hidden" name="redirect" value="https://brookeruhdhockett-ux.github.io/brooke-co-digital/posy-academy.html?subscribed=1">
+          <input type="text" name="name" placeholder="Your name" required style="width:100%;padding:14px 20px;border-radius:12px;border:1px solid rgba(0,0,0,.08);margin-bottom:12px;font-family:'DM Sans',sans-serif;font-size:.88rem;background:var(--cream)">
+          <input type="email" name="email" placeholder="Your email" required style="width:100%;padding:14px 20px;border-radius:12px;border:1px solid rgba(0,0,0,.08);margin-bottom:20px;font-family:'DM Sans',sans-serif;font-size:.88rem;background:var(--cream)">
           <button type="submit" class="btn btn-primary" style="width:100%;padding:16px;font-size:.92rem">Save My Free Spot</button>
         </form>
         <p style="font-size:.72rem;color:var(--text-light);margin-top:14px">No credit card required. Unsubscribe anytime.</p>
@@ -703,6 +715,9 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
     <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="index.html#tools">Tools</a>
+      <a href="posy-course-outline.html">Course Outline</a>
+      <a href="posy-ai-scorecard.html">Take the Quiz</a>
+      <a href="https://the-posy-production.up.railway.app/login">Student Login</a>
       <a href="index.html#about">About</a>
     </div>
     <p class="footer-copy">&copy; 2026 The Posy by Brooke Co &middot; All Rights Reserved</p>

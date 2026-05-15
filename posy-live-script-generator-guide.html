@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Your Own AI Live Script Generator — Guide</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--sage:#8FA68A;--sage-dark:#6B8B65;--cream:#FAF8F5;--blush:#E8C4B8;--blush-light:#F5E1DA;--charcoal:#3D3D3D;--text:#555;--rose:#C4897A;--white:#FFF}
+body{font-family:'DM Sans',sans-serif;color:var(--charcoal);background:var(--cream);line-height:1.8;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:600;line-height:1.3}
+.page{max-width:640px;margin:0 auto;padding:48px 28px}
+.cover{text-align:center;padding:60px 20px 48px;border-bottom:2px solid var(--blush)}
+.cover h1{font-size:2rem;margin-bottom:8px}
+.cover .sub{font-size:1.05rem;color:var(--text);margin-bottom:4px}
+.cover .brand{font-size:.85rem;color:var(--rose);font-weight:600;margin-top:16px}
+.section{padding:40px 0;border-bottom:1px solid rgba(0,0,0,.06)}
+.section:last-child{border-bottom:none}
+.section h2{font-size:1.4rem;margin-bottom:16px;color:var(--sage-dark)}
+.section h3{font-size:1.1rem;margin:24px 0 8px;color:var(--charcoal)}
+.section p{margin-bottom:14px;color:var(--text)}
+.section ul,.section ol{margin:0 0 16px 20px;color:var(--text)}
+.section li{margin-bottom:6px}
+.prompt-box{background:var(--white);border:1px solid #e0ddd8;border-radius:12px;padding:20px 24px;margin:16px 0 24px;font-size:.88rem;line-height:1.7;white-space:pre-wrap;color:var(--charcoal);position:relative}
+.prompt-box .label{position:absolute;top:-10px;left:16px;background:var(--sage);color:var(--white);font-size:.7rem;font-weight:600;padding:2px 10px;border-radius:6px;text-transform:uppercase;letter-spacing:.5px}
+.tip{background:var(--blush-light);border-radius:10px;padding:16px 20px;margin:16px 0;font-size:.9rem}
+.tip strong{color:var(--charcoal)}
+.example{background:#f0f7ef;border-left:3px solid var(--sage);padding:14px 20px;margin:14px 0;border-radius:0 10px 10px 0;font-size:.9rem;font-style:italic;color:var(--charcoal)}
+.footer-note{text-align:center;padding:40px 20px;font-size:.85rem;color:var(--text)}
+.footer-note a{color:var(--rose);font-weight:600}
+@media print{
+  body{background:#fff}
+  .page{padding:20px}
+  .prompt-box{break-inside:avoid}
+}
+@media(max-width:500px){
+  .cover h1{font-size:1.6rem}
+  .page{padding:32px 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+<div class="cover">
+  <h1>Build Your Own AI Live Script Generator</h1>
+  <p class="sub">A step-by-step guide to writing TikTok Shop live selling scripts with Claude</p>
+  <p class="brand">The Posy Academy &middot; by Brooke Co</p>
+</div>
+
+<!-- INTRO -->
+<div class="section">
+  <h2>What This Guide Gives You</h2>
+  <p>By the end of this guide you'll have a Claude AI project that writes complete TikTok Shop live selling scripts on demand. Tell it your product, your sale price, and how long you're going live — it writes the whole thing.</p>
+  <p>No coding. No subscriptions. Just Claude (free tier works) and the prompts in this guide.</p>
+  <p><strong>What your scripts will include:</strong></p>
+  <ul>
+    <li>3-5 minute product loops that repeat naturally for new viewers</li>
+    <li>Flash sale urgency with countdown language</li>
+    <li>Objection handling that doesn't sound robotic</li>
+    <li>"Click the orange cart" call-to-actions timed throughout</li>
+    <li>Warm openers and natural transitions between products</li>
+  </ul>
+</div>
+
+<!-- STEP 1 -->
+<div class="section">
+  <h2>Step 1: Set Up Your Claude Project</h2>
+  <p>Open <strong>claude.ai</strong> and click <strong>Projects</strong> on the left sidebar. Create a new project and name it something like "Live Script Generator."</p>
+  <p>In the project instructions box, paste the system prompt below. This tells Claude exactly how to write your scripts every time.</p>
+
+  <div class="prompt-box">
+    <span class="label">Copy this into Project Instructions</span>
+You are a TikTok Shop live selling script writer. You write scripts for creators who sell products during TikTok LIVE sessions using the orange cart (TikTok Shop product links).
+
+SCRIPT STRUCTURE — every script you write follows this format:
+
+1. WARM-UP (first 60-90 seconds)
+- Greet viewers by name when possible
+- Tease what's coming ("I have something that's going to blow your mind today")
+- Ask an engagement question to get comments flowing
+- Mention "stick around because I have a flash deal dropping in a few minutes"
+
+2. PRODUCT LOOP (3-5 minutes, designed to repeat)
+The product loop is the core of the script. It runs once, then repeats with slight variations so new viewers get the full pitch. Each loop contains:
+
+a) THE HOOK (15-20 seconds)
+- Lead with a problem or relatable moment
+- "okay so if you've ever [pain point], you need to see this"
+
+b) THE DEMO (60-90 seconds)
+- Show the product, describe what you're doing
+- Use sensory language — what it looks like, feels like, sounds like
+- Compare to the alternative ("instead of spending $60 at [store], this is...")
+
+c) SOCIAL PROOF (15-20 seconds)
+- Mention reviews, how many sold, personal experience
+- "I've been using this for three weeks and honestly..."
+- "This has over 10,000 five-star reviews"
+
+d) OBJECTION HANDLING (30-45 seconds)
+- Address the top 2-3 reasons someone wouldn't buy
+- Price: "I know what you're thinking — but wait till you see the flash deal price"
+- Quality: "Let me show you up close... this is not cheap stuff"
+- Need: "Even if you don't need it today, at this price you stock up"
+
+e) URGENCY + CTA (30-45 seconds)
+- Flash deal countdown language
+- "This price is only live for the next [X] minutes"
+- "Click the orange cart below — tap the product — and checkout before it's gone"
+- "Once this timer hits zero the price goes back up, I can't control that"
+- Repeat the CTA: "orange cart, bottom of your screen, tap it now"
+
+f) ENGAGEMENT BRIDGE (15-30 seconds)
+- "Drop a [emoji] if you grabbed one"
+- "Type NEED IT in the comments if you want me to hold one"
+- Answer a comment or two before looping back
+
+3. BETWEEN PRODUCTS (30-60 seconds)
+- Quick personal moment or comment response
+- Tease the next product
+- "Okay the next one — I almost didn't put this on the live because I wanted to keep it for myself"
+
+4. FLASH SALE CLOSE (final 60-90 seconds)
+- Last call on the best deals
+- Recap what's still available
+- "If you missed anything, the orange cart has everything pinned"
+- Thank viewers, mention next live schedule
+
+FORMATTING RULES:
+- Write in lowercase conversational voice — no ALL CAPS, no excessive punctuation
+- Include [pause], [show product], [hold up to camera] stage directions in brackets
+- Mark each section clearly so the creator can glance at it during the live
+- Time estimates in parentheses next to each section header
+- Write for 8-10 minute flash sale sessions by default (two loops of one product) unless told otherwise
+- Keep the energy building — start warm, peak at urgency, close grateful
+
+WHAT I NEED FROM THE USER:
+When someone asks for a script, ask for:
+1. Product name and what it does
+2. Regular price and flash deal price
+3. Key selling points (2-3)
+4. Who it's for (the ideal buyer)
+5. How long is the live? (default: 8-10 min)
+6. Any specific objections to address?
+
+If they don't provide all of this, make reasonable assumptions and note what you assumed.
+  </div>
+
+  <div class="tip">
+    <strong>Pro tip:</strong> The free version of Claude works for this. You don't need a paid plan. If you hit the message limit, just wait a bit or start a new chat within the same project — your instructions carry over.
+  </div>
+</div>
+
+<!-- STEP 2 -->
+<div class="section">
+  <h2>Step 2: Generate Your First Script</h2>
+  <p>Now just start a new chat in your project and tell Claude about a product. Here's an example:</p>
+
+  <div class="prompt-box">
+    <span class="label">Example message</span>
+write me a live script for:
+
+product: glow recipe watermelon toner
+regular price: $34
+flash deal price: $18
+selling points: hydrating, smells amazing, glass skin effect
+ideal buyer: skincare girlies 20-35
+live length: 8 minutes
+objections: "I already have a toner" and "is it worth the hype"
+  </div>
+
+  <p>Claude will generate a full timed script with hooks, demos, objection handling, urgency, and cart call-outs — ready to use on your next live.</p>
+
+  <div class="example">"okay so if you've been doom-scrolling skincare tiktok you've definitely seen this pink bottle everywhere. and I'm about to tell you why it's everywhere — and why the flash deal price right now is actually insane. [hold up product] ..."</div>
+</div>
+
+<!-- STEP 3 -->
+<div class="section">
+  <h2>Step 3: Customize for Your Style</h2>
+  <p>The script Claude writes is a starting point. Here's how to make it yours:</p>
+
+  <h3>Add your catchphrases</h3>
+  <p>Go back to your project instructions and add a line like:</p>
+  <div class="prompt-box">
+    <span class="label">Add to Project Instructions</span>
+MY STYLE NOTES:
+- I always open with "heyyyy welcome welcome welcome"
+- I say "oh my gosh" a lot — keep that energy
+- My closing line is "love you guys, see you [next live day]"
+- I like to ask "should I do a giveaway?" to get engagement up
+  </div>
+
+  <h3>Add your niche context</h3>
+  <p>If you always sell in a specific category, tell Claude:</p>
+  <div class="prompt-box">
+    <span class="label">Add to Project Instructions</span>
+NICHE: I sell beauty, skincare, and wellness products on TikTok Shop. My audience is mostly women 25-40 who are into clean beauty and affordable self-care. I compare everything to the high-end version to show the value.
+  </div>
+
+  <div class="tip">
+    <strong>Pro tip:</strong> The more context you give in project instructions, the less you have to repeat each time. Add your most-used objection handles, your go-to engagement lines, even your typical flash deal discount range.
+  </div>
+</div>
+
+<!-- STEP 4 -->
+<div class="section">
+  <h2>Step 4: Multi-Product Lives</h2>
+  <p>For longer lives with multiple products, just list them all:</p>
+
+  <div class="prompt-box">
+    <span class="label">Example message</span>
+write me a 30 minute live script with these products in order:
+
+1. snail mucin serum — $12 flash deal (reg $24) — hydrating, glass skin
+2. ice roller — $6 flash deal (reg $15) — depuffing, feels amazing on camera
+3. lip sleeping mask — $9 flash deal (reg $22) — viral, overnight results
+
+open with the serum as the hero product. use the ice roller as a mid-live energy boost. close with the lip mask as "one more thing before I go."
+  </div>
+
+  <p>Claude will write transitions between each product, build energy throughout the live, and time everything so the whole session flows naturally.</p>
+</div>
+
+<!-- STEP 5 -->
+<div class="section">
+  <h2>Step 5: Quick Scripts on the Fly</h2>
+  <p>Once your project is set up, you can get scripts fast. Some quick prompts:</p>
+
+  <div class="prompt-box">
+    <span class="label">Quick prompts to try</span>
+"quick 5 minute flash sale script for [product] at $[price]"
+
+"rewrite that last script but more high energy"
+
+"give me just the hook and CTA for [product] — I'll freestyle the middle"
+
+"write me 5 different opening hooks I can rotate for tonight's live"
+
+"I'm going live in 10 minutes with [product] — give me bullet points not a full script"
+  </div>
+
+  <div class="tip">
+    <strong>Pro tip:</strong> After a live, tell Claude what worked and what didn't. "The objection handling part felt stiff — make it more casual next time." It remembers within the conversation and gets better the more you use it.
+  </div>
+</div>
+
+<!-- BONUS -->
+<div class="section">
+  <h2>Bonus: The Urgency Cheat Sheet</h2>
+  <p>These are the phrases that convert on TikTok Shop lives. Mix them into your scripts or add them to your project instructions so Claude uses them naturally:</p>
+
+  <h3>Flash deal countdown</h3>
+  <ul>
+    <li>"this price disappears when the timer hits zero — I literally cannot bring it back"</li>
+    <li>"we've sold [X] in the last two minutes, I don't know how many are left"</li>
+    <li>"if you're even thinking about it, grab it now and decide later — you can always return it"</li>
+  </ul>
+
+  <h3>Cart call-outs</h3>
+  <ul>
+    <li>"click the orange cart at the bottom of your screen"</li>
+    <li>"tap the little shopping bag — you'll see everything pinned in there"</li>
+    <li>"the link is right below me — orange cart, tap, checkout, done"</li>
+  </ul>
+
+  <h3>Objection killers</h3>
+  <ul>
+    <li>"I know you're thinking 'do I really need this' — let me show you why yes"</li>
+    <li>"the reviews speak for themselves — [X] thousand people can't be wrong"</li>
+    <li>"at this price you're not buying one, you're stocking up"</li>
+    <li>"worst case you try it and return it. but you won't because it's that good"</li>
+  </ul>
+
+  <h3>Engagement pumps</h3>
+  <ul>
+    <li>"drop a [emoji] if you've been wanting to try this"</li>
+    <li>"type NEED IT in the comments"</li>
+    <li>"share this live with your bestie who needs this"</li>
+    <li>"who already grabbed one? let me see those orders"</li>
+  </ul>
+</div>
+
+<!-- CLOSING -->
+<div class="section">
+  <h2>That's It — You're Set</h2>
+  <p>You now have an AI assistant that writes personalized TikTok Shop live scripts whenever you need them. No monthly fee. No app. Just Claude and your product list.</p>
+  <p>The more you use it, the better it gets at matching your voice and your audience.</p>
+  <p><strong>Want to go deeper?</strong> The Posy Academy teaches creators how to build their entire live selling business with AI — from scripts to analytics to product research. Join the waitlist at <a href="posy.html" style="color:var(--rose);font-weight:600">theposyacademy.com</a>.</p>
+</div>
+
+<div class="footer-note">
+  <p><strong>The Posy Academy</strong> by Brooke Co</p>
+  <p><a href="posy-freebies.html">More free tools</a> &middot; <a href="posy.html">Join the waitlist</a></p>
+</div>
+
+</div>
+</body>
+</html>
