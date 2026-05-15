@@ -11,10 +11,9 @@
       font-family: -apple-system, 'Segoe UI', sans-serif;
       background: #ffffff;
       color: #1a1a1a;
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
-    /* Header */
     .hero {
       background: #1e3a2f;
       color: white;
@@ -32,19 +31,17 @@
       font-size: 1.4rem;
       font-weight: 600;
       color: #c8b88a;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
     .hero .desc {
-      font-size: 0.95rem;
-      opacity: 0.7;
-      max-width: 500px;
+      font-size: 1rem;
+      opacity: 0.8;
+      max-width: 550px;
       margin: 0 auto;
     }
 
-    /* Layout */
-    .page { max-width: 850px; margin: 0 auto; padding: 0 1.5rem; }
+    .page { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
 
-    /* Section */
     .section {
       padding: 3rem 0;
       border-bottom: 1px solid #eee;
@@ -56,77 +53,144 @@
       letter-spacing: 0.15em;
       color: #1e3a2f;
       font-weight: 700;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.5rem;
     }
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      color: #1a1a1a;
+    }
+    p { margin-bottom: 1rem; font-size: 0.95rem; color: #444; }
 
-    /* Tier Cards */
-    .tiers {
+    /* Before/After */
+    .ba-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
-      margin-top: 1rem;
+      margin: 1.25rem 0;
     }
+    .ba-card {
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .ba-card.before {
+      background: #fdf5f5;
+      border: 1px solid #f0d5d5;
+    }
+    .ba-card.after {
+      background: #f0f7f3;
+      border: 1px solid #c8ddd0;
+    }
+    .ba-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .ba-card.before .ba-label { color: #c0706f; }
+    .ba-card.after .ba-label { color: #3d7a56; }
+    .ba-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .ba-card ul li {
+      font-size: 0.9rem;
+      padding: 0.3rem 0;
+      color: #444;
+    }
+
+    /* Math callout */
+    .math-box {
+      background: #1e3a2f;
+      color: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+    .math-box .math-line {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.9;
+    }
+    .math-box .math-result {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #c8b88a;
+      margin-top: 0.5rem;
+    }
+
+    /* Tier cards */
     .tier {
-      border: 1px solid #e5e5e5;
       border-radius: 16px;
       padding: 2rem;
-      background: #fff;
+      margin: 1.5rem 0;
+    }
+    .tier.starter {
+      background: #faf8f5;
+      border: 1px solid #e5e0d6;
     }
     .tier.pro {
-      border-color: #1e3a2f;
-      border-width: 2px;
-      background: #f9faf9;
+      background: #f5f9f7;
+      border: 2px solid #1e3a2f;
+    }
+    .tier-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
     }
     .tier-badge {
-      display: inline-block;
       font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       font-weight: 700;
-      padding: 0.25rem 0.75rem;
+      padding: 0.2rem 0.7rem;
       border-radius: 20px;
-      margin-bottom: 0.75rem;
+      display: inline-block;
     }
-    .tier:not(.pro) .tier-badge {
-      background: #f0ede8;
-      color: #7a6f5f;
+    .tier.starter .tier-badge { background: #e8e2d8; color: #7a6f5f; }
+    .tier.pro .tier-badge { background: #1e3a2f; color: #c8b88a; }
+    .tier-price {
+      text-align: right;
     }
-    .tier.pro .tier-badge {
-      background: #1e3a2f;
-      color: #c8b88a;
-    }
-    .tier h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.15rem;
-    }
-    .tier .tier-tag {
-      color: #888;
-      font-style: italic;
-      font-size: 0.9rem;
-      margin-bottom: 0.75rem;
-    }
-    .tier .price {
-      font-size: 1.8rem;
+    .tier-price .amount {
+      font-size: 1.6rem;
       font-weight: 700;
       color: #1e3a2f;
     }
-    .tier .price-sub {
-      font-size: 0.85rem;
+    .tier-price .plan {
+      font-size: 0.8rem;
       color: #999;
-      font-weight: 400;
-      margin-bottom: 1.25rem;
     }
-    .tier .audience {
+    .tier h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+    .tier .tier-sub {
+      color: #888;
       font-size: 0.9rem;
-      color: #555;
+      font-style: italic;
       margin-bottom: 1rem;
-      padding-bottom: 1rem;
+    }
+    .tier .value-story {
+      font-size: 0.95rem;
+      color: #444;
+      margin-bottom: 1.25rem;
+      padding-bottom: 1.25rem;
       border-bottom: 1px solid #eee;
     }
-    .tier ul {
-      list-style: none;
-      padding: 0;
+    .tier .includes-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      color: #999;
+      margin-bottom: 0.5rem;
     }
+    .tier ul { list-style: none; padding: 0; }
     .tier ul li {
       font-size: 0.9rem;
       padding: 0.35rem 0 0.35rem 1.4rem;
@@ -134,149 +198,82 @@
       color: #333;
     }
     .tier ul li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      font-weight: 700;
+      content: ""; position: absolute; left: 0; top: 0.65rem;
+      width: 8px; height: 8px; border-radius: 50%;
     }
-    .tier:not(.pro) ul li::before { color: #7a6f5f; }
-    .tier.pro ul li::before { color: #1e3a2f; }
+    .tier.starter ul li::before { background: #c8b88a; }
+    .tier.pro ul li::before { background: #1e3a2f; }
 
     /* Modules */
-    .modules-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 1rem;
+    .mod-section {
+      margin-top: 1.5rem;
     }
-    .mod-col-label {
+    .mod-section-title {
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       font-weight: 700;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       padding-bottom: 0.5rem;
       border-bottom: 2px solid;
     }
-    .mod-col:first-child .mod-col-label {
-      color: #7a6f5f;
-      border-color: #d4c9b8;
-    }
-    .mod-col:last-child .mod-col-label {
-      color: #1e3a2f;
-      border-color: #1e3a2f;
-    }
+    .tier.starter .mod-section-title { color: #7a6f5f; border-color: #d4c9b8; }
+    .tier.pro .mod-section-title { color: #1e3a2f; border-color: #1e3a2f; }
     .mod-item {
       display: flex;
-      align-items: flex-start;
       gap: 0.75rem;
-      padding: 0.65rem 0;
+      padding: 0.6rem 0;
+      align-items: flex-start;
     }
     .mod-num {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
+      width: 24px; height: 24px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 700; color: white; flex-shrink: 0;
+    }
+    .tier.starter .mod-num { background: #a99a82; }
+    .tier.pro .mod-num { background: #1e3a2f; }
+    .mod-title { font-weight: 600; font-size: 0.9rem; }
+    .mod-desc { font-size: 0.85rem; color: #777; }
+
+    /* Scenario cards */
+    .scenario {
+      background: #faf8f5;
+      border: 1px solid #e5e0d6;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+    .scenario .scenario-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      color: #1a1a1a;
+    }
+    .scenario p {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    .scenario .outcome {
+      font-weight: 600;
+      color: #1e3a2f;
+    }
+
+    /* Wizard */
+    .wizard-flow {
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      font-weight: 700;
-      flex-shrink: 0;
-      color: white;
-    }
-    .mod-col:first-child .mod-num { background: #a99a82; }
-    .mod-col:last-child .mod-num { background: #1e3a2f; }
-    .mod-text .mod-title {
-      font-weight: 600;
-      font-size: 0.95rem;
-      display: block;
-    }
-    .mod-text .mod-desc {
-      font-size: 0.85rem;
-      color: #777;
-    }
-
-    /* Comparison Table */
-    .compare {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-      font-size: 0.9rem;
-    }
-    .compare th {
-      text-align: left;
-      padding: 0.75rem 1rem;
-      font-weight: 600;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .compare th:first-child { color: #999; }
-    .compare th:nth-child(2) { color: #7a6f5f; }
-    .compare th:nth-child(3) { color: #1e3a2f; }
-    .compare td {
-      padding: 0.65rem 1rem;
-      border-top: 1px solid #f0f0f0;
-    }
-    .compare tr:nth-child(even) td { background: #fafafa; }
-    .compare .label { color: #555; font-weight: 500; }
-
-    /* Tech */
-    .tech-cols {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-top: 1rem;
-    }
-    .tech-col h4 {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid;
-    }
-    .tech-col:first-child h4 { color: #7a6f5f; border-color: #d4c9b8; }
-    .tech-col:last-child h4 { color: #1e3a2f; border-color: #1e3a2f; }
-    .tech-item {
-      padding: 0.4rem 0;
-      font-size: 0.9rem;
-    }
-    .tech-item strong { color: #1a1a1a; }
-    .tech-item .cost { color: #999; font-size: 0.85rem; }
-
-    /* Wizard Steps */
-    .wizard-flow {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 0.5rem;
+      justify-content: space-between;
       margin: 1.5rem 0;
+      gap: 0.25rem;
     }
     .wiz-step {
       text-align: center;
-      padding: 1rem 0.5rem;
-      background: #f9faf9;
-      border-radius: 12px;
-      border: 1px solid #e5e5e5;
+      flex: 1;
     }
-    .wiz-step .wiz-icon {
-      font-size: 1.5rem;
-      margin-bottom: 0.4rem;
-    }
-    .wiz-step .wiz-label {
-      font-size: 0.75rem;
-      color: #555;
-      line-height: 1.3;
-    }
-    .wiz-arrow {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ccc;
-      font-size: 1.2rem;
-    }
+    .wiz-icon { font-size: 1.8rem; margin-bottom: 0.3rem; }
+    .wiz-label { font-size: 0.75rem; color: #555; line-height: 1.3; }
+    .wiz-arrow { color: #ccc; font-size: 1rem; flex-shrink: 0; }
 
-    /* Callout */
     .callout {
       background: #f4f7f5;
       border-radius: 12px;
@@ -295,62 +292,21 @@
       border-radius: 12px;
       margin: 1rem 0;
     }
-    .comp-empty .big {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #1e3a2f;
-      margin-bottom: 0.5rem;
-    }
-    .comp-empty p {
-      font-size: 0.9rem;
-      color: #666;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    .comp-list {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0;
-    }
+    .comp-empty .big { font-size: 1.4rem; font-weight: 700; color: #1e3a2f; margin-bottom: 0.5rem; }
+    .comp-empty p { font-size: 0.9rem; color: #666; max-width: 500px; margin: 0 auto; }
+    .comp-list { list-style: none; padding: 0; margin: 1rem 0; }
     .comp-list li {
-      padding: 0.4rem 0 0.4rem 1.5rem;
-      position: relative;
-      font-size: 0.9rem;
-      color: #666;
+      padding: 0.4rem 0 0.4rem 1.5rem; position: relative;
+      font-size: 0.9rem; color: #888;
     }
-    .comp-list li::before {
-      content: "✗";
-      position: absolute;
-      left: 0;
-      color: #ccc;
-      font-weight: 700;
-    }
+    .comp-list li::before { content: "\2715"; position: absolute; left: 0; color: #ccc; font-weight: 700; }
 
     /* Funnel */
-    .funnel-steps {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      margin: 1rem 0;
-    }
-    .f-step {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.75rem 0;
-    }
+    .f-step { display: flex; align-items: center; gap: 1rem; padding: 0.6rem 0; }
     .f-dot {
-      width: 32px;
-      height: 32px;
-      background: #1e3a2f;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      font-weight: 700;
-      flex-shrink: 0;
+      width: 30px; height: 30px; background: #1e3a2f; color: white; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700; flex-shrink: 0;
     }
     .f-text { font-size: 0.9rem; }
     .f-text strong { color: #1a1a1a; }
@@ -363,46 +319,25 @@
       padding: 2.5rem;
       margin: 2rem 0;
     }
-    .feedback h3 {
-      font-size: 1.1rem;
-      margin-bottom: 1.25rem;
-      color: #c8b88a;
-    }
-    .feedback ol {
-      padding-left: 1.25rem;
-    }
-    .feedback li {
-      padding: 0.4rem 0;
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
+    .feedback h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #c8b88a; }
+    .feedback ol { padding-left: 1.25rem; }
+    .feedback li { padding: 0.4rem 0; font-size: 0.9rem; opacity: 0.9; }
     .feedback li strong { color: #c8b88a; }
 
-    /* Footer */
     .foot {
-      text-align: center;
-      padding: 3rem 0;
-      color: #bbb;
-      font-size: 0.85rem;
+      text-align: center; padding: 3rem 0; color: #bbb; font-size: 0.85rem;
     }
-    .foot .brand {
-      font-size: 1rem;
-      color: #1e3a2f;
-      font-weight: 600;
-      display: block;
-      margin-bottom: 0.25rem;
-    }
+    .foot .brand { font-size: 1rem; color: #1e3a2f; font-weight: 600; display: block; margin-bottom: 0.25rem; }
 
     @media (max-width: 700px) {
-      .tiers, .modules-grid, .tech-cols { grid-template-columns: 1fr; }
-      .wizard-flow {
-        grid-template-columns: 1fr 1fr;
-      }
+      .ba-grid { grid-template-columns: 1fr; }
+      .tier-top { flex-direction: column; gap: 0.5rem; }
+      .tier-price { text-align: left; }
+      .wizard-flow { flex-wrap: wrap; }
       .wiz-arrow { display: none; }
       .hero { padding: 3rem 1.5rem 2rem; }
       .hero h1 { font-size: 1.4rem; }
       .hero .tagline { font-size: 1.2rem; }
-      .tier { padding: 1.5rem; }
     }
   </style>
 </head>
@@ -411,293 +346,277 @@
 <div class="hero">
   <h1>The Posy Academy</h1>
   <div class="tagline">Work less. Earn more. Live more.</div>
-  <div class="desc">Teaching creators how to use AI to make more money and get their time back.</div>
+  <div class="desc">An AI course built for TikTok Shop affiliates and content creators.</div>
 </div>
 
 <div class="page">
 
-  <!-- TWO TIERS -->
+  <!-- THE PROBLEM -->
   <div class="section">
-    <div class="section-label">The Two Tiers</div>
+    <div class="section-label">The Problem</div>
+    <div class="section-title">Creators are drowning in busy work.</div>
 
-    <div class="tiers">
-      <div class="tier">
-        <div class="tier-badge">Starter</div>
-        <h3>Earn more.</h3>
-        <div class="tier-tag">Learn to use AI yourself</div>
-        <div class="price">$497</div>
-        <div class="price-sub">or $97/mo × 6</div>
-        <div class="audience">For creators who want to use AI to land more brand deals and retainers — but have never gone beyond basic ChatGPT.</div>
+    <p>Most TikTok Shop affiliates spend their days buried in emails they forgot to answer, brand deals they let expire, Lark messages they missed, and receipts they shoved in a drawer. They're leaving thousands of dollars on the table every month — not because they're bad at what they do, but because there aren't enough hours in the day.</p>
+
+    <div class="ba-grid">
+      <div class="ba-card before">
+        <div class="ba-label">Without Posy</div>
         <ul>
-          <li>5 video modules on using AI for business</li>
-          <li>Pre-built Brand Deal Assistant (AI reads Gmail, drafts replies)</li>
-          <li>200+ copy-paste prompt library</li>
-          <li>Templates: media kit, rate card, pitch emails</li>
-          <li>Discord community</li>
-          <li>Lifetime updates</li>
+          <li>Brand emails sit unanswered for days</li>
+          <li>Retainer offers expire before you see them</li>
+          <li>Lark commission boosts gone before you notice</li>
+          <li>Tax season = panic and a shoebox of receipts</li>
+          <li>Hours spent on admin instead of creating content</li>
+          <li>No idea what you actually made last month</li>
         </ul>
       </div>
-
-      <div class="tier pro">
-        <div class="tier-badge">Pro</div>
-        <h3>Earn more AND work less.</h3>
-        <div class="tier-tag">AI employees that run your business</div>
-        <div class="price">$997</div>
-        <div class="price-sub">or $197/mo × 6</div>
-        <div class="audience">For creators who want AI bots working 24/7 — catching deals, tracking money, and monitoring Lark groups while they live their life.</div>
+      <div class="ba-card after">
+        <div class="ba-label">With Posy</div>
         <ul>
-          <li>6 video modules on building AI employees</li>
-          <li>3 pre-made AI bots deployed to your own server</li>
-          <li>Setup Wizard — everything installed from your phone</li>
-          <li>Telegram integration — bots message you directly</li>
-          <li>Money, Email, and Lark agents included</li>
-          <li>Build Your Own agent module</li>
-          <li>Priority Discord support</li>
+          <li>Every brand email analyzed with a draft reply ready</li>
+          <li>Retainer offers flagged the second they arrive</li>
+          <li>Lark boosts and samples caught automatically</li>
+          <li>Income and expenses tracked in real time</li>
+          <li>5 minutes a day (or 5 minutes a week with Pro)</li>
+          <li>Know your numbers, always</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <!-- MODULES -->
+  <!-- THE VALUE / MATH -->
   <div class="section">
-    <div class="section-label">What's Inside Each Tier</div>
+    <div class="section-label">The Math</div>
+    <div class="section-title">One deal pays for the entire course.</div>
 
-    <div class="modules-grid">
-      <div class="mod-col">
-        <div class="mod-col-label">Starter — 5 Modules</div>
-        <div class="mod-item">
-          <div class="mod-num">1</div>
-          <div class="mod-text">
-            <span class="mod-title">AI Foundations</span>
-            <span class="mod-desc">What AI is, Claude vs ChatGPT, Projects, memory</span>
-          </div>
+    <div class="scenario">
+      <div class="scenario-title">Missed retainer offer</div>
+      <p>A brand emails you a $1,500/month retainer offer on Tuesday. You don't see it until Friday. They already signed someone else.</p>
+      <p class="outcome">That's $18,000/year you lost because your inbox was too full.</p>
+    </div>
+
+    <div class="scenario">
+      <div class="scenario-title">Lowball negotiation</div>
+      <p>A brand offers you $200 for a video. You accept because you don't know your rate. Your AI assistant would have countered with $600 — and explained what they get for that price.</p>
+      <p class="outcome">That's $400 left on the table on a single deal.</p>
+    </div>
+
+    <div class="scenario">
+      <div class="scenario-title">Lark commission boost</div>
+      <p>A TikTok Shop seller posts a 24-hour 15% commission boost in Lark at 11pm. You're asleep. It expires before you wake up.</p>
+      <p class="outcome">Your Lark Agent would have caught it and messaged you on Telegram.</p>
+    </div>
+
+    <div class="math-box">
+      <div class="math-line">Starter costs $497. One retainer deal = $1,500+/month.</div>
+      <div class="math-line">Pro costs $997. Runs for ~$15/month after that.</div>
+      <div class="math-result">Both tiers pay for themselves with a single deal.</div>
+    </div>
+  </div>
+
+  <!-- STARTER TIER -->
+  <div class="section">
+    <div class="section-label">Tier One</div>
+
+    <div class="tier starter">
+      <div class="tier-top">
+        <div>
+          <div class="tier-badge">Starter</div>
+          <h3>Earn more.</h3>
+          <div class="tier-sub">Learn to use AI as your personal business assistant.</div>
         </div>
-        <div class="mod-item">
-          <div class="mod-num">2</div>
-          <div class="mod-text">
-            <span class="mod-title">Prompt Mastery</span>
-            <span class="mod-desc">Writing prompts that work, the 200+ library</span>
-          </div>
-        </div>
-        <div class="mod-item">
-          <div class="mod-num">3</div>
-          <div class="mod-text">
-            <span class="mod-title">Brand Deals & AI Email Assistant</span>
-            <span class="mod-desc">Rates, pitching, red flags + your AI email assistant</span>
-          </div>
-        </div>
-        <div class="mod-item">
-          <div class="mod-num">4</div>
-          <div class="mod-text">
-            <span class="mod-title">Money Simplified</span>
-            <span class="mod-desc">Income, expenses, deductions, quarterly estimates</span>
-          </div>
-        </div>
-        <div class="mod-item">
-          <div class="mod-num">5</div>
-          <div class="mod-text">
-            <span class="mod-title">AI for Life</span>
-            <span class="mod-desc">Meal planning, scheduling, content calendars</span>
-          </div>
+        <div class="tier-price">
+          <div class="amount">$497</div>
+          <div class="plan">or $97/mo x 6</div>
         </div>
       </div>
 
-      <div class="mod-col">
-        <div class="mod-col-label">Pro — 6 Modules</div>
+      <div class="value-story">You'll set up an AI assistant that connects to your Gmail, reads your brand emails, tells you which ones matter, drafts your replies, helps you negotiate better rates, and builds your pitch emails when you're ready to reach out to brands. You open it once a day for 5 minutes. It remembers everything about your business — your rates, your niche, your tone, your deal history.</div>
+
+      <div class="includes-label">What's included</div>
+      <ul>
+        <li>5 video modules teaching you how to use AI for every part of your business</li>
+        <li>Pre-built Brand Deal Assistant — reads your Gmail, drafts replies, negotiates for you</li>
+        <li>200+ copy-paste prompt library (scripts, captions, taxes, planning, pitches)</li>
+        <li>Templates: media kit, rate card, pitch emails, contract review checklist</li>
+        <li>Discord community with other creators using AI</li>
+        <li>Lifetime updates as AI tools evolve</li>
+      </ul>
+
+      <div class="mod-section">
+        <div class="mod-section-title">5 Modules</div>
         <div class="mod-item">
           <div class="mod-num">1</div>
-          <div class="mod-text">
-            <span class="mod-title">The AI Employee System</span>
-            <span class="mod-desc">Autonomous agents vs chatbots, how it works</span>
-          </div>
+          <div><span class="mod-title">AI Foundations</span><br><span class="mod-desc">What AI actually is, which tools to use, setting up Projects and memory so it remembers your business</span></div>
         </div>
         <div class="mod-item">
           <div class="mod-num">2</div>
-          <div class="mod-text">
-            <span class="mod-title">Setup & Install</span>
-            <span class="mod-desc">The Setup Wizard handles everything automatically</span>
-          </div>
+          <div><span class="mod-title">Prompt Mastery</span><br><span class="mod-desc">How to talk to AI so it gives you exactly what you need — plus the full 200+ prompt library</span></div>
         </div>
         <div class="mod-item">
           <div class="mod-num">3</div>
-          <div class="mod-text">
-            <span class="mod-title">Money Agent</span>
-            <span class="mod-desc">Tracks income/expenses, photo receipts, tax estimates</span>
-          </div>
+          <div><span class="mod-title">Brand Deals & Your AI Email Assistant</span><br><span class="mod-desc">Calculate your rates, approach brands, avoid red flags — then set up the AI that manages your deal inbox daily</span></div>
         </div>
         <div class="mod-item">
           <div class="mod-num">4</div>
-          <div class="mod-text">
-            <span class="mod-title">Email Agent</span>
-            <span class="mod-desc">Monitors Gmail 24/7, surfaces deals, drafts replies</span>
-          </div>
+          <div><span class="mod-title">Money Simplified</span><br><span class="mod-desc">Track income, log expenses, find deductions you're missing, estimate quarterly taxes — all through AI</span></div>
         </div>
         <div class="mod-item">
           <div class="mod-num">5</div>
-          <div class="mod-text">
-            <span class="mod-title">Lark Agent</span>
-            <span class="mod-desc">Monitors Lark groups, catches boosts and samples</span>
-          </div>
+          <div><span class="mod-title">AI for Life</span><br><span class="mod-desc">Meal planning, weekly scheduling, content calendars — the module where it clicks that AI works for everything</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRO TIER -->
+  <div class="section">
+    <div class="section-label">Tier Two</div>
+
+    <div class="tier pro">
+      <div class="tier-top">
+        <div>
+          <div class="tier-badge">Pro</div>
+          <h3>Earn more AND work less.</h3>
+          <div class="tier-sub">AI employees that run your business 24/7.</div>
+        </div>
+        <div class="tier-price">
+          <div class="amount">$997</div>
+          <div class="plan">or $197/mo x 6</div>
+        </div>
+      </div>
+
+      <div class="value-story">You get 3 AI employees deployed to your own cloud server. They run around the clock. Your Email Agent catches brand deals at 2am and messages you on Telegram with a draft reply. Your Money Agent tracks every dollar and tells you exactly what you owe in taxes. Your Lark Agent monitors TikTok Shop groups so you never miss a commission boost or sample window again. You manage everything from Telegram — the same app you already use. Total time: about 5 minutes a week.</div>
+
+      <div class="includes-label">What's included</div>
+      <ul>
+        <li>6 video modules on building and managing AI employees</li>
+        <li>3 pre-made AI bots deployed to your own server through our Setup Wizard</li>
+        <li>Email Agent — monitors Gmail 24/7, surfaces deals, drafts replies automatically</li>
+        <li>Money Agent — tracks income/expenses, photo receipts, quarterly tax estimates</li>
+        <li>Lark Agent — catches commission boosts, sample windows, trending products in real time</li>
+        <li>Setup Wizard — everything installed from your phone in under 5 minutes</li>
+        <li>Telegram integration — your bots message YOU, not the other way around</li>
+        <li>"Build Your Own" module to create custom AI employees for anything</li>
+        <li>Priority Discord support</li>
+      </ul>
+
+      <div class="mod-section">
+        <div class="mod-section-title">6 Modules</div>
+        <div class="mod-item">
+          <div class="mod-num">1</div>
+          <div><span class="mod-title">The AI Employee System</span><br><span class="mod-desc">How autonomous AI agents actually work — and why they're nothing like chatbots</span></div>
+        </div>
+        <div class="mod-item">
+          <div class="mod-num">2</div>
+          <div><span class="mod-title">Setup & Install</span><br><span class="mod-desc">Our Setup Wizard provisions everything from your phone — no coding, no terminal, no desktop needed</span></div>
+        </div>
+        <div class="mod-item">
+          <div class="mod-num">3</div>
+          <div><span class="mod-title">Money Agent</span><br><span class="mod-desc">Text your bot a receipt photo, it logs it. Ask "what did I make this month?" and get a real answer.</span></div>
+        </div>
+        <div class="mod-item">
+          <div class="mod-num">4</div>
+          <div><span class="mod-title">Email Agent</span><br><span class="mod-desc">Your inbox runs on autopilot. Deals surface to Telegram. You approve the reply. That's it.</span></div>
+        </div>
+        <div class="mod-item">
+          <div class="mod-num">5</div>
+          <div><span class="mod-title">Lark Agent</span><br><span class="mod-desc">Commission boosts, sample drops, trending alerts — caught in real time, even at 3am</span></div>
         </div>
         <div class="mod-item">
           <div class="mod-num">6</div>
-          <div class="mod-text">
-            <span class="mod-title">Build Your Own</span>
-            <span class="mod-desc">Create custom AI employees for anything</span>
-          </div>
+          <div><span class="mod-title">Build Your Own</span><br><span class="mod-desc">Create custom AI employees for content scheduling, customer service, analytics — whatever you need</span></div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- SIDE BY SIDE -->
-  <div class="section">
-    <div class="section-label">At a Glance</div>
-
-    <table class="compare">
-      <tr>
-        <th></th>
-        <th>Starter</th>
-        <th>Pro</th>
-      </tr>
-      <tr>
-        <td class="label">Price</td>
-        <td>$497</td>
-        <td>$997</td>
-      </tr>
-      <tr>
-        <td class="label">Payment plan</td>
-        <td>$97/mo × 6</td>
-        <td>$197/mo × 6</td>
-      </tr>
-      <tr>
-        <td class="label">What you learn</td>
-        <td>How to use AI tools</td>
-        <td>How to deploy AI employees</td>
-      </tr>
-      <tr>
-        <td class="label">Email handling</td>
-        <td>You ask AI to check email daily</td>
-        <td>Bot monitors email 24/7</td>
-      </tr>
-      <tr>
-        <td class="label">Time commitment</td>
-        <td>5–10 min/day</td>
-        <td>~5 min/week</td>
-      </tr>
-      <tr>
-        <td class="label">Ongoing cost</td>
-        <td>$0–20/mo</td>
-        <td>~$15–30/mo</td>
-      </tr>
-      <tr>
-        <td class="label">Requires coding</td>
-        <td>No</td>
-        <td>No</td>
-      </tr>
-    </table>
-  </div>
-
-  <!-- TECH STACK -->
-  <div class="section">
-    <div class="section-label">What Students Use</div>
-
-    <div class="tech-cols">
-      <div class="tech-col">
-        <h4>Starter</h4>
-        <div class="tech-item"><strong>Claude</strong> — the AI they talk to <span class="cost">(free or $20/mo)</span></div>
-        <div class="tech-item"><strong>Claude Projects</strong> — paste our system prompt, it remembers everything</div>
-        <div class="tech-item"><strong>Gmail</strong> — Claude reads email when asked</div>
-        <div class="callout"><strong>That's it.</strong> No code, no servers, no terminal.</div>
-      </div>
-      <div class="tech-col">
-        <h4>Pro</h4>
-        <div class="tech-item"><strong>Cloud server</strong> — runs bots 24/7 <span class="cost">($5–12/mo)</span></div>
-        <div class="tech-item"><strong>Anthropic API</strong> — the AI brain <span class="cost">($5–20/mo)</span></div>
-        <div class="tech-item"><strong>Telegram</strong> — how bots talk to you <span class="cost">(free)</span></div>
-        <div class="tech-item"><strong>Setup Wizard</strong> — installs everything from your phone</div>
-        <div class="callout"><strong>~$15–30/mo total.</strong> Less than one hour of a real VA.</div>
-      </div>
+    <div class="callout">
+      <strong>Pro runs for ~$15–30/month after purchase.</strong> That covers the cloud server and AI costs. Less than one hour of a human virtual assistant — and it never sleeps, never forgets, and never calls in sick.
     </div>
   </div>
 
   <!-- SETUP WIZARD -->
   <div class="section">
-    <div class="section-label">The Setup Wizard (Pro)</div>
+    <div class="section-label">How Pro Setup Works</div>
+    <div class="section-title">From zero to running AI employees in under 5 minutes.</div>
 
-    <p style="margin-bottom:1rem; color:#555;">Confirmed buildable. No dealbreakers. Works entirely from a phone or iPad.</p>
+    <p>Our Setup Wizard handles everything. Confirmed buildable. Works entirely from a phone or iPad.</p>
 
     <div class="wizard-flow">
       <div class="wiz-step">
         <div class="wiz-icon">🔑</div>
-        <div class="wiz-label">Paste API keys</div>
+        <div class="wiz-label">Paste<br>API keys</div>
       </div>
+      <div class="wiz-arrow">&#8594;</div>
       <div class="wiz-step">
         <div class="wiz-icon">💬</div>
-        <div class="wiz-label">Create Telegram bot</div>
+        <div class="wiz-label">Create<br>Telegram bot</div>
       </div>
+      <div class="wiz-arrow">&#8594;</div>
       <div class="wiz-step">
         <div class="wiz-icon">🤖</div>
-        <div class="wiz-label">Pick your agents</div>
+        <div class="wiz-label">Pick your<br>agents</div>
       </div>
+      <div class="wiz-arrow">&#8594;</div>
       <div class="wiz-step">
         <div class="wiz-icon">🚀</div>
-        <div class="wiz-label">Tap deploy</div>
+        <div class="wiz-label">Tap<br>deploy</div>
       </div>
+      <div class="wiz-arrow">&#8594;</div>
       <div class="wiz-step">
         <div class="wiz-icon">✅</div>
-        <div class="wiz-label">Bot messages you in 2 min</div>
+        <div class="wiz-label">Bot messages<br>you in 2 min</div>
       </div>
     </div>
 
-    <div class="callout">
-      <strong>No terminal. No coding. No desktop required.</strong> Server auto-provisions on the student's own cloud account. Bots start running immediately. Every competitor in this space requires a desktop and terminal — we're the only mobile-first option.
-    </div>
+    <p><strong>After setup:</strong> Everything happens in Telegram. Your bots message you — you don't have to go find them. If a server ever crashes, it auto-restarts. You can pause your agents and billing with one tap.</p>
 
-    <p style="margin-top:1rem; font-size:0.9rem; color:#555;"><strong>After setup:</strong> Everything happens in Telegram. Email Agent monitors Gmail. Lark Agent monitors TikTok Shop groups. Money Agent accepts messages and photo receipts. If a server crashes, it auto-restarts. Students can pause their agents (and billing) with one tap.</p>
+    <div class="callout">
+      <strong>Every competitor in this space requires a desktop and a terminal.</strong> We're the only option that's truly mobile-first — because our students live on their phones.
+    </div>
   </div>
 
   <!-- COMPETITION -->
   <div class="section">
-    <div class="section-label">Competitive Landscape</div>
+    <div class="section-label">Market</div>
+    <div class="section-title">We'd be first to market.</div>
 
     <div class="comp-empty">
       <div class="big">There is no competition.</div>
-      <p>Every AI tool in the TikTok Shop space is built for brands and sellers — not creators.</p>
+      <p>Every AI tool in the TikTok Shop space is built for brands and sellers — not for creators.</p>
     </div>
 
     <ul class="comp-list">
-      <li>Euka, Stormy, Cruva, Agentative — all brand-side, not for creators</li>
+      <li>Euka, Stormy, Cruva, Agentative — all brand-side tools</li>
       <li>Sintra AI ($97/mo) — chatbot, not autonomous agents</li>
-      <li>Poppy AI — planning tool, not automation</li>
+      <li>Poppy AI — planning tool, not real automation</li>
     </ul>
 
-    <p style="font-size:0.95rem; margin-top:1rem;"><strong>Nobody is teaching creators to build AI systems. Nobody is selling pre-made AI employees for affiliates. This would be first to market.</strong></p>
+    <p><strong>Nobody is teaching creators to use AI this way. Nobody is selling pre-made AI employees for affiliates. The creator side of this market is completely wide open.</strong></p>
   </div>
 
   <!-- FUNNEL -->
   <div class="section">
-    <div class="section-label">The Funnel</div>
+    <div class="section-label">Sales Funnel</div>
+    <div class="section-title">How students find us and buy.</div>
 
-    <div class="funnel-steps">
-      <div class="f-step"><div class="f-dot">1</div><div class="f-text"><strong>Traffic</strong> — TikTok content, Pinterest, blog</div></div>
-      <div class="f-step"><div class="f-dot">2</div><div class="f-text"><strong>Lead magnet</strong> — AI Readiness Scorecard Quiz (already built)</div></div>
-      <div class="f-step"><div class="f-dot">3</div><div class="f-text"><strong>Email nurture</strong> — 5–7 email sequence</div></div>
-      <div class="f-step"><div class="f-dot">4</div><div class="f-text"><strong>Masterclass</strong> — Free 35-min video on AI employees</div></div>
-      <div class="f-step"><div class="f-dot">5</div><div class="f-text"><strong>Sales page</strong> — Two-tier offer with comparison</div></div>
-      <div class="f-step"><div class="f-dot">6</div><div class="f-text"><strong>Purchase</strong> — Stripe checkout with payment plans</div></div>
-      <div class="f-step"><div class="f-dot">7</div><div class="f-text"><strong>Delivery</strong> — Custom student portal</div></div>
-    </div>
+    <div class="f-step"><div class="f-dot">1</div><div class="f-text"><strong>Traffic</strong> — TikTok content, Pinterest, blog</div></div>
+    <div class="f-step"><div class="f-dot">2</div><div class="f-text"><strong>Lead magnet</strong> — AI Readiness Scorecard Quiz (already built)</div></div>
+    <div class="f-step"><div class="f-dot">3</div><div class="f-text"><strong>Email nurture</strong> — 5–7 email sequence showing what AI can do</div></div>
+    <div class="f-step"><div class="f-dot">4</div><div class="f-text"><strong>Masterclass</strong> — Free 35-min video on building AI employees</div></div>
+    <div class="f-step"><div class="f-dot">5</div><div class="f-text"><strong>Sales page</strong> — Two-tier comparison with real examples</div></div>
+    <div class="f-step"><div class="f-dot">6</div><div class="f-text"><strong>Checkout</strong> — Stripe with payment plan options</div></div>
+    <div class="f-step"><div class="f-dot">7</div><div class="f-text"><strong>Delivery</strong> — Custom student portal, immediate access</div></div>
   </div>
 
   <!-- FEEDBACK -->
   <div class="feedback">
     <h3>Looking For Your Input On:</h3>
     <ol>
-      <li><strong>The two-tier split</strong> — Does Starter feel like enough value at $497? Does Pro feel worth $997?</li>
-      <li><strong>The modules</strong> — Anything missing? Anything that doesn't belong?</li>
-      <li><strong>The pricing</strong> — Too high? Too low? Right range?</li>
-      <li><strong>The brand deals angle</strong> — You said email/retainers is the main sell. Does this put it front and center enough?</li>
+      <li><strong>The two-tier split</strong> — Does Starter feel like real value at $497? Does Pro justify $997?</li>
+      <li><strong>The modules</strong> — Anything missing? Anything that shouldn't be there?</li>
+      <li><strong>The pricing</strong> — Too high? Too low? Just right?</li>
+      <li><strong>The brand deals angle</strong> — You said email/retainers is the main sell. Does this put it front and center?</li>
       <li><strong>Anything else</strong> — What am I not thinking about?</li>
     </ol>
   </div>
