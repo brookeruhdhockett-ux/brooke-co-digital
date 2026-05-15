@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Posy Academy — Business Model Overview</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Georgia', serif;
+      background: #faf9f7;
+      color: #2d2d2d;
+      line-height: 1.7;
+      padding: 0;
+    }
+    .header {
+      background: linear-gradient(135deg, #3d5a4c, #2a3f34);
+      color: white;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    .header .subtitle {
+      font-size: 1rem;
+      opacity: 0.8;
+      font-style: italic;
+    }
+    .header .date {
+      font-size: 0.85rem;
+      opacity: 0.6;
+      margin-top: 0.5rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    .intro {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #e0ddd8;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      color: #3d5a4c;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #d4c9b8;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+    }
+    h3 {
+      font-size: 1.15rem;
+      color: #2d2d2d;
+      margin: 1.5rem 0 0.75rem;
+      font-weight: 600;
+    }
+    p { margin-bottom: 1rem; }
+    .tagline {
+      text-align: center;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      background: #f0ede8;
+      border-radius: 8px;
+    }
+    .tagline .main {
+      font-size: 1.6rem;
+      color: #3d5a4c;
+      font-style: italic;
+      font-weight: 400;
+    }
+    .tagline .sub {
+      font-size: 1rem;
+      color: #777;
+      margin-top: 0.5rem;
+    }
+    .tier-card {
+      background: white;
+      border: 1px solid #e0ddd8;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .tier-card.pro {
+      border-color: #3d5a4c;
+      border-width: 2px;
+    }
+    .tier-name {
+      font-size: 1.3rem;
+      color: #3d5a4c;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    .tier-tagline {
+      font-style: italic;
+      color: #888;
+      margin-bottom: 0.25rem;
+    }
+    .tier-price {
+      font-size: 1.4rem;
+      color: #2d2d2d;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .tier-price .payment {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #888;
+    }
+    .tier-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+    .tier-card ul li {
+      padding: 0.4rem 0 0.4rem 1.5rem;
+      position: relative;
+      font-size: 0.95rem;
+    }
+    .tier-card ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #3d5a4c;
+      font-weight: 700;
+    }
+    .hook {
+      background: #f7f5f0;
+      border-left: 3px solid #d4c9b8;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-style: italic;
+      color: #555;
+      font-size: 0.95rem;
+    }
+    .module-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+    .module-list li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #f0ede8;
+      font-size: 0.95rem;
+    }
+    .module-list li:last-child { border-bottom: none; }
+    .module-num {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      background: #3d5a4c;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 28px;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+      font-weight: 600;
+    }
+    .module-title { font-weight: 600; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    th {
+      background: #3d5a4c;
+      color: white;
+      padding: 0.75rem;
+      text-align: left;
+      font-weight: 500;
+    }
+    td {
+      padding: 0.65rem 0.75rem;
+      border-bottom: 1px solid #e0ddd8;
+    }
+    tr:nth-child(even) td { background: #faf9f7; }
+    .wizard-steps {
+      list-style: none;
+      padding: 0;
+      counter-reset: step;
+    }
+    .wizard-steps li {
+      padding: 0.75rem 0 0.75rem 3rem;
+      position: relative;
+      border-left: 2px solid #e0ddd8;
+      margin-left: 1rem;
+    }
+    .wizard-steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: -14px;
+      width: 26px;
+      height: 26px;
+      background: #3d5a4c;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 26px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .wizard-steps li:last-child { border-left-color: transparent; }
+    .highlight-box {
+      background: #e8f0eb;
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    .highlight-box strong { color: #3d5a4c; }
+    .no-comp {
+      text-align: center;
+      font-size: 1.3rem;
+      color: #3d5a4c;
+      font-weight: 600;
+      padding: 1.5rem;
+      background: #e8f0eb;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+    .timeline {
+      list-style: none;
+      padding: 0;
+    }
+    .timeline li {
+      padding: 0.75rem 0 0.75rem 1.5rem;
+      border-left: 2px solid #d4c9b8;
+      position: relative;
+      margin-left: 0.5rem;
+    }
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: 1rem;
+      width: 10px;
+      height: 10px;
+      background: #3d5a4c;
+      border-radius: 50%;
+    }
+    .timeline .when {
+      font-weight: 600;
+      color: #3d5a4c;
+    }
+    .funnel-step {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 0;
+    }
+    .funnel-num {
+      width: 30px;
+      height: 30px;
+      background: #3d5a4c;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      flex-shrink: 0;
+      margin-right: 1rem;
+    }
+    .feedback-section {
+      background: white;
+      border: 2px solid #3d5a4c;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    .feedback-section h2 {
+      border-bottom: none;
+      text-align: center;
+      padding-bottom: 0;
+    }
+    .feedback-section ol {
+      padding-left: 1.25rem;
+    }
+    .feedback-section li {
+      padding: 0.5rem 0;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      color: #999;
+      font-style: italic;
+      font-size: 1.1rem;
+      border-top: 1px solid #e0ddd8;
+      margin-top: 2rem;
+    }
+    .footer .brand {
+      color: #3d5a4c;
+      font-weight: 600;
+      font-style: normal;
+    }
+    @media (max-width: 600px) {
+      .header h1 { font-size: 1.5rem; }
+      .tier-card { padding: 1.25rem; }
+      .container { padding: 1.25rem 1rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>The Posy Academy</h1>
+  <div class="subtitle">Business Model Overview</div>
+  <div class="date">For Chris's Review — May 15, 2026</div>
+</div>
+
+<div class="container">
+
+  <div class="intro">
+    Hey Chris — here's the full picture of what I'm building based on our conversation today. Not a proposal, just want your eyes on it. Tell me what's smart, what's dumb, and what I'm missing.
+  </div>
+
+  <!-- ONE-LINER -->
+  <div class="tagline">
+    <div class="main">"Work less. Earn more. Live more."</div>
+    <div class="sub">Teaching TikTok Shop affiliates how to use AI to make more money and get their time back.</div>
+  </div>
+
+  <!-- STARTER TIER -->
+  <section>
+    <h2>Two Tiers</h2>
+
+    <div class="tier-card">
+      <div class="tier-name">Starter</div>
+      <div class="tier-tagline">"Earn more."</div>
+      <div class="tier-price">$497 <span class="payment">or $97/mo × 6</span></div>
+
+      <p><strong>Who it's for:</strong> Creators who want to use AI but have never gone beyond basic ChatGPT. They want to make more money from brand deals and retainers but don't have the tools or systems to do it.</p>
+
+      <ul>
+        <li>5 modules of video lessons + resources</li>
+        <li>Pre-built Brand Deal Assistant (AI reads your Gmail, drafts replies)</li>
+        <li>200+ copy-paste prompt library</li>
+        <li>Templates: media kit, rate card, pitch emails, contract checklist</li>
+        <li>Discord community access</li>
+        <li>Lifetime updates</li>
+      </ul>
+
+      <h3>The 5 Modules</h3>
+      <ol class="module-list">
+        <li><span class="module-num">1</span> <span class="module-title">AI Foundations</span> — What AI is, Claude vs ChatGPT, Projects, memory</li>
+        <li><span class="module-num">2</span> <span class="module-title">Prompt Mastery</span> — Writing prompts that work, the 200+ library, custom prompts</li>
+        <li><span class="module-num">3</span> <span class="module-title">Brand Deals & AI Email Assistant</span> — Rates, pitching, red flags + setting up your AI email assistant</li>
+        <li><span class="module-num">4</span> <span class="module-title">Money Simplified</span> — Income/expenses, tax deductions, receipts, quarterly estimates</li>
+        <li><span class="module-num">5</span> <span class="module-title">AI for Life</span> — Meal planning, scheduling, content calendars, the "this works for everything" module</li>
+      </ol>
+
+      <p><strong>Time commitment:</strong> ~5 hours/week during the course, then 5–10 min/day using the email assistant</p>
+
+      <div class="hook">"You're leaving money on the table every day. Brand emails sit in your inbox for a week. Retainer offers expire. You forget to follow up. Your AI assistant catches every opportunity and writes the reply — you just hit send."</div>
+    </div>
+
+    <!-- PRO TIER -->
+    <div class="tier-card pro">
+      <div class="tier-name">Pro</div>
+      <div class="tier-tagline">"Earn more AND work less."</div>
+      <div class="tier-price">$997 <span class="payment">or $197/mo × 6</span></div>
+
+      <p><strong>Who it's for:</strong> Creators who want AI employees that run their business while they live their life. They don't want to open Claude every day — they want bots that work 24/7 and message them on Telegram.</p>
+
+      <ul>
+        <li>Everything in Starter (all 5 modules + resources)</li>
+        <li>6 additional Pro modules</li>
+        <li>3 pre-made AI employee bots deployed to their own cloud server</li>
+        <li>Telegram integration — bots message them directly</li>
+        <li>Priority Discord support</li>
+      </ul>
+
+      <h3>The 6 Pro Modules</h3>
+      <ol class="module-list">
+        <li><span class="module-num">6</span> <span class="module-title">The AI Employee System</span> — What autonomous agents are, how they differ from chatbots</li>
+        <li><span class="module-num">7</span> <span class="module-title">Setup & Install</span> — Our web-based Setup Wizard does everything automatically</li>
+        <li><span class="module-num">8</span> <span class="module-title">Money Agent</span> — Tracks income/expenses via Telegram, photo receipts, tax estimates</li>
+        <li><span class="module-num">9</span> <span class="module-title">Email Agent</span> — Monitors Gmail 24/7, surfaces deals, drafts replies, Telegram alerts</li>
+        <li><span class="module-num">10</span> <span class="module-title">Lark Agent</span> — Monitors TikTok Shop Lark groups, catches boosts and sample windows</li>
+        <li><span class="module-num">11</span> <span class="module-title">Build Your Own</span> — Create custom AI employees for anything</li>
+      </ol>
+
+      <p><strong>Time commitment:</strong> ~5 min/week to manage the bots</p>
+
+      <div class="hook">"I spend 5 minutes a week to make an extra $5,000 a month. My AI employees catch the deals, track the money, and monitor the Lark groups while I'm at my kid's soccer game."</div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section>
+    <h2>Pricing Rationale</h2>
+
+    <table>
+      <tr>
+        <th></th>
+        <th>Starter</th>
+        <th>Pro</th>
+      </tr>
+      <tr>
+        <td><strong>Price</strong></td>
+        <td>$497</td>
+        <td>$997</td>
+      </tr>
+      <tr>
+        <td><strong>Payment plan</strong></td>
+        <td>$97/mo × 6</td>
+        <td>$197/mo × 6</td>
+      </tr>
+      <tr>
+        <td><strong>What they pay for</strong></td>
+        <td>Knowledge + tools</td>
+        <td>Knowledge + tools + done-for-you automation</td>
+      </tr>
+      <tr>
+        <td><strong>Ongoing cost</strong></td>
+        <td>$0–20/mo</td>
+        <td>~$15–30/mo</td>
+      </tr>
+      <tr>
+        <td><strong>Time saved</strong></td>
+        <td>Hours/week on emails</td>
+        <td>Almost everything except content creation</td>
+      </tr>
+    </table>
+
+    <div class="highlight-box">
+      <strong>Why these prices work:</strong> $497 is impulse-buy territory for someone making money on TikTok Shop — one retainer deal pays for it. $997 is mid-range for automation. Payment plans boost conversions 15–30%. Both tiers pay for themselves with a single deal.
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section>
+    <h2>What Students Actually Use</h2>
+
+    <h3>Starter Students</h3>
+    <ul style="list-style:none; padding:0;">
+      <li style="padding:0.3rem 0;">🔹 <strong>Claude</strong> (free or $20/mo Pro) — the AI they talk to</li>
+      <li style="padding:0.3rem 0;">🔹 <strong>Claude Projects</strong> — where they paste the system prompt we give them</li>
+      <li style="padding:0.3rem 0;">🔹 <strong>Gmail integration</strong> — Claude reads their email when asked</li>
+      <li style="padding:0.3rem 0;">🔹 <strong>That's it.</strong> No code, no servers, no terminal.</li>
+    </ul>
+
+    <h3>Pro Students</h3>
+    <ul style="list-style:none; padding:0;">
+      <li style="padding:0.3rem 0;">🔹 <strong>OpenClaw</strong> (open source, free) — AI agent gateway</li>
+      <li style="padding:0.3rem 0;">🔹 <strong>Cloud server</strong> ($5–12/mo) — runs bots 24/7</li>
+      <li style="padding:0.3rem 0;">🔹 <strong>Anthropic API</strong> ($5–20/mo) — the AI brain</li>
+      <li style="padding:0.3rem 0;">🔹 <strong>Telegram</strong> (free) — how bots communicate</li>
+      <li style="padding:0.3rem 0;">🔹 <strong>Posy Setup Wizard</strong> — sets up everything automatically</li>
+    </ul>
+
+    <div class="highlight-box">
+      <strong>Total monthly cost for Pro students: ~$15–30/mo.</strong> "Less than a streaming subscription, and it makes you money."
+    </div>
+  </section>
+
+  <!-- SETUP WIZARD -->
+  <section>
+    <h2>The Setup Wizard</h2>
+    <p>Confirmed buildable in 2–3 weeks. No dealbreakers. Feasibility report complete.</p>
+
+    <h3>What the student experiences (works on phone/iPad):</h3>
+    <ol class="wizard-steps">
+      <li>Open the Posy Setup Wizard in their browser</li>
+      <li>Create a Hetzner cloud account (~$5/mo)</li>
+      <li>Paste their Hetzner API token</li>
+      <li>Paste their Anthropic API key (with $20 spending cap)</li>
+      <li>Create a Telegram bot and paste the token</li>
+      <li>Pick which AI employees: Money, Email, Lark</li>
+      <li>Tap <strong>"Deploy"</strong></li>
+      <li>Server auto-provisions on their account (~60 seconds)</li>
+      <li>Everything pre-installed, daemon starts</li>
+      <li><strong>Bot messages them on Telegram within 2 minutes. Done.</strong></li>
+    </ol>
+
+    <div class="highlight-box">
+      <strong>No terminal. No coding. No SSH. No desktop required.</strong> The entire setup works from a phone. Every competitor requires a desktop and terminal — we're the only mobile-first option.
+    </div>
+
+    <h3>After setup:</h3>
+    <ul style="list-style:none; padding:0;">
+      <li style="padding:0.3rem 0;">✓ 100% Telegram — talk to bots in the same app they already use</li>
+      <li style="padding:0.3rem 0;">✓ Email Agent monitors Gmail via MCP (secure Google protocol)</li>
+      <li style="padding:0.3rem 0;">✓ Lark Agent connects via official plugin</li>
+      <li style="padding:0.3rem 0;">✓ Server crashes → auto-restarts, we monitor 24/7</li>
+      <li style="padding:0.3rem 0;">✓ "Pause your agents" button stops server and billing instantly</li>
+    </ul>
+  </section>
+
+  <!-- REVENUE -->
+  <section>
+    <h2>Revenue Projections (Conservative)</h2>
+
+    <h3>First 6 months after public launch:</h3>
+    <table>
+      <tr>
+        <th>Scenario</th>
+        <th>Starter</th>
+        <th>Pro</th>
+        <th>Revenue</th>
+      </tr>
+      <tr>
+        <td>Slow start</td>
+        <td>50</td>
+        <td>20</td>
+        <td><strong>$44,850</strong></td>
+      </tr>
+      <tr>
+        <td>Moderate</td>
+        <td>100</td>
+        <td>40</td>
+        <td><strong>$89,500</strong></td>
+      </tr>
+      <tr>
+        <td>Strong</td>
+        <td>200</td>
+        <td>80</td>
+        <td><strong>$179,200</strong></td>
+      </tr>
+    </table>
+
+    <h3>Ongoing evergreen funnel (monthly):</h3>
+    <ul style="list-style:none; padding:0;">
+      <li style="padding:0.3rem 0;">15–25 Starter/mo = $7,500–12,500</li>
+      <li style="padding:0.3rem 0;">5–10 Pro/mo = $5,000–10,000</li>
+      <li style="padding:0.3rem 0;"><strong>Monthly recurring: $12,500–22,500</strong></li>
+    </ul>
+  </section>
+
+  <!-- COMPETITION -->
+  <section>
+    <h2>Competitive Landscape</h2>
+
+    <div class="no-comp">There is no competition.</div>
+
+    <p>Every AI tool in the TikTok Shop space is brand-side:</p>
+    <ul style="padding-left:1.25rem;">
+      <li>Euka, Stormy, Cruva, Agentative — all for brands/sellers, not creators</li>
+      <li>Sintra AI ($97/mo) — glorified chatbot, not autonomous agents</li>
+      <li>Poppy AI — planning canvas, not automation</li>
+    </ul>
+    <p><strong>Nobody is teaching creators to build AI systems. Nobody is selling pre-made AI employees for affiliates. We'd be first to market.</strong></p>
+  </section>
+
+  <!-- TIMELINE -->
+  <section>
+    <h2>Launch Timeline</h2>
+    <ul class="timeline">
+      <li><span class="when">Now – June:</span> Build freebies, grow email list, build agent templates</li>
+      <li><span class="when">Mid-June:</span> Beta launch with Live Academy members (6-week live cohort)</li>
+      <li><span class="when">July:</span> Beta feedback, iterate, record final videos</li>
+      <li><span class="when">August:</span> Polish into evergreen course</li>
+      <li><span class="when">Sept–Oct:</span> Public launch</li>
+      <li><span class="when">Nov+:</span> Evergreen funnel running, ongoing updates</li>
+    </ul>
+  </section>
+
+  <!-- FUNNEL -->
+  <section>
+    <h2>The Funnel</h2>
+    <div class="funnel-step"><div class="funnel-num">1</div><div><strong>Traffic:</strong> TikTok content, Pinterest, blog</div></div>
+    <div class="funnel-step"><div class="funnel-num">2</div><div><strong>Lead magnet:</strong> AI Readiness Scorecard Quiz (already built)</div></div>
+    <div class="funnel-step"><div class="funnel-num">3</div><div><strong>Email nurture:</strong> 5–7 email sequence</div></div>
+    <div class="funnel-step"><div class="funnel-num">4</div><div><strong>Masterclass:</strong> Free 35-min video</div></div>
+    <div class="funnel-step"><div class="funnel-num">5</div><div><strong>Sales page:</strong> Two-tier offer with comparison</div></div>
+    <div class="funnel-step"><div class="funnel-num">6</div><div><strong>Purchase:</strong> Stripe checkout with payment plans</div></div>
+    <div class="funnel-step"><div class="funnel-num">7</div><div><strong>Delivery:</strong> Custom student portal</div></div>
+  </section>
+
+  <!-- FEEDBACK -->
+  <div class="feedback-section">
+    <h2>What I Need From You</h2>
+    <p>Honest feedback on:</p>
+    <ol>
+      <li><strong>The two-tier split</strong> — Does Starter feel like enough value at $497? Does Pro feel worth the jump to $997?</li>
+      <li><strong>The modules</strong> — Anything missing? Anything that doesn't belong?</li>
+      <li><strong>The pricing</strong> — Too high? Too low? Right range?</li>
+      <li><strong>The beta plan</strong> — 6 weeks with LA members. Good idea? Enough time?</li>
+      <li><strong>The brand deals angle</strong> — You said email/retainers is the main sell. Does this put it front and center enough?</li>
+      <li><strong>Anything else</strong> — What am I not thinking about?</li>
+    </ol>
+    <p style="margin-top:1rem; color:#777;">No rush. Just want your brain on this before I go heads-down building.</p>
+  </div>
+
+  <div class="footer">
+    <span class="brand">The Posy Academy</span><br>
+    Work less. Earn more. Live more.
+  </div>
+
+</div>
+
+</body>
+</html>
