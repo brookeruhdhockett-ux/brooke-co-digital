@@ -380,6 +380,34 @@ section{padding:90px 0}
   .price-card.featured:hover{transform:translateY(-4px)}
 }
 
+/* hero stat */
+.hero-stat{
+  display:inline-block;margin-top:20px;padding:10px 24px;
+  background:rgba(143,166,138,.1);border-radius:50px;
+  font-size:.82rem;font-weight:500;color:var(--sage-dark);letter-spacing:.02em;
+}
+.hero-stat strong{font-weight:700}
+
+/* first week timeline */
+.timeline-section{background:var(--white)}
+.timeline{max-width:640px;margin:0 auto;position:relative;padding-left:40px}
+.timeline::before{
+  content:'';position:absolute;left:15px;top:0;bottom:0;width:2px;
+  background:linear-gradient(180deg,var(--sage-light) 0%,var(--sage) 100%);
+}
+.tl-day{position:relative;padding-bottom:28px}
+.tl-day:last-child{padding-bottom:0}
+.tl-dot{
+  position:absolute;left:-33px;top:2px;width:18px;height:18px;
+  border-radius:50%;background:var(--sage);border:3px solid var(--white);
+  box-shadow:0 0 0 2px var(--sage-light);
+}
+.tl-day.highlight .tl-dot{background:var(--rose);box-shadow:0 0 0 2px var(--blush)}
+.tl-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:4px}
+.tl-day.highlight .tl-label{color:var(--rose)}
+.tl-title{font-size:.95rem;font-weight:600;color:var(--charcoal);margin-bottom:4px}
+.tl-desc{font-size:.84rem;color:var(--text);line-height:1.65}
+
 /* FAQ */
 .faq-section{background:var(--white)}
 .faq-list{max-width:680px;margin:0 auto}
@@ -472,6 +500,7 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
     <a href="posy-ai-scorecard.html" class="btn btn-primary btn-lg">Take the Free Quiz</a>
     <a href="#paths" class="btn btn-secondary btn-lg">See How It Works</a>
   </div>
+  <div class="hero-stat reveal"><strong>8 AI employees. $0 payroll.</strong> Built by one creator with zero coding experience.</div>
 </section>
 
 <!-- IS THIS YOU -->
@@ -776,6 +805,52 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
     <div class="quote-card reveal">
       <p>"I spend 5 minutes a week managing my AI. It makes me an extra $5,000 a month."</p>
       <div class="quote-sub">This is what the Pro tier builds for you.</div>
+    </div>
+  </div>
+</section>
+
+<!-- YOUR FIRST WEEK -->
+<section class="timeline-section section-padding">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label reveal">What happens next</p>
+      <h2 class="section-title reveal">Your first week inside</h2>
+      <p class="section-sub mx-auto reveal">You're not going to wait weeks to see results. Here's what your first 7 days actually look like.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-day reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-label">Day 1</div>
+        <div class="tl-title">Set up Claude and meet your first AI project</div>
+        <div class="tl-desc">You'll have Claude open, your first Project created, and AI that already knows your business. Takes about 20 minutes. You'll wonder why you didn't do this sooner.</div>
+      </div>
+      <div class="tl-day reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-label">Day 2-3</div>
+        <div class="tl-title">Master the prompts that actually work</div>
+        <div class="tl-desc">Learn the difference between "meh" AI responses and ones that blow your mind. Get access to the 200+ prompt library and start using them immediately.</div>
+      </div>
+      <div class="tl-day reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-label">Day 4-5</div>
+        <div class="tl-title">Your AI email assistant is reading your inbox</div>
+        <div class="tl-desc">Brand deal emails getting flagged, replies drafted, follow-ups tracked. You open Claude, say "check my emails," and it does everything. Five minutes.</div>
+      </div>
+      <div class="tl-day reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-label">Day 6-7</div>
+        <div class="tl-title">Money tracking on autopilot</div>
+        <div class="tl-desc">Income logged, expenses categorized, tax estimates updating in real time. No more spreadsheet panic. No more "I'll do it later."</div>
+      </div>
+      <div class="tl-day highlight reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-label">Week 2+</div>
+        <div class="tl-title">You start getting your life back</div>
+        <div class="tl-desc">Meal planning, content calendars, scheduling — AI handles the stuff that used to eat your evenings. You're making more money and spending less time. This is the part where it clicks.</div>
+      </div>
+    </div>
+    <div class="text-center reveal" style="margin-top:40px">
+      <p style="font-size:.88rem;color:var(--text);font-style:italic;max-width:480px;margin:0 auto">That's just Starter. Pro students? By the end of week 2, they have AI employees running 24/7 — handling things while they sleep.</p>
     </div>
   </div>
 </section>
