@@ -138,6 +138,92 @@ section{padding:90px 0}
 .mx-auto{margin-left:auto;margin-right:auto}
 .divider{width:44px;height:2px;background:var(--sage);border-radius:2px;margin:14px auto 0}
 
+/* before / after org chart */
+.orgchart-section{background:var(--cream-warm)}
+.orgchart-tabs{display:flex;justify-content:center;gap:12px;margin-bottom:40px}
+.orgchart-tab{
+  padding:12px 32px;border-radius:50px;font-family:'DM Sans',sans-serif;
+  font-weight:600;font-size:.88rem;cursor:pointer;border:2px solid transparent;
+  transition:all .3s ease;background:var(--white);color:var(--text);
+}
+.orgchart-tab.active-before{background:var(--blush);color:var(--white);border-color:var(--blush)}
+.orgchart-tab.active-after{background:var(--sage);color:var(--white);border-color:var(--sage)}
+.orgchart-panel{display:none}
+.orgchart-panel.active{display:block}
+
+.org-tree{display:flex;flex-direction:column;align-items:center;gap:0}
+.org-you{
+  background:var(--white);border-radius:var(--radius-lg);padding:20px 32px;
+  text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.05);position:relative;
+  border:2px solid var(--sage-light);margin-bottom:0;
+}
+.org-you .org-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:var(--charcoal)}
+.org-you .org-subtitle{font-size:.78rem;color:var(--text-light)}
+
+.org-connector{width:2px;height:32px;background:var(--sage-light);margin:0 auto}
+.org-branch-line{
+  width:80%;max-width:700px;height:2px;background:var(--sage-light);margin:0 auto;position:relative;
+}
+
+.org-nodes{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:16px;max-width:800px;margin:0 auto;padding-top:0;
+}
+.org-node{
+  background:var(--white);border-radius:var(--radius);padding:16px 14px;
+  text-align:center;position:relative;border:1px solid rgba(0,0,0,.04);
+  box-shadow:0 2px 12px rgba(0,0,0,.03);
+}
+.org-node::before{
+  content:'';position:absolute;top:-17px;left:50%;width:2px;height:16px;
+  background:var(--sage-light);transform:translateX(-50%);
+}
+.org-node-icon{font-size:1.4rem;margin-bottom:6px}
+.org-node-title{font-size:.82rem;font-weight:600;color:var(--charcoal);margin-bottom:4px}
+.org-node-cost{font-size:.72rem;font-weight:600;color:var(--rose-dark);margin-bottom:6px}
+.org-node-tasks{list-style:none;font-size:.7rem;color:var(--text-light);line-height:1.5}
+.org-node-tasks li{padding:1px 0}
+
+/* before-specific */
+.org-node.problem{border-left:3px solid var(--blush)}
+.org-node.problem .org-node-cost{color:var(--rose-dark)}
+
+/* after-specific */
+.org-node.ai-agent{border-left:3px solid var(--sage)}
+.org-node.ai-agent .org-node-cost{color:var(--sage-dark)}
+
+.org-cracks{
+  max-width:600px;margin:24px auto 0;padding:18px 24px;
+  background:var(--blush-soft);border-radius:var(--radius);border:1px dashed var(--blush);
+  text-align:center;
+}
+.org-cracks .label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--rose);margin-bottom:6px}
+.org-cracks p{font-size:.82rem;color:var(--text);line-height:1.6}
+
+.org-freedom{
+  max-width:600px;margin:24px auto 0;padding:18px 24px;
+  background:rgba(143,166,138,.08);border-radius:var(--radius);border:1px dashed var(--sage);
+  text-align:center;
+}
+.org-freedom .label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--sage-dark);margin-bottom:6px}
+.org-freedom p{font-size:.82rem;color:var(--text);line-height:1.6}
+
+.org-total{
+  text-align:center;margin-top:20px;font-size:.88rem;color:var(--text);
+}
+.org-total strong{font-family:'Playfair Display',serif;font-size:1.3rem}
+.org-total .before-total strong{color:var(--rose-dark)}
+.org-total .after-total strong{color:var(--sage-dark)}
+
+@media(max-width:768px){
+  .org-nodes{grid-template-columns:repeat(2,1fr);gap:10px}
+  .org-branch-line{width:90%}
+}
+@media(max-width:480px){
+  .org-nodes{grid-template-columns:1fr 1fr;gap:8px}
+  .org-node{padding:12px 10px}
+}
+
 /* is this you */
 .pain-section{background:var(--white)}
 .pain-list{max-width:640px;margin:0 auto}
@@ -417,6 +503,144 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
       <div class="pain-item reveal">
         <span class="pain-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
         <p>You know AI could help but every tutorial feels like it's made for developers</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER ORG CHART -->
+<section class="orgchart-section section-padding" id="orgchart">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label reveal">See the difference</p>
+      <h2 class="section-title reveal">Your business, before and after</h2>
+      <p class="section-sub mx-auto reveal">Most creators are either paying thousands for help or drowning trying to do everything alone. Here's what changes.</p>
+    </div>
+
+    <div class="orgchart-tabs reveal">
+      <button class="orgchart-tab active-before" onclick="showOrg('before')">Before Posy</button>
+      <button class="orgchart-tab" onclick="showOrg('after')">After Posy</button>
+    </div>
+
+    <!-- BEFORE -->
+    <div class="orgchart-panel active" id="org-before">
+      <div class="org-tree">
+        <div class="org-you reveal">
+          <div class="org-title">You (the creator)</div>
+          <div class="org-subtitle">doing everything, paying for some, dropping the rest</div>
+        </div>
+        <div class="org-connector"></div>
+        <div class="org-branch-line"></div>
+        <div class="org-nodes" style="padding-top:16px">
+          <div class="org-node problem reveal">
+            <div class="org-node-icon">&#128176;</div>
+            <div class="org-node-title">Bookkeeper</div>
+            <div class="org-node-cost">$300-500/mo</div>
+            <ul class="org-node-tasks">
+              <li>Track income</li>
+              <li>Log expenses</li>
+              <li>Tax estimates</li>
+            </ul>
+          </div>
+          <div class="org-node problem reveal">
+            <div class="org-node-icon">&#128231;</div>
+            <div class="org-node-title">Email VA</div>
+            <div class="org-node-cost">$500-1,500/mo</div>
+            <ul class="org-node-tasks">
+              <li>Brand deal emails</li>
+              <li>Draft replies</li>
+              <li>Follow up</li>
+            </ul>
+          </div>
+          <div class="org-node problem reveal">
+            <div class="org-node-icon">&#128241;</div>
+            <div class="org-node-title">Social Manager</div>
+            <div class="org-node-cost">$1,000-3,000/mo</div>
+            <ul class="org-node-tasks">
+              <li>Post scheduling</li>
+              <li>Caption writing</li>
+              <li>Engagement</li>
+            </ul>
+          </div>
+          <div class="org-node problem reveal">
+            <div class="org-node-icon">&#128188;</div>
+            <div class="org-node-title">General VA</div>
+            <div class="org-node-cost">$500-2,000/mo</div>
+            <ul class="org-node-tasks">
+              <li>Calendar</li>
+              <li>Admin tasks</li>
+              <li>Research</li>
+            </ul>
+          </div>
+        </div>
+        <div class="org-total before-total reveal"><strong>$2,300-7,000/mo</strong> and things still slip</div>
+        <div class="org-cracks reveal">
+          <div class="label">Still falling through the cracks</div>
+          <p>Forgot to meal prep. Double-booked yourself. Missed a brand deal reply. Couldn't find that receipt. Posted the wrong caption. Taxes are a mess. You're exhausted and you're still behind.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AFTER -->
+    <div class="orgchart-panel" id="org-after">
+      <div class="org-tree">
+        <div class="org-you reveal" style="border-color:var(--sage)">
+          <div class="org-title">You (the creator)</div>
+          <div class="org-subtitle">living your life while your AI team handles the rest</div>
+        </div>
+        <div class="org-connector"></div>
+        <div class="org-branch-line"></div>
+        <div class="org-nodes" style="padding-top:16px">
+          <div class="org-node ai-agent reveal">
+            <div class="org-node-icon">&#128181;</div>
+            <div class="org-node-title">Money Agent</div>
+            <div class="org-node-cost">included</div>
+            <ul class="org-node-tasks">
+              <li>Tracks all income</li>
+              <li>Logs expenses + receipts</li>
+              <li>Monthly tax estimates</li>
+              <li>Photo receipt scanning</li>
+            </ul>
+          </div>
+          <div class="org-node ai-agent reveal">
+            <div class="org-node-icon">&#128233;</div>
+            <div class="org-node-title">Email Agent</div>
+            <div class="org-node-cost">included</div>
+            <ul class="org-node-tasks">
+              <li>Monitors Gmail 24/7</li>
+              <li>Flags brand deals</li>
+              <li>Drafts replies for you</li>
+              <li>Tracks deal pipeline</li>
+            </ul>
+          </div>
+          <div class="org-node ai-agent reveal">
+            <div class="org-node-icon">&#128172;</div>
+            <div class="org-node-title">Lark Agent</div>
+            <div class="org-node-cost">included</div>
+            <ul class="org-node-tasks">
+              <li>Watches TikTok groups</li>
+              <li>Catches commission boosts</li>
+              <li>Alerts you to samples</li>
+              <li>Never misses a post</li>
+            </ul>
+          </div>
+          <div class="org-node ai-agent reveal">
+            <div class="org-node-icon">&#127793;</div>
+            <div class="org-node-title">Life Agent</div>
+            <div class="org-node-cost">you build this one</div>
+            <ul class="org-node-tasks">
+              <li>Meal planning</li>
+              <li>Calendar management</li>
+              <li>Content scheduling</li>
+              <li>Whatever you need</li>
+            </ul>
+          </div>
+        </div>
+        <div class="org-total after-total reveal"><strong>~$30-50/mo total</strong> for all of them</div>
+        <div class="org-freedom reveal">
+          <div class="label">What your day looks like now</div>
+          <p>You wake up. Check Telegram. Your Money Agent logged yesterday's sales. Your Email Agent flagged two brand deals and drafted replies. Your Lark Agent caught a 30% commission boost you would've missed. You approve what looks good, ignore the rest, and go live your life. They keep working while your phone is off.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -808,6 +1032,17 @@ const nav=document.getElementById('nav');
 hamburger.addEventListener('click',()=>{hamburger.classList.toggle('active');nav.classList.toggle('open')});
 nav.querySelectorAll('a').forEach(a=>{a.addEventListener('click',()=>{hamburger.classList.remove('active');nav.classList.remove('open')})});
 document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!hamburger.contains(e.target)){hamburger.classList.remove('active');nav.classList.remove('open')}});
+
+// org chart tabs
+function showOrg(which){
+  document.querySelectorAll('.orgchart-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.orgchart-tab').forEach(t=>{t.classList.remove('active-before');t.classList.remove('active-after')});
+  document.getElementById('org-'+which).classList.add('active');
+  const tabs=document.querySelectorAll('.orgchart-tab');
+  if(which==='before'){tabs[0].classList.add('active-before')}else{tabs[1].classList.add('active-after')}
+  // re-trigger reveals in the newly visible panel
+  document.getElementById('org-'+which).querySelectorAll('.reveal:not(.visible)').forEach(el=>observer.observe(el));
+}
 
 // waitlist form submit
 document.getElementById('waitlist-form').addEventListener('submit',async function(e){
