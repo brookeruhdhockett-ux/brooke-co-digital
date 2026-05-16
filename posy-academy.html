@@ -235,6 +235,30 @@ section{padding:90px 0}
   .story-img{max-width:300px;margin:0 auto}
 }
 
+/* what this replaces */
+.replaces-section{background:var(--white)}
+.replaces-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:900px;margin:0 auto}
+.replaces-costs{display:flex;flex-direction:column;gap:12px}
+.replaces-row{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:var(--cream);border-radius:var(--radius);border:1px solid rgba(0,0,0,.04)}
+.replaces-row .role{font-size:.88rem;color:var(--text)}
+.replaces-row .cost{font-size:.88rem;font-weight:600;color:var(--charcoal)}
+.replaces-row.strikethrough .cost{text-decoration:line-through;color:var(--text-light)}
+.replaces-total{padding:18px 20px;background:var(--blush-soft);border-radius:var(--radius);border:2px solid var(--blush);text-align:center}
+.replaces-total .label{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-light);margin-bottom:4px}
+.replaces-total .amount{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--rose-dark)}
+.replaces-vs{text-align:center}
+.replaces-vs .vs-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-light);margin-bottom:12px}
+.replaces-vs .vs-card{background:var(--sage-light);border-radius:var(--radius-lg);padding:32px 24px;text-align:center}
+.replaces-vs .vs-amount{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--sage-dark);margin-bottom:4px}
+.replaces-vs .vs-period{font-size:.82rem;color:var(--text);margin-bottom:16px}
+.replaces-vs .vs-note{font-size:.78rem;color:var(--text-light);font-style:italic}
+.replaces-footer{text-align:center;margin-top:32px;max-width:600px;margin-left:auto;margin-right:auto}
+.replaces-footer p{font-size:.88rem;color:var(--text);line-height:1.7}
+.replaces-footer .highlight{color:var(--sage-dark);font-weight:600}
+@media(max-width:768px){
+  .replaces-grid{grid-template-columns:1fr;gap:24px}
+}
+
 /* pricing */
 .pricing-section{
   background:linear-gradient(165deg,var(--cream-warm) 0%,var(--cream) 100%);
@@ -592,7 +616,54 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
         <p class="reveal">6-figure creator. Mom of four. ADHD brain that won't quit. No team, no agency, no viral moment. Just AI tools and systems I built myself.</p>
         <p class="reveal">I'm not a tech influencer. I'm a real person who figured this out because I had to. I couldn't afford to hire a team, so I built one with AI. Nine AI employees that cost me about $30 a month total. And it actually works.</p>
         <p class="reveal">Now I'm teaching everything I know — the exact tools, the exact workflows, the exact systems — because I wish someone had shown me this two years ago.</p>
+        <p class="reveal" style="font-family:'Playfair Display',serif;font-style:italic;color:var(--rose);font-size:1.05rem;margin-top:20px;line-height:1.6">AI isn't meant to remove the human from the work. It's meant to put the human back into life.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT THIS REPLACES -->
+<section class="replaces-section section-padding" id="replaces">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label reveal">The real math</p>
+      <h2 class="section-title reveal">What this replaces</h2>
+      <p class="section-sub mx-auto reveal">Most creators are either paying thousands for help they can't afford, or drowning trying to do it all alone. Here's what this system does instead.</p>
+    </div>
+    <div class="replaces-grid">
+      <div class="replaces-costs">
+        <div class="replaces-row strikethrough reveal">
+          <span class="role">Virtual assistant</span>
+          <span class="cost">$500-2,000/mo</span>
+        </div>
+        <div class="replaces-row strikethrough reveal">
+          <span class="role">Bookkeeper</span>
+          <span class="cost">$300-500/mo</span>
+        </div>
+        <div class="replaces-row strikethrough reveal">
+          <span class="role">Email manager</span>
+          <span class="cost">$500-1,500/mo</span>
+        </div>
+        <div class="replaces-row strikethrough reveal">
+          <span class="role">Social media manager</span>
+          <span class="cost">$1,000-3,000/mo</span>
+        </div>
+        <div class="replaces-total reveal">
+          <div class="label">What most creators spend</div>
+          <div class="amount">$2,300-7,000/mo</div>
+        </div>
+      </div>
+      <div class="replaces-vs">
+        <div class="vs-label reveal">Your AI employee system</div>
+        <div class="vs-card reveal">
+          <div class="vs-amount">~$30-50/mo</div>
+          <div class="vs-period">total operating cost</div>
+          <div class="vs-note">No subscriptions. No contracts. No drama. Just AI that works for you 24/7.</div>
+        </div>
+      </div>
+    </div>
+    <div class="replaces-footer reveal">
+      <p>That's not a typo. The entire system — email monitoring, expense tracking, deal alerts, commission tracking — runs on less than the cost of one coffee a day. <span class="highlight">You don't even need a paid Claude subscription.</span> Your AI employees run on API credits, which is a completely different (and way cheaper) thing.</p>
     </div>
   </div>
 </section>
