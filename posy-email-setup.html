@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Set Up Your AI Email Assistant</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, 'Segoe UI', sans-serif;
+      background: #faf9f7;
+      color: #1a1a1a;
+      line-height: 1.7;
+      padding: 0;
+    }
+    .header {
+      background: #1e3a2f;
+      color: white;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+    .header h1 { font-size: 1.4rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .header p { font-size: 0.9rem; opacity: 0.8; }
+    .container { max-width: 650px; margin: 0 auto; padding: 1.5rem; }
+
+    .time-badge {
+      display: inline-block;
+      background: #e8f0eb;
+      color: #1e3a2f;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
+      margin: 1rem 0;
+    }
+    .needs {
+      background: white;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+    }
+    .needs h3 { font-size: 0.9rem; margin-bottom: 0.5rem; color: #1e3a2f; }
+    .needs ul { list-style: none; padding: 0; }
+    .needs li { padding: 0.3rem 0; font-size: 0.9rem; padding-left: 1.5rem; position: relative; }
+    .needs li::before { content: "○"; position: absolute; left: 0; color: #999; }
+
+    .step {
+      margin: 2rem 0;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #eee;
+    }
+    .step:last-of-type { border-bottom: none; }
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px; height: 32px;
+      background: #1e3a2f;
+      color: white;
+      border-radius: 50%;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .step h2 { font-size: 1.1rem; margin-bottom: 0.75rem; }
+    .step p { font-size: 0.9rem; color: #444; margin-bottom: 0.75rem; }
+
+    .substep {
+      padding: 0.4rem 0 0.4rem 1.25rem;
+      border-left: 2px solid #e5e5e5;
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+      color: #444;
+    }
+    .substep strong { color: #1a1a1a; }
+
+    .callout {
+      background: #fff8e6;
+      border: 1px solid #f0e0a0;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+      font-size: 0.85rem;
+      color: #665500;
+    }
+    .callout.green {
+      background: #e8f5ed;
+      border-color: #b8ddc5;
+      color: #1e5535;
+    }
+
+    .prompt-block {
+      position: relative;
+      background: #1a1a1a;
+      color: #e0e0e0;
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+      font-family: 'SF Mono', 'Menlo', monospace;
+      font-size: 0.8rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 0.4rem 0.75rem;
+      font-size: 0.75rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .copy-btn:hover { background: #555; }
+    .copy-btn.copied { background: #1e3a2f; }
+
+    .routine {
+      background: white;
+      border: 2px solid #1e3a2f;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .routine h3 { color: #1e3a2f; font-size: 1rem; margin-bottom: 0.75rem; }
+    .routine ol { padding-left: 1.25rem; }
+    .routine li { padding: 0.3rem 0; font-size: 0.9rem; }
+
+    .troubleshoot { margin: 2rem 0; }
+    .troubleshoot h2 { font-size: 1.1rem; margin-bottom: 1rem; }
+    .trouble-item { margin: 1rem 0; }
+    .trouble-item strong { font-size: 0.9rem; color: #1e3a2f; display: block; margin-bottom: 0.25rem; }
+    .trouble-item p { font-size: 0.85rem; color: #666; }
+
+    .footer { text-align: center; padding: 2rem; color: #999; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Set Up Your AI Brand Deal Assistant</h1>
+  <p>Follow these steps. You'll be done in about 10 minutes.</p>
+</div>
+
+<div class="container">
+
+  <div class="time-badge">About 10 minutes to set up</div>
+
+  <div class="needs">
+    <h3>You'll need:</h3>
+    <ul>
+      <li>A Gmail account (free — if you use Outlook, I'll show you how to connect it)</li>
+      <li>A Claude account at claude.ai (free works)</li>
+    </ul>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="step">
+    <div class="step-num">1</div>
+    <h2>Get Gmail Set Up</h2>
+    <p><strong>If you already use Gmail for brand emails, skip to Step 2.</strong></p>
+    <p>If your brand email is Outlook, Yahoo, or something else — we need to forward your emails to a Gmail account so Claude can read them.</p>
+
+    <div class="substep"><strong>Create a Gmail:</strong> Go to gmail.com → Create account. Name it something like yourname.brands@gmail.com</div>
+    <div class="substep"><strong>Set up forwarding from Outlook:</strong><br>
+      • Outlook on the web: Settings → Mail → Forwarding → Turn on → Enter your new Gmail<br>
+      • Outlook desktop: File → Rules → New Rule → Apply to all → Forward to your Gmail</div>
+    <div class="substep"><strong>Test it:</strong> Send yourself an email from another account. Make sure it shows up in both Outlook AND Gmail.</div>
+
+    <div class="callout">Your Outlook stays your main inbox. Gmail is just the bridge that Claude reads through. You'll still send replies from Outlook — you just copy-paste the drafts Claude writes for you.</div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step">
+    <div class="step-num">2</div>
+    <h2>Create Your Claude Account</h2>
+    <div class="substep">Go to <strong>claude.ai</strong></div>
+    <div class="substep">Click <strong>Sign up</strong> (use any email — doesn't have to be Gmail)</div>
+    <div class="substep">Verify your email</div>
+    <div class="substep">You're in. Free account is fine to start.</div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step">
+    <div class="step-num">3</div>
+    <h2>Connect Gmail to Claude</h2>
+    <div class="substep">Click your <strong>profile icon</strong> (bottom left corner)</div>
+    <div class="substep">Click <strong>Settings</strong></div>
+    <div class="substep">Click <strong>Connectors</strong></div>
+    <div class="substep">Click <strong>Gmail</strong> → <strong>Connect</strong></div>
+    <div class="substep">Sign in with the Gmail that's receiving your brand emails</div>
+    <div class="substep">Click <strong>Allow</strong> when it asks for permission</div>
+    <div class="substep">Done. Claude can now read your emails when you ask it to.</div>
+
+    <div class="callout green">Claude only reads your email when YOU ask it to. It's not monitoring 24/7. You're in control.</div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step">
+    <div class="step-num">4</div>
+    <h2>Create Your Brand Deals Project</h2>
+    <div class="substep">Click <strong>Projects</strong> in the left sidebar</div>
+    <div class="substep">Click <strong>Create Project</strong></div>
+    <div class="substep">Name it <strong>"Brand Deals"</strong></div>
+    <div class="substep">Click the <strong>gear icon</strong> → <strong>Project Instructions</strong></div>
+    <div class="substep">Copy the entire block below and paste it in:</div>
+
+    <div class="prompt-block" id="prompt1"><button class="copy-btn" onclick="copyPrompt('prompt1', this)">COPY</button>You are my Brand Deal Assistant. You help me find, evaluate, and respond to brand collaboration and retainer opportunities in my email.
+
+## About Me
+Before we start working together, you need to know about my business. Ask me these questions one at a time (wait for my answer before asking the next one):
+
+1. What's your name and your main handle? (so brands can look you up)
+2. What's your niche? (e.g., fashion, beauty, home, lifestyle, outdoor, wellness)
+3. What platforms are you on and what's your follower count on each?
+4. Do you do livestreams? If so, how many hours per week on average?
+5. What's your average GMV (gross merchandise value) per month, if you know it?
+6. What's your minimum rate for a single sponsored video?
+7. What's your minimum monthly rate for a retainer deal?
+8. Do you offer package discounts? (e.g., 3 videos for a lower per-video rate)
+9. What are your terms on usage rights? (e.g., do you charge extra if a brand wants to run your video as an ad?)
+10. What types of products do you love promoting? Any you won't touch?
+11. Do you have a manager or agent, or do you handle deals yourself?
+12. What's your preferred tone when replying to brands? (casual, professional, somewhere in between)
+13. Is there anything else you want brands to know about you? (media kit link, notable past partnerships, awards, etc.)
+
+Save all my answers and use them in every conversation going forward.
+
+## When I Ask You to Check My Emails
+
+Search my Gmail for emails from the last 3 days (or whatever timeframe I specify) that look like:
+- Brand collaboration requests
+- Retainer or ambassador offers
+- Affiliate program invitations
+- PR/gifting offers
+- Follow-ups on existing deals
+- Payment confirmations or invoices related to brand work
+
+Ignore: newsletters, promotional emails, personal emails, spam.
+
+## How to Analyze Each Email
+
+For each relevant email, give me:
+
+**[Priority: HIGH / MEDIUM / LOW]**
+- **From:** brand name + sender
+- **What they want:** 1-2 sentence summary
+- **Offer:** any dollar amounts, product counts, or terms mentioned
+- **Usage rights:** are they asking for whitelisting/ad rights? Flag if yes.
+- **My take:** your honest recommendation (worth it, lowball, red flag, need more info)
+- **Draft reply:** a ready-to-send response based on my preferences
+
+### Priority Rules
+- **HIGH:** Retainer offers, paid collaborations above my minimum rate, follow-ups on deals I'm already in
+- **MEDIUM:** Paid offers below my rate (worth negotiating), affiliate programs with good commission, PR from brands I love
+- **LOW:** Mass outreach, gifting only with no pay, brands that don't fit my niche
+
+## When Drafting Replies
+
+- Match my tone (I'll tell you in setup)
+- Always be professional but never desperate
+- If the offer is below my rate, counter with my actual rate and explain what they get
+- If it's a good offer, express genuine enthusiasm without overselling
+- If I need to decline, be gracious and leave the door open
+- If they want usage/whitelisting rights, always quote my add-on rate for that
+- If they're asking for a package, apply my package discount
+- Include my stats (GMV, livestream hours) when relevant to show value
+- Keep replies under 150 words unless a longer response is needed
+- Never commit to specific dates without checking with me first
+
+## Outreach Mode
+
+When I say "help me pitch [brand name]" or "find brands to reach out to":
+
+1. Ask what I like about that brand / why I want to work with them
+2. Draft a cold pitch email that:
+   - Opens with something specific about their brand (not generic flattery)
+   - Briefly introduces me and my audience (include my handle so they can look me up)
+   - Mentions 1-2 specific content ideas I'd create for them
+   - Includes my rate or says "happy to discuss rates"
+   - Is under 120 words (brands get hundreds of these — short wins)
+3. Suggest a subject line that won't get deleted
+
+## Negotiation Help
+
+When I forward a brand's response and ask for help negotiating:
+
+- Analyze their counter-offer
+- Tell me if it's fair based on my follower count, engagement, and GMV
+- Draft a counter that's firm but friendly
+- Suggest creative alternatives if budget is tight (longer timeline, usage rights trade, performance bonuses, adding livestream hours)
+- Tell me when to walk away
+
+## Rate Card Help
+
+When I ask you to build or update my rate card:
+
+Create a clean rate card including:
+- Single video: my rate
+- Video + usage rights (30/60/90 day): my rate + percentage
+- Monthly retainer (X videos/month): my rate
+- Package pricing (3+ videos): my discounted rate
+- Livestream mention: my rate (if I do lives)
+- Add-ons: story posts, pins, blog features
+- Include my handle, stats, and media kit link if I have one
+
+Format it so I can copy-paste it into an email or save it as a PDF.
+
+## Weekly Summary
+
+When I ask for a weekly summary:
+
+- How many brand emails came in
+- How many were worth responding to
+- Any follow-ups I need to send
+- Any payments due or overdue
+- Suggested brands to pitch this week based on my niche
+- Brands I should be engaging with on social (pre-pitch warming)</div>
+
+    <div class="substep">Click <strong>Save</strong></div>
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="step">
+    <div class="step-num">5</div>
+    <h2>Start Your First Chat</h2>
+    <div class="substep">Open a <strong>new chat</strong> inside your Brand Deals project</div>
+    <div class="substep">Type: <strong>"Hi! Let's get set up."</strong></div>
+    <div class="substep">Claude will ask you questions about your business — answer each one</div>
+    <div class="substep">Take your time. The more detail you give, the better it helps you.</div>
+    <div class="substep">When you're done with setup, type:</div>
+
+    <div class="prompt-block" id="prompt2"><button class="copy-btn" onclick="copyPrompt('prompt2', this)">COPY</button>Check my emails from the last 3 days</div>
+
+    <div class="substep">Claude will ask to access your Gmail — click <strong>Allow</strong></div>
+    <div class="substep">Watch it find and analyze your brand emails</div>
+
+    <div class="callout green">That's it. You're set up. Tomorrow morning, just open this project and say "check my emails." Five minutes and you never miss a deal again.</div>
+  </div>
+
+  <!-- DAILY ROUTINE -->
+  <div class="routine">
+    <h3>Your Daily Routine (5 minutes)</h3>
+    <ol>
+      <li>Open Claude → Brand Deals project</li>
+      <li>Say "check my emails"</li>
+      <li>Read the analysis</li>
+      <li>Edit any draft replies if needed</li>
+      <li>Copy-paste replies into your email and send</li>
+    </ol>
+  </div>
+
+  <!-- TROUBLESHOOTING -->
+  <div class="troubleshoot">
+    <h2>Troubleshooting</h2>
+
+    <div class="trouble-item">
+      <strong>"Claude can't see my emails"</strong>
+      <p>Make sure you connected Gmail in Settings → Connectors. Also check that your Outlook forwarding is actually working (send a test email).</p>
+    </div>
+
+    <div class="trouble-item">
+      <strong>"It's giving me weird answers"</strong>
+      <p>Make sure you pasted the instructions into PROJECT INSTRUCTIONS (the gear icon), not into a regular chat message. Then start a fresh chat.</p>
+    </div>
+
+    <div class="trouble-item">
+      <strong>"Can it just auto-send replies for me?"</strong>
+      <p>No — and you don't want it to. AI is smart but not perfect. It could agree to a rate you didn't set or commit to a deadline you can't hit. Always read the draft before sending. It takes 10 seconds and protects your reputation.</p>
+    </div>
+
+    <div class="trouble-item">
+      <strong>"I use Outlook and don't want Gmail"</strong>
+      <p>Claude only connects to Gmail right now. The forwarding workaround is the move — your Outlook stays your main inbox, Gmail is just the bridge. You still send replies from Outlook.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    Questions? Text Brooke.<br>
+    The Posy Academy
+  </div>
+
+</div>
+
+<script>
+function copyPrompt(id, btn) {
+  const block = document.getElementById(id);
+  const text = block.innerText.replace('COPY', '').trim();
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'COPIED!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'COPY';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>
