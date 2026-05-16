@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Posy Creator Academy — Free Masterclass for TikTok Shop Creators</title>
-<meta name="description" content="Learn how to use AI to run your creator business. Free live masterclass by Brooke Co — 6-figure creator using AI tools and systems she built herself.">
+<title>The Posy Academy — Work Less. Earn More. Live More.</title>
+<meta name="description" content="The AI-powered system that helps creators land brand retainers and automate their entire business. Built by a real creator, not a tech bro.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -103,6 +103,10 @@ nav a:hover{color:var(--rose)}
 }
 .btn-primary{background:var(--sage);color:var(--white)}
 .btn-primary:hover{background:var(--sage-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(107,139,101,.2)}
+.btn-secondary{background:transparent;color:var(--sage);border:2px solid var(--sage)}
+.btn-secondary:hover{background:var(--sage);color:var(--white);transform:translateY(-2px)}
+.btn-rose{background:var(--rose);color:var(--white)}
+.btn-rose:hover{background:var(--rose-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(196,137,122,.2)}
 .btn-lg{padding:18px 44px;font-size:.95rem}
 
 /* hero */
@@ -120,8 +124,8 @@ nav a:hover{color:var(--rose)}
 }
 .academy-hero h1{font-size:clamp(2.2rem,5vw,3.2rem);max-width:700px;margin:0 auto 20px}
 .academy-hero h1 em{font-style:italic;color:var(--rose)}
-.academy-hero p.hero-sub{font-size:1.05rem;color:var(--text);max-width:560px;margin:0 auto 32px;line-height:1.85}
-.academy-hero .hero-meta{font-size:.82rem;color:var(--text-light);margin-top:16px}
+.academy-hero p.hero-sub{font-size:1.05rem;color:var(--text);max-width:600px;margin:0 auto 32px;line-height:1.85}
+.hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 
 @media(max-width:768px){.academy-hero{padding:110px 24px 60px}}
 
@@ -146,89 +150,81 @@ section{padding:90px 0}
 .pain-icon svg{width:16px;height:16px;stroke:var(--rose);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .pain-item p{font-size:.92rem;color:var(--text);line-height:1.7}
 
-/* data section */
-.data-section{background:var(--cream)}
-.data-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:700px;margin:0 auto}
-.data-card{
-  text-align:center;padding:32px 20px;background:var(--white);
-  border-radius:var(--radius-lg);border:1px solid rgba(0,0,0,.04);
+/* two paths */
+.paths-section{background:var(--cream)}
+.paths-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:960px;margin:0 auto}
+.path-card{
+  background:var(--white);border-radius:var(--radius-xl);padding:40px 32px;
+  border:1px solid rgba(0,0,0,.04);position:relative;transition:transform .3s,box-shadow .3s;
 }
-.data-num{font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--sage);font-weight:700;margin-bottom:6px}
-.data-label{font-size:.82rem;color:var(--text);line-height:1.5}
+.path-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.06)}
+.path-card.featured{border:2px solid var(--sage)}
+.path-badge{
+  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:var(--sage);color:var(--white);font-size:.68rem;font-weight:700;
+  padding:5px 18px;border-radius:20px;letter-spacing:.08em;text-transform:uppercase;
+}
+.path-tier{font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--sage);margin-bottom:6px}
+.path-card h3{font-size:1.4rem;margin-bottom:4px}
+.path-tagline{font-family:'Playfair Display',serif;font-style:italic;color:var(--rose);font-size:1rem;margin-bottom:12px}
+.path-desc{font-size:.88rem;color:var(--text);line-height:1.8;margin-bottom:20px}
+.path-price{font-family:'Playfair Display',serif;font-size:2rem;color:var(--charcoal);font-weight:700;margin-bottom:2px}
+.path-plan{font-size:.78rem;color:var(--text-light);margin-bottom:20px}
+.path-modules-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:10px}
+.path-modules{list-style:none;margin-bottom:20px}
+.path-modules li{font-size:.84rem;color:var(--text);padding:5px 0;display:flex;align-items:center;gap:8px}
+.path-modules li::before{content:''; display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--sage-light);flex-shrink:0}
+.path-includes-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:8px;margin-top:16px;padding-top:16px;border-top:1px solid rgba(0,0,0,.06)}
+.path-includes{list-style:none;margin-bottom:24px}
+.path-includes li{font-size:.82rem;color:var(--text);padding:3px 0;display:flex;align-items:center;gap:8px}
+.path-includes li::before{content:'';color:var(--sage);font-weight:700;font-size:.9rem}
 
-@media(max-width:600px){.data-grid{grid-template-columns:1fr;max-width:280px}}
+@media(max-width:768px){
+  .paths-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}
+}
 
-/* who its for */
-.audience-section{background:var(--white)}
-.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px;margin:0 auto}
-.audience-card{
-  padding:32px 24px;border-radius:var(--radius-lg);
+/* quote card */
+.quote-card{
+  max-width:700px;margin:48px auto 0;padding:32px 36px;
+  background:var(--charcoal);border-radius:var(--radius-xl);text-align:center;
+}
+.quote-card p{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--white);line-height:1.6;font-style:italic;margin-bottom:8px}
+.quote-card .quote-sub{font-family:'DM Sans',sans-serif;font-size:.78rem;color:rgba(255,255,255,.5);font-style:normal}
+
+/* free resources */
+.resources-section{background:var(--white)}
+.resources-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:760px;margin:0 auto}
+.resource-card{
+  padding:32px 28px;border-radius:var(--radius-lg);
   background:var(--cream);text-align:center;border:1px solid rgba(0,0,0,.03);
+  transition:transform .3s,box-shadow .3s;
 }
-.audience-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
-.audience-icon svg{width:22px;height:22px;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.audience-card:nth-child(1) .audience-icon{background:var(--blush-soft)}
-.audience-card:nth-child(1) .audience-icon svg{stroke:var(--rose)}
-.audience-card:nth-child(2) .audience-icon{background:rgba(143,166,138,.1)}
-.audience-card:nth-child(2) .audience-icon svg{stroke:var(--sage-dark)}
-.audience-card:nth-child(3) .audience-icon{background:var(--blush-soft)}
-.audience-card:nth-child(3) .audience-icon svg{stroke:var(--rose-dark)}
-.audience-card h3{font-size:1rem;margin-bottom:8px;font-family:'DM Sans',sans-serif;font-weight:600}
-.audience-card p{font-size:.85rem;color:var(--text);line-height:1.7}
+.resource-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.06)}
+.resource-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:1.6rem}
+.resource-card h3{font-size:1rem;margin-bottom:8px;font-family:'DM Sans',sans-serif;font-weight:600}
+.resource-card p{font-size:.85rem;color:var(--text);line-height:1.7;margin-bottom:16px}
+.resource-badge{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;background:rgba(143,166,138,.12);color:var(--sage)}
 
-@media(max-width:768px){.audience-grid{grid-template-columns:1fr;max-width:360px;margin:0 auto}}
+@media(max-width:600px){.resources-grid{grid-template-columns:1fr;max-width:360px}}
 
-/* course intro */
-.intro-section{
-  background:linear-gradient(165deg,rgba(143,166,138,.08) 0%,var(--cream) 100%);
-}
-.intro-inner{max-width:700px;margin:0 auto;text-align:center}
-.intro-inner h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:16px}
-.intro-inner p{font-size:.95rem;color:var(--text);line-height:1.85;margin-bottom:16px}
-.intro-details{
-  display:flex;gap:32px;justify-content:center;margin-top:32px;flex-wrap:wrap;
-}
-.intro-detail{text-align:center}
-.intro-detail .detail-icon{font-size:1.4rem;margin-bottom:6px}
-.intro-detail p{font-size:.82rem;color:var(--text);font-weight:500}
+/* comparison table */
+.comparison-section{background:var(--cream)}
+.comp-table{width:100%;max-width:760px;margin:0 auto;border-collapse:collapse;font-size:.88rem}
+.comp-table th{text-align:left;padding:12px 16px;border-bottom:2px solid var(--charcoal);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light)}
+.comp-table th:nth-child(2),.comp-table th:nth-child(3){text-align:center}
+.comp-table td{padding:12px 16px;border-bottom:1px solid rgba(0,0,0,.06)}
+.comp-table td.feat{color:var(--charcoal)}
+.comp-table td.check{text-align:center;color:var(--sage);font-weight:700;font-size:1.1rem}
+.comp-table td.dash{text-align:center;color:var(--text-light)}
+.comp-table tr:last-child td{border-bottom:none}
 
-/* modules */
-.modules-section{background:var(--white)}
-.module-list{max-width:720px;margin:0 auto}
-.module-item{
-  padding:28px 32px;border-radius:var(--radius-lg);
-  background:var(--cream);margin-bottom:16px;
-  border:1px solid rgba(0,0,0,.03);position:relative;overflow:hidden;
+@media(max-width:600px){
+  .comp-table{font-size:.78rem}
+  .comp-table th,.comp-table td{padding:10px 8px}
 }
-.module-item::before{
-  content:'';position:absolute;top:0;left:0;bottom:0;width:4px;
-}
-.module-item:nth-child(1)::before{background:var(--blush)}
-.module-item:nth-child(2)::before{background:var(--sage)}
-.module-item:nth-child(3)::before{background:var(--rose)}
-.module-item:nth-child(4)::before{background:var(--sage-dark)}
-.module-num{font-size:.68rem;font-weight:700;letter-spacing:.12em;color:var(--sage);text-transform:uppercase;margin-bottom:6px}
-.module-item h3{font-size:1.1rem;margin-bottom:8px}
-.module-item p{font-size:.88rem;color:var(--text);line-height:1.8}
-.module-outcomes{list-style:none;margin-top:12px}
-.module-outcomes li{
-  font-size:.84rem;color:var(--charcoal);padding:4px 0;
-  display:flex;align-items:center;gap:8px;
-}
-.module-outcomes li::before{content:'→';color:var(--sage);font-weight:700}
-
-/* testimonial inline */
-.testimonial-inline{
-  max-width:600px;margin:40px auto 0;padding:28px 32px;
-  background:var(--blush-soft);border-radius:var(--radius-lg);
-  border:1px solid rgba(232,196,184,.2);text-align:center;
-}
-.testimonial-inline p{font-size:.9rem;font-style:italic;color:var(--charcoal);line-height:1.8;margin-bottom:10px}
-.testimonial-inline .t-name{font-size:.78rem;font-weight:700;color:var(--charcoal)}
-.testimonial-inline .t-detail{font-size:.72rem;color:var(--text-light)}
 
 /* founder story */
-.story-section{background:var(--cream)}
+.story-section{background:var(--white)}
 .story-inner{display:grid;grid-template-columns:1fr 1.3fr;gap:48px;align-items:center;max-width:900px;margin:0 auto}
 .story-img img{border-radius:var(--radius-xl);box-shadow:0 16px 48px rgba(0,0,0,.06)}
 .story-text h2{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:16px}
@@ -239,33 +235,13 @@ section{padding:90px 0}
   .story-img{max-width:300px;margin:0 auto}
 }
 
-/* value stack */
-.value-section{background:var(--white)}
-.value-list{max-width:640px;margin:0 auto}
-.value-item{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:18px 24px;border-bottom:1px solid rgba(0,0,0,.04);
-}
-.value-item:last-child{border-bottom:none}
-.value-name{font-size:.92rem;color:var(--charcoal);font-weight:500}
-.value-price{font-family:'Playfair Display',serif;font-size:1rem;color:var(--text-light);text-decoration:line-through}
-.value-total{
-  text-align:center;margin-top:32px;padding:28px;
-  background:var(--blush-soft);border-radius:var(--radius-lg);
-  max-width:400px;margin-left:auto;margin-right:auto;
-}
-.value-total .total-label{font-size:.78rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
-.value-total .total-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--charcoal);text-decoration:line-through;margin-bottom:4px}
-.value-total .total-actual{font-family:'Playfair Display',serif;font-size:2.6rem;color:var(--sage);font-weight:700}
-.value-total .total-note{font-size:.82rem;color:var(--text);margin-top:8px}
-
 /* pricing */
 .pricing-section{
   background:linear-gradient(165deg,var(--cream-warm) 0%,var(--cream) 100%);
 }
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:920px;margin:0 auto}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:760px;margin:0 auto}
 .price-card{
-  background:var(--white);border-radius:var(--radius-lg);padding:36px 28px;
+  background:var(--white);border-radius:var(--radius-xl);padding:40px 32px;
   text-align:center;border:1px solid rgba(0,0,0,.04);position:relative;
   transition:transform .3s,box-shadow .3s;
 }
@@ -277,19 +253,19 @@ section{padding:90px 0}
   background:var(--sage);color:var(--white);font-size:.68rem;font-weight:700;
   padding:5px 18px;border-radius:20px;letter-spacing:.08em;text-transform:uppercase;
 }
-.price-card h3{font-size:1rem;margin-bottom:4px;font-family:'DM Sans',sans-serif;font-weight:600}
-.price-card .price-desc{font-size:.78rem;color:var(--text-light);margin-bottom:20px}
-.price-amount{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--charcoal);font-weight:700;margin-bottom:4px}
-.price-period{font-size:.78rem;color:var(--text-light);margin-bottom:24px}
+.price-card h3{font-size:1.1rem;margin-bottom:4px;font-family:'DM Sans',sans-serif;font-weight:600}
+.price-card .price-tagline{font-family:'Playfair Display',serif;font-style:italic;color:var(--rose);font-size:.92rem;margin-bottom:20px}
+.price-amount{font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--charcoal);font-weight:700;margin-bottom:4px}
+.price-period{font-size:.78rem;color:var(--text-light);margin-bottom:28px}
 .price-features{list-style:none;text-align:left;margin-bottom:28px}
 .price-features li{
   font-size:.84rem;color:var(--text);padding:6px 0;
   display:flex;align-items:center;gap:8px;
 }
-.price-features li::before{content:'✓';color:var(--sage);font-weight:700;font-size:.9rem}
+.price-features li::before{content:'';color:var(--sage);font-weight:700;font-size:.9rem}
 
 @media(max-width:768px){
-  .pricing-grid{grid-template-columns:1fr;max-width:380px;margin:0 auto}
+  .pricing-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}
   .price-card.featured{transform:none}
   .price-card.featured:hover{transform:translateY(-4px)}
 }
@@ -311,26 +287,26 @@ section{padding:90px 0}
 }
 .faq-item.open .faq-a{max-height:300px;padding-top:14px}
 
-/* guarantee */
-.guarantee-section{
-  background:var(--cream);text-align:center;padding:70px 0;
-}
-.guarantee-box{
-  max-width:560px;margin:0 auto;padding:40px 36px;
-  background:var(--white);border-radius:var(--radius-xl);
-  border:2px solid var(--sage-light);
-}
-.guarantee-box h2{font-size:1.5rem;margin-bottom:12px}
-.guarantee-box p{font-size:.9rem;color:var(--text);line-height:1.8}
-
-/* final CTA */
-.final-cta{
+/* waitlist signup */
+.waitlist-section{
   background:var(--charcoal);color:var(--white);padding:80px 0;text-align:center;
 }
-.final-cta h2{color:var(--white);font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:12px}
-.final-cta p{color:rgba(255,255,255,.7);font-size:.95rem;max-width:500px;margin:0 auto 32px}
-.final-cta .btn-primary{background:var(--sage);font-size:.95rem;padding:18px 44px}
-.final-cta .btn-primary:hover{background:var(--sage-dark)}
+.waitlist-section h2{color:var(--white);font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:12px}
+.waitlist-section p{color:rgba(255,255,255,.7);font-size:.95rem;max-width:500px;margin:0 auto 32px}
+.waitlist-form{max-width:420px;margin:0 auto}
+.waitlist-form input[type="text"],
+.waitlist-form input[type="email"]{
+  width:100%;padding:14px 20px;border-radius:12px;border:1px solid rgba(255,255,255,.15);
+  margin-bottom:12px;font-family:'DM Sans',sans-serif;font-size:.88rem;
+  background:rgba(255,255,255,.08);color:var(--white);
+}
+.waitlist-form input::placeholder{color:rgba(255,255,255,.4)}
+.waitlist-form button{
+  width:100%;padding:16px;border-radius:50px;border:none;
+  background:var(--sage);color:var(--white);font-family:'DM Sans',sans-serif;
+  font-weight:600;font-size:.92rem;cursor:pointer;transition:background .25s,transform .2s;
+}
+.waitlist-form button:hover{background:var(--sage-dark);transform:translateY(-2px)}
 
 /* footer */
 footer{
@@ -343,6 +319,16 @@ footer .footer-links{display:flex;gap:24px;justify-content:center;margin-bottom:
 footer .footer-links a{font-size:.82rem;color:var(--text);transition:color .2s}
 footer .footer-links a:hover{color:var(--rose)}
 footer .footer-copy{font-size:.72rem;color:var(--text-light)}
+
+/* modules list in paths */
+.module-expand{margin-top:16px}
+.module-expand-item{
+  padding:16px 20px;border-radius:var(--radius);
+  background:var(--cream);margin-bottom:8px;border:1px solid rgba(0,0,0,.03);
+}
+.module-expand-item .me-num{font-size:.65rem;font-weight:700;letter-spacing:.1em;color:var(--sage);text-transform:uppercase;margin-bottom:4px}
+.module-expand-item h4{font-size:.9rem;margin-bottom:4px;font-family:'DM Sans',sans-serif;font-weight:600}
+.module-expand-item p{font-size:.8rem;color:var(--text);line-height:1.6}
 </style>
 </head>
 <body>
@@ -356,10 +342,10 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
       <span></span><span></span><span></span>
     </div>
     <nav id="nav">
-      <a href="index.html#tools">Tools</a>
-      <a href="index.html#academy">Academy</a>
-      <a href="index.html#about">About</a>
-      <a href="#pricing" class="nav-cta">Enroll Now</a>
+      <a href="#paths">Course</a>
+      <a href="#freebies">Free Resources</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
     </nav>
   </div>
 </header>
@@ -369,11 +355,13 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
 <section class="academy-hero">
   <div class="blob-1"></div>
   <div class="blob-2"></div>
-  <p class="hero-label reveal">Free Live Masterclass</p>
-  <h1 class="reveal">Learn to use AI like a <em>creator</em>, not a tech bro</h1>
-  <p class="hero-sub reveal">A free, no-fluff masterclass on using AI to actually run your creator business — from someone who does it every single day.</p>
-  <a href="#signup" class="btn btn-primary btn-lg reveal">Save My Spot</a>
-  <p class="hero-meta reveal">Live sessions &middot; 4 weeks &middot; Completely free</p>
+  <p class="hero-label reveal">The Posy Academy</p>
+  <h1 class="reveal">Work less. Earn more. <em>Live more.</em></h1>
+  <p class="hero-sub reveal">The AI-powered system that helps creators land brand retainers and automate their entire business — built by a real creator, not a tech bro.</p>
+  <div class="hero-buttons reveal">
+    <a href="posy-ai-scorecard.html" class="btn btn-primary btn-lg">Take the Free Quiz</a>
+    <a href="#pricing" class="btn btn-secondary btn-lg">See Pricing</a>
+  </div>
 </section>
 
 <!-- IS THIS YOU -->
@@ -387,265 +375,271 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
     </div>
     <div class="pain-list">
       <div class="pain-item reveal">
-        <span class="pain-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
-        <p>You've tried ChatGPT but you're mostly asking it to write captions that sound nothing like you</p>
-      </div>
-      <div class="pain-item reveal">
         <span class="pain-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-        <p>You spend 2+ hours editing a single video that gets 200 views</p>
+        <p>You're spending 20+ hours a week on admin instead of creating</p>
       </div>
       <div class="pain-item reveal">
-        <span class="pain-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
-        <p>You know AI could help but every tutorial is made by a dude in a hoodie talking about "prompt engineering"</p>
+        <span class="pain-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <p>You're missing brand emails and retainer opportunities because your inbox is a disaster</p>
       </div>
       <div class="pain-item reveal">
         <span class="pain-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
-        <p>You're making money but have no clue what you actually keep after taxes and expenses</p>
+        <p>You have no idea what you actually keep after taxes and expenses</p>
       </div>
       <div class="pain-item reveal">
         <span class="pain-icon"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></span>
-        <p>You feel like everyone else has figured out AI and you're falling behind</p>
+        <p>Your Lark notifications are pure chaos and you're missing the important ones</p>
+      </div>
+      <div class="pain-item reveal">
+        <span class="pain-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+        <p>You know AI could help but every tutorial feels like it's made for developers</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- QUIZ CTA -->
-<section style="background:var(--blush-soft);padding:48px 0;text-align:center">
-  <div class="container reveal">
-    <p style="font-size:.85rem;color:var(--rose);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Free 2-minute quiz</p>
-    <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:12px">How AI-ready is your creator business?</h2>
-    <p style="font-size:.95rem;color:var(--text);max-width:480px;margin:0 auto 24px">Find out how much time you're leaving on the table — and which tools would make the biggest difference for you.</p>
-    <a href="posy-ai-scorecard.html" class="btn btn-primary" style="padding:16px 36px;font-size:.95rem">Take the Scorecard Quiz</a>
+<!-- TWO PATHS -->
+<section class="paths-section" id="paths">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label reveal">Two paths, one goal</p>
+      <h2 class="section-title reveal">Pick the level that fits your life</h2>
+      <p class="section-sub mx-auto reveal">Both paths give you real skills. Starter teaches you to use AI like a power tool. Pro gives you AI employees that run your business while you sleep.</p>
+    </div>
+    <div class="paths-grid">
+
+      <!-- STARTER -->
+      <div class="path-card reveal">
+        <div class="path-tier">Starter</div>
+        <h3>Starter</h3>
+        <div class="path-tagline">"Earn more."</div>
+        <p class="path-desc">AI-assisted retainer system. Learn to use AI to land and manage brand retainers. About 5 hours a week of your time.</p>
+        <div class="path-price">$497</div>
+        <div class="path-plan">or $97/mo x 6</div>
+
+        <div class="path-modules-label">Modules</div>
+        <div class="module-expand">
+          <div class="module-expand-item">
+            <div class="me-num">Module 1</div>
+            <h4>AI Foundations</h4>
+            <p>What AI is, which tools to use, and how to set up your workspace.</p>
+          </div>
+          <div class="module-expand-item">
+            <div class="me-num">Module 2</div>
+            <h4>Prompt Mastery</h4>
+            <p>Write prompts that get real results on the first try. 200+ ready-to-use prompts included.</p>
+          </div>
+          <div class="module-expand-item">
+            <div class="me-num">Module 3</div>
+            <h4>Brand Deals and AI Email Assistant</h4>
+            <p>Use AI to find retainer opportunities, draft pitches, and manage brand communication.</p>
+          </div>
+          <div class="module-expand-item">
+            <div class="me-num">Module 4</div>
+            <h4>Money Simplified</h4>
+            <p>Track income, categorize expenses, and catch every tax deduction with AI.</p>
+          </div>
+          <div class="module-expand-item">
+            <div class="me-num">Module 5</div>
+            <h4>AI for Life</h4>
+            <p>Meal planning, scheduling, family logistics, and the "get unstuck" prompt.</p>
+          </div>
+        </div>
+
+        <div class="path-includes-label">Includes</div>
+        <ul class="path-includes">
+          <li>200+ prompt library</li>
+          <li>Templates and checklists</li>
+          <li>Discord community</li>
+          <li>Lifetime updates</li>
+        </ul>
+        <a href="#pricing" class="btn btn-primary" style="width:100%">Get Starter</a>
+      </div>
+
+      <!-- PRO -->
+      <div class="path-card featured reveal">
+        <div class="path-badge">Most Popular</div>
+        <div class="path-tier">Pro</div>
+        <h3>Pro</h3>
+        <div class="path-tagline">"Earn more AND work less."</div>
+        <p class="path-desc">Full business automation. Everything in Starter plus an AI employee system deployed for you. Manage it all from your phone.</p>
+        <div class="path-price">$997</div>
+        <div class="path-plan">or $197/mo x 6</div>
+
+        <div class="path-modules-label">Everything in Starter, plus</div>
+        <div class="module-expand">
+          <div class="module-expand-item">
+            <div class="me-num">Module 6</div>
+            <h4>The AI Employee System</h4>
+            <p>How AI agents work, mapping your business, and choosing what to automate first.</p>
+          </div>
+          <div class="module-expand-item">
+            <div class="me-num">Module 7</div>
+            <h4>Setup and Install</h4>
+            <p>Use the Posy Setup Wizard to deploy your AI employees. No coding needed.</p>
+          </div>
+          <div class="module-expand-item">
+            <div class="me-num">Module 8</div>
+            <h4>Money Agent</h4>
+            <p>Deploy the pre-built finance agent. Tracks income, expenses, and deductions automatically.</p>
+          </div>
+          <div class="module-expand-item">
+            <div class="me-num">Module 9</div>
+            <h4>Email Agent</h4>
+            <p>AI that monitors your brand inbox, surfaces retainer offers, and drafts replies.</p>
+          </div>
+          <div class="module-expand-item">
+            <div class="me-num">Module 10</div>
+            <h4>Lark Agent</h4>
+            <p>Cuts through the Lark noise. Catches commission boosts and sample requests for you.</p>
+          </div>
+          <div class="module-expand-item">
+            <div class="me-num">Module 11</div>
+            <h4>Build Your Own</h4>
+            <p>Create custom agents for anything — content scheduling, analytics, meal planning.</p>
+          </div>
+        </div>
+
+        <div class="path-includes-label">Pro extras</div>
+        <ul class="path-includes">
+          <li>Posy Setup Wizard</li>
+          <li>3 pre-made agents (Money, Email, Lark)</li>
+          <li>Agent templates for custom builds</li>
+          <li>Cloud hosting walkthrough</li>
+        </ul>
+        <a href="#pricing" class="btn btn-rose" style="width:100%">Get Pro</a>
+      </div>
+
+    </div>
+
+    <!-- Quote card -->
+    <div class="quote-card reveal">
+      <p>"I spend 5 minutes a week managing my AI. It makes me an extra $5,000 a month."</p>
+      <div class="quote-sub">This is what the Pro tier builds for you.</div>
+    </div>
   </div>
 </section>
 
-<!-- HARD DATA -->
-<section class="data-section">
+<!-- FREE RESOURCES -->
+<section class="resources-section" id="freebies">
   <div class="container">
     <div class="text-center">
-      <p class="section-label reveal">The numbers don't lie</p>
-      <h2 class="section-title reveal">Creators using AI are pulling ahead</h2>
+      <p class="section-label reveal">Free resources</p>
+      <h2 class="section-title reveal">Try before you buy</h2>
+      <p class="section-sub mx-auto reveal">Not sure if this is for you? Start here. Zero cost, zero commitment.</p>
+    </div>
+    <div class="resources-grid stagger">
+      <div class="resource-card reveal">
+        <div class="resource-icon" style="background:var(--blush-soft)">&#9997;</div>
+        <h3>AI Readiness Scorecard</h3>
+        <p>2-minute quiz: find out how AI-ready your business is and get a personalized action plan.</p>
+        <a href="posy-ai-scorecard.html" class="btn btn-primary" style="padding:10px 24px;font-size:.82rem">Take the Quiz</a>
+      </div>
+      <div class="resource-card reveal">
+        <div class="resource-icon" style="background:rgba(143,166,138,.1)">&#9658;</div>
+        <h3>Free Masterclass</h3>
+        <p>How I built 9 AI employees that run my business for $30 a month. Watch it free.</p>
+        <span class="resource-badge">Coming Soon</span>
+      </div>
+    </div>
+    <p class="text-center reveal" style="font-size:.82rem;color:var(--text-light);margin-top:28px">More free tools and templates available on your quiz results page.</p>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="comparison-section">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label reveal">Side by side</p>
+      <h2 class="section-title reveal">What's included in each tier</h2>
       <div class="divider"></div>
       <br><br>
     </div>
-    <div class="data-grid stagger">
-      <div class="data-card reveal">
-        <div class="data-num">73%</div>
-        <div class="data-label">of top creators use AI tools daily</div>
-      </div>
-      <div class="data-card reveal">
-        <div class="data-num">10+</div>
-        <div class="data-label">hours saved per week with AI workflows</div>
-      </div>
-      <div class="data-card reveal">
-        <div class="data-num">3x</div>
-        <div class="data-label">more content output with the same effort</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHO IT'S FOR -->
-<section class="audience-section">
-  <div class="container">
-    <div class="text-center">
-      <p class="section-label reveal">This is for you if</p>
-      <h2 class="section-title reveal">You're one of these creators</h2>
-      <div class="divider"></div>
-      <br><br>
-    </div>
-    <div class="audience-grid stagger">
-      <div class="audience-card reveal">
-        <div class="audience-icon"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
-        <h3>The TikTok Shop Affiliate</h3>
-        <p>You're posting product videos, building a shop, and want to scale without burning out or hiring a team.</p>
-      </div>
-      <div class="audience-card reveal">
-        <div class="audience-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-        <h3>The Content Creator</h3>
-        <p>You make content across platforms but editing, planning, and tracking income eats all your time.</p>
-      </div>
-      <div class="audience-card reveal">
-        <div class="audience-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>The Side Hustler</h3>
-        <p>You're building a creator business while working a job or raising kids and need to be ruthlessly efficient.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COURSE INTRO -->
-<section class="intro-section">
-  <div class="container">
-    <div class="intro-inner">
-      <p class="section-label reveal">Introducing</p>
-      <h2 class="reveal">The Posy Creator Academy</h2>
-      <p class="reveal">A 4-session live masterclass that teaches you exactly how to use AI tools to run your creator business — from video editing to money tracking to knowing what to post next.</p>
-      <p class="reveal">No fluff. No theory. Just the actual workflows I use every day to run a six-figure business as a solo creator and mom of four.</p>
-      <div class="intro-details reveal">
-        <div class="intro-detail">
-          <div class="detail-icon">📅</div>
-          <p>4 Live Sessions</p>
-        </div>
-        <div class="intro-detail">
-          <div class="detail-icon">⏱️</div>
-          <p>60 min each</p>
-        </div>
-        <div class="intro-detail">
-          <div class="detail-icon">🎥</div>
-          <p>Replays included</p>
-        </div>
-        <div class="intro-detail">
-          <div class="detail-icon">💬</div>
-          <p>Live Q&A</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MODULES -->
-<section class="modules-section">
-  <div class="container">
-    <div class="text-center">
-      <p class="section-label reveal">The curriculum</p>
-      <h2 class="section-title reveal">What you'll learn</h2>
-      <p class="section-sub mx-auto reveal">Each session builds on the last. By the end, you'll have a full AI-powered system running your business.</p>
-    </div>
-    <div class="module-list">
-      <div class="module-item reveal">
-        <div class="module-num">Session 1</div>
-        <h3>AI Foundations for Creators</h3>
-        <p>Stop using ChatGPT like a search engine. Learn the frameworks that actually work for content creation.</p>
-        <ul class="module-outcomes">
-          <li>Set up AI tools that match your workflow</li>
-          <li>Write prompts that sound like you, not a robot</li>
-          <li>Build your first automated content workflow</li>
-        </ul>
-      </div>
-      <div class="module-item reveal">
-        <div class="module-num">Session 2</div>
-        <h3>AI Video Editing</h3>
-        <p>Cut your editing time by 80%. Seriously.</p>
-        <ul class="module-outcomes">
-          <li>Remove filler words and dead air automatically</li>
-          <li>Add captions and jump cuts in minutes</li>
-          <li>Batch-edit multiple videos at once</li>
-        </ul>
-      </div>
-      <div class="module-item reveal">
-        <div class="module-num">Session 3</div>
-        <h3>Money & Taxes Without the Panic</h3>
-        <p>Finally know what you're making, what you're spending, and what to save for taxes.</p>
-        <ul class="module-outcomes">
-          <li>Track income across TikTok Shop, Amazon, and affiliates</li>
-          <li>Set up automatic tax set-asides</li>
-          <li>Expense tracking that takes 30 seconds</li>
-        </ul>
-      </div>
-      <div class="module-item reveal">
-        <div class="module-num">Session 4</div>
-        <h3>Know What to Post Next</h3>
-        <p>Stop guessing. Use data to know exactly which products and content formats are working.</p>
-        <ul class="module-outcomes">
-          <li>Find trending products before they blow up</li>
-          <li>Analyze what's working in your niche</li>
-          <li>Build a content calendar based on real data</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="testimonial-inline reveal">
-      <p>"Your testimonial here — this will be replaced with a real quote from a beta student."</p>
-      <p class="t-name">Creator Name</p>
-      <p class="t-detail">Beta student</p>
-    </div>
+    <table class="comp-table reveal">
+      <thead>
+        <tr><th class="feat">Feature</th><th>Starter</th><th>Pro</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="feat">Video lessons</td><td class="check">Modules 1-5</td><td class="check">Modules 1-11</td></tr>
+        <tr><td class="feat">200+ Prompt Library</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td class="feat">Templates and SOPs</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td class="feat">Discord community</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td class="feat">Lifetime updates</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td class="feat">AI Safety and Privacy module</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td class="feat">Posy Setup Wizard</td><td class="dash">&mdash;</td><td class="check">&#10003;</td></tr>
+        <tr><td class="feat">Pre-made AI agents (Money, Email, Lark)</td><td class="dash">&mdash;</td><td class="check">&#10003;</td></tr>
+        <tr><td class="feat">Cloud hosting (24/7 agents)</td><td class="dash">&mdash;</td><td class="check">&#10003;</td></tr>
+        <tr><td class="feat">Build-your-own agent training</td><td class="dash">&mdash;</td><td class="check">&#10003;</td></tr>
+        <tr><td class="feat">Gmail integration</td><td class="dash">&mdash;</td><td class="check">&#10003;</td></tr>
+        <tr><td class="feat">Lark integration</td><td class="dash">&mdash;</td><td class="check">&#10003;</td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
 <!-- FOUNDER STORY -->
-<section class="story-section">
+<section class="story-section" id="about">
   <div class="container">
     <div class="story-inner">
       <div class="story-img reveal">
         <img src="brooke-headshot.jpg" alt="Brooke Hockett">
       </div>
       <div class="story-text">
-        <p class="section-label reveal">Your teacher</p>
+        <p class="section-label reveal">Meet your teacher</p>
         <h2 class="reveal">Hi, I'm Brooke.</h2>
-        <p class="reveal">6-figure creator. Former teacher. ADHD brain that won't quit. No team, no agency, no viral moment. Just AI tools and systems I built myself.</p>
-        <p class="reveal">I'm not a tech influencer. I'm a real person who figured this out because I had to. I couldn't afford to hire a team, so I built one with AI. And it actually works.</p>
-        <p class="reveal">Now I'm teaching everything I know — the exact tools, the exact workflows, the exact systems — in this free masterclass. Because I wish someone had shown me this two years ago.</p>
+        <p class="reveal">6-figure creator. Mom of four. ADHD brain that won't quit. No team, no agency, no viral moment. Just AI tools and systems I built myself.</p>
+        <p class="reveal">I'm not a tech influencer. I'm a real person who figured this out because I had to. I couldn't afford to hire a team, so I built one with AI. Nine AI employees that cost me about $30 a month total. And it actually works.</p>
+        <p class="reveal">Now I'm teaching everything I know — the exact tools, the exact workflows, the exact systems — because I wish someone had shown me this two years ago.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- VALUE STACK -->
-<section class="value-section">
-  <div class="container">
-    <div class="text-center">
-      <p class="section-label reveal">What you're getting</p>
-      <h2 class="section-title reveal">The full value breakdown</h2>
-      <div class="divider"></div>
-      <br><br>
-    </div>
-    <div class="value-list reveal">
-      <div class="value-item">
-        <span class="value-name">4 Live Masterclass Sessions (with replays)</span>
-        <span class="value-price">$497</span>
-      </div>
-      <div class="value-item">
-        <span class="value-name">AI Prompt Template Library</span>
-        <span class="value-price">$97</span>
-      </div>
-      <div class="value-item">
-        <span class="value-name">Creator Workflow Cheat Sheets</span>
-        <span class="value-price">$47</span>
-      </div>
-      <div class="value-item">
-        <span class="value-name">Live Q&A with Brooke</span>
-        <span class="value-price">$197</span>
-      </div>
-      <div class="value-item">
-        <span class="value-name">Early Access to The Posy Tools (beta)</span>
-        <span class="value-price">$297</span>
-      </div>
-    </div>
-    <div class="value-total reveal">
-      <div class="total-label">Total value</div>
-      <div class="total-num">$1,135</div>
-      <div class="total-actual">FREE</div>
-      <div class="total-note">For the first live cohort only</div>
-    </div>
-  </div>
-</section>
-
-<!-- SIGNUP / PRICING -->
+<!-- PRICING -->
 <section class="pricing-section" id="pricing">
   <div class="container">
     <div class="text-center">
-      <p class="section-label reveal">Join the academy</p>
-      <h2 class="section-title reveal">The masterclass is free. Seriously.</h2>
-      <p class="section-sub mx-auto reveal">Sign up for the live cohort and get everything above at zero cost. When we open the full paid course, you'll be first in line with a founding member discount.</p>
-      <br>
+      <p class="section-label reveal">Pricing</p>
+      <h2 class="section-title reveal">Choose your path</h2>
+      <p class="section-sub mx-auto reveal">Both tiers include lifetime access and all future updates. Pick the one that fits where you are right now.</p>
     </div>
-    <div id="signup" style="max-width:480px;margin:0 auto;text-align:center">
-      <div class="reveal" style="background:var(--white);border-radius:var(--radius-xl);padding:48px 36px;border:2px solid var(--sage-light)">
-        <h3 style="font-size:1.3rem;margin-bottom:6px">Free Masterclass</h3>
-        <p style="font-size:.82rem;color:var(--text-light);margin-bottom:24px">Live 4-session cohort</p>
-        <div style="font-family:'Playfair Display',serif;font-size:2.8rem;color:var(--sage);font-weight:700;margin-bottom:4px">$0</div>
-        <p style="font-size:.78rem;color:var(--text-light);margin-bottom:28px">Limited spots for the first live cohort</p>
-        <form action="https://email-hub-production.up.railway.app/subscribe" method="post">
-          <input type="hidden" name="source" value="posy-academy-waitlist">
-          <input type="hidden" name="redirect" value="https://brookeruhdhockett-ux.github.io/brooke-co-digital/posy-academy.html?subscribed=1">
-          <input type="text" name="name" placeholder="Your name" required style="width:100%;padding:14px 20px;border-radius:12px;border:1px solid rgba(0,0,0,.08);margin-bottom:12px;font-family:'DM Sans',sans-serif;font-size:.88rem;background:var(--cream)">
-          <input type="email" name="email" placeholder="Your email" required style="width:100%;padding:14px 20px;border-radius:12px;border:1px solid rgba(0,0,0,.08);margin-bottom:20px;font-family:'DM Sans',sans-serif;font-size:.88rem;background:var(--cream)">
-          <button type="submit" class="btn btn-primary" style="width:100%;padding:16px;font-size:.92rem">Save My Free Spot</button>
-        </form>
-        <p style="font-size:.72rem;color:var(--text-light);margin-top:14px">No credit card required. Unsubscribe anytime.</p>
+    <div class="pricing-grid">
+
+      <!-- Starter -->
+      <div class="price-card reveal">
+        <h3>Starter</h3>
+        <div class="price-tagline">"Earn more."</div>
+        <div class="price-amount">$497</div>
+        <div class="price-period">one-time, or $97/mo x 6</div>
+        <ul class="price-features">
+          <li>Modules 1-5 (AI foundations through life automation)</li>
+          <li>200+ prompt library</li>
+          <li>Templates, checklists, and SOPs</li>
+          <li>Discord community access</li>
+          <li>Lifetime updates</li>
+        </ul>
+        <a href="#signup" class="btn btn-primary" style="width:100%">Get Starter</a>
       </div>
+
+      <!-- Pro -->
+      <div class="price-card featured reveal">
+        <div class="price-badge">Best Value</div>
+        <h3>Pro</h3>
+        <div class="price-tagline">"Earn more AND work less."</div>
+        <div class="price-amount">$997</div>
+        <div class="price-period">one-time, or $197/mo x 6</div>
+        <ul class="price-features">
+          <li>Everything in Starter</li>
+          <li>Modules 6-11 (full AI employee system)</li>
+          <li>Posy Setup Wizard (no coding)</li>
+          <li>3 pre-made agents: Money, Email, Lark</li>
+          <li>Agent templates for custom builds</li>
+          <li>Cloud hosting walkthrough</li>
+          <li>Gmail and Lark integrations</li>
+        </ul>
+        <a href="#signup" class="btn btn-rose" style="width:100%">Get Pro</a>
+      </div>
+
     </div>
   </div>
 </section>
@@ -661,49 +655,47 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
     </div>
     <div class="faq-list">
       <div class="faq-item reveal">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need to know anything about AI already?<span></span></div>
-        <div class="faq-a">Nope. If you can use TikTok, you can do this. We start from zero and build up. No coding, no technical background needed.</div>
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need any tech skills?<span></span></div>
+        <div class="faq-a">Not at all. If you can use TikTok and send a text, you can do this. Starter is all about learning to use AI through conversation — no coding, no terminal, nothing technical. Pro uses the Posy Setup Wizard, which walks you through everything step by step.</div>
       </div>
       <div class="faq-item reveal">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What if I can't attend live?<span></span></div>
-        <div class="faq-a">Every session is recorded and replays are available within 24 hours. But live is best — you can ask questions in real time.</div>
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What's the difference between Starter and Pro?<span></span></div>
+        <div class="faq-a">Starter teaches you to use AI as a tool — better prompts, smarter workflows, more time back. Pro goes further and sets up AI employees that actually run parts of your business for you, 24/7. Think of Starter as learning to fish. Pro is hiring a fleet of fishing boats.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What are AI employees?<span></span></div>
+        <div class="faq-a">AI employees are automated agents that handle real tasks in your business — monitoring your brand inbox, tracking your income and expenses, catching important Lark notifications. They run 24/7 on a cloud server and message you on Telegram when something needs your attention. They're not chatbots. They actually do the work.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How much does it cost to run the AI after the course?<span></span></div>
+        <div class="faq-a">About $15-30 per month total. That covers the cloud server ($6-12/mo), AI usage through the Anthropic API ($5-20/mo), and Telegram is free. Less than a streaming subscription for an employee that never sleeps.</div>
       </div>
       <div class="faq-item reveal">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is this only for TikTok Shop creators?<span></span></div>
-        <div class="faq-a">It's designed for TikTok Shop affiliates but the AI workflows work for any content creator — Instagram, YouTube, Amazon affiliates, anyone making content and money online.</div>
+        <div class="faq-a">No. The AI skills and automation systems work for any content creator — Instagram, YouTube, Amazon affiliates, brand ambassadors, anyone making content and money online. The Lark Agent is TikTok-Shop-specific, but everything else applies across platforms.</div>
       </div>
       <div class="faq-item reveal">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Why is this free?<span></span></div>
-        <div class="faq-a">This is the beta cohort. You get the course free, we get your feedback to make it better. When we launch the paid version, you'll get a founding member discount. Win-win.</div>
-      </div>
-      <div class="faq-item reveal">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Will I get access to The Posy apps?<span></span></div>
-        <div class="faq-a">Yes — masterclass students get early beta access to The Posy Money, The Posy Edit, and The Posy Intel before anyone else.</div>
-      </div>
-      <div class="faq-item reveal">
-        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How long are the sessions?<span></span></div>
-        <div class="faq-a">About 60 minutes each, with time at the end for Q&A. Short enough to watch during nap time.</div>
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What if I want to upgrade from Starter to Pro later?<span></span></div>
+        <div class="faq-a">You can upgrade anytime and only pay the difference. Your progress carries over — you just unlock the Pro modules and get access to the setup wizard and pre-made agents.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GUARANTEE -->
-<section class="guarantee-section">
+<!-- BETA SIGNUP -->
+<section class="waitlist-section" id="signup">
   <div class="container">
-    <div class="guarantee-box reveal">
-      <h2>The "No Fluff" Promise</h2>
-      <p>If you attend the masterclass and don't learn at least one workflow that saves you real time in your creator business, I'll personally hop on a call and help you set one up. That's how confident I am in this.</p>
+    <h2 class="reveal">Join the waitlist for founding member pricing</h2>
+    <p class="reveal">Be the first to know when doors open — and lock in a price that won't come back.</p>
+    <div class="waitlist-form reveal">
+      <form id="waitlist-form">
+        <input type="hidden" name="source" value="posy-academy">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <button type="submit">Join the Waitlist</button>
+      </form>
+      <p style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:14px">No spam, ever. Unsubscribe anytime.</p>
     </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final-cta">
-  <div class="container">
-    <h2 class="reveal">Ready to stop doing everything manually?</h2>
-    <p class="reveal">Join the free masterclass and learn the AI systems behind a six-figure creator business run by one person.</p>
-    <a href="#signup" class="btn btn-primary reveal">Save My Free Spot</a>
   </div>
 </section>
 
@@ -714,11 +706,11 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
     <div class="footer-tagline">Your hand-picked creator toolkit</div>
     <div class="footer-links">
       <a href="index.html">Home</a>
-      <a href="index.html#tools">Tools</a>
-      <a href="posy-course-outline.html">Course Outline</a>
+      <a href="posy-course-outline.html">Full Course Outline</a>
       <a href="posy-ai-scorecard.html">Take the Quiz</a>
       <a href="https://the-posy-production.up.railway.app/login">Student Login</a>
-      <a href="index.html#about">About</a>
+      <a href="posy-privacy.html">Privacy Policy</a>
+      <a href="posy-terms.html">Terms of Service</a>
     </div>
     <p class="footer-copy">&copy; 2026 The Posy by Brooke Co &middot; All Rights Reserved</p>
   </div>
@@ -726,20 +718,50 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
 
 <!-- JS -->
 <script>
+// reveal on scroll
 const reveals=document.querySelectorAll('.reveal');
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
 },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
 reveals.forEach(el=>observer.observe(el));
 
+// header scroll shadow
 const headerWrap=document.getElementById('header');
 window.addEventListener('scroll',()=>{headerWrap.classList.toggle('scrolled',window.scrollY>20)},{passive:true});
 
+// hamburger menu
 const hamburger=document.getElementById('hamburger');
 const nav=document.getElementById('nav');
 hamburger.addEventListener('click',()=>{hamburger.classList.toggle('active');nav.classList.toggle('open')});
 nav.querySelectorAll('a').forEach(a=>{a.addEventListener('click',()=>{hamburger.classList.remove('active');nav.classList.remove('open')})});
 document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!hamburger.contains(e.target)){hamburger.classList.remove('active');nav.classList.remove('open')}});
+
+// waitlist form submit
+document.getElementById('waitlist-form').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const form=e.target;
+  const btn=form.querySelector('button');
+  const name=form.querySelector('input[name="name"]').value;
+  const email=form.querySelector('input[name="email"]').value;
+  const source=form.querySelector('input[name="source"]').value;
+  btn.textContent='Joining...';btn.disabled=true;
+  try{
+    const res=await fetch('https://email-hub-production.up.railway.app/api/subscribe',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({name,email,source})
+    });
+    if(res.ok){
+      btn.textContent='You\'re on the list!';
+      btn.style.background='var(--sage-dark)';
+      form.querySelector('input[name="name"]').value='';
+      form.querySelector('input[name="email"]').value='';
+    }else{
+      btn.textContent='Try again';btn.disabled=false;
+    }
+  }catch(err){
+    btn.textContent='Try again';btn.disabled=false;
+  }
+});
 </script>
 </body>
 </html>
