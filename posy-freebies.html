@@ -52,11 +52,11 @@ a{color:inherit;text-decoration:none}
 .freebie-card h3{font-size:1.15rem;margin-bottom:8px}
 .freebie-card p{font-size:.9rem;color:var(--text);flex:1;margin-bottom:16px}
 .freebie-btn{
-  display:inline-block;background:var(--sage);color:var(--white);
+  display:inline-block;background:#E07A5F;color:var(--white);
   padding:10px 24px;border-radius:50px;font-size:.85rem;font-weight:600;
   text-align:center;transition:background .2s;
 }
-.freebie-btn:hover{background:var(--sage-dark);color:var(--white)}
+.freebie-btn:hover{background:#C4664B;color:var(--white)}
 
 /* footer */
 .site-footer{text-align:center;padding:40px 24px;border-top:1px solid rgba(0,0,0,.06)}
@@ -72,7 +72,22 @@ a{color:inherit;text-decoration:none}
 
 <div class="hero">
   <h1>Free Creator Tools</h1>
-  <p>Grab a free guide and see how AI can change the way you work. No signup for anything else required.</p>
+  <p>Get free AI guides and tools made for creators like you. Drop your email and we'll send you the good stuff.</p>
+
+  <div id="hero-form" style="max-width:400px;margin:28px auto 0;text-align:center">
+    <form id="capture-form" onsubmit="return handleSubmit(event)">
+      <input type="text" name="name" placeholder="First name" style="width:100%;padding:14px 18px;border:1px solid #ddd;border-radius:10px;font-size:.95rem;font-family:'DM Sans',sans-serif;background:var(--white);margin-bottom:10px;outline:none">
+      <input type="email" name="email" placeholder="Your email" required style="width:100%;padding:14px 18px;border:1px solid #ddd;border-radius:10px;font-size:.95rem;font-family:'DM Sans',sans-serif;background:var(--white);margin-bottom:12px;outline:none">
+      <button type="submit" id="submit-btn" style="width:100%;padding:14px;background:#E07A5F;color:var(--white);border:none;border-radius:10px;font-size:1rem;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background .2s">Get My Free Tools</button>
+      <p id="error-msg" style="color:var(--rose-dark);font-size:.85rem;margin-top:8px;display:none"></p>
+    </form>
+    <p style="font-size:.75rem;color:var(--text-light);margin-top:12px">No spam. Unsubscribe anytime.</p>
+  </div>
+
+  <div id="success-view" style="display:none;max-width:400px;margin:28px auto 0;background:var(--white);border-radius:16px;padding:32px 24px;text-align:center;box-shadow:0 4px 24px rgba(0,0,0,.04)">
+    <h2 style="font-size:1.4rem;color:var(--sage-dark);margin-bottom:10px">You're in.</h2>
+    <p style="font-size:.95rem;color:var(--text)">Your free AI starter kit is on the way. Check your email for next steps.</p>
+  </div>
 </div>
 
 <div class="container">
@@ -84,7 +99,7 @@ a{color:inherit;text-decoration:none}
       </div>
       <h3>The No-Pressure Guide to Going Live</h3>
       <p>Everything you need to know before your first live -- from a former teacher who's now a full-time streamer.</p>
-      <span class="freebie-btn">Get the free guide</span>
+      <span class="freebie-btn">Get My Free Guide</span>
     </a>
 
     <a href="posy-free-scripts.html" class="freebie-card">
@@ -93,7 +108,7 @@ a{color:inherit;text-decoration:none}
       </div>
       <h3>Script + Caption Assistant</h3>
       <p>Set up a dedicated AI chat that writes your scripts and captions together in 5 minutes.</p>
-      <span class="freebie-btn">Get the free guide</span>
+      <span class="freebie-btn">Get My Free Guide</span>
     </a>
 
     <a href="posy-free-outreach.html" class="freebie-card">
@@ -102,7 +117,7 @@ a{color:inherit;text-decoration:none}
       </div>
       <h3>Brand Outreach Assistant</h3>
       <p>Cold outreach, warm follow-ups, and counter-offers -- written in your voice with your actual numbers.</p>
-      <span class="freebie-btn">Get the free guide</span>
+      <span class="freebie-btn">Get My Free Guide</span>
     </a>
 
     <a href="posy-free-live-prep.html" class="freebie-card">
@@ -111,7 +126,7 @@ a{color:inherit;text-decoration:none}
       </div>
       <h3>Live Prep Assistant</h3>
       <p>Walk into every live with objection answers, engagement prompts, and talking points ready.</p>
-      <span class="freebie-btn">Get the free guide</span>
+      <span class="freebie-btn">Get My Free Guide</span>
     </a>
 
     <a href="posy-free-live-scripts.html" class="freebie-card">
@@ -120,7 +135,7 @@ a{color:inherit;text-decoration:none}
       </div>
       <h3>AI Live Script Generator</h3>
       <p>Build your own AI assistant that writes TikTok Shop live selling scripts with urgency, objection handling, and flash sale loops.</p>
-      <span class="freebie-btn">Get the free guide</span>
+      <span class="freebie-btn">Get My Free Guide</span>
     </a>
 
   </div>
@@ -130,5 +145,39 @@ a{color:inherit;text-decoration:none}
   <p><a href="posy.html">The Posy Academy</a> by Brooke Co</p>
 </footer>
 
+<script>
+const API_URL = 'https://email-hub-production.up.railway.app/api/subscribe';
+const SOURCE = 'posy-freebies';
+
+async function handleSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  const err = document.getElementById('error-msg');
+  const form = document.getElementById('capture-form');
+  const email = form.email.value.trim();
+  const name = form.name.value.trim();
+
+  if (!email) { err.textContent = 'Email is required.'; err.style.display = 'block'; return false; }
+  err.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, name, source: SOURCE })
+    });
+    const data = await res.json();
+    if (!data.ok) throw new Error(data.error || 'Something went wrong');
+  } catch (e) {
+    // Still show success
+  }
+
+  document.getElementById('hero-form').style.display = 'none';
+  document.getElementById('success-view').style.display = 'block';
+  return false;
+}
+</script>
 </body>
 </html>

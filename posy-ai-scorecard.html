@@ -95,8 +95,8 @@ a{color:inherit;text-decoration:none}
   font-size:1rem;font-weight:600;font-family:'DM Sans',sans-serif;
   cursor:pointer;transition:all .2s;border:none;
 }
-.btn-primary{background:var(--sage);color:var(--white)}
-.btn-primary:hover{background:var(--sage-dark)}
+.btn-primary{background:#E07A5F;color:var(--white)}
+.btn-primary:hover{background:#C4664B}
 .btn-secondary{background:transparent;color:var(--sage-dark);border:2px solid var(--sage-light);margin-left:8px}
 .btn-secondary:hover{background:var(--cream)}
 .btn:disabled{opacity:.5;cursor:not-allowed}
@@ -146,7 +146,7 @@ a{color:inherit;text-decoration:none}
       <h1>AI Readiness Scorecard</h1>
       <p>Find out how much time AI could save you every week — and which Posy tools are the best fit for where you are right now.</p>
       <p class="time">10 questions &middot; takes about 2 minutes</p>
-      <button class="btn btn-primary" onclick="startQuiz()">Take the Quiz</button>
+      <button class="btn btn-primary" onclick="startQuiz()">Show Me My Score</button>
     </div>
 
     <!-- QUESTIONS (rendered by JS) -->
@@ -158,7 +158,7 @@ a{color:inherit;text-decoration:none}
       <p>Enter your email to see your personalized results and recommendations.</p>
       <input type="text" id="gate-name" placeholder="First name (optional)">
       <input type="email" id="gate-email" placeholder="Your email" required>
-      <button class="btn btn-primary" style="width:100%" onclick="submitEmail()">See My Results</button>
+      <button class="btn btn-primary" style="width:100%" onclick="submitEmail()">Show Me My Results</button>
       <p class="fine-print">No spam. Just your results + occasional Posy updates. Unsubscribe anytime.</p>
     </div>
 

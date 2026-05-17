@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>the 3 things i'd automate first if i was starting my TikTok Shop over — The Posy Blog</title>
+<meta name="description" content="If someone took away all my AI tools tomorrow, I'd set up three things. These gave me the most time back, made me the most money, and were the easiest to get running.">
+<link rel="icon" type="image/png" href="posy-favicon.png">
+<link rel="apple-touch-icon" href="posy-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --blush:#E8C4B8;
+  --blush-light:#F5E1DA;
+  --blush-soft:#FDF5F2;
+  --cream:#FAF8F5;
+  --cream-warm:#F5F0EB;
+  --sage:#8FA68A;
+  --sage-light:#C5D4C0;
+  --sage-dark:#6B8B65;
+  --rose:#C4897A;
+  --rose-dark:#A8705F;
+  --coral:#E07A5F;
+  --coral-dark:#C4664B;
+  --charcoal:#3D3D3D;
+  --text:#555555;
+  --text-light:#888888;
+  --white:#FFFFFF;
+  --radius:16px;
+  --radius-lg:24px;
+  --radius-xl:32px;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'DM Sans',sans-serif;font-weight:400;
+  color:var(--charcoal);background:var(--cream);line-height:1.7;
+  font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.25;color:var(--charcoal)}
+a{color:inherit;text-decoration:none}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* header */
+.top-bar-wrap{position:fixed;top:0;left:0;right:0;z-index:101}
+header{
+  background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(0,0,0,.04);transition:box-shadow .3s;
+}
+.top-bar-wrap.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.06)}
+.header-inner{
+  max-width:1100px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;height:72px;
+}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:600;color:var(--rose)}
+.logo span{font-weight:400;font-size:.85rem;color:var(--text-light);display:block;font-family:'DM Sans',sans-serif;letter-spacing:.02em}
+nav{display:flex;align-items:center;gap:32px}
+nav a{font-size:.85rem;font-weight:500;color:var(--text);transition:color .25s}
+nav a:hover{color:var(--rose)}
+.nav-cta{
+  background:var(--coral);color:var(--white);padding:10px 26px;
+  border-radius:50px;font-weight:600;font-size:.82rem;letter-spacing:.03em;
+  transition:background .25s,transform .2s;
+}
+.nav-cta:hover{background:var(--coral-dark);color:var(--white);transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;z-index:110}
+.hamburger span{display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:768px){
+  .hamburger{display:flex}
+  nav{
+    position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100vh;
+    flex-direction:column;justify-content:center;gap:28px;
+    background:var(--white);padding:40px;
+    transition:right .35s ease;box-shadow:-8px 0 40px rgba(0,0,0,.08);
+  }
+  nav.open{right:0}
+  nav a{font-size:1.1rem}
+}
+
+/* article */
+.article-hero{
+  padding:140px 24px 60px;
+  background:linear-gradient(165deg,var(--blush-soft) 0%,var(--cream) 50%,var(--cream-warm) 100%);
+  text-align:center;
+}
+.article-hero .back-link{
+  display:inline-block;font-size:.82rem;font-weight:500;color:var(--sage);
+  margin-bottom:20px;transition:color .2s;
+}
+.article-hero .back-link:hover{color:var(--sage-dark)}
+.article-hero h1{font-size:clamp(1.6rem,4vw,2.4rem);max-width:680px;margin:0 auto 16px;line-height:1.35}
+.article-hero .article-meta{font-size:.88rem;color:var(--text-light);font-style:italic}
+
+.article-body{
+  max-width:680px;margin:0 auto;padding:60px 24px 80px;
+  font-size:1.02rem;line-height:1.85;color:var(--text);
+}
+.article-body p{margin-bottom:24px}
+.article-body h2{
+  font-size:1.4rem;color:var(--charcoal);margin:48px 0 20px;
+  padding-bottom:8px;border-bottom:2px solid var(--sage-light);
+}
+.article-body strong{color:var(--charcoal);font-weight:600}
+.article-body ul,.article-body ol{margin:0 0 24px 24px}
+.article-body li{margin-bottom:8px;line-height:1.75}
+.article-body hr{border:none;border-top:1px solid rgba(0,0,0,.08);margin:40px 0}
+
+/* cta card */
+.article-cta{
+  max-width:680px;margin:0 auto 80px;padding:40px 36px;
+  background:var(--white);border-radius:var(--radius-xl);
+  text-align:center;border:2px solid var(--sage-light);
+  box-shadow:0 8px 32px rgba(0,0,0,.04);
+}
+.article-cta p{font-size:1rem;color:var(--text);line-height:1.75;margin-bottom:24px}
+.article-cta .cta-btn{
+  display:inline-block;padding:16px 40px;border-radius:50px;
+  background:var(--coral);color:var(--white);font-family:'DM Sans',sans-serif;
+  font-weight:600;font-size:.95rem;letter-spacing:.03em;
+  transition:all .3s ease;
+}
+.article-cta .cta-btn:hover{background:var(--coral-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(224,122,95,.25)}
+
+/* footer */
+footer{
+  background:var(--white);border-top:1px solid rgba(0,0,0,.04);
+  padding:40px 0;text-align:center;
+}
+footer .footer-brand{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--rose);margin-bottom:8px}
+footer .footer-tagline{font-size:.88rem;color:var(--text-light);font-style:italic;margin-bottom:16px}
+footer .footer-links{display:flex;gap:24px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}
+footer .footer-links a{font-size:.82rem;color:var(--text);transition:color .2s}
+footer .footer-links a:hover{color:var(--rose)}
+footer .footer-copy{font-size:.72rem;color:var(--text-light)}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="top-bar-wrap" id="header">
+<header>
+  <div class="header-inner">
+    <a href="posy-academy.html" class="logo">The Posy Academy<span>by Brooke Co</span></a>
+    <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+    <nav id="nav">
+      <a href="posy-academy.html">Home</a>
+      <a href="posy-blog.html">Blog</a>
+      <a href="posy-course-outline.html">Course</a>
+      <a href="posy-ai-scorecard.html" class="nav-cta">Take My Free Quiz</a>
+    </nav>
+  </div>
+</header>
+</div>
+
+<!-- ARTICLE HERO -->
+<section class="article-hero">
+  <a href="posy-blog.html" class="back-link reveal">&larr; back to the blog</a>
+  <h1 class="reveal">the 3 things i'd automate first if i was starting my TikTok Shop over</h1>
+  <p class="article-meta reveal">by brooke | the posy academy</p>
+</section>
+
+<!-- ARTICLE BODY -->
+<article class="article-body">
+
+<p class="reveal">if someone took away all my AI tools tomorrow and said "start over," i wouldn't panic.</p>
+
+<p class="reveal">i'd set up three things. in this order. and i'd be back to running at full speed within a week.</p>
+
+<p class="reveal">these are the three setups that gave me the most time back, made me the most money, and were the easiest to get running. if you're doing everything manually right now, start here.</p>
+
+<h2 class="reveal">1. script + caption assistant</h2>
+
+<p class="reveal"><strong>the problem:</strong> staring at a blank page before every video, spending 30-45 minutes writing a script that should take 5.</p>
+
+<p class="reveal"><strong>the fix:</strong> a permanent AI chat that already knows your niche, your voice, your products, and your style. you tell it what you're filming and it gives you a script that sounds like you — not like a robot, not like a generic influencer, like YOU.</p>
+
+<p class="reveal"><strong>what changed for me:</strong> i went from spending an hour on scripts to 4 minutes. not exaggerating. i film more because the prep doesn't feel like a chore anymore. more videos = more sales. the math is simple.</p>
+
+<p class="reveal"><strong>the key:</strong> this isn't a prompt you paste in every time. it's a chat you set up ONCE with all your context — your niche, your stats, your tone, examples of your best-performing videos. then you just... talk to it. "i'm filming a video about this product, give me a hook and script." done.</p>
+
+<h2 class="reveal">2. email assistant</h2>
+
+<p class="reveal"><strong>the problem:</strong> you have emails sitting in your inbox right now that you haven't opened. brand deals you missed. collabs you forgot to follow up on. pitches you meant to send last week.</p>
+
+<p class="reveal"><strong>the fix:</strong> an AI chat that sorts what matters, drafts replies, handles follow-ups and sample requests. it already knows your stats, your rates, and your tone.</p>
+
+<p class="reveal">but here's what makes this different from just using ChatGPT: you don't copy someone else's email templates. you BUILD your own templates WITH the assistant, using your actual numbers and your actual voice. so when a brand reaches out, your reply sounds like you wrote it at your desk — not like you found it on a blog.</p>
+
+<p class="reveal"><strong>what it handles:</strong></p>
+
+<ul class="reveal">
+  <li>cold pitches to new brands</li>
+  <li>warm pitches to brands you're already seeing results with</li>
+  <li>follow-ups when you don't hear back</li>
+  <li>counter offers when brands lowball you</li>
+</ul>
+
+<p class="reveal"><strong>what changed for me:</strong> i stopped losing opportunities. that's it. the emails get answered, the follow-ups happen, and i don't spend my evenings in my inbox.</p>
+
+<h2 class="reveal">3. live prep assistant</h2>
+
+<p class="reveal"><strong>the problem:</strong> you spend an hour before every live pulling product info, thinking of talking points, trying to remember what objections people had last time. or worse — you skip the prep and wing it, and your conversion rate shows.</p>
+
+<p class="reveal"><strong>the fix:</strong> an AI chat that already knows your products. it pulls real reviews for objection handling, gives you talking points, engagement prompts, and saves for dead moments. you spend 2 minutes prepping instead of 60.</p>
+
+<p class="reveal"><strong>what changed for me:</strong> my lives got better AND i stopped dreading them. the prep was the part i hated. now it takes less time than making coffee.</p>
+
+<h2 class="reveal">the pattern</h2>
+
+<p class="reveal">notice what all three have in common:</p>
+
+<ul class="reveal">
+  <li>they're <strong>permanent</strong> — set up once, use forever</li>
+  <li>they know <strong>your</strong> context — not generic, not one-size-fits-all</li>
+  <li>they handle <strong>admin</strong> — the boring stuff between the creative work</li>
+  <li>they save <strong>time</strong> — not 5 minutes, HOURS every week</li>
+</ul>
+
+<p class="reveal">that's the whole philosophy behind the posy academy. we're not teaching you how to make better content — you already know how to do that. we're giving you tools that handle the busywork so your time is yours.</p>
+
+<h2 class="reveal">how to start</h2>
+
+<p class="reveal">pick one. whichever one made you think "oh, i need that." set it up this week.</p>
+
+<p class="reveal">we have free setup guides for all three. they're not prompt lists — they walk you through creating a permanent AI assistant chat that knows your niche, your voice, and your stats. set it up once, use it forever.</p>
+
+</article>
+
+<!-- CTA CARD -->
+<div class="article-cta reveal" style="margin-left:24px;margin-right:24px">
+  <p>grab the free setup guides — all three are yours, no catch.</p>
+  <a href="posy-freebies.html" class="cta-btn">Get My Free Guides</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px">
+    <div class="footer-brand">The Posy Academy</div>
+    <div class="footer-tagline">Your hand-picked creator toolkit</div>
+    <div class="footer-links">
+      <a href="posy-blog.html">Blog</a>
+      <a href="posy-course-outline.html">Course Outline</a>
+      <a href="posy-ai-scorecard.html">Quiz</a>
+      <a href="https://the-posy-production.up.railway.app/login">Student Login</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 The Posy by Brooke Co &middot; All Rights Reserved</p>
+  </div>
+</footer>
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+reveals.forEach(el=>observer.observe(el));
+
+const headerWrap=document.getElementById('header');
+window.addEventListener('scroll',()=>{
+  headerWrap.classList.toggle('scrolled',window.scrollY>20);
+},{passive:true});
+
+const hamburger=document.getElementById('hamburger');
+const nav=document.getElementById('nav');
+hamburger.addEventListener('click',()=>{hamburger.classList.toggle('active');nav.classList.toggle('open')});
+nav.querySelectorAll('a').forEach(a=>{a.addEventListener('click',()=>{hamburger.classList.remove('active');nav.classList.remove('open')})});
+document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!hamburger.contains(e.target)){hamburger.classList.remove('active');nav.classList.remove('open')}});
+</script>
+</body>
+</html>

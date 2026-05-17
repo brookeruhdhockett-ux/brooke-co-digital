@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" href="posy-favicon.png">
 <meta property="og:image" content="posy-favicon.png">
 <meta property="og:title" content="The Posy Academy">
-<meta property="og:description" content="AI employees for creators. Built by a mom who made $89K solo.">
+<meta property="og:description" content="AI employees for creators. Built by a six-figure creator mom.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -27,6 +27,8 @@
   --sage-dark:#6B8B65;
   --rose:#C4897A;
   --rose-dark:#A8705F;
+  --coral:#E07A5F;
+  --coral-dark:#C4664B;
   --charcoal:#3D3D3D;
   --text:#555555;
   --text-light:#888888;
@@ -76,11 +78,11 @@ nav a{font-size:.85rem;font-weight:500;color:var(--text);transition:color .25s}
 nav a:hover{color:var(--rose)}
 
 .nav-cta{
-  background:var(--sage);color:var(--white);padding:10px 26px;
+  background:var(--coral);color:var(--white);padding:10px 26px;
   border-radius:50px;font-weight:600;font-size:.82rem;letter-spacing:.03em;
   transition:background .25s,transform .2s;
 }
-.nav-cta:hover{background:var(--sage-dark);color:var(--white);transform:translateY(-1px)}
+.nav-cta:hover{background:var(--coral-dark);color:var(--white);transform:translateY(-1px)}
 
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;z-index:110}
 .hamburger span{display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:transform .3s,opacity .3s}
@@ -106,12 +108,12 @@ nav a:hover{color:var(--rose)}
   font-family:'DM Sans',sans-serif;font-weight:600;font-size:.88rem;
   letter-spacing:.03em;transition:all .3s ease;cursor:pointer;border:none;
 }
-.btn-primary{background:var(--sage);color:var(--white)}
-.btn-primary:hover{background:var(--sage-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(107,139,101,.2)}
+.btn-primary{background:var(--coral);color:var(--white)}
+.btn-primary:hover{background:var(--coral-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(224,122,95,.25)}
 .btn-secondary{background:transparent;color:var(--sage);border:2px solid var(--sage)}
 .btn-secondary:hover{background:var(--sage);color:var(--white);transform:translateY(-2px)}
-.btn-rose{background:var(--rose);color:var(--white)}
-.btn-rose:hover{background:var(--rose-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(196,137,122,.2)}
+.btn-rose{background:var(--coral);color:var(--white)}
+.btn-rose:hover{background:var(--coral-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(224,122,95,.25)}
 .btn-lg{padding:18px 44px;font-size:.95rem}
 
 /* hero */
@@ -446,10 +448,10 @@ section{padding:90px 0}
 .waitlist-form input::placeholder{color:rgba(255,255,255,.4)}
 .waitlist-form button{
   width:100%;padding:16px;border-radius:50px;border:none;
-  background:var(--sage);color:var(--white);font-family:'DM Sans',sans-serif;
+  background:var(--coral);color:var(--white);font-family:'DM Sans',sans-serif;
   font-weight:600;font-size:.92rem;cursor:pointer;transition:background .25s,transform .2s;
 }
-.waitlist-form button:hover{background:var(--sage-dark);transform:translateY(-2px)}
+.waitlist-form button:hover{background:var(--coral-dark);transform:translateY(-2px)}
 
 /* footer */
 footer{
@@ -462,6 +464,35 @@ footer .footer-links{display:flex;gap:24px;justify-content:center;margin-bottom:
 footer .footer-links a{font-size:.82rem;color:var(--text);transition:color .2s}
 footer .footer-links a:hover{color:var(--rose)}
 footer .footer-copy{font-size:.72rem;color:var(--text-light)}
+
+/* sticky mobile CTA */
+.sticky-cta{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:100;
+  background:rgba(255,255,255,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-top:1px solid rgba(0,0,0,.06);padding:12px 20px;
+  text-align:center;transform:translateY(100%);transition:transform .3s ease;
+}
+.sticky-cta.visible{transform:translateY(0)}
+.sticky-cta a{
+  display:block;width:100%;max-width:400px;margin:0 auto;padding:14px;
+  background:var(--coral);color:var(--white);border-radius:50px;
+  font-family:'DM Sans',sans-serif;font-weight:600;font-size:.92rem;
+  transition:background .2s;
+}
+.sticky-cta a:hover{background:var(--coral-dark);color:var(--white)}
+@media(max-width:768px){.sticky-cta{display:block}}
+
+/* guarantee */
+.guarantee-section{text-align:center;padding:48px 0 0}
+.guarantee-badge{
+  display:inline-flex;align-items:center;gap:14px;
+  padding:24px 36px;border-radius:var(--radius-lg);
+  background:rgba(143,166,138,.08);border:2px dashed var(--sage-light);
+}
+.guarantee-icon{font-size:2rem}
+.guarantee-text{text-align:left}
+.guarantee-text strong{font-size:.95rem;color:var(--charcoal);display:block;margin-bottom:4px}
+.guarantee-text p{font-size:.82rem;color:var(--text);line-height:1.6}
 
 /* modules list in paths */
 .module-expand{margin-top:16px}
@@ -488,7 +519,7 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
       <a href="#paths">Course</a>
       <a href="#freebies">Free Resources</a>
       <a href="#about">About</a>
-      <a href="posy-ai-scorecard.html" class="nav-cta">Take the Quiz</a>
+      <a href="posy-ai-scorecard.html" class="nav-cta">Take My Free Quiz</a>
     </nav>
   </div>
 </header>
@@ -502,8 +533,8 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
   <h1 class="reveal">Work less. Earn more. <em>Live more.</em></h1>
   <p class="hero-sub reveal">The AI-powered system that helps creators land brand retainers and automate their entire business — built by a real creator, not a tech bro.</p>
   <div class="hero-buttons reveal">
-    <a href="posy-ai-scorecard.html" class="btn btn-primary btn-lg">Take the Free Quiz</a>
-    <a href="#paths" class="btn btn-secondary btn-lg">See How It Works</a>
+    <a href="posy-ai-scorecard.html" class="btn btn-primary btn-lg">Take My Free Quiz</a>
+    <a href="#paths" class="btn btn-secondary btn-lg">Show Me How It Works</a>
   </div>
   <div class="hero-stat reveal"><strong>8 AI employees. $0 payroll.</strong> Built by one creator with zero coding experience.</div>
 </section>
@@ -745,7 +776,7 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
           <li>Built-in Q&amp;A support</li>
           <li>Lifetime updates</li>
         </ul>
-        <a href="#pricing" class="btn btn-primary" style="width:100%">Get Starter</a>
+        <a href="#pricing" class="btn btn-primary" style="width:100%">Start My Journey</a>
         <p style="font-size:.72rem;color:var(--text-light);margin-top:14px;line-height:1.5;font-style:italic">Note: Starter uses Claude's web app, which requires a Claude Pro subscription ($20/mo). As you get more fluent with AI, you'll likely want to use it more — and Claude's higher plans run $100-200/mo. Pro runs on API credits ($5-30/mo) instead, with no Claude subscription needed at all. So if you see yourself using AI a lot, Pro actually costs less to run long-term.</p>
       </div>
 
@@ -802,7 +833,7 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
           <li>Posy Shop HQ dashboard (see income, expenses, brand emails, and deal status in one place)</li>
           <li>Direct support for setup questions</li>
         </ul>
-        <a href="#pricing" class="btn btn-rose" style="width:100%">Get Pro</a>
+        <a href="#pricing" class="btn btn-rose" style="width:100%">Get My AI Team</a>
       </div>
 
     </div>
@@ -874,7 +905,7 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
         <div class="resource-icon" style="background:var(--blush-soft)">&#9997;</div>
         <h3>AI Readiness Scorecard</h3>
         <p>2-minute quiz: find out how AI-ready your business is and get a personalized action plan.</p>
-        <a href="posy-ai-scorecard.html" class="btn btn-primary" style="padding:10px 24px;font-size:.82rem">Take the Quiz</a>
+        <a href="posy-ai-scorecard.html" class="btn btn-primary" style="padding:10px 24px;font-size:.82rem">Take My Free Quiz</a>
       </div>
       <div class="resource-card reveal">
         <div class="resource-icon" style="background:rgba(143,166,138,.1)">&#9658;</div>
@@ -1006,12 +1037,12 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
           <li>Built-in Q&amp;A support access</li>
           <li>Lifetime updates</li>
         </ul>
-        <a href="#signup" class="btn btn-primary" style="width:100%">Get Starter</a>
+        <a href="#signup" class="btn btn-primary" style="width:100%">Start My Journey</a>
       </div>
 
       <!-- Pro -->
       <div class="price-card featured reveal">
-        <div class="price-badge">Best Value</div>
+        <div class="price-badge">Most Popular</div>
         <h3>Pro</h3>
         <div class="price-tagline">"Earn more AND work less."</div>
         <div class="price-amount">$997</div>
@@ -1025,9 +1056,20 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
           <li>Cloud hosting walkthrough</li>
           <li>Gmail and Lark integrations</li>
         </ul>
-        <a href="#signup" class="btn btn-rose" style="width:100%">Get Pro</a>
+        <a href="#signup" class="btn btn-rose" style="width:100%">Get My AI Team</a>
       </div>
 
+    </div>
+
+    <!-- Guarantee -->
+    <div class="guarantee-section reveal">
+      <div class="guarantee-badge">
+        <div class="guarantee-icon">&#128274;</div>
+        <div class="guarantee-text">
+          <strong>No-fluff guarantee</strong>
+          <p>If you go through the material and it doesn't help your business, reach out within 14 days for a full refund. No hoops, no guilt trips.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1080,7 +1122,7 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
         <input type="hidden" name="source" value="posy-academy">
         <input type="text" name="name" placeholder="Your name" required>
         <input type="email" name="email" placeholder="Your email" required>
-        <button type="submit">Join the Waitlist</button>
+        <button type="submit">Save My Spot</button>
       </form>
       <p style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:14px">No spam, ever. Unsubscribe anytime.</p>
     </div>
@@ -1096,6 +1138,7 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
       <a href="index.html">Home</a>
       <a href="posy-course-outline.html">Full Course Outline</a>
       <a href="posy-ai-scorecard.html">Take the Quiz</a>
+      <a href="posy-blog.html">Blog</a>
       <a href="https://the-posy-production.up.railway.app/login">Student Login</a>
       <a href="posy-privacy.html">Privacy Policy</a>
       <a href="posy-terms.html">Terms of Service</a>
@@ -1103,6 +1146,11 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
     <p class="footer-copy">&copy; 2026 The Posy by Brooke Co &middot; All Rights Reserved</p>
   </div>
 </footer>
+
+<!-- Sticky Mobile CTA -->
+<div class="sticky-cta" id="sticky-cta">
+  <a href="posy-ai-scorecard.html">Take My Free Quiz</a>
+</div>
 
 <!-- JS -->
 <script>
@@ -1113,9 +1161,13 @@ const observer=new IntersectionObserver(entries=>{
 },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
 reveals.forEach(el=>observer.observe(el));
 
-// header scroll shadow
+// header scroll shadow + sticky CTA
 const headerWrap=document.getElementById('header');
-window.addEventListener('scroll',()=>{headerWrap.classList.toggle('scrolled',window.scrollY>20)},{passive:true});
+const stickyCta=document.getElementById('sticky-cta');
+window.addEventListener('scroll',()=>{
+  headerWrap.classList.toggle('scrolled',window.scrollY>20);
+  stickyCta.classList.toggle('visible',window.scrollY>600);
+},{passive:true});
 
 // hamburger menu
 const hamburger=document.getElementById('hamburger');

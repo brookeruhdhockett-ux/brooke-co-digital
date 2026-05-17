@@ -42,12 +42,12 @@ a{color:inherit;text-decoration:none}
 .form-group input::placeholder{color:#aaa}
 
 .submit-btn{
-  width:100%;padding:14px;background:var(--sage);color:var(--white);
+  width:100%;padding:14px;background:#E07A5F;color:var(--white);
   border:none;border-radius:10px;font-size:1rem;font-weight:600;
   font-family:'DM Sans',sans-serif;cursor:pointer;transition:background .2s;
   margin-top:6px;
 }
-.submit-btn:hover{background:var(--sage-dark)}
+.submit-btn:hover{background:#C4664B}
 .submit-btn:disabled{opacity:.6;cursor:not-allowed}
 
 .fine-print{font-size:.75rem;color:var(--text-light);margin-top:14px}
@@ -57,11 +57,11 @@ a{color:inherit;text-decoration:none}
 .success-msg h2{font-size:1.4rem;margin-bottom:12px;color:var(--sage-dark)}
 .success-msg p{font-size:.95rem;color:var(--text);margin-bottom:20px}
 .download-btn{
-  display:inline-block;padding:14px 32px;background:var(--sage);color:var(--white);
+  display:inline-block;padding:14px 32px;background:#E07A5F;color:var(--white);
   border-radius:10px;font-size:1rem;font-weight:600;text-decoration:none;
   transition:background .2s;
 }
-.download-btn:hover{background:var(--sage-dark);color:var(--white)}
+.download-btn:hover{background:#C4664B;color:var(--white)}
 
 .error-msg{color:var(--rose-dark);font-size:.85rem;margin-top:8px;display:none}
 
@@ -97,16 +97,16 @@ a{color:inherit;text-decoration:none}
         <div class="form-group">
           <input type="email" name="email" placeholder="Your email" required>
         </div>
-        <button type="submit" class="submit-btn" id="submit-btn">Send me the free guide</button>
+        <button type="submit" class="submit-btn" id="submit-btn">Get My Free Guide</button>
         <p class="error-msg" id="error-msg"></p>
       </form>
       <p class="fine-print">No spam. Just the guide. Unsubscribe anytime.</p>
     </div>
 
     <div class="success-msg" id="success-view">
-      <h2>Check your inbox (just kidding)</h2>
-      <p>Your guide is ready. Click below to download it now.</p>
-      <a id="download-link" href="#" class="download-btn" target="_blank">Download PDF</a>
+      <h2>You're in.</h2>
+      <p>Your free AI starter kit is on the way. Check your email for next steps.</p>
+      <a href="posy-freebies.html" class="download-btn">Browse more free tools</a>
     </div>
   </div>
 </div>
@@ -117,9 +117,7 @@ a{color:inherit;text-decoration:none}
 
 <script>
 const API_URL = 'https://email-hub-production.up.railway.app/api/subscribe';
-const SLUG = 'first-live';
 const SOURCE = 'posy-first-live';
-const FALLBACK_PDF = 'https://brookeruhdhockett-ux.github.io/brooke-co-digital/posy-first-live-guide.pdf';
 
 async function handleSubmit(e) {
   e.preventDefault();
@@ -141,19 +139,13 @@ async function handleSubmit(e) {
       body: JSON.stringify({ email, name, source: SOURCE })
     });
     const data = await res.json();
-    if (data.ok) {
-      document.getElementById('form-view').style.display = 'none';
-      document.getElementById('success-view').style.display = 'block';
-      document.getElementById('download-link').href = data.pdf_url || FALLBACK_PDF;
-    } else {
-      throw new Error(data.error || 'Something went wrong');
-    }
+    if (!data.ok) throw new Error(data.error || 'Something went wrong');
   } catch (e) {
-    // If API is down, still deliver the PDF
-    document.getElementById('form-view').style.display = 'none';
-    document.getElementById('success-view').style.display = 'block';
-    document.getElementById('download-link').href = FALLBACK_PDF;
+    // Still show success — email will be captured on retry or manual add
   }
+
+  document.getElementById('form-view').style.display = 'none';
+  document.getElementById('success-view').style.display = 'block';
   return false;
 }
 </script>

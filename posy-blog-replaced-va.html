@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>i replaced $4,200/mo in help with AI employees that cost me $50 — The Posy Blog</title>
+<meta name="description" content="I was paying over $4,000 a month in help and still felt behind. Then I started experimenting with AI employees. Here's what happened.">
+<link rel="icon" type="image/png" href="posy-favicon.png">
+<link rel="apple-touch-icon" href="posy-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --blush:#E8C4B8;
+  --blush-light:#F5E1DA;
+  --blush-soft:#FDF5F2;
+  --cream:#FAF8F5;
+  --cream-warm:#F5F0EB;
+  --sage:#8FA68A;
+  --sage-light:#C5D4C0;
+  --sage-dark:#6B8B65;
+  --rose:#C4897A;
+  --rose-dark:#A8705F;
+  --coral:#E07A5F;
+  --coral-dark:#C4664B;
+  --charcoal:#3D3D3D;
+  --text:#555555;
+  --text-light:#888888;
+  --white:#FFFFFF;
+  --radius:16px;
+  --radius-lg:24px;
+  --radius-xl:32px;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'DM Sans',sans-serif;font-weight:400;
+  color:var(--charcoal);background:var(--cream);line-height:1.7;
+  font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;line-height:1.25;color:var(--charcoal)}
+a{color:inherit;text-decoration:none}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* header */
+.top-bar-wrap{position:fixed;top:0;left:0;right:0;z-index:101}
+header{
+  background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(0,0,0,.04);transition:box-shadow .3s;
+}
+.top-bar-wrap.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.06)}
+.header-inner{
+  max-width:1100px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;height:72px;
+}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:600;color:var(--rose)}
+.logo span{font-weight:400;font-size:.85rem;color:var(--text-light);display:block;font-family:'DM Sans',sans-serif;letter-spacing:.02em}
+nav{display:flex;align-items:center;gap:32px}
+nav a{font-size:.85rem;font-weight:500;color:var(--text);transition:color .25s}
+nav a:hover{color:var(--rose)}
+.nav-cta{
+  background:var(--coral);color:var(--white);padding:10px 26px;
+  border-radius:50px;font-weight:600;font-size:.82rem;letter-spacing:.03em;
+  transition:background .25s,transform .2s;
+}
+.nav-cta:hover{background:var(--coral-dark);color:var(--white);transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;z-index:110}
+.hamburger span{display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:768px){
+  .hamburger{display:flex}
+  nav{
+    position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100vh;
+    flex-direction:column;justify-content:center;gap:28px;
+    background:var(--white);padding:40px;
+    transition:right .35s ease;box-shadow:-8px 0 40px rgba(0,0,0,.08);
+  }
+  nav.open{right:0}
+  nav a{font-size:1.1rem}
+}
+
+/* article */
+.article-hero{
+  padding:140px 24px 60px;
+  background:linear-gradient(165deg,var(--blush-soft) 0%,var(--cream) 50%,var(--cream-warm) 100%);
+  text-align:center;
+}
+.article-hero .back-link{
+  display:inline-block;font-size:.82rem;font-weight:500;color:var(--sage);
+  margin-bottom:20px;transition:color .2s;
+}
+.article-hero .back-link:hover{color:var(--sage-dark)}
+.article-hero h1{font-size:clamp(1.6rem,4vw,2.4rem);max-width:680px;margin:0 auto 16px;line-height:1.35}
+.article-hero .article-meta{font-size:.88rem;color:var(--text-light);font-style:italic}
+
+.article-body{
+  max-width:680px;margin:0 auto;padding:60px 24px 80px;
+  font-size:1.02rem;line-height:1.85;color:var(--text);
+}
+.article-body p{margin-bottom:24px}
+.article-body h2{
+  font-size:1.4rem;color:var(--charcoal);margin:48px 0 20px;
+  padding-bottom:8px;border-bottom:2px solid var(--sage-light);
+}
+.article-body strong{color:var(--charcoal);font-weight:600}
+.article-body ul,.article-body ol{margin:0 0 24px 24px}
+.article-body li{margin-bottom:8px;line-height:1.75}
+.article-body hr{border:none;border-top:1px solid rgba(0,0,0,.08);margin:40px 0}
+
+/* cta card */
+.article-cta{
+  max-width:680px;margin:0 auto 80px;padding:40px 36px;
+  background:var(--white);border-radius:var(--radius-xl);
+  text-align:center;border:2px solid var(--sage-light);
+  box-shadow:0 8px 32px rgba(0,0,0,.04);
+}
+.article-cta p{font-size:1rem;color:var(--text);line-height:1.75;margin-bottom:24px}
+.article-cta .cta-btn{
+  display:inline-block;padding:16px 40px;border-radius:50px;
+  background:var(--coral);color:var(--white);font-family:'DM Sans',sans-serif;
+  font-weight:600;font-size:.95rem;letter-spacing:.03em;
+  transition:all .3s ease;
+}
+.article-cta .cta-btn:hover{background:var(--coral-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(224,122,95,.25)}
+
+/* footer */
+footer{
+  background:var(--white);border-top:1px solid rgba(0,0,0,.04);
+  padding:40px 0;text-align:center;
+}
+footer .footer-brand{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--rose);margin-bottom:8px}
+footer .footer-tagline{font-size:.88rem;color:var(--text-light);font-style:italic;margin-bottom:16px}
+footer .footer-links{display:flex;gap:24px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}
+footer .footer-links a{font-size:.82rem;color:var(--text);transition:color .2s}
+footer .footer-links a:hover{color:var(--rose)}
+footer .footer-copy{font-size:.72rem;color:var(--text-light)}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="top-bar-wrap" id="header">
+<header>
+  <div class="header-inner">
+    <a href="posy-academy.html" class="logo">The Posy Academy<span>by Brooke Co</span></a>
+    <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+    <nav id="nav">
+      <a href="posy-academy.html">Home</a>
+      <a href="posy-blog.html">Blog</a>
+      <a href="posy-course-outline.html">Course</a>
+      <a href="posy-ai-scorecard.html" class="nav-cta">Take My Free Quiz</a>
+    </nav>
+  </div>
+</header>
+</div>
+
+<!-- ARTICLE HERO -->
+<section class="article-hero">
+  <a href="posy-blog.html" class="back-link reveal">&larr; back to the blog</a>
+  <h1 class="reveal">i replaced $4,200/mo in help with AI employees that cost me $50</h1>
+  <p class="article-meta reveal">by brooke | the posy academy</p>
+</section>
+
+<!-- ARTICLE BODY -->
+<article class="article-body">
+
+<p class="reveal">i'm going to tell you something that made my VA nervous.</p>
+
+<p class="reveal">last year, i was paying over $4,000 a month in help. a virtual assistant. a bookkeeper. someone managing my emails. someone handling my social media scheduling. and honestly? i still felt behind.</p>
+
+<p class="reveal">not because they weren't good — they were great. but the coordination alone was a part-time job. slack messages, loom videos explaining what i needed, follow-up threads when things fell through the cracks. i was managing people instead of running my business.</p>
+
+<p class="reveal">then i started experimenting with AI.</p>
+
+<p class="reveal">not the kind where you paste a prompt into ChatGPT and hope for the best. i'm talking about permanent AI assistants — ones that already know my niche, my voice, my products, my stats. i set them up once and they just... work.</p>
+
+<h2 class="reveal">here's what they handle now</h2>
+
+<p class="reveal"><strong>molly</strong> runs my morning briefing. she pulls together what happened overnight — sales, messages, anything i need to know — and gives me a 2-minute summary before my kids wake up.</p>
+
+<p class="reveal"><strong>frame</strong> reviews my VA's video edits. she flags issues so i don't have to watch every single clip.</p>
+
+<p class="reveal"><strong>nina</strong> schedules my pinterest pins. she rotates hooks, manages boards, and keeps content going out even when i'm at target with the twins.</p>
+
+<p class="reveal">and there are more. eight total, running 24/7, for about $50/mo in API credits.</p>
+
+<h2 class="reveal">the math that changed everything</h2>
+
+<p class="reveal">here's what i was paying before:</p>
+
+<ul class="reveal">
+  <li>virtual assistant: $800-1,500/mo</li>
+  <li>bookkeeper: $300-500/mo</li>
+  <li>email manager: $500-1,000/mo</li>
+  <li>social media manager: $1,000-2,000/mo</li>
+</ul>
+
+<p class="reveal"><strong>total: $2,600-5,000/mo</strong></p>
+
+<p class="reveal">here's what i pay now for AI employees that handle the same tasks: <strong>~$50/mo.</strong></p>
+
+<p class="reveal">i still have human help — i didn't fire everyone. but my AI employees handle the repetitive, time-consuming stuff that was eating my budget and my sanity. the humans on my team do the creative work that actually needs a human.</p>
+
+<h2 class="reveal">but i'm not technical</h2>
+
+<p class="reveal">neither am i. i'm a retired art teacher with four kids. i figured this out from my phone, mostly during naptime.</p>
+
+<p class="reveal">the tools have gotten so easy that "i'm not tech-savvy" isn't really a barrier anymore. if you can set up a TikTok shop account, you can set up an AI employee. it's honestly easier than filing your taxes.</p>
+
+<h2 class="reveal">what i'd automate first</h2>
+
+<p class="reveal">if i was starting over tomorrow, i'd set up three things:</p>
+
+<ol class="reveal">
+  <li><strong>a script assistant</strong> — a chat that already knows my niche and voice, so i go from blank page to ready-to-film in 4 minutes</li>
+  <li><strong>an email assistant</strong> — handles cold pitches, follow-ups, counter offers. builds templates WITH me using my own stats</li>
+  <li><strong>a live prep assistant</strong> — pulls product reviews, gives me objection handling, talking points, and saves for dead moments</li>
+</ol>
+
+<p class="reveal">these three alone would've saved me 15-20 hours a week when i was doing everything manually.</p>
+
+<h2 class="reveal">the real point</h2>
+
+<p class="reveal">this isn't about replacing humans. it's about getting the admin off your plate so you can show up for the parts that actually matter — going live, filming, connecting with your audience, being present with your family.</p>
+
+<p class="reveal">i didn't build AI employees because i love technology. i built them because i love tuesday afternoons with my kids more than i love formatting spreadsheets.</p>
+
+<p class="reveal">work less. earn more. live more. that's the whole thing.</p>
+
+</article>
+
+<!-- CTA CARD -->
+<div class="article-cta reveal" style="margin-left:24px;margin-right:24px">
+  <p>want to see where AI could save you time? take the AI readiness scorecard — it's free and takes 60 seconds.</p>
+  <a href="posy-ai-scorecard.html" class="cta-btn">Take My Free Scorecard</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px">
+    <div class="footer-brand">The Posy Academy</div>
+    <div class="footer-tagline">Your hand-picked creator toolkit</div>
+    <div class="footer-links">
+      <a href="posy-blog.html">Blog</a>
+      <a href="posy-course-outline.html">Course Outline</a>
+      <a href="posy-ai-scorecard.html">Quiz</a>
+      <a href="https://the-posy-production.up.railway.app/login">Student Login</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 The Posy by Brooke Co &middot; All Rights Reserved</p>
+  </div>
+</footer>
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+reveals.forEach(el=>observer.observe(el));
+
+const headerWrap=document.getElementById('header');
+window.addEventListener('scroll',()=>{
+  headerWrap.classList.toggle('scrolled',window.scrollY>20);
+},{passive:true});
+
+const hamburger=document.getElementById('hamburger');
+const nav=document.getElementById('nav');
+hamburger.addEventListener('click',()=>{hamburger.classList.toggle('active');nav.classList.toggle('open')});
+nav.querySelectorAll('a').forEach(a=>{a.addEventListener('click',()=>{hamburger.classList.remove('active');nav.classList.remove('open')})});
+document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!hamburger.contains(e.target)){hamburger.classList.remove('active');nav.classList.remove('open')}});
+</script>
+</body>
+</html>
