@@ -83,6 +83,12 @@ nav a:hover{color:var(--rose)}
   transition:background .25s,transform .2s;
 }
 .nav-cta:hover{background:var(--coral-dark);color:var(--white);transform:translateY(-1px)}
+.nav-login{
+  padding:10px 20px;border-radius:50px;font-weight:600;font-size:.82rem;
+  border:1.5px solid var(--charcoal);color:var(--charcoal);letter-spacing:.03em;
+  transition:background .25s,color .25s;
+}
+.nav-login:hover{background:var(--charcoal);color:var(--white)}
 
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;z-index:110}
 .hamburger span{display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:transform .3s,opacity .3s}
@@ -521,6 +527,7 @@ footer .footer-copy{font-size:.72rem;color:var(--text-light)}
       <a href="posy-blog.html">Blog</a>
       <a href="#about">About</a>
       <a href="posy-ai-scorecard.html" class="nav-cta">Take My Free Quiz</a>
+      <a href="#" class="nav-login" onclick="alert('Student portal coming soon.')">Student Login</a>
     </nav>
   </div>
 </header>
