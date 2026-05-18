@@ -396,6 +396,8 @@ function submitEmail() {
   else if (score <= 24) resultType = 'optimizer';
   else resultType = 'hustler';
 
+  if(window.__ta) __ta('email_signup');
+
   // Post to Email Hub
   fetch('https://email-hub-production.up.railway.app/api/subscribe', {
     method: 'POST',
@@ -423,6 +425,7 @@ function showResults() {
   document.getElementById('result-cta').textContent = r.cta + ' \u2192';
 
   document.getElementById('results').style.display = 'block';
+  if(window.__ta) __ta('quiz_complete', {type: resultType, score: score});
 }
 
 function shareResult() {
