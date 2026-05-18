@@ -319,6 +319,7 @@ function startQuiz() {
   document.getElementById('progress-wrap').style.display = 'block';
   renderQuestions();
   showQuestion(0);
+  if(window.__ta) __ta('quiz_start');
 }
 
 function renderQuestions() {
@@ -437,5 +438,6 @@ function shareResult() {
   });
 }
 </script>
+<script src="https://email-hub-production.up.railway.app/t/script.js?host=https://email-hub-production.up.railway.app" defer></script>
 </body>
 </html>
